@@ -1,0 +1,109 @@
+.fixed {
+    position: fixed;
+}
+
+.transparent {
+    background: transparent;
+}
+
+.primary-header {
+    width: 100%;
+    align-items: center;
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+.navbar-logo {
+    width: 10rem;
+    margin: 2rem;
+}
+
+nav {
+    width: 100%;
+}
+
+.primary-navigation {
+    justify-content: center;
+    margin-left: -6rem !important;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.primary-navigation li {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
+.primary-navigation li a {
+    color: white;
+    text-decoration: none;
+}
+
+.primary-navigation li a:hover {
+    font-weight: bolder;
+}
+
+@media (max-width: 68rem) {
+    .primary-navigation {
+        --gap: 2em;
+
+        position: fixed;
+        z-index: 1000;
+        inset: 0 0 0 30%;
+
+        flex-direction: column;
+        padding: min(20vh, 20rem) 2rem;
+
+        background: hsl(0 0% 0% / 0.75);
+        backdrop-filter: blur(1rem);
+
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        -o-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+        transform: translateX(100%);
+        -webkit-transition: transform 350ms ease-out;
+        -moz-transition: transform 350ms ease-out;
+        -o-transition: transform 350ms ease-out;
+        -ms-transition: transform 350ms ease-out;
+        transition: transform 350ms ease-out;
+    }
+
+    .primary-navigation[data-visible="true"] {
+        -webkit-transform: translateX(0%);
+        transform: translateX(0%);
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 9999;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .hamburger-inner,
+    .hamburger-inner::before,
+    .hamburger-inner::after {
+        background-color: white;
+    }
+
+    .hamburger.is-active .hamburger-inner,
+    .hamburger.is-active .hamburger-inner::before,
+    .hamburger.is-active .hamburger-inner::after {
+        background-color: white;
+    }
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+    @media (max-width: 68rem) {
+        .primary-navigation {
+            background: hsl(0 0% 100% / 0.1);
+            backdrop-filter: blur(1.5rem);
+        }
+    }
+}

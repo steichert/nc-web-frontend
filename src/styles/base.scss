@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "Nexa";
+    src: url("./fonts/Nexa/Commercial/Nexa_V2_2020/OTF/NexaTextDemo-Light.otf") format('opentype'),
+    url("./fonts/Nexa/Commercial/Nexa_V2_2020/TTF/NexaDemo-Light.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Nexa";
+    font-weight: bold;
+    src: url("./fonts/Nexa/Commercial/Nexa_V2_2020/OTF/NexaTextDemo-Bold.otf") format('opentype'),
+    url("./fonts/Nexa/Commercial/Nexa_V2_2020/TTF/NexaTextDemo-Bold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Noah";
+    src: url("./fonts/Noah/Commercial/OTF/Noah-Regular.otf") format('opentype'),
+    url("./fonts/Noah/Commercial/TTF/Noah-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Noah";
+    font-weight: bold;
+    src: url("./fonts/Noah/Commercial/OTF/Noah-Bold.otf") format('opentype'),
+    url("./fonts/Noah/Commercial/TTF/Noah-Bold.ttf") format('truetype');
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+a {
+    font-family: 'Noah';
+}
+
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+// Backgrounds
+.background-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    -webkit-background-attachment: fixed;
+    -moz-background-attachment: fixed;
+    -o-background-attachment: fixed;
+    background-attachment: fixed;
+}

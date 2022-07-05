@@ -1,0 +1,62 @@
+<header class="primary-header fixed transparent flex">
+    <div class="navbar-logo-wrapper">
+        <img
+            class="navbar-logo"
+            src="assets/images/logos/ncfc-logo-full.png"
+            alt="ncfc logo"
+        />
+    </div>
+
+    <button
+        #navbarButton
+        class="mobile-nav-toggle hamburger hamburger--collapse"
+        type="button"
+        (click)="toggleNavbar()"
+        aria-controls="primary-navigation"
+        aria-expanded="false"
+    >
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <nav>
+        <ul
+            #primaryNavigation
+            id="primary-navigation"
+            data-visible="false"
+            class="primary-navigation flex"
+        >
+            <li *ngFor="let item of currentNavbarItems; let i = index">
+                <div class="dropdown">
+                    <a
+                        href="#"
+                        [ngClass]="{
+                            'dropdown-toggle': item.dropdownItems.length > 0
+                        }"
+                        [id]="'navbarItem' + i"
+                        data-bs-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                    >
+                        {{ item?.name }}
+                    </a>
+
+                    <div
+                        *ngIf="item.dropdownItems.length > 0"
+                        class="dropdown-menu"
+                        [attr.aria-labelledby]="'navbarItem' + i"
+                    >
+                        <a
+                            *ngFor="let dropItem of item.dropdownItems"
+                            class="dropdown-item"
+                            href="#"
+                        >
+                            {{ dropItem?.name }}
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>

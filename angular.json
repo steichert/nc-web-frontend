@@ -25,11 +25,16 @@
                         "inlineStyleLanguage": "scss",
                         "assets": ["src/assets"],
                         "styles": [
-                            "./node_modules/bootstrap/dist/css/bootstrap.css",
-                            "src/styles.scss"
+                            "src/styles/base.scss",
+                            "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+                            "./node_modules/hamburgers/dist/hamburgers.css",
+                            "src/styles/colors.scss",
+                            "src/styles/constants.scss"
                         ],
                         "scripts": [
-                            "node_modules/bootstrap/dist/js/bootstrap.min.js"
+                            "./node_modules/jquery/dist/jquery.min.js",
+                            "./node_modules/popper.js/dist/umd/popper.min.js",
+                            "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
                         ]
                     },
                     "configurations": {
@@ -92,7 +97,7 @@
                         "karmaConfig": "karma.conf.js",
                         "inlineStyleLanguage": "scss",
                         "assets": ["src/favicon.ico", "src/assets"],
-                        "styles": ["src/styles.scss"],
+                        "styles": ["src/styles/base.scss"],
                         "scripts": []
                     }
                 }

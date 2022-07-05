@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { LoadingService } from './services/loading/loading.service';
 
 @Component({
     selector: 'app-root',
@@ -6,5 +8,14 @@ import { Component } from '@angular/core';
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-    title = 'nc-web-frontend';
+    isLoading: boolean = false;
+    isLoadingSubscription: Subscription;
+
+    constructor(private loadingService: LoadingService) {
+        this.isLoadingSubscription = this.loadingService.loadingStatus.subscribe(
+            (value) => {
+                this.isLoading = value;
+            }
+        );
+    }
 }
