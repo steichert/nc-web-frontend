@@ -22,16 +22,9 @@ export const navbarItems = {
                 dropdownItems: [],
             },
             {
-                name: 'MEDIA',
-                routerLink: '/media',
-                dropdownItems: [
-                    {
-                        name: 'SERMONS'
-                    },
-                    {
-                        name: 'PODCASTS'
-                    }
-                ],
+                name: 'SERMONS',
+                routerLink: '/sermons',
+                dropdownItems: [],
             },
             {
                 name: 'EVENTS',

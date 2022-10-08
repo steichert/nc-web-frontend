@@ -1,57 +1,48 @@
-<header class="primary-header fixed transparent flex">
+<header #navbarHeader 
+    id="primaryHeader"
+    class="primary-header fixed transparent flex">
     <div class="navbar-logo-wrapper">
-        <img
+        <img #navbarLogo
             class="navbar-logo"
             src="assets/images/logos/ncfc-logo-full.png"
-            alt="ncfc logo"
-        />
+            alt="NCFC Logo"/>
     </div>
 
-    <button
-        #navbarButton
+    <button #navbarButton
         class="mobile-nav-toggle hamburger hamburger--collapse"
         type="button"
         (click)="toggleNavbar()"
         aria-controls="primary-navigation"
-        aria-expanded="false"
-    >
+        aria-expanded="false">
         <span class="hamburger-box">
             <span class="hamburger-inner"></span>
         </span>
     </button>
 
     <nav>
-        <ul
-            #primaryNavigation
-            id="primary-navigation"
+        <ul #primaryNavigation
+            id="primaryNavigation"
             data-visible="false"
-            class="primary-navigation flex"
-        >
-            <li *ngFor="let item of currentNavbarItems; let i = index">
+            class="primary-navigation flex">
+            <li *ngFor="let item of currentNavbarItems; let i = index"
+                class="primary-navigation-list-item">
                 <div class="dropdown">
-                    <a
-                        href="#"
-                        [ngClass]="{
-                            'dropdown-toggle': item.dropdownItems.length > 0
-                        }"
+                    <a href="#"
+                        [ngClass]="{ 'dropdown-toggle': item.dropdownItems.length > 0 }"
                         [id]="'navbarItem' + i"
+                        class="navbar-item hover-underline-animation"
                         data-bs-toggle="dropdown"
                         aria-haspopup="true"
-                        aria-expanded="false"
-                    >
+                        aria-expanded="false">
                         {{ item?.name }}
                     </a>
 
-                    <div
-                        *ngIf="item.dropdownItems.length > 0"
-                        class="dropdown-menu"
-                        [attr.aria-labelledby]="'navbarItem' + i"
-                    >
-                        <a
-                            *ngFor="let dropItem of item.dropdownItems"
+                    <div *ngIf="item.dropdownItems.length > 0"
+                        class="dropdown-menu transparent"
+                        [attr.aria-labelledby]="'navbarItem' + i">
+                        <a *ngFor="let dropItem of item.dropdownItems"
                             class="dropdown-item"
-                            href="#"
-                        >
+                            href="#">
                             {{ dropItem?.name }}
                         </a>
                     </div>

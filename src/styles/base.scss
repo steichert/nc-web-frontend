@@ -5,23 +5,9 @@
 }
 
 @font-face {
-    font-family: "Nexa";
-    font-weight: bold;
-    src: url("./fonts/Nexa/Commercial/Nexa_V2_2020/OTF/NexaTextDemo-Bold.otf") format('opentype'),
-    url("./fonts/Nexa/Commercial/Nexa_V2_2020/TTF/NexaTextDemo-Bold.ttf") format('truetype');
-}
-
-@font-face {
     font-family: "Noah";
     src: url("./fonts/Noah/Commercial/OTF/Noah-Regular.otf") format('opentype'),
     url("./fonts/Noah/Commercial/TTF/Noah-Regular.ttf") format('truetype');
-}
-
-@font-face {
-    font-family: "Noah";
-    font-weight: bold;
-    src: url("./fonts/Noah/Commercial/OTF/Noah-Bold.otf") format('opentype'),
-    url("./fonts/Noah/Commercial/TTF/Noah-Bold.ttf") format('truetype');
 }
 
 html {
