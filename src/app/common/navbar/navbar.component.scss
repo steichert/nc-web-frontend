@@ -152,11 +152,11 @@ nav {
         -ms-transform: translateX(100%);
         transform: translateX(100%);
 
-        -webkit-transition: transform 500ms ease-out;
-        -moz-transition: transform 500ms ease-out;
-        -o-transition: transform 500ms ease-out;
-        -ms-transition: transform 500ms ease-out;
-        transition: transform 500ms ease-out;
+        -webkit-transition: transform 400ms ease-out;
+        -moz-transition: transform 400ms ease-out;
+        -o-transition: transform 400ms ease-out;
+        -ms-transition: transform 400ms ease-out;
+        transition: transform 400ms ease-out;
     }
 
     .primary-navigation[data-visible="true"] {

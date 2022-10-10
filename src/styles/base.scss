@@ -5,19 +5,42 @@
 }
 
 @font-face {
+    font-family: "Nexa";
+    font-weight: bold;
+    src: url("./fonts/Nexa/Commercial/Nexa_V2_2020/OTF/NexaTextDemo-Bold.otf") format('opentype'),
+    url("./fonts/Nexa/Commercial/Nexa_V2_2020/TTF/NexaTextDemo-Bold.ttf") format('truetype');
+}
+
+@font-face {
     font-family: "Noah";
     src: url("./fonts/Noah/Commercial/OTF/Noah-Regular.otf") format('opentype'),
     url("./fonts/Noah/Commercial/TTF/Noah-Regular.ttf") format('truetype');
 }
 
+@font-face {
+    font-family: "Noah";
+    font-weight: bold;
+    src: url("./fonts/Noah/Commercial/OTF/Noah-Bold.otf") format('opentype'),
+    url("./fonts/Noah/Commercial/TTF/Noah-Bold.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Noah";
+    font-style: italic;
+    src: url("./fonts/Noah/Commercial/OTF/Noah-RegularItalic.otf") format('opentype'),
+    url("./fonts/Noah/Commercial/TTF/Noah-RegularItalic.ttf") format('truetype');
+}
+
 html {
     height: 100%;
     width: 100%;
+    margin: 0 auto;
 }
 
 body {
     height: 100%;
     width: 100%;
+    margin: 0 auto;
     overflow-x: hidden;
     -webkit-animation: fadeInAnimation ease 2.5s;
     -moz-animation: fadeInAnimation ease 2.5s;
@@ -47,6 +70,15 @@ body {
      }
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noah';
+}
+
+p {
+    font-family: 'Noah';
+    font-size: 1.2em;
+}
+
 a {
     font-family: 'Noah';
 }
@@ -73,8 +105,16 @@ a {
     -o-background-size: cover;
     background-size: cover;
 
-    -webkit-background-attachment: fixed;
-    -moz-background-attachment: fixed;
-    -o-background-attachment: fixed;
-    background-attachment: fixed;
+    // -webkit-background-attachment: fixed;
+    // -moz-background-attachment: fixed;
+    // -o-background-attachment: fixed;
+    // background-attachment: fixed;
+}
+
+button {
+    color: white;
+}
+
+.btn-green {
+    background-color: #39a542;
 }

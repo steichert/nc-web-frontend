@@ -1,3 +1,7 @@
+/*
+*   BEGIN: Welcome Banner Section
+*/
+
 .welcome-banner-background {
     z-index: 1;
     position: relative;
@@ -8,7 +12,9 @@
 
 .welcome-home-container {
     z-index: 2;
-    position: relative;
+    height: 18rem;
+    width: 18rem;
+    position: absolute;
     top: 30%;
     left: calc((100% - 20rem) / 2);
 }
@@ -61,7 +67,7 @@
 
 @media (max-width: 68rem) {
     .welcome-home-container {
-        left: calc((100% - 18rem) / 2);
+        left: calc((100% - 18em) / 2);
     }
 
     .welcome-home-circle {
@@ -88,4 +94,111 @@
     #joinTheFamily {
         font-size: 1.2em;
     }    
+}
+
+/*
+*   END: Welcome Banner Section
+*
+*
+*   ----------------------------
+*
+*
+*   BEGIN: Service Section
+*/
+
+.service-container {
+    color: white;
+    text-align: center;
+    height: 65%;
+}
+
+.service-title {
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    position: absolute;
+    padding-top: 5em;
+    color: white;
+}
+
+.service-details {
+    padding-top: 12em;
+    padding-bottom: 5em;
+}
+
+.morning-service-details {
+    background-image: url('../../../assets/images/backgrounds/morning-service.jpg');
+}
+
+.evening-service-details {
+    background-image: url('../../../assets/images/backgrounds/evening-service.jpg');
+}
+
+/*
+*   END: Services Section
+*
+*
+*   ----------------------------
+*
+*
+*   BEGIN: Sermons Section
+*/
+
+.sermons-section {
+    text-align: center;
+}
+
+.sermons-title {
+    padding-top: 5em;
+    padding-bottom: 3em;
+}
+
+.sermon-video-container {
+    width: 100%;
+    height: 80vh;
+}
+
+.sermon-video-iframe {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.sermons-button-container {
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+
+/*
+*  Responsive styles
+*/
+
+@media (max-width: 68rem) {
+    .sermon-video-container {
+        height: 50vh;
+    }
+
+    .sermon-video-iframe {
+        width: 100%;
+    }
+}
+
+/*
+*   END: Sermons Section
+*
+*
+*   ----------------------------
+*
+*
+*   BEGIN: About Us Section
+*/
+
+.about-us-section {
+    padding-top: 5rem;
+    text-align: center;
+}
+
+.more-about-button-container {
+    margin-top: 10em;
+    margin-bottom: 5em;
 }

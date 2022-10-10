@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit {
 
     public currentNavbarItems: any[];
     public navbarVisible: boolean = false;
+    public navbarToggleSplit: number = 5; 
 
     constructor() {
         this.currentNavbarItems = navbarItems.homePage.items;
@@ -67,7 +68,7 @@ export class NavbarComponent implements OnInit {
     triggerNavbarTransform() {
         this.triggerNavbarBackgroundTransparency();
 
-        if (scrollY > screen.availHeight / 4) {
+        if (scrollY > screen.availHeight / this.navbarToggleSplit) {
             if (!this.navbarHeader.nativeElement.classList.contains('collapsed-navbar-header')) {
                 this.navbarHeader.nativeElement.classList.add('collapsed-navbar-header');
             }
@@ -92,8 +93,8 @@ export class NavbarComponent implements OnInit {
         let primaryHeader = document.getElementById('primaryHeader');
         if (primaryHeader != null) {
             let screenHeight = screen.availHeight;
-            if (scrollY > screenHeight / 4) {
-                let opacity = (scrollY  / screenHeight) - 0.25;
+            if (scrollY > screenHeight / this.navbarToggleSplit) {
+                let opacity = (scrollY  / screenHeight) - (1 / this.navbarToggleSplit);
                 if (opacity > 1) {
                     opacity = 1;
                 }
