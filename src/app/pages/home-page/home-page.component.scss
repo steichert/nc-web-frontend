@@ -1,5 +1,91 @@
 .welcome-banner-background {
+    z-index: 1;
+    position: relative;
     height: 100%;
     width: 100%;
     background-image: url('../../../assets/images/backgrounds/welcome-banner.jpg');
+}
+
+.welcome-home-container {
+    z-index: 2;
+    position: relative;
+    top: 30%;
+    left: calc((100% - 20rem) / 2);
+}
+
+.welcome-home-circle {
+    z-index: 3;
+    position: relative;
+    height: 20rem;
+    width: 20rem;
+    border-radius: 100%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.15) -10px -10px 15px;
+}
+
+.welcome-home-square {
+    z-index: 2;
+    position: relative;
+    background-color: white;
+    height: 10rem;
+    width: 10rem;
+    margin-left: 10rem;
+    margin-top: -10rem;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 5px 15px;
+}
+
+.welcome-home-text-container {
+    font-family: 'Nexa';
+    text-align: center;
+    padding-top: 8em;
+}
+
+#welcomeHome {
+    font-size: 2em;
+    display: inline-block;
+}
+
+#welcomeHome p {
+    margin-bottom: 0;
+}
+
+#joinTheFamily {
+    font-size: 1.5em;
+    color: #1de22d;
+}
+
+/*
+*  Responsive styles
+*/
+
+@media (max-width: 68rem) {
+    .welcome-home-container {
+        left: calc((100% - 18rem) / 2);
+    }
+
+    .welcome-home-circle {
+        height: 18rem;
+        width: 18rem;
+    }
+
+    .welcome-home-square {
+        height: 9rem;
+        width: 9rem;
+        margin-left: 9rem;
+        margin-top: -9rem;
+        border-radius: 3px;
+    }
+
+    .welcome-home-text-container {
+        padding-top: 7.5em;
+    }
+
+    #welcomeHome {
+        font-size: 1.6em;
+    }
+    
+    #joinTheFamily {
+        font-size: 1.2em;
+    }    
 }

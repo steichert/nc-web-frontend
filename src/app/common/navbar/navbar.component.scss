@@ -7,6 +7,7 @@
 }
 
 .primary-header {
+    z-index: 1000;
     width: 100%;
     align-items: center;  
     transition: transform 0.75s ease;
@@ -53,10 +54,12 @@
 }
 
 nav {
+    z-index: 1000;
     width: 100%;
 }
 
 .primary-navigation {
+    z-index: 1000;
     justify-content: center;
     margin-left: -6rem !important;
     list-style: none;
@@ -135,7 +138,6 @@ nav {
         --gap: 2em;
 
         position: fixed;
-        z-index: 1000;
         inset: 0 0 0 30%;
 
         flex-direction: column;
@@ -150,11 +152,11 @@ nav {
         -ms-transform: translateX(100%);
         transform: translateX(100%);
 
-        -webkit-transition: transform 350ms ease-out;
-        -moz-transition: transform 350ms ease-out;
-        -o-transition: transform 350ms ease-out;
-        -ms-transition: transform 350ms ease-out;
-        transition: transform 350ms ease-out;
+        -webkit-transition: transform 500ms ease-out;
+        -moz-transition: transform 500ms ease-out;
+        -o-transition: transform 500ms ease-out;
+        -ms-transition: transform 500ms ease-out;
+        transition: transform 500ms ease-out;
     }
 
     .primary-navigation[data-visible="true"] {
@@ -260,7 +262,7 @@ nav {
 @supports (backdrop-filter: blur(1rem)) {
     @media (max-width: 68rem) {
         .primary-navigation {
-            background: hsl(0 0% 100% / 0.1);
+            background: hsl(0 0% 0% / 0.28);
             backdrop-filter: blur(1.5rem);
         }
     }
