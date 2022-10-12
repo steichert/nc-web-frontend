@@ -48,7 +48,7 @@
 }
 
 #welcomeHome {
-    font-size: 2em;
+    font-size: 1.8em;
     display: inline-block;
 }
 
@@ -106,23 +106,32 @@
 *   BEGIN: Service Section
 */
 
-.service-container {
+.service-section {
     color: white;
     text-align: center;
-    height: 65%;
+    height: 100%;
 }
 
 .service-title {
     width: 100%;
     z-index: 1;
-    text-align: center;
     position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
     padding-top: 5em;
     color: white;
 }
 
+#churchOnlineButton {
+    margin-top: 1.5em;
+    width: 15em;
+}
+
 .service-details {
-    padding-top: 12em;
+    padding-top: 10em;
     padding-bottom: 5em;
 }
 
@@ -132,6 +141,24 @@
 
 .evening-service-details {
     background-image: url('../../../assets/images/backgrounds/evening-service.jpg');
+}
+
+/*
+*  Responsive styles
+*/
+
+@media (max-width: 68rem) {
+    #churchOnlineButton {
+        margin-top: 1.5em;
+    }
+
+    .morning-service-details {
+        padding-top: 18em;
+    }
+
+    .evening-service-details {
+        padding-top: 6em;
+    }
 }
 
 /*
@@ -169,6 +196,10 @@
     margin-bottom: 5em;
 }
 
+#sermonButton {
+    width: 15em;
+}
+
 /*
 *  Responsive styles
 */
@@ -176,10 +207,15 @@
 @media (max-width: 68rem) {
     .sermon-video-container {
         height: 50vh;
+        padding: 0;
     }
 
     .sermon-video-iframe {
         width: 100%;
+    }
+
+    .sermons-button-container {
+        padding: 0;
     }
 }
 
@@ -196,9 +232,203 @@
 .about-us-section {
     padding-top: 5rem;
     text-align: center;
+    background-color: #e9ecef;
+}
+
+.about-us-details {
+    margin-bottom: 5em;
 }
 
 .more-about-button-container {
-    margin-top: 10em;
     margin-bottom: 5em;
 }
+
+
+#aboutButton {
+    width: 15em;
+}
+
+/*
+*   END: About Us Section
+*
+*
+*   ----------------------------
+*
+*
+*   BEGIN: Visitors Section
+*/
+
+.visitors-section {
+    background-image: url('../../../assets/images/backgrounds/visitor-background.jpg');
+    height: 50vh;
+    color: white;
+    text-align: center;
+}
+
+.visitor-title {
+    padding-top: 5em;
+}
+
+.btn-visitor {
+    background-color: rgba(250, 250, 250, 0.80);
+    border-color: #f1f1f1;    
+    color: #3c3c3c;
+    width: 50%;
+}
+
+.btn-visitor:hover {
+    background-color: rgb(255, 255, 255, 1);
+}
+
+/*
+*   END: Visitors Section
+*
+*
+*   ----------------------------
+*
+*
+*   BEGIN: Events Section
+*/
+
+.events-section {
+    text-align: center;
+}
+
+.events-title {
+    padding-top: 5em;
+}
+
+.no-events {
+    padding: 5em;
+    color: #7f7f7f;
+}
+
+/*
+*   END: Events Section
+*
+*
+*   ----------------------------
+*
+*
+*   BEGIN: Giving Section
+*/
+
+.giving-section {
+    text-align: center;
+    background-color: #e9ecef;
+    padding-bottom: 5em;
+}
+
+.giving-title {
+    padding-top: 5em;
+    padding-bottom: 2em;
+}
+
+.giving-content {
+    padding: 2em 5em;
+}
+
+.giving-col {
+    min-height: 300px;
+    margin-bottom: 2em;
+}
+
+.giving-option {
+    background-color: white;
+    height: 100%;
+    margin-left: 8em;
+    margin-right: 8em;
+    border-radius: 5px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+/*
+*  Responsive styles
+*/
+
+@media (max-width: 68rem) {
+    .giving-section {
+        padding-bottom: 2.5em;
+    }
+
+    .giving-content {
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+
+    .giving-option {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+
+/*
+*   END: Giving Section
+*
+*
+*   ----------------------------
+*
+*
+*   BEGIN: Connect Section
+*/
+
+.connect-section {
+    min-height: 25em;
+    text-align: center;
+    padding-bottom: 5em;
+    background-image: url('../../../assets/images/backgrounds/connect-background.jpg');
+}
+
+.connect-title {
+    padding-top: 5em;
+    padding-bottom: 2em;
+}
+
+.connect-content {
+    text-align: left;
+    padding-left: 10em;
+    padding-right: 5em;
+}
+
+.connect-button {
+    width: 15em;
+}
+
+/*
+*   END: Connect Section
+*
+*
+*   ----------------------------
+*
+*
+*   BEGIN: Contact Us Section
+*/
+
+.contact-section {
+    text-align: center;
+    background-color: #e9ecef;
+    padding-bottom: 2.5em;
+}
+
+.contact-title {
+    padding-top: 5em;
+    padding-bottom: 2em;
+}
+
+.contact-item {
+    padding-bottom: 2em;
+}
+
+.contact-item-icon {
+    margin-bottom: 1em;
+}
+
+.get-in-touch-section {
+    background-color: #e9ecef;
+    padding-bottom: 5em;
+}
+
+/*
+*   END: Contact Us Section
+*/

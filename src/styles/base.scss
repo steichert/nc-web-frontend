@@ -88,6 +88,14 @@ a {
     gap: var(--gap, 1rem);
 }
 
+.container-fluid {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
 // Backgrounds
 .background-image {
     -webkit-background-position: center;
@@ -104,17 +112,50 @@ a {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-
-    // -webkit-background-attachment: fixed;
-    // -moz-background-attachment: fixed;
-    // -o-background-attachment: fixed;
-    // background-attachment: fixed;
 }
 
-button {
+.btn {
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn-outline {
     color: white;
+    background: transparent;
+    border-color: white;
+    border-width: 2px;
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+    color: black;
 }
 
 .btn-green {
     background-color: #39a542;
+}
+
+.btn-green {
+    background-color: #4fc259;
+    border-color: #4fc259;
+}
+
+.btn-green:hover {
+    background-color: #39a542;
+    border-color: #39a542;
+}
+
+.btn-green-outline {
+    color:#4fc259;
+    background-color: transparent;
+    border-color: #4fc259;
+}
+
+.btn-green-outline:hover {
+    background-color: #39a542;
+    border-color: #39a542;
 }

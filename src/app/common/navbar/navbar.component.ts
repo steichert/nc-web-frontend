@@ -98,7 +98,7 @@ export class NavbarComponent implements OnInit {
                 if (opacity > 1) {
                     opacity = 1;
                 }
-                primaryHeader.style.background = 'hsl(0 0% 0% / ' + opacity + ')';
+                primaryHeader.style.background = 'hsl(0 0% 13% / ' + opacity + ')';
             } else {
                 primaryHeader.style.background = 'none';
             }

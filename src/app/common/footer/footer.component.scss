@@ -1,0 +1,44 @@
+/* Footer */
+
+#navbar-footer-home.navbar.navbar-inverse {    
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.footer {
+    text-align: center;
+    background-color: #222;
+}
+
+.footer-row {
+    padding-top: 4%;
+}
+
+.footer-header {
+    color: rgb(172, 172, 172) !important;
+}
+
+.footer-list {
+    padding-left: 0;
+    padding-top: 5px;
+}
+
+.footer-list li {        
+    list-style-type: none;
+    margin-left: 0;
+    padding-top: 5px;
+}
+
+.footer-list li a {
+    color: rgb(100, 100, 100) !important;
+}
+
+sub {
+    color: rgb(100, 100, 100) !important;    
+    text-align: center;
+}
+
+a {
+    cursor: pointer;
+}

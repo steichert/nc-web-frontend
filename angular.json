@@ -25,11 +25,11 @@
                         "inlineStyleLanguage": "scss",
                         "assets": ["src/assets"],
                         "styles": [
-                            "src/styles/base.scss",
                             "./node_modules/bootstrap/dist/css/bootstrap.min.css",
                             "./node_modules/hamburgers/dist/hamburgers.css",
                             "src/styles/colors.scss",
-                            "src/styles/constants.scss"
+                            "src/styles/constants.scss",
+                            "src/styles/base.scss"
                         ],
                         "scripts": [
                             "./node_modules/jquery/dist/jquery.min.js",
