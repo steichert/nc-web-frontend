@@ -1,0 +1,29 @@
+.social-media-section {
+    padding-top: 2.5em;
+}
+
+.social-media {
+    padding: 0;
+}
+
+.social-media li {
+    display: inline-block;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+a.social-media-icons {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+  
+a.social-media-icons :hover {
+    color: #73fd20;    
+}
+
+@media screen and (max-width: 767px) {
+    a.social-media-icons {
+        font-size: 14px;
+    }
+}
