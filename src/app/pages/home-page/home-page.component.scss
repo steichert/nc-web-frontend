@@ -395,6 +395,18 @@
     width: 15em;
 }
 
+@media (max-width: 68rem) {
+    .connect-content {
+        text-align: center;
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+    .connect-button {
+        width: 10em;
+    }
+}
+
 /*
 *   END: Connect Section
 *
