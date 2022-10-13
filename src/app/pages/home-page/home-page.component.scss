@@ -16,7 +16,7 @@
     width: 18rem;
     position: absolute;
     top: 30%;
-    left: calc((100% - 20rem) / 2);
+    left: calc((100% - 18rem) / 2);
 }
 
 .welcome-home-circle {
@@ -67,19 +67,21 @@
 
 @media (max-width: 68rem) {
     .welcome-home-container {
-        left: calc((100% - 18em) / 2);
+        height: 20rem;
+        width: 20rem;
+        left: calc((100% - 20rem) / 2);
     }
 
     .welcome-home-circle {
-        height: 18rem;
-        width: 18rem;
+        height: 20rem;
+        width: 20rem;
     }
 
     .welcome-home-square {
-        height: 9rem;
-        width: 9rem;
-        margin-left: 9rem;
-        margin-top: -9rem;
+        height: 10rem;
+        width: 10rem;
+        margin-left: 10rem;
+        margin-top: -10rem;
         border-radius: 3px;
     }
 
@@ -88,11 +90,77 @@
     }
 
     #welcomeHome {
-        font-size: 1.6em;
+        font-size: 1.75em;
     }
     
     #joinTheFamily {
+        font-size: 1.5em;
+    }   
+}
+
+@media (max-width: 51rem) {
+    .welcome-home-container {
+        height: 14rem;
+        width: 14rem;
+        left: calc((100% - 14rem) / 2);
+    }
+
+    .welcome-home-circle {
+        height: 14rem;
+        width: 14rem;
+    }
+
+    .welcome-home-square {
+        height: 7rem;
+        width: 7rem;
+        margin-left: 7rem;
+        margin-top: -7rem;
+        border-radius: 3px;
+    }
+
+    .welcome-home-text-container {
+        padding-top: 5.2em;
+    }
+
+    #welcomeHome {
         font-size: 1.2em;
+    }
+    
+    #joinTheFamily {
+        font-size: 1.05em;
+    }    
+}
+
+@media (max-width: 18rem) {
+    .welcome-home-container {
+        height: 12rem;
+        width: 12rem;
+        left: calc((100% - 12rem) / 2);
+    }
+
+    .welcome-home-circle {
+        height: 12rem;
+        width: 12rem;
+    }
+
+    .welcome-home-square {
+        height: 6rem;
+        width: 6rem;
+        margin-left: 6rem;
+        margin-top: -6rem;
+        border-radius: 2px;
+    }
+
+    .welcome-home-text-container {
+        padding-top: 4.5em;
+    }
+
+    #welcomeHome {
+        font-size: 1.2em;
+    }
+    
+    #joinTheFamily {
+        font-size: 1em;
     }    
 }
 
@@ -133,6 +201,8 @@
 .service-details {
     padding-top: 10em;
     padding-bottom: 5em;
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
 }
 
 .morning-service-details {
@@ -150,6 +220,11 @@
 @media (max-width: 68rem) {
     #churchOnlineButton {
         margin-top: 1.5em;
+    }
+
+    .service-details {
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
 
     .morning-service-details {
@@ -280,6 +355,12 @@
     background-color: rgb(255, 255, 255, 1);
 }
 
+@media (max-width: 18rem) {
+    .btn-visitor {
+        width: 15em;
+    }
+}
+
 /*
 *   END: Visitors Section
 *
@@ -403,7 +484,14 @@
     }
 
     .connect-button {
-        width: 10em;
+        width: 12em;
+    }
+}
+
+@media (max-width: 18rem) {
+    .connect-content {
+        padding-left: 1em;
+        padding-right: 1em;
     }
 }
 
@@ -439,6 +527,10 @@
 .get-in-touch-section {
     background-color: #e9ecef;
     padding-bottom: 5em;
+}
+
+.btn-get-in-touch {
+    width: 15em;
 }
 
 /*

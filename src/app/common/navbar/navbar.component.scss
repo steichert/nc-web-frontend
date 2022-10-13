@@ -133,6 +133,12 @@ nav {
 *  Responsive styles
 */
 
+@media (max-width: 18rem) {
+    .mobile-nav-toggle {
+        padding-right: 0;
+    }
+}
+
 @media (max-width: 68rem) {
     .primary-navigation {
         --gap: 2em;

@@ -79,6 +79,12 @@ p {
     font-size: 1.2em;
 }
 
+@media (max-width: 18rem) {
+    p {
+        font-size: 1.1em;
+    }
+}
+
 a {
     font-family: 'Noah';
 }
