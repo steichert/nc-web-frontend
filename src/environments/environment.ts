@@ -9,7 +9,8 @@ export const environment = {
     emailDetails: emailConfig,
     // ncApiUrl: './api/nc-api',
     ncApiUrl: 'https://new-creation-backend.herokuapp.com/nc-api',
-    imageUrl: './api/static/images'
+    // imageUrl: './api/static/images'
+    imageUrl: 'https://new-creation-backend.herokuapp.com/static/images'
 };
 
 /*

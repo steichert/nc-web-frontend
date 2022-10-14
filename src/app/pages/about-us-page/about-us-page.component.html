@@ -1,0 +1,246 @@
+<div class="container about-us-container">
+    <!-- Our Story -->
+    <div class="row section-row" id="foundations-row">
+        <div class="col-12">
+            <h2>OUR STORY</h2>
+            <hr>
+            <br>
+
+            <p>
+                New Creation began in January of 1982 when Ron and Ann Robinson returned from the United Kingdom with the call of God in their hearts to plant a local church.  Up until that overseas trip, Ron had been lay preaching for ten years and was a successful businessman but had no thoughts of pastoring a church!  All of that changed when they gave up the business world to participate in a ministry training programme in England for a year.  During this period, they grew in their vision for God’s house which resulted in the birth of New Creation Family Church, an elder-led local church with a New Testament vision.<br><br>
+                In the early days the church met in the Robinson family's home and then in a variety of recreation centres.  It was not long, however, before fresh vision was again planted in Ron and Ann’s hearts – this time for the establishment of Christian schools which would train up the next generation in the ways of God for Kingdom impact in the world.  A pre-school with a few of the church’s children attending was started; a trip overseas to investigate Christian education in America and England was undertaken; a group of teachers and parents with the vision burning in their hearts met together. Then, in January 1984, The King’s School opened its doors with approximately 40 children.  Since that time the church and school have grown substantially, and relocated to our present property in Robin Hills, where a campus with facilities used seven days a week has been developed.<br><br>
+            </p>
+            <figure>
+                <img class="img-responsive img-story" [src]="leadershipRonAndAnnImageUrl" alt="Ron and Ann Robinson" width="500">
+                <figcaption class="figure-caption text-center">Ron & Ann Robinson</figcaption>
+            </figure>
+            <br><br>
+            <p>
+                In 2006 our beloved Ron was diagnosed with a terminal tumour of the brain. During the five-and-a-half months of his illness, he continued to encourage everyone who visited him, and set an amazing example by continually pointing towards the goodness of God in the midst of difficulty. On 18th July, 2006, Ron went home to be with the Lord he had so faithfully served for so many years. Grant Walton, who had served in the school for ten years and then moved onto pastoral staff in 1995, took over as lead-elder with his wife Elizabeth supporting him. Grant continued to build on the legacy left by Ron, while stamping his own mark on the church and its ministries. The church continued its trend towards becoming a multi-generational, multi-ethnic congregation, with a young and diverse leadership team emerging.<br><br>
+            </p>
+            <figure>
+                <img class="img-responsive img-story" [src]="leadershipGrantAndLizImageUrl" alt="Grant and Elizabeth Walton" width="500">
+                <figcaption class="figure-caption text-center">Grant & Elizabeth Walton</figcaption>
+            </figure>
+            <br><br>
+            <p>
+                During 2017, an opportunity for Elizabeth (a professor of education at Wits) to work overseas arose. Both Grant and Elizabeth felt the time was right for a transition and having worked the ramifications through with the elders and our covering in Church of the Nations, they relocated to the University of Nottingham in the UK during March 2018. With the approval of the church and our wider family, leadership of the team was handed over to Paul Dennison, who has faithfully served alongside Grant for many years. Milaine Dennison joined Paul on church staff after having taught in the school’s pre-primary phase. A new group of servant leaders and additional elders were appointed to support the transition. Grant continues to play a role in supporting, teaching and fathering from afar using available technology. The church remains firmly in the COTN family, through our relationship with Tony and Marilyn Fitzgerald, and other apostolic COTN leaders. We are grateful for the foundations on which we are built and are looking forward to this new season of growth as we pursue following Jesus together!<br><br>
+            </p>
+            <figure>
+                <img class="img-responsive img-story" [src]="leadershipPaulAndMilaineImageUrl" alt="Paul and Milaine Dennison" width="500">
+                <figcaption class="figure-caption text-center">Paul & Milaine Dennison</figcaption>
+            </figure>    
+        </div>
+    </div>
+
+    <!-- Values -->
+    <div class="row section-row" id="values-row">
+        <div class="col-12">
+            <h2>VALUES</h2>
+            <hr>
+            <br>
+
+            <p>
+                The heart of New Creation Family Church is reflected in the following values. They are the foundation for what we do and how we do it. While our methods and ways of doing things change from time to time, these values are non-negotiable.
+            </p>
+
+            <div id="accordionValues" class="accordion" style="margin-top: 5%;">
+                <div class="card" *ngFor="let value of values">
+                    <div class="card-header" 
+                         [id]="value.headingId" 
+                         data-bs-toggle="collapse" 
+                         [attr.data-bs-target]="'#'+value.collapseId" 
+                         aria-expanded="true" 
+                         [attr.aria-controls]="value.collapseId"
+                         (click)="rotateValueChevronArrow(value)">
+                        <h5 class="mb-0">
+                            <button class="collapse-button-statement">
+                                {{value.title}}
+                                <div *ngIf="value.open" class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </div>
+                                <div *ngIf="!value.open" class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </h5>
+                    </div>
+                    <div [id]="value.collapseId" class="card-collapse collapse" [attr.aria-labelledby]="value.headingId" data-bs-parent="#accordionValues">
+                        <div class="card-body">
+                            {{value.body}}
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div> 
+    </div>
+
+    <div class="row section-row" id="statement-row">
+        <div class="col-12">
+            <h2>STATEMENT OF FAITH</h2>
+            <hr>
+            <br>
+
+            <p>
+            A statement of faith does not represent everything a church believes, but it does represent core beliefs about important doctrinal matters. As such, the following states generally what we subscribe to in terms of fundamental Christian beliefs.
+            </p>
+
+            <!--Accordion collapse-->
+            <div id="accordionSOF" class="accordion" style="margin-top: 5%;">
+                <div class="card" *ngFor="let statement of statementsOfFaith">
+                    <div class="card-header" 
+                         [id]="statement.headingId" 
+                         data-bs-toggle="collapse" 
+                         [attr.data-bs-target]="'#'+statement.collapseId" 
+                         aria-expanded="true" 
+                         [attr.aria-controls]="statement.collapseId"
+                         (click)="rotateStatementChevronArrow(statement)">
+                        <h5 class="mb-0">
+                            <button class="collapse-button-statement">
+                                {{statement.title}}
+                                <div *ngIf="statement.open" class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </div>
+                                <div *ngIf="!statement.open" class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </h5>
+                    </div>
+                    <div [id]="statement.collapseId" class="card-collapse collapse" [attr.aria-labelledby]="statement.headingId" data-bs-parent="#accordionSOF">
+                        <div class="card-body">
+                            {{statement.body}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row section-row" id="leadership-row">  
+        <div class="col-12">
+            <h2>LEADERSHIP</h2>
+            <hr>
+            <br>
+            
+            <p>
+                We believe that the Biblical model of leadership is servant and team oriented.<br>
+                We also believe that true leadership is more about character and influence than it is
+                about position.
+            </p>
+            <br>
+            
+            <!-- Governmental Elders -->
+            <div class="row photo-row">
+                <h3 class="col-12 leadership-subtitle" id="governmentalLeaders">GOVERNMENTAL ELDERSHIP</h3>      
+                <hr>
+            </div>
+
+            <div class="row photo-row">
+                <div class="col-sm-4 photo-col" *ngFor="let item of governmentalEldership">
+                    <figure>
+                    <img class="img-circle img-responsive img-leader" [src]="item.imageSrc" [alt]="item.title">
+                        <figcaption class="figure-caption text-center">{{item.title}}<br><sub>{{item.subTitle}}</sub></figcaption>
+                    </figure>
+                </div>
+            </div>
+            <!-- End Governmental Elders -->
+        
+            <!-- Pastoral and Ministry Deacon Leadership -->
+            <div class="row photo-row">
+                <h3 class="col-12 leadership-subtitle" id="pastoralLeaders">PASTORAL AND MINISTRY LEADERSHIP</h3>
+                <hr class="sub-hr">
+            </div>
+
+            <div class="row photo-row">
+                <div class="photo-col" 
+                     *ngFor="let item of pastoralLeadership; let i = index"
+                     [ngClass]="{'col-sm-3': i < pastoralLeadership.length - 3, 'col-sm-4': i >= pastoralLeadership.length - 3}">
+                    <figure>
+                        <img class="img-circle img-responsive img-leader" [src]="item.imageSrc" [alt]="item.title">
+                        <figcaption class="figure-caption text-center">{{item.title}}</figcaption>
+                    </figure>
+                </div>
+            </div>
+            <!-- End Pastoral and Ministry Deacon Leadership -->
+
+            <!-- Church Office Staff -->
+            <div class="row photo-row">
+                <h3 class="col-12 leadership-subtitle" id="admin">CHURCH OFFICE STAFF</h3>
+                <hr class="sub-hr">
+            </div>
+
+            <div class="row photo-row">
+                <div class="photo-col col-sm-4" 
+                     *ngFor="let item of churchStaff; let i = index">
+                    <figure>
+                        <img class="img-circle img-responsive img-leader" [src]="item.imageSrc" [alt]="item.title">
+                        <figcaption class="figure-caption text-center">{{item.title}}<br><sub>{{item.subTitle}}</sub></figcaption>
+                    </figure>
+                </div>
+            </div>
+            <!-- End Church Office Staff -->
+        </div>
+    </div>
+    <!-- End Leadership -->
+
+    <div class="row section-row" id="faq-row">
+        <div class="col-12">
+            <h2>FAQs</h2>
+            <hr>
+            <br>
+
+            <p>
+                Some frequently asked questions we typically receive here at New Creation.
+            </p>
+
+            <div id="accordionFAQS" class="accordion" style="margin-top: 5%;">
+                <div class="card" *ngFor="let faq of faqs">
+                    <div class="card-header" 
+                         [id]="faq.headingId" 
+                         data-bs-toggle="collapse" 
+                         [attr.data-bs-target]="'#'+faq.collapseId" 
+                         aria-expanded="true" 
+                         [attr.aria-controls]="faq.collapseId"
+                         (click)="rotateFAQChevronArrow(faq)">
+                        <h5 class="mb-0">
+                            <button class="collapse-button-statement">
+                                {{faq.title}}
+                                <div *ngIf="faq.open" class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+                                    </svg>
+                                </div>
+                                <div *ngIf="!faq.open" class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-up" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </h5>
+                    </div>
+                    <div [id]="faq.collapseId" class="card-collapse collapse" [attr.aria-labelledby]="faq.headingId" data-bs-parent="#accordionFAQS">
+                        <div class="card-body">
+                            {{faq.body}}
+                            <div id="faqList" *ngIf="faq.values != null">
+                                <ul style="list-style-type: disc;">
+                                    <li *ngFor="let value of faq.values">
+                                        {{value}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

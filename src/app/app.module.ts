@@ -9,6 +9,7 @@ import { FooterModule } from './common/footer/footer.module';
 import { LoadingSpinnerModule } from './common/loading-spinner/loading-spinner.module';
 import { NavbarModule } from './common/navbar/navbar.module';
 import { SocialMediaIconsModule } from './common/social-media-icons/social-media-icons.module';
+import { AboutUsPageModule } from './pages/about-us-page/about-us-page.module';
 import { EventsPageModule } from './pages/events-page/events-page.module';
 import { HomePageModule } from './pages/home-page/home-page.module';
 
@@ -24,7 +25,8 @@ import { HomePageModule } from './pages/home-page/home-page.module';
         HomePageModule,
         SocialMediaIconsModule,
         EventCardModule,
-        EventsPageModule
+        EventsPageModule,
+        AboutUsPageModule
     ],
     providers: [],
     bootstrap: [AppComponent],

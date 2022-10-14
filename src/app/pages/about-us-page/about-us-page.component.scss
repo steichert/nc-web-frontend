@@ -1,0 +1,122 @@
+.about-us-container {
+    padding-top: 10em;
+    margin-bottom: 5em;
+    text-align: center;
+}
+
+p {
+    font-size: 110%;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.about-us-title {
+    text-align: center;
+}
+
+.row {
+    padding-top: 10em;
+}
+
+#collapseBtn {
+    line-height: 70px;
+    height: 70px;
+    border: none;
+}
+
+.collapse-text {
+    text-align: left;
+}
+
+.collapse-button {
+    width: 50%;
+    margin-bottom: 1%;
+    opacity: 0.8;
+}
+
+.collapse-button-statement {
+    border: none;
+    background-color: inherit;
+    width: 100%;
+    text-align: left;
+}
+
+.collapse-button-statement:focus {
+    outline: none;
+}
+
+.card {     
+    position: relative;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 1%;    
+}
+
+.card-header {    
+    background-color: #e0e0e0 !important;
+}
+
+.card-icon {        
+    float: right;
+}
+
+.card-body {
+    font-size: 16px;
+}
+
+hr {
+    border-color: rgb(212, 212, 212);
+}
+
+#faq-row h4,
+#faq-row p {
+    text-align: center;
+}
+
+#faqList {
+    margin-left: 3% !important;
+    margin-top: 2% !important;
+}
+
+.photo-row {
+    margin-bottom: 0 !important;
+}
+
+.photo-col {
+    margin-bottom: 6%;
+}
+
+.img-leader {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    height: 180px !important;    
+    margin-bottom: 10px;
+    border-radius: 100%;
+}
+
+.img-story {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .container {
+        margin-top: 12%;
+    }
+    .img-story {
+        width: 95%;
+    }
+    .section-row {
+        padding-top: 30% !important;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+    .container {
+        padding: 0;
+    }
+}
