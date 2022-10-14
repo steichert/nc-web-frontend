@@ -119,6 +119,17 @@
             <h2><b>EVENTS</b></h2>
         </div>
 
+        <div class="event-cards-container row" *ngIf="events != null && events.length > 0">
+            <div class='col-lg-3 col-sm-6 col-xs-12' *ngFor="let event of events ; let i = index;">
+                <app-event-card [event]="event" [eventModalId]="i"></app-event-card>
+            </div>
+
+            <div class="all-events-button-container">
+                <button class="btn btn-success btn-green btn-all-events">
+                    <b>ALL EVENTS</b>
+                </button>
+            </div>
+        </div>
         <div class="no-events" *ngIf="events == null || events.length == 0">
             <div class="col-12">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
@@ -139,8 +150,8 @@
 
         <div class="giving-content">
             <p>
-                There are many ways in which you can give.<br>
-                At New Creation, we have a single bank account which is used for all aspects of the church.<br>
+                There are many ways in which you can give.
+                At New Creation, we have a single bank account which is used for all aspects of the church.
                 Please be specific in your reference as to the purpose of your gift.
             </p>
         </div>
@@ -161,7 +172,7 @@
                 <h4><b>SNAPSCAN</b></h4>
                 <br>
                 <div class="text-center">
-                    <img id="nc-snapscan" src="../../../assets/images/snapscan/nc-snapscan.png" width="220">
+                    <img id="nc-snapscan" src="../../../assets/images/snapscan/nc-snapscan.png" width="200">
                 </div>
             </div>
         </div>

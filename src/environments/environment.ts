@@ -6,7 +6,10 @@ import { emailConfig } from "src/config/dev/email.config";
 
 export const environment = {
     production: false,
-    emailDetails: emailConfig
+    emailDetails: emailConfig,
+    // ncApiUrl: './api/nc-api',
+    ncApiUrl: 'https://new-creation-backend.herokuapp.com/nc-api',
+    imageUrl: './api/static/images'
 };
 
 /*

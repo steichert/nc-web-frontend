@@ -1,0 +1,72 @@
+<div class="card" data-bs-toggle="modal" [attr.data-bs-target]="'#eventModal'+eventModalId">
+    <div class="card-block">          
+        <img class="card-img-top" [src]="event?.imageUrl" alt="{{event?.postTitle}}">
+    </div>
+    <div class="card-footer">
+        <div id="eventTitle">
+            <p><b>{{event?.postTitle}}</b></p>
+        </div>
+        <div id="eventDate">
+            <p>{{event?.eventDate}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div [id]="'eventModal'+eventModalId" 
+     class="modal" 
+     tabindex="-1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-md modal-fullscreen-sm-down event-modal-dialog">    
+        <div class="modal-content event-modal-content">
+            <div class="modal-header event-modal-header">
+                <button type="button" 
+                        class="btn-close btn-close-event-modal" 
+                        data-bs-dismiss="modal" 
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body event-modal-body">
+                <img class="card-img-top" [src]="event?.imageUrl" alt="{{event?.postTitle}}">
+                
+                <div class="event-modal-title">
+                    <h4><b>{{event?.postTitle}}</b></h4>
+                </div>
+
+                <div class="event-modal-date">
+                    <p>{{event?.eventDate}}</p>       
+                </div>
+
+                <div *ngIf="event?.registrationUrl != null" 
+                     class="text-center">
+                    <a role="button" 
+                       id="registerButton"
+                       class="btn btn-success btn-green" 
+                       [href]="event?.registrationUrl" 
+                       target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-check" viewBox="0 0 16 16">
+                            <path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                            <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                        </svg>
+                        &nbsp;<b>&nbsp;REGISTER&nbsp;</b>
+                    </a>
+                </div>
+
+                <p class="event-body" [innerHTML]="event?.postDescription"></p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-sm btn-secondary btn-contact-us float-left" 
+                        (click)="triggerContactUsModal()">
+                    <b>CONTACT US</b>
+                </button>
+                <button type="button" 
+                        class="btn btn-sm btn-light float-right" 
+                        data-bs-dismiss="modal">
+                    <b>CLOSE</b>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
