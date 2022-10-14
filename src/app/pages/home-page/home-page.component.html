@@ -87,7 +87,7 @@
         <div class="more-about-button-container">
             <button id="aboutButton" 
                     class="btn btn-success btn-green" 
-                    routerLink="/about">
+                    (click)="navigateToLink('/about')">
                 <b>MORE ABOUT US</b>
             </button>
         </div>
@@ -125,7 +125,9 @@
             </div>
 
             <div class="all-events-button-container">
-                <button class="btn btn-success btn-green btn-all-events">
+                <button type="button"
+                        class="btn btn-success btn-green btn-all-events"
+                        (click)="navigateToLink('/events')">
                     <b>ALL EVENTS</b>
                 </button>
             </div>

@@ -379,37 +379,14 @@
     padding-top: 5em;
 }
 
-.no-events {
-    padding: 5em;
-    color: #7f7f7f;
-}
-
-.event-cards-container {
-    padding: 5rem;
-    text-align: center;
-}
-
 .btn-all-events {
     margin-top: 2.5rem;
     width: 15rem;
 }
 
-@media (max-width: 68rem) {
-    .event-cards-container {
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-}
-
-@media (max-width: 18rem) {
-    .event-cards-container {
-        padding: 2rem 1rem;
-    }
-
-    .btn-all-events {
-        margin-top: 1rem;
-        width: 12rem;
-    }
+.event-cards-container {
+    padding: 5rem;
+    text-align: center;
 }
 
 /*

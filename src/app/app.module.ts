@@ -9,6 +9,7 @@ import { FooterModule } from './common/footer/footer.module';
 import { LoadingSpinnerModule } from './common/loading-spinner/loading-spinner.module';
 import { NavbarModule } from './common/navbar/navbar.module';
 import { SocialMediaIconsModule } from './common/social-media-icons/social-media-icons.module';
+import { EventsPageModule } from './pages/events-page/events-page.module';
 import { HomePageModule } from './pages/home-page/home-page.module';
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HomePageModule } from './pages/home-page/home-page.module';
         LoadingSpinnerModule,
         HomePageModule,
         SocialMediaIconsModule,
-        EventCardModule
+        EventCardModule,
+        EventsPageModule
     ],
     providers: [],
     bootstrap: [AppComponent],

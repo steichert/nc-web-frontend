@@ -1,7 +1,8 @@
 <header #navbarHeader 
     id="primaryHeader"
     class="primary-header fixed transparent flex">
-    <div class="navbar-logo-wrapper">
+    <div class="navbar-logo-wrapper"
+         (click)="navigateToLink('/')">
         <img #navbarLogo
             class="navbar-logo"
             src="assets/images/logos/ncfc-logo-full.png"
@@ -27,10 +28,10 @@
             <li *ngFor="let item of currentNavbarItems; let i = index"
                 class="primary-navigation-list-item">
                 <div class="dropdown">
-                    <a href="#"
-                        [ngClass]="{ 'dropdown-toggle': item.dropdownItems.length > 0 }"
+                    <a  [ngClass]="{ 'dropdown-toggle': item.dropdownItems.length > 0 }"
                         [id]="'navbarItem' + i"
                         class="navbar-item hover-underline-animation"
+                        (click)="navigateToLink(item?.routerLink)"
                         data-bs-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false">

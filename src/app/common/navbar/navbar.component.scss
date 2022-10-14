@@ -26,6 +26,10 @@
     transition: transform 0.7s ease;
 }
 
+.navbar-logo-wrapper {
+    cursor: pointer;
+}
+
 .navbar-logo {
     width: 10rem;
     margin: 2rem;
@@ -80,6 +84,7 @@ nav {
     font-size: 1.05rem;
     color: white;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .navbar-item:hover {

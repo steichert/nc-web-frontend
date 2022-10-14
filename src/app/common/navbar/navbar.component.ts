@@ -1,4 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoadingService } from 'src/app/services/loading/loading.service';
+import { NavbarService } from 'src/app/services/navbar/navbar.service';
 import { navbarItems } from './navbar.items';
 
 @Component({
@@ -22,18 +25,56 @@ export class NavbarComponent implements OnInit {
 
     @HostListener('window:scroll', ['$event'])
     onScroll() {
-        this.triggerNavbarTransform();
+        if (this.currentUrl != null && this.currentUrl === this.HOME) {
+            this.triggerNavbarTransform();
+        }
     }
 
     public currentNavbarItems: any[];
     public navbarVisible: boolean = false;
     public navbarToggleSplit: number = 5; 
+    public currentUrl: string | null;
 
-    constructor() {
+    // Routes
+    private HOME: string = "/";
+    private EVENTS: string = "/events";
+
+    constructor(private navbarService: NavbarService,
+                private loadingService: LoadingService,
+                private router: Router) {
+        this.currentUrl = null;
         this.currentNavbarItems = navbarItems.homePage.items;
     }
 
     ngOnInit(): void {
+        this.loadingService.startLoading();
+        this.initializeUrlChangeListener();
+
+        if (this.currentUrl != null && this.currentUrl !== this.HOME) {
+            this.setNonHomeNavbarClasses();
+        }
+
+        this.loadingService.stopLoading();
+    }
+
+    private initializeUrlChangeListener() {
+        this.currentUrl = this.navbarService.getCurrentURL();
+
+        this.navbarService.urlChange.subscribe(
+            (url) => {
+                this.loadingService.startLoading();
+
+                this.currentUrl = url;
+                if (this.currentUrl != null && this.currentUrl === this.HOME) {
+                    this.triggerNavbarTransform();
+                } else {
+                    this.setNonHomeNavbarClasses();
+                }
+                
+                this.scrollToTop();
+                this.loadingService.stopLoading();
+            }
+        );
     }
 
     toggleNavbar() {
@@ -103,5 +144,35 @@ export class NavbarComponent implements OnInit {
                 primaryHeader.style.background = 'none';
             }
         }
+    }
+
+    setNonHomeNavbarClasses() {
+        let primaryHeader = document.getElementById('primaryHeader');
+        if (primaryHeader != null) {
+            primaryHeader.style.background = 'hsl(0 0% 13% / 1)';
+        }
+        if (!this.navbarHeader.nativeElement.classList.contains('collapsed-navbar-header')) {
+            this.navbarHeader.nativeElement.classList.add('collapsed-navbar-header');
+        }
+        if (!this.navbarLogo.nativeElement.classList.contains('shrink-navbar-logo')) {
+            this.navbarLogo.nativeElement.classList.add('shrink-navbar-logo');
+        }
+        if (!this.primaryNavigation.nativeElement.classList.contains('collapsed-primary-navigation')) {
+            this.primaryNavigation.nativeElement.classList.add('collapsed-primary-navigation');
+        }
+        if (!this.navbarButton.nativeElement.classList.contains('shrink-navbar-button')) {
+            this.navbarButton.nativeElement.classList.add('shrink-navbar-button');
+        }
+    }
+
+    public scrollToTop() {
+        window.scroll({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+    public navigateToLink(link: string) {
+        this.router.navigateByUrl(link);
     }
 }
