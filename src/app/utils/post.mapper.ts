@@ -101,7 +101,6 @@ export class PostMapper {
 
     static getDescription(content: string) {
         let description = null;
-
         let contentSplit = content.split('/></a>');
 
         if (contentSplit == null || contentSplit.length == 0) {
@@ -111,8 +110,6 @@ export class PostMapper {
         if (contentSplit[1] != null) {
             description = contentSplit[1];
         }
-
-        console.log(description);
 
         return description;
     }

@@ -12,6 +12,9 @@ import { SocialMediaIconsModule } from './common/social-media-icons/social-media
 import { AboutUsPageModule } from './pages/about-us-page/about-us-page.module';
 import { EventsPageModule } from './pages/events-page/events-page.module';
 import { HomePageModule } from './pages/home-page/home-page.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+import { ContactModalModule } from './common/contact-modal/contact-modal.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -26,7 +29,11 @@ import { HomePageModule } from './pages/home-page/home-page.module';
         SocialMediaIconsModule,
         EventCardModule,
         EventsPageModule,
-        AboutUsPageModule
+        AboutUsPageModule,
+        ContactModalModule,
+        BrowserAnimationsModule,
+        // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        ToastrModule.forRoot()
     ],
     providers: [],
     bootstrap: [AppComponent],

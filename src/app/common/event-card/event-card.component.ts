@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { EventService } from 'src/app/services/event/event.service';
 import { Event } from '../../domain/Event';
+declare var $ :any;
 
 @Component({
   selector: 'app-event-card',
@@ -21,7 +22,7 @@ export class EventCardComponent implements OnInit {
     }
 
     public triggerContactUsModal() {
-        // $('#eventModal'+this.eventModalId).modal('hide')
+        $('#eventModal'+this.eventModalId).modal('hide');
         this.eventService.setShowContactUsModal(true);
     }
 

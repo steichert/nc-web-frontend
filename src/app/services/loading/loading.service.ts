@@ -28,7 +28,9 @@ export class LoadingService {
         this.loadingCounter--;
 
         if (this.loadingCounter == 0) {
-            this.setLoadingStatus(false);
+            setTimeout(() => {
+                this.setLoadingStatus(false);
+            }, 500);
         }
     }
 }

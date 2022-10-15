@@ -1,0 +1,54 @@
+<div id="getInTouchModal" 
+     class="modal" 
+     tabindex="-1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">    
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" 
+                        class="btn-close" 
+                        data-bs-dismiss="modal" 
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body contact-modal-body">   
+                <div class="contact-modal-body-title">
+                    <h4><b>FEEL FREE TO CONTACT US</b></h4>
+                </div>
+                <br><br>
+                <form id="contactForm">
+                    <div class="input-group mb-3">
+                        <input [(ngModel)]="contactForm.firstName" type="text" class="form-control" id="contactFirstName" name="contactFirstName" placeholder="First Name">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input [(ngModel)]="contactForm.surname" type="text" class="form-control" id="contactSurname" name="contactSurname" placeholder="Surname">
+                    </div>
+                    <div class="input-group mb-3">
+                        <input [(ngModel)]="contactForm.email" type="email" class="form-control" id="contactEmail" name="contactEmail" aria-describedby="emailHelp" placeholder="Email">
+                    </div>
+                    <div class="input-group mb-3">
+                        <textarea [(ngModel)]="contactForm.message" name="contactMessage" id="contactMessage" name="contactMsg" cols="30" rows="8" class="form-control" placeholder="Message"></textarea>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <button *ngIf="!isLoading" 
+                                id="contactSendButton" 
+                                type="submit" 
+                                class="btn btn-success btn-green contact-send-button" 
+                                (click)="sendEmailMessage()">
+                            <b>SEND</b>
+                        </button>
+                        <button *ngIf="isLoading" 
+                                class="btn btn-success btn-green contact-send-button submit-button" 
+                                type="button" 
+                                disabled>
+                            <span class="spinner-border spinner-border-sm" 
+                                  role="status" 
+                                  aria-hidden="true">
+                            </span>
+                            <b>&nbsp;SENDING...</b>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

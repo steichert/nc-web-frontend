@@ -81,18 +81,26 @@ export class NavbarComponent implements OnInit {
         let isNavbarVisible = this.primaryNavigation.nativeElement.getAttribute('data-visible');
 
         if (isNavbarVisible == "true") {
-            this.primaryNavigation.nativeElement.setAttribute('data-visible', false);
-            this.navbarButton.nativeElement.setAttribute('aria-expanded', false);
-            this.navbarButton.nativeElement.classList.remove('is-active');
-            this.navbarVisible = false;
+            this.closeNavbar()
         } else if (isNavbarVisible == "false") {
-            this.primaryNavigation.nativeElement.setAttribute('data-visible', true);
-            this.navbarButton.nativeElement.setAttribute('aria-expanded', true);
-            this.navbarButton.nativeElement.classList.add('is-active');
-            this.navbarVisible = true;
+            this.openNavbar();
         }
 
         this.toggleScrolling();
+    }
+
+    openNavbar() {
+        this.primaryNavigation.nativeElement.setAttribute('data-visible', true);
+        this.navbarButton.nativeElement.setAttribute('aria-expanded', true);
+        this.navbarButton.nativeElement.classList.add('is-active');
+        this.navbarVisible = true;
+    }
+
+    closeNavbar() {
+        this.primaryNavigation.nativeElement.setAttribute('data-visible', false);
+        this.navbarButton.nativeElement.setAttribute('aria-expanded', false);
+        this.navbarButton.nativeElement.classList.remove('is-active');
+        this.navbarVisible = false;
     }
 
     toggleScrolling() {
@@ -173,6 +181,7 @@ export class NavbarComponent implements OnInit {
     }
 
     public navigateToLink(link: string) {
+        this.closeNavbar();
         this.router.navigateByUrl(link);
     }
 }

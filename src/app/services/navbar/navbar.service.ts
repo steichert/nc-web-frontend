@@ -19,7 +19,7 @@ export class NavbarService {
         this.currentURL = null;
         this.clearNavTitles = false;
 
-        router.events.subscribe((event) => {
+        this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
                 this.setCurrentURL(event.url);
             }

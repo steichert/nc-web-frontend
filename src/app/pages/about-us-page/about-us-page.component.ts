@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { NavbarService } from 'src/app/services/navbar/navbar.service';
 import { imageUrls } from 'src/app/resources/image-url';
 import { VALUES, STATEMENT_OF_FAITH, FAQS, GOVERNMENTAL_ELDERSHIP, PASTORAL_LEADERSHIP, CHURCH_STAFF } from 'src/app/resources/about-us-screen-constants';
-import { Router } from '@angular/router';
-
 
 @Component({
     selector: 'app-about-us-page',
@@ -27,14 +24,11 @@ export class AboutUsPageComponent implements OnInit {
     leadershipGrantAndLizImageUrl = imageUrls.leadershipGrantAndLizImageUrl;
     leadershipPaulAndMilaineImageUrl = imageUrls.leadershipPaulAndMilaineImageUrl;
 
-    constructor(private title: Title,
-                private router: Router,
-                private navbarService: NavbarService) { 
+    constructor(private title: Title) { 
         this.title.setTitle(this.pageTitle);
     }
 
     ngOnInit(): void {
-        this.navbarService.setCurrentURL(this.router.url);
     }
 
     public rotateValueChevronArrow(currentValue: any) {

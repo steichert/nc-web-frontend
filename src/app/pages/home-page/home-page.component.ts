@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
+import { EventService } from 'src/app/services/event/event.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
-import { NavbarService } from 'src/app/services/navbar/navbar.service';
 import { PostMapper } from 'src/app/utils/post.mapper';
 
 @Component({
@@ -19,14 +19,13 @@ export class HomePageComponent implements OnInit {
 
     constructor(private title: Title, 
                 private loadingService: LoadingService,
-                private navbarService: NavbarService,
                 private ncApi: ApiService,
-                private router: Router) {
-        title.setTitle(this.pageTitle);
+                private router: Router,
+                private eventService: EventService) {
+        this.title.setTitle(this.pageTitle);
     }
 
     ngOnInit(): void {
-        this.navbarService.setCurrentURL(this.router.url);
         this.fetchLatestEvents();
     }
 
@@ -57,4 +56,5 @@ export class HomePageComponent implements OnInit {
     public navigateToLink(link: string) {
         this.router.navigateByUrl(link);
     }
+
 }
