@@ -7,7 +7,7 @@ export class Page {
     pageNumber: number;
     pageSize: number;
     totalPages: number;
-    pagesList: string[];
+    pagesList: number[];
 
     constructor(allItems: any, pageNumber: number, pageSize: number) {
         this.allItems = allItems;
@@ -22,15 +22,15 @@ export class Page {
 
         this.pagesList = [];
         for (let i = 1 ; i <= this.totalPages ; i++) {
-            this.pagesList.push(i.toString());
+            this.pagesList.push(i);
         }
     }
 
     setPage(pageNumber: number) {
-        this.pageNumber = pageNumber;
+        this.pageNumber = pageNumber
         this.currentPageItems = [];
 
-        let startIndex = (pageNumber * this.pageSize) - this.pageSize;
+        let startIndex = (this.pageNumber * this.pageSize) - this.pageSize;
         let endIndex = startIndex + this.pageSize;
 
         for (let i = startIndex ; i < endIndex && i < this.totalNumberOfItems ; i++) {

@@ -37,7 +37,6 @@ export class NavbarComponent implements OnInit {
 
     // Routes
     private HOME: string = "/";
-    private EVENTS: string = "/events";
 
     constructor(private navbarService: NavbarService,
                 private loadingService: LoadingService,

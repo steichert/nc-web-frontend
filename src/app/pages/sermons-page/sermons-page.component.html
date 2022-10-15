@@ -1,0 +1,138 @@
+<div class="container sermons-container">
+    <div id="sermonsTitle">
+        <h2><b>SERMONS</b></h2>
+    </div>
+   
+    <div id="activeSermonContainer" class="row">
+        <div id="activeSermonThumbnailContainer" 
+             class="col-lg-3 col-sm-1">
+            <img id="activeSermonThumbnail" 
+                 [src]="defaultThumbnailImageUrl" 
+                 alt="Sermon Series Logo"/>
+        </div>
+
+        <div id="activeSermonDetailsContainer" 
+             class="col-lg-6 col-sm-10">
+            <h5><b>{{ activeSermon?.postTitle }}</b></h5>
+            <p>{{ activeSermon?.speaker }}</p>
+            <p>{{ activeSermon?.postDescription }}</p>
+        </div>
+
+        <div id="activeSermonDateContainer"
+             class="col-lg-3 col-sm-1 sermon-date">
+            <p>{{ activeSermon?.sermonDateFormatted }}</p>
+        </div>
+    </div>
+
+    <div id="sermonAudioPlayerContainer" 
+         class="row">
+        <audio id="sermonAudioPlayer" 
+                src="{{ activeSermon?.guid }}" 
+                type="audio/m4a" 
+                controls>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <div id="sermonListContainer" 
+         class="row">
+        <div id="searchBarContainer" 
+             class="col-12">
+            <div id="sermonTypeDropdownContainer">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" 
+                            type="button" 
+                            id="dropdownMenuButton" 
+                            data-bs-toggle="dropdown" 
+                            aria-haspopup="true" 
+                            aria-expanded="false">
+                        {{ sermonSearchType }}
+                    </button>
+                    <div class="dropdown-menu" 
+                            aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" 
+                            *ngFor="let type of availableSearchTypes" 
+                            (click)="setSearchType(type)">
+                            {{ type }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="sermonSearchContainer">
+                <input [(ngModel)]="sermonSearchTerm" 
+                        name="sermonSearch" 
+                        id="sermonSearch" 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Search" 
+                        data-bs-toggle="tooltip" 
+                        data-bs-placement="top">
+            </div>
+        </div>
+
+        <div id="sermonResultsContainer" 
+                *ngIf="sermonsPage != null" 
+                class="col-lg-12">
+            <div class="sermonResultItem" 
+                    *ngFor="let sermonItem of sermonsPage.currentPageItems | filter:sermonsPage:sermonSearchTerm:sermonSearchType" 
+                    (click)="selectSermon(sermonItem)">
+                <div id="sermonResultItemRow" 
+                        class="row">
+                    <div id="sermonResultItemThumbnail" 
+                            class="col-lg-1 col-sm-0">
+                        <img id="sermonResultItemThumbnail" 
+                                [src]="defaultThumbnailImageUrl" 
+                                alt="Sermon Series Logo"/>
+                    </div>
+                    <div id="sermonResultItemContainer" 
+                            class="col-lg-9 col-sm-10">
+                        <h6>{{ sermonItem?.postTitle }}</h6>
+                        <p>{{ sermonItem?.speaker }}</p>
+                    </div>
+                    <div id="sermonResultItemDate" 
+                            class="col-lg-2 col-sm-2 sermon-date">
+                        <p>{{ sermonItem?.sermonDateFormatted }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sermonResultPaginationContainer" 
+                class="col-lg-12">
+            <nav aria-label="Sermons Page navigation">
+                <ul class="pagination justify-content-center" 
+                    *ngIf="sermonsPage != null">
+                    <li class="page-item" 
+                        [ngClass]="{'disabled': sermonsPage != null && !sermonsPage.hasPreviousPage()}">
+                        <a class="page-link" 
+                            aria-label="Previous" 
+                            (click)="sermonsPage.previousPage()">
+                            <span aria-hidden="true">&laquo;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                    </li>
+
+                    <li *ngFor="let pageNumber of sermonsPage.pagesList" 
+                        class="page-item" 
+                        [ngClass]="{'active': pageNumber == sermonsPage.pageNumber}">
+                        <a class="page-link" 
+                            (click)="sermonsPage.setPage(pageNumber)">
+                            {{ pageNumber }}
+                        </a>
+                    </li>
+                    
+                    <li class="page-item" 
+                        [ngClass]="{'disabled': sermonsPage != null && !sermonsPage.hasNextPage()}">
+                        <a class="page-link" 
+                            aria-label="Next" 
+                            (click)="sermonsPage.nextPage()">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
