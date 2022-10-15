@@ -10,14 +10,15 @@ p {
 
 ul {
     padding-left: 0;
+    text-align: left;
+}
+
+.section-row {
+    padding-bottom: 4rem;
 }
 
 .about-us-title {
     text-align: center;
-}
-
-.row {
-    padding-top: 10em;
 }
 
 #collapseBtn {
@@ -82,6 +83,7 @@ hr {
 
 .photo-row {
     margin-bottom: 0 !important;
+    padding-top: 5rem;
 }
 
 .photo-col {
@@ -103,20 +105,8 @@ hr {
     margin-right: auto;
 }
 
-@media screen and (max-width: 767px) {
-    .container {
-        margin-top: 12%;
-    }
+@media screen and (max-width: 68rem) {
     .img-story {
         width: 95%;
-    }
-    .section-row {
-        padding-top: 30% !important;
-    }
-}
-
-@media screen and (min-width: 1900px) {
-    .container {
-        padding: 0;
     }
 }

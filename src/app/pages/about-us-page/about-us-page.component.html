@@ -1,6 +1,6 @@
 <div class="container about-us-container">
     <!-- Our Story -->
-    <div class="row section-row" id="foundations-row">
+    <div class="row section-row" id="foundationsRow">
         <div class="col-12">
             <h2>OUR STORY</h2>
             <hr>
@@ -138,14 +138,14 @@
             </p>
             <br>
             
-            <!-- Governmental Elders -->
+            <!-- Elders -->
             <div class="row photo-row">
-                <h3 class="col-12 leadership-subtitle" id="governmentalLeaders">GOVERNMENTAL ELDERSHIP</h3>      
+                <h3 class="col-12 leadership-subtitle" id="governmentalLeaders">ELDERSHIP</h3>      
                 <hr>
             </div>
 
             <div class="row photo-row">
-                <div class="col-sm-4 photo-col" *ngFor="let item of governmentalEldership">
+                <div class="col-lg-4 col-md-6 photo-col" *ngFor="let item of governmentalEldership">
                     <figure>
                     <img class="img-circle img-responsive img-leader" [src]="item.imageSrc" [alt]="item.title">
                         <figcaption class="figure-caption text-center">{{item.title}}<br><sub>{{item.subTitle}}</sub></figcaption>
@@ -163,7 +163,7 @@
             <div class="row photo-row">
                 <div class="photo-col" 
                      *ngFor="let item of pastoralLeadership; let i = index"
-                     [ngClass]="{'col-sm-3': i < pastoralLeadership.length - 3, 'col-sm-4': i >= pastoralLeadership.length - 3}">
+                     [ngClass]="{'col-lg-3': i < pastoralLeadership.length - 3, 'col-lg-4': i >= pastoralLeadership.length - 3}">
                     <figure>
                         <img class="img-circle img-responsive img-leader" [src]="item.imageSrc" [alt]="item.title">
                         <figcaption class="figure-caption text-center">{{item.title}}</figcaption>
@@ -179,7 +179,7 @@
             </div>
 
             <div class="row photo-row">
-                <div class="photo-col col-sm-4" 
+                <div class="photo-col col-lg-4 col-md-6" 
                      *ngFor="let item of churchStaff; let i = index">
                     <figure>
                         <img class="img-circle img-responsive img-leader" [src]="item.imageSrc" [alt]="item.title">
