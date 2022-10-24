@@ -181,6 +181,7 @@ export class NavbarComponent implements OnInit {
 
     public navigateToLink(link: string) {
         this.closeNavbar();
+        this.toggleScrolling();
         this.router.navigateByUrl(link);
     }
 }

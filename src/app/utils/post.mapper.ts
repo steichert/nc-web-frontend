@@ -136,6 +136,7 @@ export class PostMapper {
     }
 
     static sanitizePostDescription(sermon: Sermon) {
+        console.log(sermon.postDescription);
         if (sermon.postDescription != null && sermon.postDescription.split('Welcome to New Creation Family Church') != null) {
             let descriptionSplit = sermon.postDescription.split('Welcome to New Creation Family Church');
 

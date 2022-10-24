@@ -72,7 +72,6 @@ export class SermonsPageComponent implements OnInit {
                     if (this.allSermons.length > 0) {
                         this.activeSermon = this.allSermons[0];
                     }
-
                 } else {
                     console.log("Unable to retrieve latest sermon");
                 }
@@ -88,6 +87,7 @@ export class SermonsPageComponent implements OnInit {
 
     public selectSermon(sermon: Sermon) {
         this.activeSermon = sermon;
+        this.scrollToTop();
     }
 
     public getSermonsPage() {
@@ -102,4 +102,10 @@ export class SermonsPageComponent implements OnInit {
         this.sermonSearchType = type;
     }
 
+    public scrollToTop() {
+        window.scroll({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
 }

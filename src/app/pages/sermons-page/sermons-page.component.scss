@@ -1,6 +1,6 @@
 .sermons-container {
     padding-top: 10em;
-    padding-bottom: 5em;
+    padding-bottom: 2em;
     padding-left: 0;
     padding-right: 0;
 }
@@ -17,8 +17,19 @@
 }
 
 #activeSermonContainer {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #efefef;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#activeSermonThumbnailContainer {
+    padding: 0;
+}
+
+#activeSermonThumbnail {
+    width: 100%;
     border-radius: 5px;
-    background-color: #f4f4f4;
 }
 
 #activeSermonDetailsContainer {
@@ -34,54 +45,50 @@
     padding-right: 1rem;
 }
 
-#activeSermonThumbnailContainer {
-    padding-left: 0;
-}
-
-#activeSermonThumbnail {
-    width: 100%;
-    border-radius: 5px;
-}
-
-#activeSermonContentRow {
-    overflow-y: scroll;
-    padding-top: 2%;
-}
-
 #sermonAudioPlayerContainer {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
     background-color: #f4f4f4;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 #sermonAudioPlayer {
     width: 100%;
 }
 
-#sermonListContainer {
-    margin-top: 2%;
-}
-
-#sermonListColumn {
-    padding: 0;
-}
-
 #searchBarContainer {
+    margin-top: 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+#sermonTypeDropdownContainer {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
     padding: 0;
-    
+}
+
+#dropdownMenuButton {
+    background-color: #fff;
+    color: #495057;
+    border-color: #ced4da;
+    border-top-left-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    box-shadow: none;
 }
 
 #sermonSearchContainer {
     display: inline-block;
-    vertical-align: top;
-    width: 90%;
-    height: 100%;
-    padding-left: 0;
+    padding: 0;
 }
 
-#sermonSearch {
-    border: none;
+#sermonSearchInput {
     height: 100%;
     border-top-left-radius: 0px !important;
     border-bottom-left-radius: 0px !important;
@@ -94,6 +101,15 @@
     overflow-x: hidden;
     background-color: #fff;
     border-radius: 5px;
+    padding: 0;
+}
+
+#sermonListContainer {
+    margin-top: 1rem;
+}
+
+#sermonListColumn {
+    padding: 0;
 }
 
 #sermonResultItemRow {
@@ -103,6 +119,11 @@
 #sermonResultItemRow:hover {
     cursor: pointer;
     background-color: #d8d8d8;
+}
+
+#sermonResultItemThumbnailContainer {
+    padding-right: 0;
+    padding-left: 0;
 }
 
 #sermonResultItemThumbnail {
@@ -119,8 +140,8 @@
     padding-top: 1%;
 }
 
-#sermonResultItemDate p {
-    text-align: left !important;
+#sermonResultItemDateText {
+    text-align: right !important;
 }
 
 #sermonResultItemContainer h5,
@@ -134,8 +155,8 @@
 
 #sermonResultPaginationContainer {
     width: 100%;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     text-align: center;
 }
 
@@ -154,50 +175,26 @@
 }
 
 .page-item.active .page-link {
-    background-color: #b1b1b1;
-    border-color: #b1b1b1;
+    background-color: #dddddd;
+    border-color: #dedede;
 }
 
 .page-link {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border-radius: 100%;
     color: black;
 }
 
-#sermonTypeDropdownContainer {
-    display: inline-block;
-    vertical-align: top;
-    width: 10%;
-    height: 100%;
-}
-
-#dropdownMenuButton {
-    background-color: #fff;
-    color: #495057;
-    border-top-left-radius: 5px !important;
-    border-bottom-left-radius: 5px !important;
-    border-top-right-radius: 0px !important;
-    border-bottom-right-radius: 0px !important;
-    width: 100%;
-    height: 100%;
-    text-align: left;
-    border-top-color: #fff;
-    border-bottom-color: #fff;
-    border-left-color: #fff;
-    border-right-color: #d3d3d3;
-}
-
-@media screen and (max-width: 767px) {
-    #sermonsTitle {
-        margin-top: 15%;
+@media screen and (max-width: 68rem) {
+    #sermonListContainer {
+        margin-top: 2rem;
+    }
+    
+    #sermonResultItemText {
+        font-size: 0.8rem;
     }
 
-    .sermons-section {
-        padding-bottom: 28%;
-    }
-}
-
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .sermons-section {
-        padding-bottom: 10%;
+    #sermonResultItemDateText {
+        font-size: 0.7rem;
     }
 }
