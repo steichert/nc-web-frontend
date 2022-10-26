@@ -4,6 +4,7 @@ import { AboutUsPageComponent } from './pages/about-us-page/about-us-page.compon
 import { ConnectPageComponent } from './pages/connect-page/connect-page.component';
 import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { MissionsPageComponent } from './pages/missions-page/missions-page.component';
 import { SermonsPageComponent } from './pages/sermons-page/sermons-page.component';
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
     { path: 'events', component: EventsPageComponent, pathMatch: 'full' },
     { path: 'sermons', component: SermonsPageComponent, pathMatch: 'full' },
     { path: 'connect', component: ConnectPageComponent, pathMatch: 'full' },
+    { path: 'missions', component: MissionsPageComponent, pathMatch: 'full' },
     // This needs to stay at the bottom of the list
     { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

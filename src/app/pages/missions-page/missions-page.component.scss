@@ -1,0 +1,252 @@
+.missions-container {
+    padding-top: 10em;
+    padding-bottom: 2em;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 auto;
+}
+
+#missionsBanner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 100%;
+    color: #fff;
+}
+
+#missionsTitle {
+    position: relative;
+    text-align: center;
+    padding-top: 12rem;
+    padding-bottom: 2rem;
+}
+
+#missionsContent {
+    margin-top: 16rem;
+    width: 100%;
+}
+
+#aboutUsContentCol {
+    padding-right: 35px;
+}
+
+.missions-logo-wrapper {
+    height: inherit;
+    width: 100%;
+    margin-top: 20%;
+}
+
+#synergyInMissionLogo {
+    width: 100%;
+    height: auto;
+}
+
+#internationalProjectsQuote {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 110%;
+}
+
+.missions-section {
+    min-height: 300px;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.grey-background {
+    background-color: #eaeaea;
+}
+
+#communication-row {
+    margin-bottom: 0;
+}
+
+#localProjectsRow {
+    text-align: center;
+}
+
+.project-col {
+    margin-bottom: 5%;
+}
+
+.project-col:nth-child(7) {
+    margin-left: 17%;
+}
+
+.local-project-card {
+    border-radius: 0.5rem;
+    height: 224px;
+}
+
+.local-project-card-img {
+    border-radius: 0.5rem;
+    height: 224px;
+}
+
+#internationalProjectRow {
+    text-align: center;
+}
+
+.international-project-card {
+    border-radius: 0.5rem;
+    height: 275px;
+}
+
+.international-project-card-img {
+    border-radius: 0.5rem;
+    height: 275px;
+}
+
+.local-projects-card-title {
+    margin-top: 15%;
+}
+
+.training-card {
+    border-radius: 0.5rem;
+}
+
+.international-projects-card-title {
+    margin-top: 10%;
+}
+
+.card-btn-container {
+    width: 100%;
+    position: absolute;
+    bottom: 20%;
+    left: 0;
+    text-align: center;
+}
+
+.card-btn-container .btn {
+    opacity: 1;
+}
+
+#communicationRow {
+    text-align: center;
+}
+
+.comm-wrapper {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-wrapper {
+    margin-bottom: 5%;
+}
+
+.btn-comm {
+    width: 12rem;
+}
+
+// Modal Styles
+
+#missionsModal .modal-lg {
+    max-width: 1000px;
+}
+
+#missionsAreaModalTitle {
+    text-transform: uppercase;
+}
+
+.missions-modal-content {
+    background-size: cover;
+}
+
+.missions-modal-close-btn {
+    opacity: 0.5;
+}
+
+.missions-modal-image-wrapper {
+    margin-top: 5%;
+}
+
+.missions-modal-image {
+    height: 300px;
+    width: auto;
+}
+
+.missions-modal-body {
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+}
+
+.missions-modal-body p,
+.missions-modal-body h4 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.missions-modal-body h4,
+.missions-modal-body h5 {
+    text-align: center;
+}
+
+.missions-modal-title {
+    text-align: left;
+}
+
+.missions-modal-body-content-wrapper {
+    background: rgba(255, 255, 255, 0.75);
+    padding-bottom: 5%;
+}
+
+.missions-modal-body-wrapper {
+    padding-top: 6%;
+    padding-bottom: 6%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.missions-modal-body {
+    margin-bottom: 20px;
+}
+
+.missions-modal-header,
+.missions-modal-footer {
+    border: none;
+}
+
+.no-training {
+    text-align: center;
+    color: gray;
+}
+
+@media screen and (max-width: 767px) {
+    #missionsTitle {
+        margin-top: 15%;
+    }
+
+    .project-col:nth-child(7) {
+        margin-left: 0;
+    }
+
+    .missions-section {
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .missions-modal-image {
+        height: 200px;
+    }
+
+    .missions-modal-body {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .project-col:nth-child(7) {
+        margin-left: 17%;
+    }
+
+    .missions-section {
+        padding-bottom: 10%;
+    }
+}

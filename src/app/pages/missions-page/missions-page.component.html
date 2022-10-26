@@ -1,0 +1,232 @@
+<div class="container-fluid missions-container">
+    <div id="missionsBanner" class="background-image" [ngStyle]="{'background-image': getMissionsBannerImageUrl()}">
+        <div id="missionsTitle">
+            <h1><b>SYNERGY IN MISSION</b></h1>
+        </div>
+    </div>
+
+    <div id="missionsContent" class="row">
+        <div id="about-us-row" class="missions-section row">
+            <div id="aboutUsContentCol" class="col-sm-8 cl-xs-12">
+                <h3 id="about-us-title" class="text-left">
+                    <b>ABOUT US</b>
+                </h3>
+                <br>
+
+                <p class="text-left">
+                    Synergy in Mission (SIM) represents the various ministries and initiatives that New Creation Family Church is serving in God’s mission both locally and around the world. 
+                    Synergy describes the ongoing collaboration toward the completion of Christ’s Great Commission. 
+                    The SIM Team meets regularly for prayer, planning and action. Sharon Stephen serves and the SIM Coordinator. 
+                    <br><br>
+                    Please contact <a href="mailto:admin@newcreation.co.za">admin@newcreation.co.za</a> to find out more about the SIM vision, ministries and how you can get more involved. 
+                </p>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <div class="missions-logo-wrapper">
+                    <img id="synergyInMissionLogo" [src]="synergyInMissionsUrl" alt="Synergy In Mission">
+                </div>
+            </div>
+        </div>
+
+        <div id="localProjectsRow" class="missions-section grey-background">
+            <h3 id="local-projects-title">
+                <b>LOCAL PROJECTS</b>
+            </h3>
+            <br>
+
+            <p>
+                New Creation is involved in many local projects aimed to impact our local community.
+            </p>
+            <br><br>
+
+            <div class="row project-row">
+                <div class="col-lg-4 col-sm-12 project-col"
+                     *ngFor="let localProject of localProjects; let i = index"
+                     [ngClass]="{'last-project-col': isLastProjectItem(localProjects, i)}">
+                    <div class="card text-white local-project-card">
+                        <img [src]="localProject.cardImageUrl" class="card-img local-project-card-img">
+                        <div class="card-img-overlay">
+                            <h4 class="card-title local-projects-card-title text-center" 
+                                [ngStyle]="{color: localProject.cardTitleColour}">
+                                <b>{{localProject.cardTitle}}</b>
+                            </h4>
+                            <p class="card-text">
+                                {{localProject.description}}
+                            </p>
+                            <div class="card-btn-container">
+                                <button type="button" 
+                                        class="btn btn-primary" 
+                                        (click)="setSelectedMissionsArea(localProject)" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#missionsModal">
+                                    <b>READ MORE</b>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="internationalProjectRow" class="missions-section">
+            <h3 id="international-projects-title">
+                <b>INTERNATIONAL PROJECTS</b>
+            </h3>
+            <br>
+
+            <blockquote id="internationalProjectsQuote" class="blockquote">
+                <p class="mb-4">"Therefore, go and make disciples of <b>all the nations</b>, baptizing them in the name of the Father and the Son and the Holy Spirit."</p>
+                <footer class="blockquote-footer text-center">Matthew 28:19</footer>
+              </blockquote>
+            <br><br>
+
+            <div class="row project-row">
+                <div class="col-lg-3 col-sm-12"></div>
+                <div class="col-lg-6 col-sm-12 project-col"
+                     *ngFor="let internationalProject of internationalProjects; let i = index"
+                     [ngClass]="{'last-project-col': isLastProjectItem(localProjects, i)}">
+                    <div class="card text-white international-project-card">
+                        <img [src]="internationalProject.cardImageUrl" class="card-img international-project-card-img">
+                        <div class="card-img-overlay">
+                            <h4 class="card-title international-projects-card-title text-center" [ngStyle]="{color: internationalProject.cardTitleColour}">
+                                <b>{{internationalProject.cardTitle}}</b>
+                            </h4>
+                            <p class="card-text">
+                                {{internationalProject.description}}
+                            </p>
+                            <div class="card-btn-container">
+                                <button type="button" 
+                                        class="btn btn-primary" 
+                                        (click)="setSelectedMissionsArea(internationalProject)" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#missionsModal">
+                                    <b>READ MORE</b>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-12"></div>
+            </div>
+        </div>
+
+        <div id="training-row" class="missions-section grey-background">
+            <h3 id="training-title" class="text-center">
+                <b>TRAINING</b>
+            </h3>
+            <br>
+
+            <div *ngIf="hasTrainingEvents()" class="row project-row">
+                <div class="col-lg-6 col-sm-12"
+                     *ngFor="let trainingProgram of trainingPrograms; let i = index">
+                    <div class="card training-card">
+                        <img [src]="trainingProgram?.cardImageUrl" class="card-img">
+                    </div>
+                </div>
+            </div>
+            
+            <div *ngIf="!hasTrainingEvents()" class="row no-training">
+                <div class="col-12">
+                    <br>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
+                        <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+                    </svg>
+                    <br><br>
+                    <h4>Watch this space for upcoming Training Programs</h4>
+                </div>
+            </div>
+
+            <br><br>
+        </div>
+
+        <div id="communicationRow" class="missions-section">
+            <h3 id="communication-title">
+                <b>COMMUNICATION</b>
+            </h3>
+            <br>
+
+            <p>
+                Here are a few ways to get in contact with us and keep up to date with the latest missions activities.
+            </p>
+            <br><br>
+
+            <div class="row comm-row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-4">
+                    <div class="comm-wrapper">
+                        <div class="logo-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-whatsapp comm-logo" viewBox="0 0 16 16">
+                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                            </svg>
+                        </div>
+                        <a class="btn btn-green btn-success btn-comm" href="https://chat.whatsapp.com/FvNkXJnTITnF2Jmor0SVkk">
+                            <b>JOIN GROUP</b>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-4">
+                    <div class="comm-wrapper">
+                        <div class="logo-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-newspaper comm-logo" viewBox="0 0 16 16">
+                                <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+                                <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+                            </svg>
+                        </div>
+                        <a class="btn btn-green btn-comm">
+                            <b>READ NEWSLETTER</b>
+                        </a>
+                    </div>
+                </div> -->
+                <div class="col-lg-4">
+                    <div class="comm-wrapper">
+                        <div class="logo-wrapper">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-facebook comm-logo" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </div>
+                        <a class="btn btn-green btn-success btn-comm" href="https://www.facebook.com/Synergy-in-Mission-111239790404264" target="_blank">
+                            <b>FACEBOOK PAGE</b>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- More Info Modal -->
+<div id="missionsModal" 
+     class="modal missions-modal" 
+     tabindex="-1"
+     aria-hidden="true"
+     *ngIf="selectedMissionsArea != null">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
+        <div class="missions-modal-content modal-content">
+            <div class="modal-header missions-modal-header">
+                <button type="button" 
+                        class="btn-close" 
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>                
+            </div>
+            <div class="modal-body missions-modal-body">
+                <div class="missions-modal-body-content-wrapper">
+                    <h3 id="missionsAreaModalTitle"><b>{{selectedMissionsArea.mainTitle}}</b></h3>
+
+                    <div *ngIf="selectedMissionsArea.mainImageUrl != null" class="missions-modal-image-wrapper">
+                        <img [attr.src]="selectedMissionsArea.mainImageUrl" class="missions-modal-image">
+                    </div>
+
+                    <div class="missions-modal-body-wrapper">
+                        <div class="missions-modal-body">
+                            <div *ngFor="let paragraph of selectedMissionsArea.paragraphs">
+                                <app-paragraph-content [paragraph]="paragraph"></app-paragraph-content>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                        
+        </div>
+    </div>
+</div>
