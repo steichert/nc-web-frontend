@@ -1,0 +1,258 @@
+.connect-container {
+    padding-top: 10em;
+    padding-bottom: 2em;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.connect-title {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.activities-btn-container {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.activities-join-team-btn {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 12rem;
+}
+
+.activities-find-more-btn {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 12rem;
+}
+
+#servingTitle {
+    padding-top: 4rem; 
+}
+
+.connect-image {
+    text-align: center;
+}
+
+.img-circle {
+    -webkit-transition: 0.2s filter ease-in-out;
+    -moz-transition: 0.2s filter ease-in-out;
+    -ms-transition: 0.2s filter ease-in-out;
+    -o-transition: 0.2s filter ease-in-out;
+    transition: 0.2s filter ease-in-out;
+}
+
+.connect-link:hover .img-circle {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -ms-filter: blur(5px);
+    -o-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.connect-label {
+    -webkit-transition: 0.2s opacity ease-in-out;
+    -moz-transition: 0.2s opacity ease-in-out;
+    -ms-transition: 0.2s opacity ease-in-out;
+    -o-transition: 0.2s opacity ease-in-out;
+    transition: 0.2s opacity ease-in-out;
+}
+
+.connect-link:hover .connect-label {
+    opacity: 1;
+}
+
+.connect-col {
+    position: relative;
+    padding: 0;
+    margin: 4% 0;
+    text-align: center;
+}
+
+.connect-image {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.img-circle {
+    position: relative;
+    border: 3px solid #efefef;
+    border-radius: 100% !important;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.connect-link {
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    cursor: pointer;
+}
+
+.connect-text {
+    border-radius: 100% !important;
+    z-index: 3;
+    position: absolute;
+    top: 0; right: 0;
+    bottom: 0; left: 0;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 210px;
+}
+
+.connect-text h4 {
+    color: #fff;
+    display: inline-table;
+    vertical-align:middle;
+    opacity: 0;
+}
+
+a:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 28rem) {
+    .activities-find-more-btn {
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 58rem) {
+    .img-circle {
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -ms-filter: blur(2px);
+        -o-filter: blur(2px);
+        filter: blur(2px);
+    }
+    
+    .connect-label {
+        opacity: 1 !important;
+    }
+
+    #ourLifeGroupsContainer {
+        padding-top: 2.5rem;
+    }
+}
+
+/* 
+*   Modal Styles 
+*/
+
+/* General */
+.get-connected-modal-content {
+    background-size: cover;
+}
+
+.connect-modal-close-btn {
+    opacity: 0.5;
+}
+
+.modal-body {
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 60px;
+    text-align: center;
+}
+
+.modal-body p,
+.modal-body h4 {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.modal-body h4,
+.modal-body h5 {
+    text-align: center;
+}
+
+.modal-title {
+    text-align: left;
+}
+
+.connect-body-content-wrapper {
+    background: rgba(255, 255, 255, 0.75);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.connect-body-wrapper {
+    padding-top: 6%;
+    padding-bottom: 6%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.connect-body {
+    // font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.modal-header,
+.modal-footer {
+    border: none;
+}
+
+ul {
+    text-align: left;
+}
+
+/* Join Team Modal */
+
+#joinTeamModal .modal-body {
+    padding-left: 120px;
+    padding-right: 120px;
+}
+
+.checkbox-container {
+    text-align: left;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.join-team-button {
+    width: 10rem;
+}
+
+/* Life Group Modals */
+
+#lifeGroupSection {
+    text-align: center;
+    padding-top: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.life-group-location {
+    font-size: 12px;
+}
+
+.lifegroup-hosts-item {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.lifegroup-hosts-item p {
+    text-align: left;
+    margin-bottom: 4%;
+    font-size: 0.85rem;
+}
+
+.submit-group-button {
+    width: 100%;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 375px) {
+    .modal-body {
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+}

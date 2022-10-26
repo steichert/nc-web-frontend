@@ -1,0 +1,33 @@
+<p *ngIf="isSimpleParagraph(paragraph.type)" class="paragraph-section">
+    {{ paragraph.value }}
+</p>
+
+<div *ngIf="isSimpleHtmlParagraph(paragraph.type)" 
+     class="paragraph-section paragraph-inner-html" 
+     [innerHtml]="paragraph.value"></div>
+
+<p *ngIf="isUnorderedList(paragraph.type) || isOrderedList(paragraph.type)" class="paragraph-list-heading">
+    {{ paragraph.heading }}
+</p>
+
+<ul *ngIf="isUnorderedList(paragraph.type)" class="paragraph-section paragraph-list">
+    <li *ngFor="let item of paragraph.values">
+        <div *ngIf="hasNestedList(item)">
+            <app-paragraph-content [paragraph]="item"></app-paragraph-content>
+        </div>
+        <div *ngIf="!hasNestedList(item)">
+            <p>{{ item }}</p>
+        </div>
+    </li>
+</ul>
+
+<ol *ngIf="isOrderedList(paragraph.type)" [attr.type]="paragraph.listType" class="paragraph-section paragraph-list">
+    <li *ngFor="let item of paragraph.values">
+        <div *ngIf="hasNestedList(item)">
+            <app-paragraph-content [paragraph]="item"></app-paragraph-content>
+        </div>
+        <div *ngIf="!hasNestedList(item)">
+            <p>{{ item }}</p>
+        </div>
+    </li>
+</ol>

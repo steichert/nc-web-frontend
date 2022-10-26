@@ -1,0 +1,316 @@
+<div class="container connect-container">
+    <div class="connect-title row">
+        <h2><b>MINISTRIES</b></h2>
+    </div>
+
+    <div class="connect-row row">
+        <div class="col-lg-3 col-sm-6 col-12 connect-col" 
+             *ngFor="let connect of getConnectedMinistries; let i = index">
+            <div class="connect-image">
+                <a class="connect-link"
+                   (click)="setSelectedConnect(connect)" 
+                   data-bs-toggle="modal" 
+                   data-bs-target="#connectModal">
+                    <img [id]="'connectImage' + i" 
+                         class="img-circle" 
+                         [src]="connect.image" 
+                         width="200">
+                    <div class="connect-text">
+                        <h4 [id]="'connectLabel' + i" 
+                            class="connect-label">
+                            <b>{{connect.label}}</b>
+                        </h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="activities-btn-container">
+        <button class="activities-join-team-btn btn btn-success btn-green" 
+                data-bs-toggle="modal" 
+                data-bs-target="#joinTeamModal" 
+                (click)="setSelectedAreas(allAreasOfMinistry)">
+            <b>JOIN A MINISTRY</b>
+        </button>
+    </div>
+
+    <div id="servingTitle" class="connect-title row">
+        <h2><b>SERVING</b></h2>
+    </div>
+    
+    <div class="connect-row row">
+        <div class="col-lg-4 col-sm-6 col-12 connect-col" 
+             *ngFor="let connect of getConnectedServing; let i = index"
+             [ngClass]="{'col-sm-6': i < getConnectedServing.length - 1, 'col-sm-12': i == getConnectedServing.length - 1}">
+            <div class="connect-image">
+                <a class="connect-link" 
+                   (click)="setSelectedConnect(connect)" 
+                   data-bs-toggle="modal" 
+                   data-bs-target="#connectModal">
+                    <img [id]="'serveImage' + (i + getConnectedMinistries.length)" 
+                         class="img-circle" 
+                         [src]="connect.image" 
+                         width="200">
+                    <div class="connect-text">
+                        <h4 [id]="'connectLabel' + (i + getConnectedMinistries.length)" 
+                            class="connect-label">
+                            <b>{{connect.label}}</b>
+                        </h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="activities-btn-container">
+        <button class="activities-join-team-btn btn btn-success btn-green" 
+                data-bs-toggle="modal" 
+                data-bs-target="#joinTeamModal" 
+                (click)="setSelectedAreas(allAreasOfService)">
+            <b>JOIN A TEAM</b>
+        </button>
+        <button class="activities-find-more-btn btn btn-success btn-green" 
+                data-bs-toggle="modal" 
+                data-bs-target="#findOutMoreModal">
+            <b>FIND OUT MORE</b>
+        </button>
+    </div>
+</div>
+
+<div id="connectModal" 
+     class="modal get-connected-modal" 
+     tabindex="-1"
+     aria-hidden="true"
+     *ngIf="selectedConnect != null">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
+        <div class="modal-content get-connected-modal-content" 
+             [ngStyle]="{'background-image': getConnectedModalImageUrl()}">
+            <div class="modal-header">
+                <button type="button" 
+                        class="btn-close" 
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>                
+            </div>
+            <div class="modal-body">
+                <div *ngIf="selectedConnect.label != 'LIFE GROUPS'" class="connect-body-content-wrapper">
+                    <h3><b>{{selectedConnect.label}}</b></h3>
+
+                    <div class="connect-body-wrapper">
+                        <p class="connect-body" *ngFor="let paragraph of selectedConnect.paragraphs">
+                            <app-paragraph-content [paragraph]="paragraph"></app-paragraph-content>
+                        </p>
+                    </div>
+                    
+                    <div *ngIf="selectedConnect.join_team">
+                        <button *ngIf="selectedConnect.area_type == 'ministry'"
+                                class="activities-join-team-btn btn btn-success btn-green" 
+                                data-bs-toggle="modal" 
+                                data-bs-dismiss="modal" 
+                                (click)="setSelectedAreas(allAreasOfMinistry); toggleJoinTeamModal()">
+                            <b>JOIN A MINISTRY</b>
+                        </button>
+                        <button *ngIf="selectedConnect.area_type == 'serving'"
+                                class="activities-join-team-btn btn btn-success btn-green" 
+                                data-bs-toggle="modal" 
+                                data-bs-dismiss="modal" 
+                                (click)="setSelectedAreas(allAreasOfService); toggleJoinTeamModal()">
+                            <b>JOIN A TEAM</b>
+                        </button>
+                    </div>
+                </div>
+                <div id="lifeGroupSection" *ngIf="selectedConnect.label == 'LIFE GROUPS'" class="connect-body-content-wrapper">
+                    <h3><b>FIND A LIFE GROUP</b></h3>
+                    <br>
+                    <p>Please fill out your details below and we'll help you get connected with one of our Life Groups</p>   
+                    <br>
+
+                    <div class="row">
+                        <!-- Personal details -->
+                        <div class="col-lg-6 col-sm-12">
+                            <h5><b>PERSONAL DETAILS</b></h5><br>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="lifegroup.fname" name="fname" id="firstName">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="lifegroup.lname" name="lname" id="lastName">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Email" [(ngModel)]="lifegroup.email" name="email" id="email">
+                            </div>
+                            <div class="input-group mb-3">
+                                <textarea type="text" class="form-control" rows=10 placeholder="Tell us a bit about yourself, or what type of Life Group you would like to join" [(ngModel)]="lifegroup.message" name="message" id="message"></textarea>
+                            </div>
+                            <br>
+                            <!-- Submit button -->
+                            <div class="form-group">
+                                <button *ngIf="!isLoading" 
+                                        id="submitLifeGroup" 
+                                        class="btn btn-success btn-green submit-group-button" 
+                                        (click)="submitLifeGroup()">
+                                    <b>SUBMIT</b>
+                                </button>
+                                <button *ngIf="isLoading" 
+                                        class="btn btn-success btn-green submit-button submit-group-button" 
+                                        type="button" 
+                                        disabled>
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    &nbsp;SENDING...
+                                </button>
+                            </div>
+                        </div>
+                        <!-- Life Group List -->
+                        <div id="ourLifeGroupsContainer" class="col-lg-6 col-sm-12">
+                            <h5><b>OUR LIFE GROUPS</b></h5><br>
+                            <div class="lifegroup-hosts-list">
+                                <div class="lifegroup-hosts-item" *ngFor="let group of allLifeGroups">
+                                    <p>
+                                        <b>{{group.host}}</b><br>
+                                        {{group.location}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                        
+        </div>
+    </div>
+</div>
+
+<!-- Find Out More Modal -->
+<div id="findOutMoreModal" 
+     class="modal"
+     tabindex="-1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">    
+        <div class="modal-content get-connected-modal-content" 
+             [ngStyle]="{'background-image': getConnectedModalImageUrl()}">
+            <div class="modal-header">
+                <button type="button" 
+                        class="btn-close" 
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>                
+            </div>
+            <div class="modal-body">
+                <div class="connect-body-content-wrapper">
+                    <h3><b>GET INVOLVED</b></h3><br>
+                    <p class="connect-body">
+                        Membership is about involvement, not about having one's details recorded in a database somewhere. Our ethos is one of "every member involvement" - there are no professionals and no super-stars in New Creation! We believe this to be in keeping with the Biblical picture of the local church as a body made up of different but valuable parts (1 Cor 12 & 14), each of which contributes to the well-being of the whole as the Lord gives grace. So, if God has brought you here and planted you for this season in this house, throw yourself in with all you have and get involved! Be a channel of the Spirit's life!
+                    </p><br>
+                    <ul>
+                        <li>Link up with a small group, even if you can't always participate in its activities</li>
+                        <li>Find an area in which to serve; this is very important. It helps to connect you to the inner workings of the church</li>
+                        <li>Because we believe strongly in serving, we do not release anyone into ministry or leadership who has not been willing to serve faithfully over a period of time</li>
+                        <li>Make use of the training opportunities as they arise</li>
+                        <li>Take the initiative in connecting with others - introduce yourself, welcome visitors, practice hospitality.</li>
+                    </ul>
+                    <br>
+                    <p class="connect-body">
+                        We encourage you to find a place to serve and allow God to develop and release your gifts, talents and abilities in this part of His vineyard. If you need other suggestions of potential service areas, please speak to one of the elders or leaders, and we will help you find a place!
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" 
+                        class="btn btn-default" 
+                        data-bs-dismiss="modal">
+                    <b>CLOSE</b>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Join Ministry Modal -->
+<div id="joinTeamModal" 
+     class="modal"
+     tabindex="-1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" 
+                        class="btn-close" 
+                        data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3><b>GET INVOLVED</b></h3>
+                <br>
+                <p>
+                    Let us know where you would like to get involved.
+                </p>
+                <br>
+                <form>
+                    <h4>PERSONAL INFORMATION</h4>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group mb-3">
+                                <input [(ngModel)]="joinTeam.fname" name="fname" type="text" class="form-control" id="firstName" placeholder="First Name">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input [(ngModel)]="joinTeam.lname" name="lname" type="text" class="form-control" id="lastName" placeholder="Surname">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input [(ngModel)]="joinTeam.number" name="number" type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                            </div>
+                            <div class="input-group mb-3">
+                                <input [(ngModel)]="joinTeam.email" name="email" type="email" class="form-control" id="email" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <h4>I WANT TO VOLUNTEER AT</h4>
+                    <br>
+
+                    <div *ngFor="let area of selectedAreas">
+                        <h5>{{ area.name }}</h5>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group checkbox-container">
+                                    <div *ngFor="let subarea of area.subareas">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" (change)="toggleRole(joinTeam.areas, subarea)" value="">
+                                                {{ subarea.name }}
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-6">
+                            <button *ngIf="!isLoading" 
+                                    id="submitJoinTeam" 
+                                    class="btn btn-success btn-green join-team-button" 
+                                    (click)="submitJoinTeam()">
+                                <b>SUBMIT</b>
+                            </button>
+                            <button *ngIf="isLoading" 
+                                    class="btn btn-success btn-green submit-button join-team-button"
+                                    type="button" 
+                                    disabled>
+                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                                    &nbsp;SENDING...
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button type="button" 
+                                    class="btn btn-default join-team-button" 
+                                    data-bs-dismiss="modal">
+                                <b>CLOSE</b>
+                            </button>
+                        </div>
+                    </div>
+                    <br>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

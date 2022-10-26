@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { ContactModalModule } from './common/contact-modal/contact-modal.module';
 import { SermonsPageModule } from './pages/sermons-page/sermons-page.module';
+import { ConnectPageModule } from './pages/connect-page/connect-page.module';
+import { ParagraphContentModule } from './common/paragraph-content/paragraph-content.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -33,6 +35,8 @@ import { SermonsPageModule } from './pages/sermons-page/sermons-page.module';
         AboutUsPageModule,
         ContactModalModule,
         SermonsPageModule,
+        ConnectPageModule,
+        ParagraphContentModule,
         BrowserAnimationsModule,
         // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
         ToastrModule.forRoot()
