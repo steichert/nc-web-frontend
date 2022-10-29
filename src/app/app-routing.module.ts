@@ -6,6 +6,8 @@ import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MissionsPageComponent } from './pages/missions-page/missions-page.component';
 import { SermonsPageComponent } from './pages/sermons-page/sermons-page.component';
+import { VisitorsCardPageComponent } from './pages/visitors-page/visitors-card-page/visitors-card-page.component';
+import { VisitorsHomePageComponent } from './pages/visitors-page/visitors-home-page/visitors-home-page.component';
 
 const routes: Routes = [
     { path: '', component: HomePageComponent, pathMatch: 'full' },
@@ -14,6 +16,12 @@ const routes: Routes = [
     { path: 'sermons', component: SermonsPageComponent, pathMatch: 'full' },
     { path: 'connect', component: ConnectPageComponent, pathMatch: 'full' },
     { path: 'missions', component: MissionsPageComponent, pathMatch: 'full' },
+    { path: 'visitors', 
+        children: [
+            { path: 'home', component: VisitorsHomePageComponent, pathMatch: 'full' },
+            { path: 'card', component: VisitorsCardPageComponent, pathMatch: 'full' }
+        ] 
+    },
     // This needs to stay at the bottom of the list
     { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

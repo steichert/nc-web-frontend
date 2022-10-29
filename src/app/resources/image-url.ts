@@ -13,7 +13,7 @@ export const imageUrls = {
     popupCardImageUrl: `${environment.imageUrl}/backgrounds/welcome-popup.jpg`,
 
     // Missions Page
-    missionsBannerImageUrl: `${environment.imageUrl}/backgrounds/missions-banner2.jpg`,
+    missionsBannerImageUrl: `assets/images/backgrounds/missions-banner.jpg`,
     synergyInMissionsUrl: `${environment.imageUrl}/logos/synergy-in-mission.jpg`,
 
     // NC Kids
@@ -25,8 +25,8 @@ export const imageUrls = {
     ncSonKidzLogoImageUrl: `${environment.imageUrl}/logos/nc_sonkidz.png`,
     ncKidzSundayLogoImageUrl: `${environment.imageUrl}/logos/nc_kidz_sunday.png`,
 
-    // Visitors Page
-    visitorsBannerImageUrl: `${environment.imageUrl}/backgrounds/visitor-home-banner.jpg`,
+    // Visitor Card Page
+    visitorCardBannerImageUrl: `assets/images/backgrounds/visitor-card-background.jpg`,
 
     // About Us
     leadershipRonAndAnnImageUrl: `${environment.imageUrl}/leadership/our_story_ron_ann.jpg`,
