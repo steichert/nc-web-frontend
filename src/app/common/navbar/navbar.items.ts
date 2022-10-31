@@ -13,7 +13,7 @@ export const navbarItems = {
             },
             {
                 name: 'VISITORS',
-                routerLink: '/visitors/home',
+                routerLink: '/visitors',
                 dropdownItems: [],
             },
             {

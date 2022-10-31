@@ -1,0 +1,67 @@
+.visitor-home-container {
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.visitor-home-banner {
+    min-height: 350px;
+}
+
+.visitor-home-title {
+    text-align: center;
+    padding-top: 12rem;
+    padding-bottom: 5rem;
+    color: white;
+}
+
+.visitor-home-content {
+    text-align: center;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.visitor-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#visitorCardSection {
+    text-align: center;
+}
+
+#visitorCardButton {
+    width: 12rem;
+    margin-top: 2rem;
+}
+
+.icon-row {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.icon-col {
+    font-size: 2rem;
+}
+
+.visitor-icon {
+    color: #36b941;
+}
+
+@media (max-width: 68rem) {
+    .visitor-home-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .icon-row {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .icon-col {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+}

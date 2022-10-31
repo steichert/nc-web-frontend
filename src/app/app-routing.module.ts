@@ -18,8 +18,9 @@ const routes: Routes = [
     { path: 'missions', component: MissionsPageComponent, pathMatch: 'full' },
     { path: 'visitors', 
         children: [
-            { path: 'home', component: VisitorsHomePageComponent, pathMatch: 'full' },
-            { path: 'card', component: VisitorsCardPageComponent, pathMatch: 'full' }
+            { path: '', component: VisitorsHomePageComponent, pathMatch: 'full' },
+            { path: 'card', component: VisitorsCardPageComponent, pathMatch: 'full' },
+            { path: '**', redirectTo: '/visitors', pathMatch: 'full' }
         ] 
     },
     // This needs to stay at the bottom of the list

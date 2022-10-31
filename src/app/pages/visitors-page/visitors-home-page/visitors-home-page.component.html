@@ -1,1 +1,94 @@
-<p>visitors-home-page works!</p>
+<div class="container-fluid visitor-home-conatiner">
+    <div class="visitor-home-banner background-image" [ngStyle]="{'background-image': getVisitorBannerImageUrl()}">
+        <div class="visitor-home-title">
+            <h1><b>WELCOME</b></h1>
+        </div>
+    </div>
+
+    <div class="visitor-home-content">
+        <div id="visitorCardSection" class="visitor-section">
+            <h3><b>TELL US ABOUT YOURSELF</b></h3>
+            <p>We would love to get to know you and get in touch with you.<br>Please feel free to fill in our Visitors Card.</p>
+            <button id="visitorCardButton" 
+                    class="btn btn-success btn-green"
+                    (click)="navigateToLink('/visitors/card')" >
+                <b>VISITORS CARD</b>
+            </button>
+        </div>
+
+        <hr>
+
+        <div id="whatToExpectSection" class="visitor-section">
+            <h3><b>WHAT TO EXPECT</b></h3>
+            <p>We can't wait to meet you for your first visit. Here's what to expect from our gatherings.</p>
+            
+            <div class="row icon-row">
+                <div class="col-lg-3 col-sm-6 text-center icon-col">
+                    <i class="visitor-icon bi bi-car-front"></i>
+                    <br><h5>Secure parking</h5>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-center icon-col">
+                    <i class="visitor-icon bi bi-hand-thumbs-up"></i>
+                    <br><h5>Wheelchair access</h5>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-center icon-col">
+                    <i class="visitor-icon bi bi-emoji-smile"></i>
+                    <br><h5>Friendly greeters at the door</h5>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-center icon-col">
+                    <i class="visitor-icon bi-chevron-double-up"></i>
+                    <br><h5>Kids and teens ministries</h5>
+                </div>
+            </div>
+            <div class="row icon-row">
+                <div class="col-lg-3 col-sm-6 text-center icon-col">
+                    <i class="visitor-icon bi bi-house-heart"></i>
+                    <br><h5>Moms & Babies facilities</h5>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-center icon-col">
+                    <i class="visitor-icon bi bi-music-note-beamed"></i>
+                    <br><h5>Contemporary live music</h5>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-center icon-col">
+                    <i class="visitor-icon bi bi-chat-square-heart"></i>
+                    <br><h5>Relevant topical message</h5>
+                </div>
+                <div class="col-lg-3 col-sm-6 text-center icon-col">
+                    <i class="visitor-icon bi bi-cup-hot"></i>
+                    <br><h5>Coffee and scones</h5>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div id="nextStepsSection" class="visitor-section">
+            <h3><b>NEXT STEPS</b></h3>
+            <br>
+            <h5><b>Get connected to New Creation</b></h5>
+            <p>
+                If you would like to know more about what it means to be a member of this church family, please contact the church office, or join us at our Connect Table at our Connect Sunday celebration. Meet some of the elders and pastors, ask questions and enjoy a cup of coffee and a scone together with others. Connect Sundays will be advertised in our monthly newsletter and/or during notices. You can register ahead of time with the church office, or arrive at the table on the day.
+            </p>
+            <br>
+            <h5><b>Participate in our Heart & Soul seminar</b></h5>
+            <p>
+                After attending the Church for a period of time, we encourage those new to the Church to join our Heart and Soul seminar. This course will be hosted on two consecutive Sunday mornings, once a term, at the same time as a Sunday celebration. Heart and Soul gives basic foundational principles of what we believe as a Church in an interactive seminar. This seminar is optional, though we encourage everyone to participate.
+            </p>
+        </div>
+
+        <hr>
+
+        <div id="contactUs" class="visitor-section">
+            <h3><b>CONTACT US</b></h3>
+            <p>Please contact us if you have questions or special requirements for your visit.</p>
+            <button id="visitorCardButton" 
+                    class="btn btn-success btn-green"
+                    data-bs-toggle="modal"
+                    data-bs-target="#getInTouchModal">
+                <b>CONTACT US</b>
+            </button>
+        </div>
+    </div>
+</div>
+
+<app-contact-modal></app-contact-modal>

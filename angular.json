@@ -26,10 +26,12 @@
                         "assets": ["src/assets"],
                         "styles": [
                             "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+                            "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
                             "./node_modules/hamburgers/dist/hamburgers.css",
                             "src/styles/colors.scss",
                             "src/styles/constants.scss",
-                            "src/styles/base.scss"
+                            "src/styles/base.scss",
+                            "node_modules/ngx-toastr/toastr.css"
                         ],
                         "scripts": [
                             "./node_modules/jquery/dist/jquery.min.js",

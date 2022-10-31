@@ -25,7 +25,8 @@ export const imageUrls = {
     ncSonKidzLogoImageUrl: `${environment.imageUrl}/logos/nc_sonkidz.png`,
     ncKidzSundayLogoImageUrl: `${environment.imageUrl}/logos/nc_kidz_sunday.png`,
 
-    // Visitor Card Page
+    // Visitor Pages
+    visitorHomeBannerImageUrl: `assets/images/backgrounds/visitor-home-background.jpg`,
     visitorCardBannerImageUrl: `assets/images/backgrounds/visitor-card-background.jpg`,
 
     // About Us
