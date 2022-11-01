@@ -48,6 +48,7 @@ export class NavbarComponent implements OnInit {
     ngOnInit(): void {
         this.loadingService.startLoading();
         this.initializeUrlChangeListener();
+        this.determineNavbarItems();
 
         if (this.currentUrl != null && this.currentUrl !== this.HOME) {
             this.setNonHomeNavbarClasses();
@@ -64,6 +65,7 @@ export class NavbarComponent implements OnInit {
                 this.loadingService.startLoading();
 
                 this.currentUrl = url;
+                this.determineNavbarItems();
                 if (this.currentUrl != null && this.currentUrl === this.HOME) {
                     this.triggerNavbarTransform();
                 } else {
@@ -74,6 +76,14 @@ export class NavbarComponent implements OnInit {
                 this.loadingService.stopLoading();
             }
         );
+    }
+
+    determineNavbarItems() {
+        if (this.currentUrl?.includes("/nc-kidz")) {
+            this.currentNavbarItems = navbarItems.ncKids.items;
+        } else {
+            this.currentNavbarItems = navbarItems.homePage.items;
+        }
     }
 
     toggleNavbar() {

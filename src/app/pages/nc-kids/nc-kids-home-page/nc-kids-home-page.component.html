@@ -1,0 +1,373 @@
+<div class="container-fluid nc-kids-home-container">
+    <div id="ncHomeBannerRow" 
+         class="nc-kidz-content background-image" 
+         [ngStyle]="{'background-image': getNcHomeBannerImageUrl()}">
+        <h2 id="ncTitle">
+            <b>NC KIDZ</b>
+        </h2>        
+
+        <p><b>Click here to register your children</b></p>
+        <button class="btn btn-green btn-success" 
+                data-bs-toggle="modal" 
+                data-bs-target="#registerModal">
+            <b>REGISTRATION</b>
+        </button>  
+    </div>
+
+    <div id="ncKidzWhatRow" class="nc-kidz-content">
+        <h2>What is NC Kidz?</h2>
+        <hr><br>
+        <p>
+            NC Kidz is a ministry of New Creation Family Church!<br>This ministry, through fellowship between children and leaders, focuses on equipping the children of God's Kingdom, "Train a child in the way he should go and when he is old he will not turn from it," Proverbs 22:6.<br>NC Kidz provides a fun way of teaching Christian values and principles to children as a foundation for their future development in and for Christ, and aims at providing them with the building blocks for their relationship with God. NC Kidz is made up of five sub ministries: NC Babies, NC Glowkidz, NC Kidz Sunday, Jam Sessions, and 412!
+        </p>
+
+        <div class="row">
+            <div class="logo-col col-lg-12 col-sm-12 col-xs-12">
+                <div class="whatsapp-container">
+                    <i class="whatsapp-logo bi bi-whatsapp"></i>
+                    <p><b>NC Kidz Online</b></p>
+                    <p>Join our NC Kidz Online WhatsApp group to get in touch<br>and keep up to date with all of the latest information.</p>
+                    <a id="ncKidsWhatsAppLink" 
+                       class="btn btn-green btn-success" 
+                       href="https://chat.whatsapp.com/HRzMHQ80dkn6OKMQAGWi1Y" 
+                       target="_blank">
+                        <b>JOIN GROUP</b>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="nc-babies-row" class="nc-kidz-content">            
+        <h2>What is NC Babies?</h2>
+        <hr>
+        <img class="nc-kidz-image" [src]="ncBabiesLogoImageUrl" alt="NC Babies Logo" width="350"> 
+        <p>
+            <b>Age:</b> 6 months - 3 years<br>
+            <b>When:</b> Sunday 9:00 - 10:30 
+        </p>           
+        <p>
+            NC Babies is a sub ministry of NC Kidz, which is aimed at babies aged 6 months-3 years every Sunday morning 9:00-10:30. NC Babies is a weekly program driven meeting hosted at the New Creation Family Church on a Sunday morning. The aim and purpose of NC Babies is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC Babies achieves this through a simple parent to baby interactive program that uses songs and visuals.
+        </p>
+        <br>
+        
+        <button class="btn btn-blue" routerLink="/nc-kidz/babies" (click)="scrollToTop()">
+            <b>READ MORE</b>
+        </button>
+    </div>
+
+    <div id="nc-sonkidz-row" class="nc-kidz-content">
+        <h2>What is NC SonKidz?</h2>                  
+        <hr>      
+        <img class="nc-kidz-image" [src]="ncSonKidzLogoImageUrl" alt="NC Sonkidz Logo" width="350"> 
+        <p>
+            <b>Age:</b> 3 - 4 years<br>
+            <b>When:</b> Sunday 9:00 - 10:30            
+        </p>          
+        <p>
+            NC SonKidz is a sub ministry of NC Kidz, which is aimed at toddlers aged 3-4 years every Sunday morning 9:00-10:30. NC SunKidz is a weekly program driven meeting hosted at the New Creation Family Church on a Sunday morning. The aim and purpose of NC SonKidz is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC NC SonKidz achieves this through a simple parent led program that consists of; singing songs, bible story based lessons, fun dramas and puppet shows, and lesson focused activities! 
+        </p>
+        <br>
+        
+        <button class="btn btn-blue" routerLink="/nc-kidz/sonkidz" (click)="scrollToTop()">
+            <b>READ MORE</b>
+        </button>
+    </div>
+
+    <div id="nc-glowkidz-row" class="nc-kidz-content">
+        <h2>What is NC GlowKidz?</h2>   
+        <hr>         
+        <img class="nc-kidz-image" [src]="ncGlowKidzLogoImageUrl" alt="NC GlowKidz Logo" width="350">
+        <p>
+                <b>Age:</b> 4 - 6 years<br>
+                <b>When:</b> Sunday 9:00 - 10:30                      
+        <p>            
+        <p>
+            NC Glowkidz is a sub ministry of NC Kidz, which is aimed at toddlers aged 4-6 years every Sunday morning 9:00-10:30. NC Glowkidz is a weekly program driven meeting hosted at the New Creation Family Church on a Sunday morning. The aim and purpose of NC Glowkidz is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC Glowkidz achieves this through a simple parent led program that consists of; singing songs, bible story based lessons, fun dramas and puppet shows, and lesson focused activities!
+        </p>
+        <br>
+        
+        <button class="btn btn-blue" routerLink="/nc-kidz/glowkids" (click)="scrollToTop()">
+            <b>READ MORE</b>
+        </button>
+    </div>
+
+    <div id="nc-sunday-row" class="nc-kidz-content">
+        <h2>What is NC Kidz Sunday?</h2>     
+        <hr>       
+        <img class="nc-kidz-image" [src]="ncKidzSundayLogoImageUrl" alt="NC Kidz Sunday Logo" width="350">            
+        <p>
+            <b>Age:</b> 6 - 13 years<br>
+            <b>When:</b> Sunday 9:00 - 10:30                      
+        <p>
+        <p>
+            NC Kidz Sunday is a sub ministry of NC Kidz, which is aimed at children aged 6-13 years every Sunday morning 9:00-10:30. NC Kidz Sunday is a weekly program driven meeting hosted at the New Creation Family Church on a Sunday morning. The aim and purpose of NC Kidz Sunday is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC Kidz Sunday achieves this through a 1½ hour children's church service. The program consists of; praise and worship, prayer, Bible based teachings, activities, and games!
+        </p>
+        <br>
+        
+        <button class="btn btn-blue" routerLink="/nc-kidz/sunday" (click)="scrollToTop()">
+            <b>READ MORE</b>
+        </button>
+    </div>
+
+    <div id="jam-sessions-row" class="nc-kidz-content">
+        <h2>What is Jam Sessions?</h2>      
+        <hr>      
+        <img class="nc-kidz-image" [src]="ncJamLogoImageUrl" alt="Jam Sessions Logo" width="350">            
+        <p>
+            <b>Age:</b> 6 - 10 years<br>
+            <b>Grade:</b> 1 - 4<br>
+            <b>When:</b> Friday 17:00 - 19:00
+        <p>
+        <p>
+            Jam Sessions is a sub ministry of NC Kidz, which is aimed at children aged 6-10 years or Grades 1-4 every term Friday 17:00-19:00. Jam Sessions is a weekly program driven meeting hosted at the New Creation Family Church Auditorium on a Friday Evening. The aim and purpose of Jam Sessions is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. Jam stands for "Jesus And Me", which is the heart of what Jam Sessions wishes to do, Bring Jesus into the hearts of the children and allow Him to be first in our Lives. Jam Sessions achieves this by; encouraging the children to build a strong relationship with Jesus, discipleship of the children through strong mentor based relationships with leaders, and through a fun filled program of Praise, Worship, Teachings and Activities.
+        </p>
+        <br>
+        
+        <button class="btn btn-blue" routerLink="/nc-kidz/jam-sessions" (click)="scrollToTop()">
+            <b>READ MORE</b>
+        </button>
+    </div>
+
+    <div id="412-row" class="nc-kidz-content"> 
+        <h2>What is 412?</h2>           
+        <hr> 
+        <img class="nc-kidz-image" [src]="ncFourTwelveLogoImageUrl" alt="412 Logo" width="350">            
+        <p>
+            <b>Age:</b> 11 - 13 years<br>
+            <b>Grade:</b> 5 - 7<br>
+            <b>When:</b> Friday 17:00 - 19:00                      
+        <p>
+        <p>
+            412 is a sub ministry of NC Kidz, which is aimed at children aged 11-13 years or Grades 5-7 every term Friday 17:00-19:00. 412 is a weekly program driven meeting hosted at the New Creation Family Church Auditorium on a Friday Evening. The aim and purpose of 412 is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. The name 412 comes from 1 Timothy 4:12 "Don't let anyone think less of you because you are young. Be an example to all believers in what you say, in the way you live, in your love, your faith, and your purity". This is the heart of 412, to encourage and disciple the children to have a relationship with Jesus, to live a life of purity, integrity, and compassion, and to serve others with humility and love! 412 achieves this by; encouraging the children to build a strong relationship with Jesus, discipleship of the children through strong mentor based relationships with leaders, and through a fun filled program of Praise, Worship, Teachings and Small Group discussion.
+        </p>
+        <br>
+        
+        <button class="btn btn-blue" routerLink="/nc-kidz/412" (click)="scrollToTop()">
+            <b>READ MORE</b>
+        </button>
+    </div>
+
+    <div id="our-values-row" class="nc-kidz-content">
+        <h2>Our Values</h2>
+        <hr><br>
+        <h4>PASSION FOR JESUS, WORSHIP & PRAYER</h4><br>
+        <p>
+            We believe that every child is called to a have a total commitment to the Lordship of Jesus Christ, and to live a life being led by the Holy Spirit. We believe that true worship is a lifestyle of obedience to God rather than only a special activity. This lifestyle leads to expressions of worshipping the Lord like thanksgiving, praise, adoration, and intimate worship using songs, instruments, dance and drama.  We believe that prayer is an important part in growing your passion and relationship with Father God.
+        </p>
+        <br><br>
+
+        <h4>BUILDING STRONG RELATIONSHIPS AND FAMILIES</h4><br>
+        <p>
+            We believe that genuine relationships should permeate every part of church life.  We are committed to community and to team ministry.  We believe that transformation happens best through friendship, discipleship, outreach, serving others, internship and accountability. We believe that the church is called to bring healing to the wounded family.  This includes encouraging and ministering to parents and children.  We believe that the church is called to heal the broken-hearted and set the captives free in the power of the Holy Spirit.  This includes healing of spirit, soul and body through the Word of God, prayer and supportive relationships.
+        </p>
+        <br><br>
+
+        <h4>EVERY BELIEVER SERVING IN MINISTRY WITH A GREAT COMMISSION MINDSET</h4><br>
+        <p>
+            We believe that lost people are important to God and therefore ought to be important to the church. We are called to make disciples and not just converts. We believe that every follower of Jesus is called to the work of the ministry. This includes raising up leaders who will in turn raise up others to do the same. We believe we are to serve others with meekness and compassion, not being concerned only with our own interests, but expressing Christ's tender-hearted compassion and attitude of servanthood in all that we do.
+        </p>
+        <br><br>
+
+        <h4>POWER OF GOD'S WORD</h4><br>
+        <p>
+            We believe in the power and absolute truth of God's Word.  We believe that anointed teaching of, and personal study and meditation in, God's Word renews the mind and transforms lives.  This includes equipping and training for the work of ministry.
+        </p>
+        <br><br>
+
+        <h4>KINGDOM THINKING, HOLINESS & CHARACTER</h4><br>
+        <p>
+            We believe that we are called to unite and flow with the whole Body of Christ to reach our communities.  We believe in honouring one another, dwelling in unity and mutual sharing of resources, gifts and abilities.  We believe that we are called to live a life of character, which includes honesty, integrity, humility, meekness, self-discipline, teachability, perseverance, and a servant heart.
+        </p>
+        <br><br>
+
+        <h4>EXCELLENCE</h4><br>
+        <p>
+            We believe that Biblical excellence (doing the very best with what God has given) honours God and inspires people. This involves working with a strategic focus and then evaluating and reviewing our actions.
+        </p>
+        <br><br>
+
+    </div>
+
+    <div id="our-vision-mission-row" class="nc-kidz-content">
+        <h2>Our Vision and Mission</h2>
+        <hr><br>
+        <p>
+            NCFC Kidz wants to impart, train, disciple and raise a generation of young children who know God, know who they are in God, and want to serve God with all they can! The aim is to provide the greatest and basic foundations for children to have a personal relationship with God and to become real examples of a Christ follower. NCFC Kidz aims to create a place where children can learn and share their experiences and encounters with God so to inspire others around them to get closer to Father God. We want Kids to live a Christ centered life.
+        </p>
+    </div>
+
+    <div id="nc-goal-row" class="nc-kidz-content">
+        <h2>Our Goal for NC Kidz</h2>
+        <hr><br>
+        <p>
+            Our Goal is to have Christ-filled children, who receive and impart Godly characteristics in all aspects of Christian growth and development. This is achieved through committed and spirit led leaders who serve all children attending NCFC Kidz in a fun and creative manner in the following ways:            
+        </p>
+        <br>
+        
+        <ul>
+            <li>
+                Teachings - The use of themes; which are divided into weekly interactive lessons; that disciple, train, and encourage spiritual growth. Each lesson is taught by an Administration or Senior Leader and aims to be understandable and fun! All lessons are flexible, yet closely monitored.
+            </li>
+            <li>
+                Games - The use of planned and fun games. The games we play are lesson focused and encourage an atmosphere of fun. The leaders all help by making sure all games are safe and enjoyable!
+            </li>
+            <li>
+                Praise & Worship - Praising God for all He has done and is going to do is such an awesome part of NCFC Kidz. We aim to teach children to worship and praise God in a fun yet God honoring manner. We have praise songs, which we all dance and sing along with, and worship songs where we all quietly worship God in our own special way.
+            </li>
+            <li>
+                Drama & Dance - With the leaders and kids together; we serve God with an awesome dance team who help with the praise and worship, and a talented drama team who help give funny and real illustrations to the lessons each week!                    
+            </li>
+            <li>
+                Sessions/Groups/Zones - Sessions/Groups/Zones are a vital part of what we do at NCFC Kidz. Each week we divide all the children into what we call sessions/groups/or zones, according to their ages, genders or just in numbers.  In the sessions the kids:
+            </li>
+        </ul>   
+
+        <ol>
+            <li>Chat 1 on 1 with leader, to either grow friendships, ask questions, or to discuss the teaching for the week,</li>
+            <li>Learn and practice memory verses,</li>
+            <li>Read and learn bible stories,</li>
+            <li>Receive illustrations or explanations on the teaching for the week,</li>
+            <li>Perform activities (crafts, puzzles, etc) based on the weeks lesson, or</li>
+            <li>Have times of prayer with each other and/or with the leader!</li>
+        </ol>
+    </div>
+
+    <div id="contact-row" class="nc-kidz-content">
+        <h2>Contact Us</h2>
+        <hr>
+        <p>
+            For more info contact Piet at:<br>011 792 1151 or piet@newcreation.co.za
+        </p>
+    </div>
+</div>
+
+<div class="modal" 
+     id="registerModal"
+     tabindex="-1"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">NC Kidz Registration</h3>
+                <button type="button" 
+                        class="btn-close" 
+                        data-bs-dismiss="modal" 
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    With the information given, we will keep you updated as to the events and times of all the Children's Ministry programmes. Please fill in the information you feel comfortable with.
+                    <br><br>
+                    <div class="mb-3">
+                        <span class="required-field">*</span><sup> - Required field</sup>
+                    </div>                    
+
+                    <div class="mb-3">
+                        <label for="child-name">Child's Name: <span class="required-field">*</span></label>
+                        <input type="text" class="form-control" id="child-name" name="child-name" [(ngModel)]="child.firstName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="child-surname">Child's Surname: <span class="required-field">*</span></label>
+                        <input type="text" class="form-control" id="child-surname" name="child-surname" [(ngModel)]="child.surname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mother-name">Mother's Name: <span class="required-field">*</span></label>
+                        <input type="text" class="form-control" id="mother-name" name="mother-name" [(ngModel)]="child.motherFirstName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="father-name">Father's Name:</label>
+                        <input type="text" class="form-control" id="father-name" name="father-name" [(ngModel)]="child.fatherFirstName">
+                    </div>
+                    
+                    <label>Date of birth: <span class="required-field">*</span></label>
+                    <div id="dob-row" class="mb-3 row g-3">                        
+                        <div class="col">
+                            <select #dobday id="dobday" class="form-select" name="dobday" [(ngModel)]="childDOB.day" (click)="verifyDOB()" required>
+                            <option value="" disabled selected>Day</option>
+                            <option *ngFor="let day of days" [value]="day">{{day}}</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select #dobmonth id="dobmonth" class="form-select" name="dobmonth" [(ngModel)]="childDOB.month" (click)="verifyDOB()" required>
+                            <option value="" disabled selected>Month</option>
+                            <option *ngFor="let month of months; let i = index" [value]="getMonthValue(i)" [attr.disabled]="+childDOB.day > 29 && month == 'February' ? 'disabled' : null">{{month}}</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select #dobyear id="dobyear" class="form-select" name="dobyear" [(ngModel)]="childDOB.year" (click)="verifyDOB()" required>
+                            <option value="" disabled selected>Year</option>
+                            <option *ngFor="let year of years" [value]="year">{{year}}</option>
+                            </select>
+                        </div>                                         
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="email">Email address: </label>
+                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="mother-contact">Mother's Number: <span class="required-field">*</span></label>
+                        <input type="text" class="form-control" id="mother-contact" name="mother-contact" [(ngModel)]="child.motherContactNumber" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="father-contact">Father's Number:</label>
+                        <input type="text" class="form-control" id="father-contact" name="father-contact" [(ngModel)]="child.fatherContactNumber">
+                    </div><br>
+
+                    <div class="mb-3">
+                        <label>Ministry: <span class="required-field">*</span></label>
+                    </div>
+                    <div class="mb-3">                        
+                        <input #ministry1 type="checkbox" value="NCBabies" name="ncbabies-check" [(ngModel)]="babiesMinistry">&nbsp;&nbsp;NC Babies (0 - 3 years)<br>
+                        <input #ministry2 type="checkbox" value="Sonkidz" name="sonkidz-check" [(ngModel)]="sonkidzMinistry">&nbsp;&nbsp;Sonkidz (3 - 4 years)<br>
+                        <input #ministry3 type="checkbox" value="Glowkidz" name="glowkidz-check" [(ngModel)]="glowkidzMinistry">&nbsp;&nbsp;Glowkidz (4 - 5 years)<br>
+                        <input #ministry4 type="checkbox" value="NCKidz Sunday" name="sunday-check" [(ngModel)]="sundayMinistry">&nbsp;&nbsp;NC Kidz Sunday (6 - 13 years)<br>
+                        <input #ministry5 type="checkbox" value="NCKidz Friday" name="friday-check" [(ngModel)]="fridayMinistry">&nbsp;&nbsp;NC Kidz Friday (6 - 13 years)
+                    </div><br>
+
+                    <div class="mb-3">
+                        <label for="">Add to WhatsApp groups? <span class="required-field">*</span></label>
+                        <div class="radio">
+                            <label><input type="radio" name="yes" value="1" [(ngModel)]="whatsApp">&nbsp;Yes</label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" name="no" value="0" [(ngModel)]="whatsApp">&nbsp;No</label>
+                        </div>
+                    </div><br>
+                    
+                    <div class="mb-3" *ngIf="errors.length > 0">
+                        <div class="alert alert-danger">                            
+                            <ul>
+                                <li *ngFor="let error of errors">{{error}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>                
+                
+            </div>
+            <div class="modal-footer">
+                <button *ngIf="!isLoading" 
+                        type="submit" 
+                        class="btn btn-green btn-success" 
+                        (click)="submitForm()">
+                    <b>SUBMIT</b>
+                </button>
+                <button *ngIf="isLoading" 
+                        class="btn btn-default btn-green btn-success submit-button" 
+                        type="button" 
+                        disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    &nbsp;<b>SENDING...</b>
+                </button>
+                <button id="close-modal-btn" 
+                        type="button" 
+                        class="btn btn-default" 
+                        data-bs-dismiss="modal">
+                    <b>CLOSE</b>
+                </button> 
+            </div>
+        </div>
+    </div>
+</div>

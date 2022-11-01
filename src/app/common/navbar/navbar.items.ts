@@ -43,4 +43,43 @@ export const navbarItems = {
             },
         ],
     },
+    ncKids: {
+        items: [
+            {
+                name: 'KIDZ HOME',
+                routerLink: '/nc-kidz',
+                dropdownItems: []
+            },
+            {
+                name: 'BABIES',
+                routerLink: '/nc-kidz/babies',
+                dropdownItems: []
+            },
+            {
+                name: 'SONKIDZ',
+                routerLink: '/nc-kidz/sonkidz',
+                dropdownItems: []
+            },
+            {
+                name: 'GLOWKIDZ',
+                routerLink: '/nc-kidz/glowkidz',
+                dropdownItems: []
+            },
+            {
+                name: 'SUNDAY',
+                routerLink: '/nc-kidz/nc-kids',
+                dropdownItems: []
+            },
+            {
+                name: 'JAM',
+                routerLink: '/nc-kidz/jam',
+                dropdownItems: []
+            },
+            {
+                name: '412',
+                routerLink: '/nc-kidz/412',
+                dropdownItems: []
+            },
+        ]
+    }
 };

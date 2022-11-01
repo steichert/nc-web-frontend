@@ -20,6 +20,7 @@ import { ConnectPageModule } from './pages/connect-page/connect-page.module';
 import { ParagraphContentModule } from './common/paragraph-content/paragraph-content.module';
 import { MissionsPageModule } from './pages/missions-page/missions-page.module';
 import { VisitorsPageModule } from './pages/visitors-page/visitors-page.module';
+import { NcKidsModule } from './pages/nc-kids/nc-kids.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -41,6 +42,7 @@ import { VisitorsPageModule } from './pages/visitors-page/visitors-page.module';
         ParagraphContentModule,
         MissionsPageModule,
         VisitorsPageModule,
+        NcKidsModule,
         BrowserAnimationsModule,
         // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
         ToastrModule.forRoot()

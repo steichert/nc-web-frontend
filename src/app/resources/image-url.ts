@@ -17,7 +17,7 @@ export const imageUrls = {
     synergyInMissionsUrl: `${environment.imageUrl}/logos/synergy-in-mission.jpg`,
 
     // NC Kids
-    ncKidsHomeBannerImageUrl: `${environment.imageUrl}/backgrounds/nc-kidz-home-banner.jpg`,
+    ncKidsHomeBannerImageUrl: `assets/images/backgrounds/nc-kidz-home-banner.jpg`,
     ncBabiesLogoImageUrl: `${environment.imageUrl}/logos/nc_babies.png`,
     ncGlowKidzLogoImageUrl: `${environment.imageUrl}/logos/nc_glowkids.png`,
     ncFourTwelveLogoImageUrl: `${environment.imageUrl}/logos/412.png`,

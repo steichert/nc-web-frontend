@@ -1,0 +1,152 @@
+.nc-kids-home-container {
+    text-align: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+#ncHomeBannerRow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 400px;
+    width: 100%;
+    color: #fff;
+}
+
+#ncTitle {
+    display: inline-flex;
+    padding-top: 12%;
+    padding-bottom: 5%;
+    font-size: 52px;
+}
+
+#ncKidzWhatRow {
+    padding-top: 30rem;
+}
+
+.logo-col {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.whatsapp-container {
+    text-align: center;
+    border-radius: 100px;
+    border-color: white;
+    /* font-size: 20px; */
+}
+
+.whatsapp-logo {
+    color: #39a542;
+    font-size: 60px;
+    margin-bottom: 1%;
+}
+
+#ncKidsWhatsAppLink {
+    margin-top: 1%;
+}
+
+
+.nc-kidz-content {
+    margin-bottom: 10%;
+}
+
+#back-btn-link {
+    text-decoration: none;
+    color: #333;    
+}
+
+#back-btn {
+    position: absolute;
+    top: 1%;
+    left: 2%;
+    font-size: 120%;
+}
+
+hr {
+    border-color: rgb(218, 218, 218) !important;
+}
+
+.row {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+}
+
+p {
+    /* letter-spacing: 1px !important; */
+    font-size: 125%;
+}
+
+ol, ul {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    font-size: 100%;
+    letter-spacing: 1px !important;
+}
+
+ol {
+    margin-left: 5%;
+}
+
+ul li {
+    padding-bottom: 10px;
+}
+
+ol li {
+    padding-bottom: 10px;
+}
+
+#dob-row {
+    display: block;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 15px;
+}
+
+#dob-row .col-sm-12 {
+    padding-left: 0;
+}
+
+.required-field {
+    color: orange;
+}
+
+#contact-row {
+    margin-bottom: 10%;
+}
+
+@media screen and (max-width: 767px) {
+    .nc-kidz-content {
+        padding-top: 10%;
+    }
+
+    .nc-kidz-image {
+        width: 200px;
+        margin-bottom: 5%;
+    }
+
+    .modal-dialog {
+        margin: 0;
+    }
+    
+    .modal-content {
+        border-radius: 0;
+    }
+
+    #back-btn {
+        visibility: hidden;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #ncTitle {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #ncTitle {
+        margin-top: 25%;
+    }
+}
