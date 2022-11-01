@@ -5,7 +5,13 @@ import { ConnectPageComponent } from './pages/connect-page/connect-page.componen
 import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MissionsPageComponent } from './pages/missions-page/missions-page.component';
+import { NcKidsBabiesPageComponent } from './pages/nc-kids/nc-kids-babies-page/nc-kids-babies-page.component';
+import { NcKidsFourTwelvePageComponent } from './pages/nc-kids/nc-kids-four-twelve-page/nc-kids-four-twelve-page.component';
+import { NcKidsGlowkidsPageComponent } from './pages/nc-kids/nc-kids-glowkids-page/nc-kids-glowkids-page.component';
 import { NcKidsHomePageComponent } from './pages/nc-kids/nc-kids-home-page/nc-kids-home-page.component';
+import { NcKidsJamPageComponent } from './pages/nc-kids/nc-kids-jam-page/nc-kids-jam-page.component';
+import { NcKidsSonkidsPageComponent } from './pages/nc-kids/nc-kids-sonkids-page/nc-kids-sonkids-page.component';
+import { NcKidsSundayPageComponent } from './pages/nc-kids/nc-kids-sunday-page/nc-kids-sunday-page.component';
 import { SermonsPageComponent } from './pages/sermons-page/sermons-page.component';
 import { VisitorsCardPageComponent } from './pages/visitors-page/visitors-card-page/visitors-card-page.component';
 import { VisitorsHomePageComponent } from './pages/visitors-page/visitors-home-page/visitors-home-page.component';
@@ -29,6 +35,12 @@ const routes: Routes = [
         path: 'nc-kidz',
         children: [
             { path: '', component: NcKidsHomePageComponent, pathMatch: 'full' },
+            { path: 'babies', component: NcKidsBabiesPageComponent, pathMatch: 'full' },
+            { path: 'sonkidz', component: NcKidsSonkidsPageComponent, pathMatch: 'full' },
+            { path: 'glowkidz', component: NcKidsGlowkidsPageComponent, pathMatch: 'full' },
+            { path: 'sunday', component: NcKidsSundayPageComponent, pathMatch: 'full' },
+            { path: 'jam', component: NcKidsJamPageComponent, pathMatch: 'full' },
+            { path: '412', component: NcKidsFourTwelvePageComponent, pathMatch: 'full' },
             { path: '**', redirectTo: '/nc-kidz', pathMatch: 'full' }
         ]
     },

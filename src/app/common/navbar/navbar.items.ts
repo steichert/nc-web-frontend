@@ -67,7 +67,7 @@ export const navbarItems = {
             },
             {
                 name: 'SUNDAY',
-                routerLink: '/nc-kidz/nc-kids',
+                routerLink: '/nc-kidz/sunday',
                 dropdownItems: []
             },
             {

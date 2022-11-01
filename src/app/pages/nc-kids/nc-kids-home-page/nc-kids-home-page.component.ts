@@ -265,4 +265,8 @@ export class NcKidsHomePageComponent implements OnInit {
         return 'url(\'' + this.ncKidsHomeBannerImageUrl + '\')';
     }
 
+    public navigateToLink(link: string) {
+        this.router.navigateByUrl(link);
+    }
+
 }

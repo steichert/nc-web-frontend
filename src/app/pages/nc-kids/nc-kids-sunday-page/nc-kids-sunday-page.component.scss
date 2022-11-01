@@ -1,0 +1,66 @@
+.nc-kids-sunday-container {
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.nc-kidz-image {
+    margin-top: 10rem;
+}
+
+.row {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 5%;
+}
+
+p {
+    letter-spacing: 1px !important;
+    font-size: 125%;
+}
+
+ol, ul {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: left;
+    font-size: 100%;
+    letter-spacing: 1px !important;
+}
+
+ol {
+    margin-left: 5%;
+}
+
+ul li {
+    padding-bottom: 10px;
+}
+
+ol li {
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 1400px) {
+    .contact-row {
+        margin-bottom: 5%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contact-row {
+        margin-bottom: 10%;
+    }
+
+    .nc-kidz-image {
+        width: 180px;
+        margin-bottom: 5%;
+    }
+
+    #back-btn {
+        margin-top: 15% !important;
+    }
+}
+
+@media screen and (max-width: 68rem) {
+    .nc-kids-sunday-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
