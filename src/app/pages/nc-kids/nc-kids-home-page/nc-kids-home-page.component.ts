@@ -40,7 +40,7 @@ export class NcKidsHomePageComponent implements OnInit {
     @ViewChild('ministry2') ministry2: any;
     @ViewChild('ministry3') ministry3: any;
     @ViewChild('ministry4') ministry4: any;
-    @ViewChild('ministry4') ministry5: any;
+    @ViewChild('ministry5') ministry5: any;
 
     child: Child = new Child();
     email: string = "";
@@ -93,7 +93,7 @@ export class NcKidsHomePageComponent implements OnInit {
             if (this.sonkidzMinistry != "") this.ministries.push(this.ministry2.nativeElement.value);
             if (this.glowkidzMinistry != "") this.ministries.push(this.ministry3.nativeElement.value);
             if (this.sundayMinistry != "") this.ministries.push(this.ministry4.nativeElement.value); 
-            if (this.fridayMinistry != "") this.ministries.push(this.ministry4.nativeElement.value);      
+            if (this.fridayMinistry != "") this.ministries.push(this.ministry5.nativeElement.value);      
 
             this.child.dateOfBirth = this.childDOB.day+"-"+this.childDOB.month+"-"+this.childDOB.year;
             this.whatsApp = +this.whatsApp;

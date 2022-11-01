@@ -139,14 +139,25 @@ ol li {
     }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 920px) {
     #ncTitle {
-        margin-top: 20%;
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .nc-kids-home-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    #ncTitle {
+        margin-top: 4rem;
     }
 }
 
 @media screen and (max-width: 320px) {
     #ncTitle {
-        margin-top: 25%;
+        margin-top: 2em;
     }
 }
