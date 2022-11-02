@@ -7,7 +7,9 @@
         "mstart": "ng serve --host 0.0.0.0",
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
-        "test": "ng test"
+        "test": "ng test",
+        "build-prod": "ng build --prod --aot",
+        "build-test": "ng build --configuration=test --aot --base-href=/development/"
     },
     "private": true,
     "dependencies": {
