@@ -1,0 +1,51 @@
+.service-section {
+    color: white;
+    text-align: center;
+    height: 100%;
+}
+.service-title {
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+    padding-top: 5em;
+    color: white;
+}
+#churchOnlineButton {
+    margin-top: 1.5em;
+    width: 15em;
+}
+.service-details {
+    padding-top: 10em;
+    padding-bottom: 5em;
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+}
+.morning-service-details {
+    background-image: url('../../../../assets/images/backgrounds/morning-service.jpg');
+}
+.evening-service-details {
+    background-image: url('../../../../assets/images/backgrounds/evening-service.jpg');
+}
+/*
+*  Responsive styles
+*/
+@media (max-width: 68rem) {
+    #churchOnlineButton {
+        margin-top: 1.5em;
+    }
+    .service-details {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+    .morning-service-details {
+        padding-top: 18em;
+    }
+    .evening-service-details {
+        padding-top: 6em;
+    }
+}

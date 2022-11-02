@@ -61,6 +61,7 @@ export class NavbarComponent implements OnInit {
         this.navbarService.urlChange.subscribe(
             (url) => {
                 this.loadingService.startLoading();
+                this.scrollToTop();
                 this.currentUrl = url;
                 this.determineNavbarItems();
                 if (this.currentUrl != null && this.currentUrl === this.HOME) {
@@ -68,7 +69,6 @@ export class NavbarComponent implements OnInit {
                 } else {
                     this.setNonHomeNavbarClasses();
                 }
-                this.scrollToTop();
                 this.loadingService.stopLoading();
             }
         );
@@ -180,8 +180,7 @@ export class NavbarComponent implements OnInit {
 
     public scrollToTop() {
         window.scroll({
-            top: 0,
-            behavior: 'smooth'
+            top: 0
         });
     }
 

@@ -1,0 +1,38 @@
+.sermons-section {
+    text-align: center;
+}
+.sermons-title {
+    padding-top: 5em;
+    padding-bottom: 3em;
+}
+.sermon-video-container {
+    width: 100%;
+    height: 80vh;
+}
+.sermon-video-iframe {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+}
+.sermons-button-container {
+    margin-top: 5em;
+    margin-bottom: 5em;
+}
+#sermonButton {
+    width: 15em;
+}
+/*
+*  Responsive styles
+*/
+@media (max-width: 68rem) {
+    .sermon-video-container {
+        height: 50vh;
+        padding: 0;
+    }
+    .sermon-video-iframe {
+        width: 100%;
+    }
+    .sermons-button-container {
+        padding: 0;
+    }
+}

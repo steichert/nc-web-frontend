@@ -1,0 +1,41 @@
+.giving-section {
+    text-align: center;
+    background-color: #e9ecef;
+    padding-bottom: 5em;
+}
+.giving-title {
+    padding-top: 5em;
+    padding-bottom: 2em;
+}
+.giving-content {
+    padding: 2em 10em;
+}
+.giving-col {
+    min-height: 300px;
+    margin-bottom: 2em;
+}
+.giving-option {
+    background-color: white;
+    height: 100%;
+    margin-left: 8em;
+    margin-right: 8em;
+    border-radius: 5px;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+/*
+*  Responsive styles
+*/
+@media (max-width: 68rem) {
+    .giving-section {
+        padding-bottom: 2.5em;
+    }
+    .giving-content {
+        padding-left: 2.5em;
+        padding-right: 2.5em;
+    }
+    .giving-option {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}

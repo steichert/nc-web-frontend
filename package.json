@@ -8,8 +8,8 @@
         "build": "ng build",
         "watch": "ng build --watch --configuration development",
         "test": "ng test",
-        "build-prod": "ng build --prod --aot",
-        "build-test": "ng build --configuration=test --aot --base-href=/development/"
+        "build-prod": "ng build --configuration production",
+        "build-staging": "ng build --configuration staging --base-href=/development/"
     },
     "private": true,
     "dependencies": {

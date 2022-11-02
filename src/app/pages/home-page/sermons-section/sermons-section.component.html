@@ -1,0 +1,22 @@
+<div class="sermons-section row">
+    <div class="sermons-title">
+        <h2><b>SERMONS</b></h2>
+    </div>
+
+    <div class="sermon-video-container">
+        <iframe class="sermon-video-iframe"
+                src="https://www.youtube.com/embed/videoseries?list=PLEkUPWiPdGnuAzzVS1lGwPPQML71_VmA6" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="sermons-button-container">
+        <button id="sermonButton" 
+                class="btn btn-success btn-green" 
+                (click)="navigateToLink('/sermons')">
+            <b>ALL SERMONS</b>
+        </button>
+    </div>
+</div>

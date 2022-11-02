@@ -1,0 +1,34 @@
+.connect-section {
+    min-height: 25em;
+    text-align: center;
+    padding-bottom: 5em;
+    background-image: url('../../../../assets/images/backgrounds/connect-background.jpg');
+}
+.connect-title {
+    padding-top: 5em;
+    padding-bottom: 2em;
+}
+.connect-content {
+    padding-left: 10em;
+    padding-right: 10em;
+}
+.connect-button {
+    width: 15em;
+}
+@media (max-width: 68rem) {
+    .connect-content {
+        text-align: center;
+        padding-left: 5em;
+        padding-right: 5em;
+    }
+
+    .connect-button {
+        width: 12em;
+    }
+}
+@media (max-width: 18rem) {
+    .connect-content {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+}
