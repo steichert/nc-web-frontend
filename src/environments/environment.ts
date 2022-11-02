@@ -6,7 +6,7 @@ import { emailConfig } from "src/config/dev/email.config";
 
 export const environment = {
     production: false,
-    baseUrl: 'http://localhost:4200',
+    baseUrl: 'http://localhost:4200/#',
     emailDetails: emailConfig,
     // ncApiUrl: './api/nc-api',
     ncApiUrl: 'https://new-creation-backend.herokuapp.com/nc-api',
