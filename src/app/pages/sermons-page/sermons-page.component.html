@@ -18,19 +18,19 @@
                 </span>
             </div>
 
-            <h5><b>{{ activeSermon?.postTitle }}</b></h5>
-            <p>{{ activeSermon?.speaker }}</p>
-            <p>{{ activeSermon?.postDescription }}</p>
+            <h5><b>{{ activeSermon.postTitle }}</b></h5>
+            <p>{{ activeSermon.speaker }}</p>
+            <p>{{ activeSermon.postDescription }}</p>
         </div>
 
         <div id="activeSermonDateContainer" class="col-lg-3 col-4 sermon-date">
-            <p>{{ activeSermon?.sermonDateFormatted }}</p>
+            <p>{{ activeSermon.sermonDateFormatted }}</p>
         </div>
     </div>
 
     <div id="sermonAudioPlayerContainer" class="row">
         <audio id="sermonAudioPlayer" 
-                src="{{ activeSermon?.guid }}" 
+                src="{{ activeSermon.guid }}" 
                 type="audio/m4a" 
                 controls>
             Your browser does not support the audio element.
