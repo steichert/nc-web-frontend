@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { imageUrls } from 'src/app/resources/image-url';
 import { VALUES, STATEMENT_OF_FAITH, FAQS, GOVERNMENTAL_ELDERSHIP, PASTORAL_LEADERSHIP, CHURCH_STAFF } from 'src/app/resources/about-us-screen-constants';
+import { LoadingService } from 'src/app/services/loading/loading.service';
 
 @Component({
     selector: 'app-about-us-page',
@@ -24,11 +25,14 @@ export class AboutUsPageComponent implements OnInit {
     leadershipGrantAndLizImageUrl = imageUrls.leadershipGrantAndLizImageUrl;
     leadershipPaulAndMilaineImageUrl = imageUrls.leadershipPaulAndMilaineImageUrl;
 
-    constructor(private title: Title) { 
+    constructor(private title: Title,
+                private loadingService: LoadingService) { 
         this.title.setTitle(this.pageTitle);
     }
 
     ngOnInit(): void {
+        this.loadingService.startLoading();
+        this.loadingService.stopLoading();
     }
 
     public rotateValueChevronArrow(currentValue: any) {

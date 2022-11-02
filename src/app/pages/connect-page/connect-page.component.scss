@@ -202,11 +202,6 @@ ul {
 
 /* Join Team Modal */
 
-#joinTeamModal .modal-body {
-    padding-left: 120px;
-    padding-right: 120px;
-}
-
 .checkbox-container {
     text-align: left;
     border: 1px solid lightgray;
@@ -249,10 +244,9 @@ ul {
 
 /* Responsive */
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 68rem) {
     .modal-body {
-        padding-left: 20px;
-        padding-right: 20px;
-        padding-bottom: 20px;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }

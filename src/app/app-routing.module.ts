@@ -23,6 +23,9 @@ const routes: Routes = [
     { path: 'sermons', component: SermonsPageComponent, pathMatch: 'full' },
     { path: 'connect', component: ConnectPageComponent, pathMatch: 'full' },
     { path: 'missions', component: MissionsPageComponent, pathMatch: 'full' },
+    { path: 'services', component: HomePageComponent, data: { page_section: 'services' } },
+    { path: 'giving', component: HomePageComponent, data: { page_section: 'giving' } },
+    { path: 'contact', component: HomePageComponent, data: { page_section: 'contact' } },
     { 
         path: 'visitors', 
         children: [

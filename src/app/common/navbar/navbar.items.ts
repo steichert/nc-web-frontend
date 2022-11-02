@@ -38,7 +38,7 @@ export const navbarItems = {
             },
             {
                 name: 'CONTACT',
-                routerLink: null,
+                routerLink: '/contact',
                 dropdownItems: [],
             },
         ],

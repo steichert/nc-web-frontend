@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subject } from 'rxjs';
 import { ApiService } from 'src/app/services/api/api.service';
-import { EventService } from 'src/app/services/event/event.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
+import { NavbarService } from 'src/app/services/navbar/navbar.service';
 import { PostMapper } from 'src/app/utils/post.mapper';
 
 @Component({
@@ -16,17 +17,33 @@ export class HomePageComponent implements OnInit {
     pageTitle = 'Home | New Creation Family Church';
     numberOfLatestEvents = 4;
     events:any = [];
+    urlData: any;
 
     constructor(private title: Title, 
                 private loadingService: LoadingService,
                 private ncApi: ApiService,
                 private router: Router,
-                private eventService: EventService) {
+                private navbarService: NavbarService,
+                private route: ActivatedRoute) {
         this.title.setTitle(this.pageTitle);
     }
 
     ngOnInit(): void {
+        this.navbarService.setCurrentURL("/");
         this.fetchLatestEvents();
+
+        this.urlData = this.route.data.subscribe(
+            (data) => {
+                if (data != null && data['page_section'] != null) {
+                    setTimeout(() => {
+                        this.scrollToPageSection(data['page_section']);
+                    }, 500);
+                }
+            });
+    }
+
+    ngOnDestroy() {
+        this.urlData.unsubscribe();
     }
 
     private fetchLatestEvents(): void {
@@ -57,4 +74,13 @@ export class HomePageComponent implements OnInit {
         this.router.navigateByUrl(link);
     }
 
+    private scrollToPageSection(section: string) {
+        let pageSection = document.getElementById(section);
+        if (pageSection != null) {
+            var scrollTop = pageSection.offsetTop;       
+            window.scroll({
+                top: scrollTop,
+            });
+        }
+    }
 }

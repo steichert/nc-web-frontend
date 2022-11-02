@@ -7,11 +7,30 @@
             </div>
             
             <div class="row footer-row">
-                <div class="col-md-12 col-sm-12 ministry-col">
+                <div class="col-md-4 col-sm-12 home-col">
+                    <h4 class="footer-header">Home</h4>
+                    <ul class="footer-list">
+                        <li><a [href]="baseUrl + '/about'" target="_blank">About Us</a></li>
+                        <li><a [href]="baseUrl + '/sermons'" target="_blank">Sermons</a></li>
+                        <li><a [href]="baseUrl + '/events'" target="_blank">Events</a></li>
+                        <li><a [href]="baseUrl + '/connect'" target="_blank">Connect</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12 ministry-col">
                     <h4 class="footer-header">Ministries</h4>
                     <ul class="footer-list">
+                        <li><a [href]="baseUrl + '/nc-kidz'" target="_blank">NC Kidz</a></li>
+                        <li><a [href]="baseUrl + '/missions'" target="_blank">Missions Team</a></li>
                         <li><a href="https://www.thekingsschool.co.za" target="_blank">The King's School, Robin Hills</a></li>
                         <li><a href="https://www.oasishaven.org" target="_blank">Oasis Haven</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12 visitor-col">
+                    <h4 class="footer-header">Visitors</h4>
+                    <ul class="footer-list">
+                        <li><a [href]="baseUrl + '/contact'" target="_blank">Contact Us</a></li>
+                        <li><a [href]="baseUrl + '/visitors'" target="_blank">Visitors Page</a></li>
+                        <li><a [href]="baseUrl + '/visitors/card'" target="_blank">Visitors Card</a></li>
                     </ul>
                 </div>
             </div>

@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
     }
 
     public currentNavbarItems: any[];
-    public navbarVisible: boolean = false;
+    public navbarVisible: boolean;
     public navbarToggleSplit: number = 5; 
     public currentUrl: string | null;
 
@@ -41,20 +41,18 @@ export class NavbarComponent implements OnInit {
     constructor(private navbarService: NavbarService,
                 private loadingService: LoadingService,
                 private router: Router) {
+        this.navbarVisible = false;
         this.currentUrl = null;
         this.currentNavbarItems = navbarItems.homePage.items;
     }
 
     ngOnInit(): void {
-        this.loadingService.startLoading();
         this.initializeUrlChangeListener();
         this.determineNavbarItems();
 
         if (this.currentUrl != null && this.currentUrl !== this.HOME) {
             this.setNonHomeNavbarClasses();
         }
-
-        this.loadingService.stopLoading();
     }
 
     private initializeUrlChangeListener() {
@@ -63,7 +61,6 @@ export class NavbarComponent implements OnInit {
         this.navbarService.urlChange.subscribe(
             (url) => {
                 this.loadingService.startLoading();
-
                 this.currentUrl = url;
                 this.determineNavbarItems();
                 if (this.currentUrl != null && this.currentUrl === this.HOME) {
@@ -71,7 +68,6 @@ export class NavbarComponent implements OnInit {
                 } else {
                     this.setNonHomeNavbarClasses();
                 }
-                
                 this.scrollToTop();
                 this.loadingService.stopLoading();
             }

@@ -8,9 +8,7 @@
              *ngFor="let connect of getConnectedMinistries; let i = index">
             <div class="connect-image">
                 <a class="connect-link"
-                   (click)="setSelectedConnect(connect)" 
-                   data-bs-toggle="modal" 
-                   data-bs-target="#connectModal">
+                   (click)="triggerConnectItem(connect)">
                     <img [id]="'connectImage' + i" 
                          class="img-circle" 
                          [src]="connect.image" 
@@ -45,9 +43,7 @@
              [ngClass]="{'col-sm-6': i < getConnectedServing.length - 1, 'col-sm-12': i == getConnectedServing.length - 1}">
             <div class="connect-image">
                 <a class="connect-link" 
-                   (click)="setSelectedConnect(connect)" 
-                   data-bs-toggle="modal" 
-                   data-bs-target="#connectModal">
+                   (click)="triggerConnectItem(connect)">
                     <img [id]="'serveImage' + (i + getConnectedMinistries.length)" 
                          class="img-circle" 
                          [src]="connect.image" 

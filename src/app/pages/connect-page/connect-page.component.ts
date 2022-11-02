@@ -209,14 +209,16 @@ export class ConnectPageComponent implements OnInit {
         }
     }
 
-    public setSelectedConnect(connect: any) {
+    public triggerConnectItem(connect: any) {
         this.selectedConnect = connect;
 
         if (this.selectedConnect.label == "NC KIDZ") {
             this.router.navigate(['/nc-kidz']);
         } else if (this.selectedConnect.label == "MISSIONS") {
             this.router.navigate(['/missions']);
-        }        
+        } else {
+            this.openConnectModal();
+        }
     }
 
     public routeToNcKidz() {    
@@ -229,9 +231,14 @@ export class ConnectPageComponent implements OnInit {
         }, 350);
     }
 
+    public openConnectModal() {
+        setTimeout(() => {
+            $('#connectModal').modal('show');
+        }, 100);
+    }
+
     public setSelectedAreas(areas: any[]) {
         this.selectedAreas = areas;
-        console.log(this.selectedAreas);
     }
 
     public getConnectedModalImageUrl() {

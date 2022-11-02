@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { imageUrls } from 'src/app/resources/image-url';
 import { INTERNATIONAL_PROJECTS, LOCAL_PROJECTS, TRAINING_PROGRAMS } from 'src/app/resources/missions-screen-constants';
+declare var $ :any;
 
 @Component({
     selector: 'app-missions-page',
@@ -30,8 +31,12 @@ export class MissionsPageComponent implements OnInit {
     ngOnInit(): void {
     }
 
-    setSelectedMissionsArea(project: any) {
+    selectMissionsArea(project: any) {
         this.selectedMissionsArea = project;
+
+        setTimeout(() => {
+            $('#missionsModal').modal('show');
+        }, 100);
     }
 
     isLastProjectItem(projects: any, index: number) {

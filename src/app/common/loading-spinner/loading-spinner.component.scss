@@ -63,3 +63,9 @@ body, html {
         stroke-dashoffset: -200px;
     }
 }
+
+@media screen and (max-width: 38rem) {
+    .loading-container .stroke .line {
+        stroke-width: 4;   
+    }
+}
