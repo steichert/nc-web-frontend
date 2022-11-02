@@ -21,6 +21,8 @@ import { ParagraphContentModule } from './common/paragraph-content/paragraph-con
 import { MissionsPageModule } from './pages/missions-page/missions-page.module';
 import { VisitorsPageModule } from './pages/visitors-page/visitors-page.module';
 import { NcKidsModule } from './pages/nc-kids/nc-kids.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
     declarations: [AppComponent],
@@ -44,8 +46,13 @@ import { NcKidsModule } from './pages/nc-kids/nc-kids.module';
         VisitorsPageModule,
         NcKidsModule,
         BrowserAnimationsModule,
-        // ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-        ToastrModule.forRoot()
+        ToastrModule.forRoot(),
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: environment.production,
+          // Register the ServiceWorker as soon as the application is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:30000'
+        })
     ],
     providers: [],
     bootstrap: [AppComponent],
