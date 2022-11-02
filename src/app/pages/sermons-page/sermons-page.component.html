@@ -11,6 +11,13 @@
         </div>
 
         <div id="activeSermonDetailsContainer" class="col-lg-6 col-6">
+            <div *ngIf="isLoading">
+                <span class="spinner-border text-secondary" 
+                      role="status" 
+                      aria-hidden="true">
+                </span>
+            </div>
+
             <h5><b>{{ activeSermon?.postTitle }}</b></h5>
             <p>{{ activeSermon?.speaker }}</p>
             <p>{{ activeSermon?.postDescription }}</p>

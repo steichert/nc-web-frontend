@@ -17,6 +17,8 @@ import { PostMapper } from 'src/app/utils/post.mapper';
 })
 export class SermonsPageComponent implements OnInit {
 
+    isLoading: Boolean = false;
+
     pageTitle = 'Sermons | New Creation Family Church';
     defaultThumbnailImageUrl = imageUrls.defaultSermonsThumbnailImageUrl;
 
@@ -52,6 +54,7 @@ export class SermonsPageComponent implements OnInit {
     }
 
     public fetchAllSermonData() {
+        this.isLoading = true;
         this.loadingService.startLoading();
 
         let fromDate = new Date();
@@ -77,9 +80,11 @@ export class SermonsPageComponent implements OnInit {
                 }
 
                 this.loadingService.stopLoading();
+                this.isLoading = false;
             },
             err => {
                 this.loadingService.stopLoading();
+                this.isLoading = false;
                 console.log(err.error.text);
             }
         );
