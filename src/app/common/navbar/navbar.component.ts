@@ -109,6 +109,10 @@ export class NavbarComponent implements OnInit {
     }
 
     toggleScrolling() {
+        if (typeof document == 'undefined') {
+            return;
+        }
+
         let body = document.getElementById('body');
         if (body != null) {
             if (this.navbarVisible) {
@@ -121,6 +125,10 @@ export class NavbarComponent implements OnInit {
 
     triggerNavbarTransform() {
         this.triggerNavbarBackgroundTransparency();
+
+        if (typeof scrollY == 'undefined') {
+            return;
+        }
 
         if (scrollY > screen.availHeight / this.navbarToggleSplit) {
             if (!this.navbarHeader.nativeElement.classList.contains('collapsed-navbar-header')) {
@@ -144,6 +152,10 @@ export class NavbarComponent implements OnInit {
     }
 
     triggerNavbarBackgroundTransparency() {
+        if (typeof document == 'undefined') {
+            return;
+        }
+
         let primaryHeader = document.getElementById('primaryHeader');
         if (primaryHeader != null) {
             let screenHeight = screen.availHeight;
@@ -160,6 +172,10 @@ export class NavbarComponent implements OnInit {
     }
 
     setNonHomeNavbarClasses() {
+        if (typeof document == 'undefined') {
+            return;
+        }
+
         let primaryHeader = document.getElementById('primaryHeader');
         if (primaryHeader != null) {
             primaryHeader.style.background = 'hsl(0 0% 13% / 1)';
@@ -179,9 +195,11 @@ export class NavbarComponent implements OnInit {
     }
 
     public scrollToTop() {
-        window.scroll({
-            top: 0
-        });
+        if (typeof window !== 'undefined') {
+            window.scroll({
+                top: 0
+            });
+        }
     }
 
     public navigateToLink(link: string) {
