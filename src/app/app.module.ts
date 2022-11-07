@@ -23,6 +23,8 @@ import { VisitorsPageModule } from './pages/visitors-page/visitors-page.module';
 import { NcKidsModule } from './pages/nc-kids/nc-kids.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { AdminHomePageModule } from './pages/admin/admin-home-page/admin-home-page.module';
+import { AuthModule } from '@auth0/auth0-angular';
 
 @NgModule({
     declarations: [AppComponent],
@@ -45,6 +47,7 @@ import { environment } from '../environments/environment';
         MissionsPageModule,
         VisitorsPageModule,
         NcKidsModule,
+        AdminHomePageModule,
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
         ServiceWorkerModule.register('ngsw-worker.js', {
@@ -52,6 +55,10 @@ import { environment } from '../environments/environment';
           // Register the ServiceWorker as soon as the application is stable
           // or after 30 seconds (whichever comes first).
           registrationStrategy: 'registerWhenStable:30000'
+        }),
+        AuthModule.forRoot({
+            domain: 'budgie.eu.auth0.com',
+            clientId: 'AXI3j5GzPhI7nzHfvAYsChArM1PGokRu'
         })
     ],
     providers: [],

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class HomePageComponent implements OnInit {
 
     constructor(private title: Title,
                 private navbarService: NavbarService,
-                private route: ActivatedRoute) {
+                private route: ActivatedRoute,
+                private authenticationService: AuthenticationService) {
         this.title.setTitle(this.pageTitle);
     }
 
@@ -28,8 +30,15 @@ export class HomePageComponent implements OnInit {
                     setTimeout(() => {
                         this.scrollToPageSection(data['page_section']);
                     }, 500);
-                }
-            });
+                } 
+            }
+        );
+
+        this.route.queryParams.subscribe(params => {
+            if (params['code'] && params['state'] != null) {
+                this.authenticationService.checkIsLoggedIn();
+            }
+        });
     }
 
     ngOnDestroy() {

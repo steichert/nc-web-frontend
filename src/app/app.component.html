@@ -1,7 +1,7 @@
 <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
 
-<app-navbar></app-navbar>
+<app-navbar *ngIf="!isAdmin"></app-navbar>
 
 <router-outlet></router-outlet>
 
-<app-footer></app-footer>
+<app-footer *ngIf="!isAdmin"></app-footer>

@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "mstart": "ng serve --host 0.0.0.0",
+    "start": "ng serve --proxy-config proxy.conf.json",
+    "mstart": "ng serve --proxy-config proxy.conf.json --host 0.0.0.0",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -29,6 +29,7 @@
     "@angular/platform-server": "^14.2.8",
     "@angular/router": "^14.2.8",
     "@angular/service-worker": "^14.0.0",
+    "@auth0/auth0-angular": "^1.11.0",
     "@nguniversal/express-engine": "^14.2.0",
     "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.2.2",

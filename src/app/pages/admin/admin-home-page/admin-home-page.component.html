@@ -1,0 +1,10 @@
+<div class="container-fluid admin-hom-container">
+    <button class="btn btn-success btn-default logout-button" (click)="logout()">Log out</button>
+
+    <div class="user-info">
+        <ul *ngIf="userInfo != null">
+            <li>{{ userInfo.name }}</li>
+            <li>{{ userInfo.email }}</li>
+          </ul>
+    </div>
+</div>

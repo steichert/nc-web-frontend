@@ -1,5 +1,6 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
 import { navbarItems } from './navbar.items';
@@ -40,7 +41,8 @@ export class NavbarComponent implements OnInit {
 
     constructor(private navbarService: NavbarService,
                 private loadingService: LoadingService,
-                private router: Router) {
+                private router: Router,
+                private authenticationService: AuthenticationService) {
         this.navbarVisible = false;
         this.currentUrl = null;
         this.currentNavbarItems = navbarItems.homePage.items;
@@ -53,6 +55,10 @@ export class NavbarComponent implements OnInit {
         if (this.currentUrl != null && this.currentUrl !== this.HOME) {
             this.setNonHomeNavbarClasses();
         }
+    }
+
+    public isLoggedInAdminUser() {
+        return this.authenticationService.isLoggedIn && this.authenticationService
     }
 
     private initializeUrlChangeListener() {

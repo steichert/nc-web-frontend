@@ -5,42 +5,56 @@ export const navbarItems = {
                 name: 'ABOUT',
                 routerLink: '/about',
                 dropdownItems: [],
+                show: true
             },
             {
                 name: 'SERVICES',
                 routerLink: '/services',
                 dropdownItems: [],
+                show: true
             },
             {
                 name: 'VISITORS',
                 routerLink: '/visitors',
                 dropdownItems: [],
+                show: true
             },
             {
                 name: 'GIVING',
                 routerLink: '/giving',
                 dropdownItems: [],
+                show: true
             },
             {
                 name: 'SERMONS',
                 routerLink: '/sermons',
                 dropdownItems: [],
+                show: true
             },
             {
                 name: 'EVENTS',
                 routerLink: '/events',
                 dropdownItems: [],
+                show: true
             },
             {
                 name: 'CONNECT',
                 routerLink: '/connect',
                 dropdownItems: [],
+                show: true
             },
             {
                 name: 'CONTACT',
                 routerLink: '/contact',
                 dropdownItems: [],
+                show: true
             },
+            {
+                name: 'ADMIN',
+                routerLink: '/admin',
+                dropdownItems: [],
+                show: `isLoggedInAdminUser()`
+            }
         ],
     },
     ncKids: {
@@ -48,37 +62,44 @@ export const navbarItems = {
             {
                 name: 'KIDZ HOME',
                 routerLink: '/nc-kidz',
-                dropdownItems: []
+                dropdownItems: [],
+                show: true
             },
             {
                 name: 'BABIES',
                 routerLink: '/nc-kidz/babies',
-                dropdownItems: []
+                dropdownItems: [],
+                show: true
             },
             {
                 name: 'SONKIDZ',
                 routerLink: '/nc-kidz/sonkidz',
-                dropdownItems: []
+                dropdownItems: [],
+                show: true
             },
             {
                 name: 'GLOWKIDZ',
                 routerLink: '/nc-kidz/glowkidz',
-                dropdownItems: []
+                dropdownItems: [],
+                show: true
             },
             {
                 name: 'SUNDAY',
                 routerLink: '/nc-kidz/sunday',
-                dropdownItems: []
+                dropdownItems: [],
+                show: true
             },
             {
                 name: 'JAM',
                 routerLink: '/nc-kidz/jam',
-                dropdownItems: []
+                dropdownItems: [],
+                show: true
             },
             {
                 name: '412',
                 routerLink: '/nc-kidz/412',
-                dropdownItems: []
+                dropdownItems: [],
+                show: true
             },
         ]
     }

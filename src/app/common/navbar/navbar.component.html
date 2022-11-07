@@ -28,13 +28,14 @@
             <li *ngFor="let item of currentNavbarItems; let i = index"
                 class="primary-navigation-list-item">
                 <div class="dropdown">
-                    <a  [ngClass]="{ 'dropdown-toggle': item.dropdownItems.length > 0 }"
-                        [id]="'navbarItem' + i"
-                        class="navbar-item hover-underline-animation"
-                        (click)="navigateToLink(item?.routerLink)"
-                        data-bs-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false">
+                    <a *ngIf="item.show"
+                       [ngClass]="{ 'dropdown-toggle': item.dropdownItems.length > 0, 'admin-link': item.name == 'ADMIN' }"
+                       [id]="'navbarItem' + i"
+                       class="navbar-item hover-underline-animation"
+                       (click)="navigateToLink(item?.routerLink)"
+                       data-bs-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false">
                         {{ item?.name }}
                     </a>
 

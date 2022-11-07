@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsPageComponent } from './pages/about-us-page/about-us-page.component';
+import { AdminHomePageComponent } from './pages/admin/admin-home-page/admin-home-page.component';
 import { ConnectPageComponent } from './pages/connect-page/connect-page.component';
 import { EventsPageComponent } from './pages/events-page/events-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -47,6 +48,7 @@ const routes: Routes = [
             { path: '**', redirectTo: '/nc-kidz', pathMatch: 'full' }
         ]
     },
+    { path: 'admin', component: AdminHomePageComponent, pathMatch: 'full' },
     // This needs to stay at the bottom of the list
     { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];

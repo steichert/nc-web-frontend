@@ -8,7 +8,7 @@ export const environment = {
     production: false,
     baseUrl: 'http://localhost:4200',
     emailDetails: emailConfig,
-    // ncApiUrl: './api/nc-api',
+    backendBaseUrl: 'https://new-creation-backend.herokuapp.com',
     ncApiUrl: 'https://new-creation-backend.herokuapp.com/nc-api',
     // imageUrl: './api/static/images'
     imageUrl: 'https://new-creation-backend.herokuapp.com/static/images'
