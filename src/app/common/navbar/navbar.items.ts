@@ -37,6 +37,11 @@ export const navbarItems = {
                 dropdownItems: [],
             },
             {
+                name: 'MISSIONS',
+                routerLink: '/missions',
+                dropdownItems: []
+            },
+            {
                 name: 'CONTACT',
                 routerLink: '/contact',
                 dropdownItems: [],
