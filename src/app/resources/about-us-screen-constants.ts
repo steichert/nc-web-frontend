@@ -206,10 +206,6 @@ export const PASTORAL_LEADERSHIP = [
         title: "Mike & Catherine Marais"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/thabiso_lebogang.jpg`,
-        title: "Thabiso & Lebogang Mogotsi"
-    },
-    {
         imageSrc: `${environment.imageUrl}/leadership/jenny.jpg`,
         title: "Jenni Joubert"
     },
@@ -233,21 +229,16 @@ export const CHURCH_STAFF = [
     {
         imageSrc: `${environment.imageUrl}/leadership/piet.jpg`,
         title: "Pieter Trichardt",
-        subTitle: "Children's Pastor"
-    },
-    {
-        imageSrc: `${environment.imageUrl}/leadership/thabiso.jpg`,
-        title: "Thabiso Mogotsi",
-        subTitle: "Community Pastor"
+        subTitle: "Pastor / Administration"
     },
     {
         imageSrc: `${environment.imageUrl}/leadership/teresa.jpg`,
         title: "Teresa Kilian",
-        subTitle: "Secretary"
+        subTitle: "Secretary / Administration"
     },
     {
         imageSrc: `${environment.imageUrl}/leadership/grace.jpg`,
         title: "Grace Mwachoweka",
         subTitle: "Administration / House keeping"
-    }
+    },
 ]
