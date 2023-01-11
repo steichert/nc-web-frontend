@@ -141,103 +141,103 @@ export const FAQS = [
 
 export const GOVERNMENTAL_ELDERSHIP = [
     {
-        imageSrc: `${environment.imageUrl}/leadership/paul_milianne.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/paul_milianne_l2sydl.jpg',
         title: "Paul and Milaine Dennison",
         subTitle: "Lead Elders"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/mike_catherine.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/mike_catherine_gk2kk0.jpg',
         title: "Mike and Catherine Marais",
         subTitle: "The King's School / Pastoral Care"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/john_pat.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/john_pat_ihec6o.jpg',
         title: "John and Pat Fanner",
         subTitle: "The King's School / Pastoral Care"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/chris_marina.jpg`,
-        title: "Chris & Marina Reyneke",
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/chris_marina_scjysu.jpg',
+        title: "Chris and Marina Reyneke",
         subTitle: "Oasis / Pastoral Care"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/karl_jenny.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/karl_jenny_ggjzsl.jpg',
         title: "Karl and Jenny Teichert",
         subTitle: "Missions / Training / Community Ministry"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/dan_lucy.jpg`,
-        title: "Daniel & Lucy Robinson",
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/dan_lucy_ruy89b.jpg',
+        title: "Daniel and Lucy Robinson",
         subTitle: "Administration / Pastoral Care"
     }
 ];
 
 export const PASTORAL_LEADERSHIP = [
     {
-        imageSrc: `${environment.imageUrl}/leadership/paul_milianne.jpg`,
-        title: "Paul & Milaine Dennison"
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/paul_milianne_l2sydl.jpg',
+        title: "Paul and Milaine Dennison"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/john_pat.jpg`,
-        title: "John & Pat Fanner"
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/john_pat_ihec6o.jpg',
+        title: "John and Pat Fanner"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/piet_beverley.jpg`,
-        title: "Pieter & Beverley Trichardt"
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/piet_beverley_kfouha.jpg',
+        title: "Pieter and Beverley Trichardt"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/chris_marina.jpg`,
-        title: "Chris & Marina Reyneke"
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/chris_marina_scjysu.jpg',
+        title: "Chris and Marina Reyneke"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/dan_lucy.jpg`,
-        title: "Daniel & Lucy Robinson"
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/dan_lucy_ruy89b.jpg',
+        title: "Daniel and Lucy Robinson"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/rob_marelize.jpg`,
-        title: "Rob & Marelise Hull"
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/rob_marelize_uzhzew.jpg',
+        title: "Rob and Marelise Hull"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/matt_lauren.jpg`,
-        title: "Matt & Lauren Gray"
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/matt_lauren_fgeqjy.jpg',
+        title: "Matt and Lauren Gray"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/mike_catherine.jpg`,
-        title: "Mike & Catherine Marais"
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/mike_catherine_gk2kk0.jpg',
+        title: "Mike and Catherine Marais"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/jenny.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/jenny_vzuzjq.jpg',
         title: "Jenni Joubert"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/karl_jenny.jpg`,
-        title: "Karl & Jenny Teichert"
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/karl_jenny_ggjzsl.jpg',
+        title: "Karl and Jenny Teichert"
     }
 ];
 
 export const CHURCH_STAFF = [
     {
-        imageSrc: `${environment.imageUrl}/leadership/paul.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/paul_mlp5v0.jpg',
         title: "Paul Dennison",
         subTitle: "Lead Pastor"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/miliane.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/miliane_sgsuds.jpg',
         title: "Milaine Dennison",
         subTitle: "Lead Pastor"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/piet.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/piet_be27kt.jpg',
         title: "Pieter Trichardt",
         subTitle: "Pastor / Administration"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/teresa.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/teresa_igwcl6.jpg',
         title: "Teresa Kilian",
         subTitle: "Secretary / Administration"
     },
     {
-        imageSrc: `${environment.imageUrl}/leadership/grace.jpg`,
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/grace_hjjqzd.jpg',
         title: "Grace Mwachoweka",
         subTitle: "Administration / House keeping"
     },

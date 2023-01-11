@@ -4,41 +4,34 @@ export const imageUrls = {
     // Home Page
     fullNavLogoUrl: `assets/images/logos/ncfc-logo_primary_03.png`,
     smallNavLogoUrl: `assets/images/logos/ncfc-logo_digital_02.png`,
-    cotnLogoUrl: `${environment.imageUrl}/logos/cotnlogo.png`,
+    cotnLogoUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421515/static/logos/cotnlogo_ym8pbq.png',
     snapscanImageUrl: `${environment.imageUrl}/snapscan/nc-snapscan.png`,
-    connectImagePrefixUrl: `${environment.imageUrl}/circular`,
-    visitorRowImageUrl: `${environment.imageUrl}/backgrounds/visitor-background.jpg`,
-    affiliationsRowImageUrl: `${environment.imageUrl}/backgrounds/global-family-bg.jpg`,
-    bannerRowImageUrl: `${environment.imageUrl}/backgrounds/welcome-banner2.jpg`,
+    visitorRowImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/visitor-background_xsnkdj.jpg',
+    affiliationsRowImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421668/static/backgrounds/global-family-bg_l5xbhc.png',
+    bannerRowImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/welcome-banner_tbsvc2.jpg',
     popupCardImageUrl: `${environment.imageUrl}/backgrounds/welcome-popup.jpg`,
 
     // Missions Page
-    missionsBannerImageUrl: `assets/images/backgrounds/missions-banner.jpg`,
-    synergyInMissionsUrl: `${environment.imageUrl}/logos/synergy-in-mission.jpg`,
+    missionsBannerImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421282/static/backgrounds/missions-banner_suhfou.jpg',
+    synergyInMissionsUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/synergy-in-mission_bfy0gd.jpg',
 
     // NC Kids
-    ncKidsHomeBannerImageUrl: `assets/images/backgrounds/nc-kidz-home-banner.jpg`,
-    ncBabiesLogoImageUrl: `${environment.imageUrl}/logos/nc_babies.png`,
-    ncGlowKidzLogoImageUrl: `${environment.imageUrl}/logos/nc_glowkids.png`,
+    ncKidsHomeBannerImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/nc-kidz-home-banner_xzu1bq.jpg',
+    ncBabiesLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/nc_babies_ifqd3v.png',
+    ncGlowKidzLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/nc_glowkids_zizvok.png',
     ncFourTwelveLogoImageUrl: `${environment.imageUrl}/logos/412.png`,
-    ncJamLogoImageUrl: `${environment.imageUrl}/logos/jam_sessions.png`,
-    ncSonKidzLogoImageUrl: `${environment.imageUrl}/logos/nc_sonkidz.png`,
-    ncKidzSundayLogoImageUrl: `${environment.imageUrl}/logos/nc_kidz_sunday.png`,
+    ncJamLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/jam_sessions_btr2ip.png',
+    ncSonKidzLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/nc_sonkidz_wozwkg.png',
+    ncKidzSundayLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/nc_kidz_sunday_xgnhep.png',
 
     // Visitor Pages
-    visitorHomeBannerImageUrl: `assets/images/backgrounds/visitor-home-background.jpg`,
-    visitorCardBannerImageUrl: `assets/images/backgrounds/visitor-card-background.jpg`,
+    visitorHomeBannerImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/visitor-home-background_sg7byh.jpg',
+    visitorCardBannerImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/visitor-card-background_lxm0v7.jpg',
 
     // About Us
-    leadershipRonAndAnnImageUrl: `${environment.imageUrl}/leadership/our_story_ron_ann.jpg`,
-    leadershipGrantAndLizImageUrl: `${environment.imageUrl}/leadership/our_story_grant_liz.jpg`,
-    leadershipPaulAndMilaineImageUrl: `${environment.imageUrl}/leadership/our_story_paul_milianne.jpg`,
-
-    // Sermons
-    sermonsBannerImageUrl: `${environment.imageUrl}/backgrounds/visitor-home-banner.jpg`,
-
-    // General
-    floralBackgroundImageUrl: `${environment.imageUrl}/backgrounds/seasonal3.jpg`,
+    leadershipRonAndAnnImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421927/static/leadership/our_story_ron_ann_l8xd4b.jpg',
+    leadershipGrantAndLizImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421928/static/leadership/our_story_grant_liz_ebtmyo.png',
+    leadershipPaulAndMilaineImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421928/static/leadership/our_story_paul_milianne_orgsue.jpg',
 
     defaultSermonsThumbnailImageUrl: `assets/images/logos/ncfc-logo-sermons-default.png`
 };

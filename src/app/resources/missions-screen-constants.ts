@@ -5,8 +5,8 @@ export const LOCAL_PROJECTS = [
         cardTitle: "CIA: Community In Action",
         cardTitleColour: "white",
         description: "",
-        cardImageUrl: `${environment.imageUrl}/cards/cia-card.jpg`,
-        mainImageUrl: `${environment.imageUrl}/missions/cia.jpg`,
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438138/static/missions/cia-card_fvakrl.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438047/static/missions/cia_zm417w.jpg',
         mainTitle: "CIA: Community in Action",
         paragraphs: [
             {
@@ -50,8 +50,8 @@ export const LOCAL_PROJECTS = [
         cardTitle: "Community Disciple-Making Multiplication",
         cardTitleColour: "white",
         description: "",
-        cardImageUrl: `${environment.imageUrl}/missions/dmm.jpg`,
-        mainImageUrl: `${environment.imageUrl}/missions/dmm.jpg`,
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438048/static/missions/dmm_f6y8pi.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438048/static/missions/dmm_f6y8pi.jpg',
         mainTitle: "Community Disciple-Making Multiplication",
         paragraphs: [
             {
@@ -160,8 +160,8 @@ export const LOCAL_PROJECTS = [
         cardTitle: "Fellowship Through Fitness",
         cardTitleColour: "white",
         description: "",
-        cardImageUrl: `${environment.imageUrl}/missions/fellowship-through-fitness-2.jpg`,
-        mainImageUrl: `${environment.imageUrl}/missions/fellowship-through-fitness.jpg`,
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/fellowship-through-fitness-2_uxxqeg.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/fellowship-through-fitness_qxjvpa.jpg',
         mainTitle: "Fellowship Through Fitness",
         paragraphs: [
             {
@@ -232,8 +232,8 @@ export const INTERNATIONAL_PROJECTS = [
         cardTitle: "Chinese Outreach Network",
         cardTitleColour: "white",
         description: "",
-        cardImageUrl: `${environment.imageUrl}/missions/sacon-cover.jpg`,
-        mainImageUrl: `${environment.imageUrl}/missions/sacon.jpg`,
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/sacon-cover_dj544a.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/sacon_rgyl4b.jpg',
         mainTitle: "SACON: Southern Africa Chinese Outreach Network",
         paragraphs: [
             {

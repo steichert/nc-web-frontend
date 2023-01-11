@@ -8,6 +8,7 @@ import { NcKidsGlowkidsPageComponent } from './nc-kids-glowkids-page/nc-kids-glo
 import { NcKidsFourTwelvePageComponent } from './nc-kids-four-twelve-page/nc-kids-four-twelve-page.component';
 import { NcKidsJamPageComponent } from './nc-kids-jam-page/nc-kids-jam-page.component';
 import { NcKidsSundayPageComponent } from './nc-kids-sunday-page/nc-kids-sunday-page.component';
+import { ContactModalModule } from 'src/app/common/contact-modal/contact-modal.module';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { NcKidsSundayPageComponent } from './nc-kids-sunday-page/nc-kids-sunday-
     ],
     imports: [
         CommonModule,
-        FormsModule
+        FormsModule,
+        ContactModalModule
     ],
     exports: [
         NcKidsHomePageComponent

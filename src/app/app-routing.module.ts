@@ -43,7 +43,6 @@ const routes: Routes = [
             { path: 'glowkidz', component: NcKidsGlowkidsPageComponent, pathMatch: 'full' },
             { path: 'sunday', component: NcKidsSundayPageComponent, pathMatch: 'full' },
             { path: 'jam', component: NcKidsJamPageComponent, pathMatch: 'full' },
-            { path: '412', component: NcKidsFourTwelvePageComponent, pathMatch: 'full' },
             { path: '**', redirectTo: '/nc-kidz', pathMatch: 'full' }
         ]
     },

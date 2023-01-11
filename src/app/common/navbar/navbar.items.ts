@@ -80,11 +80,6 @@ export const navbarItems = {
                 routerLink: '/nc-kidz/jam',
                 dropdownItems: []
             },
-            {
-                name: '412',
-                routerLink: '/nc-kidz/412',
-                dropdownItems: []
-            },
         ]
     }
 };
