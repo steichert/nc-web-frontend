@@ -1,20 +1,18 @@
-import { environment } from '../../environments/environment';
-
 export const GET_CONNECTED_MINISTRIES = [
     {
-        image: `${environment.imageUrl}/circular/get-conn-lifegroups.jpeg`,
+        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420293/static/connect/get-conn-lifegroups_w6z21t.jpg',
         label: "LIFE GROUPS",
         join_team: false,
         area_type: "ministry"
     }, 
     {
-        image: `${environment.imageUrl}/circular/get-conn-nckidz.jpeg`,
+        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420278/static/connect/get-conn-nckidz_imicqf.jpg',
         label: "NC KIDZ",
         join_team: false,
         area_type: "ministry"
     },
     {
-        image: `${environment.imageUrl}/circular/get-conn-teens.jpeg`,
+        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420242/static/connect/get-conn-teens_m5qs7r.jpg',
         label: "TEENS",
         paragraphs: [
             {
@@ -23,18 +21,18 @@ export const GET_CONNECTED_MINISTRIES = [
             },
             {
                 type: "SIMPLE",
-                value: "We run a weekly podcast during the term, trying to engage with the teens in a relaxed environment, and we run frequent in-person events in an attempt to connect relationally and intentionally."
+                value: "We place a big emphasis on community, and have weekly in-person gatherings from 19:30 to 21:00 on Friday nights. These gatherings include games, worship, preaching and life groups."
             },
             {
                 type: "SIMPLE_HTML",
-                value: "Check out our teens <a href=\"https://www.youtube.com/channel/UCPY77oqdadajaEWar70Fg2w\" target=\"_blank\">Green Onion Podcast Channel</a>, and keep an eye on our <a href=\"https://www.instagram.com/greenonionpodcast/\" target=\"_blank\">Instagram Page</a> for any events that may be upcoming."
+                value: "Check out our teens <a href=\"https://www.instagram.com/ncyouth_jhb/\" target=\"_blank\">Instagram Page</a> for any events that may be upcoming."
             }
         ],
         join_team: false,
         area_type: "ministry"
     }, 
     {
-        image: `${environment.imageUrl}/circular/get-conn-YA.jpeg`,
+        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673418428/static/connect/connect-young-adults-circle_anlbld.jpg',
         label: "YOUNG ADULTS",
         paragraphs: [
             {
@@ -53,12 +51,12 @@ export const GET_CONNECTED_MINISTRIES = [
 
 export const GET_CONNECTED_SERVING = [
     {
-        image: `${environment.imageUrl}/circular/get-conn-hospitality.jpeg`,
+        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420302/static/connect/get-conn-hospitality_ls1efh.jpg',
         label: "HOSPITALITY",
         paragraphs: [
             {
                 type: "SIMPLE",
-                value: "At New Creation there are many ways to serve as hosts to those who are attending the service. This includes Ushering, Visitor's table, Information Desk, and serving Scones & Coffee."
+                value: "At New Creation there are many ways to serve as hosts to those who are attending the service. This includes Ushering, Visitor's table, Information Desk, Barista Bar, and serving Tea & Scones."
             },
             {
                 type: "SIMPLE_HTML",
@@ -69,12 +67,12 @@ export const GET_CONNECTED_SERVING = [
         area_type: "serving"
     }, 
     {
-        image: `${environment.imageUrl}/circular/get-conn-creative.jpeg`,
+        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420320/static/connect/get-conn-creative_w82u1u.jpg',
         label: "CREATIVE",
         paragraphs: [
             {
                 type: "SIMPLE",
-                value: "At New Creation, we value our ability to serve through various creative outlets. These include the Worship Team, Sound Desk, A/V, and Social Media."
+                value: "At New Creation, we value our ability to serve through various creative outlets. These include the Worship Team, Sound Desk, A/V, Social Media, and Online Stream Production."
             },
             {
                 type: "SIMPLE_HTML",
@@ -85,7 +83,7 @@ export const GET_CONNECTED_SERVING = [
         area_type: "serving"
     },
     {
-        image: `${environment.imageUrl}/circular/get-conn-missions.jpeg`,
+        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420286/static/connect/get-conn-missions_xx24em.jpg',
         label: "MISSIONS",
         join_team: false,
         area_type: "serving"
@@ -156,27 +154,23 @@ export const AREAS_OF_MINISTRY = [
         name: "CHILDRENS MINISTRY",
         subareas: [
             {
-                name: "Babies Bible Class",
+                name: "Babies Bible Class (Ages 0 - 3)",
                 contact: "piet@newcreation.co.za"
             },
             {
-                name: "Son Kidz",
+                name: "Son Kidz (Ages 3 - 4)",
                 contact: "piet@newcreation.co.za"
             },
             {
-                name: "Glow Kidz",
+                name: "Glow Kidz (Ages 4 - 5)",
                 contact: "piet@newcreation.co.za"
             },
             {
-                name: "NC Kidz",
+                name: "NC Kidz Sunday (Ages 6 - 12)",
                 contact: "piet@newcreation.co.za"
             },
             {
-                name: "412",
-                contact: "piet@newcreation.co.za"
-            },
-            {
-                name: "Jam Sessions",
+                name: "Friday Jam Sessions (Ages 6 - 13)",
                 contact: "piet@newcreation.co.za"
             }
         ]
@@ -185,12 +179,12 @@ export const AREAS_OF_MINISTRY = [
         name: "TEENS AND YOUNG ADULTS",
         subareas: [
             {
-                name: "Teens",
-                contact: "Gavin"
+                name: "Teens (Grades 8 - 12)",
+                contact: "Wessley"
             },
             {
-                name: "Young Adults",
-                contact: "Gavin"
+                name: "Young Adults (Ages 18+)",
+                contact: "Justin"
             }
         ]
     }
@@ -205,7 +199,7 @@ export const AREAS_OF_SERVICE = [
                 contact: "Elise Duff"
             },
             {
-                name: "Coffee Bar",
+                name: "Barista Bar",
                 contact: "Matt Carter"
             },
             {
@@ -242,6 +236,14 @@ export const AREAS_OF_SERVICE = [
     {
         name: "PRODUCTION",
         subareas: [
+            {
+                name: "Online Stream Production",
+                contact: "Phil"
+            },
+            {
+                name: "Sound Desk",
+                contact: "Piet"
+            },
             {
                 name: "A/V",
                 contact: "Piet"

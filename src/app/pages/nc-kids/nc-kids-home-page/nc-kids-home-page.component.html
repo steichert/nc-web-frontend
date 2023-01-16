@@ -2,40 +2,30 @@
     <div id="ncHomeBannerRow" 
          class="nc-kidz-content background-image" 
          [ngStyle]="{'background-image': getNcHomeBannerImageUrl()}">
-        <h2 id="ncTitle">
+        <h1 id="ncTitle">
             <b>NC KIDZ</b>
-        </h2>        
-
-        <p><b>Click here to register your children</b></p>
-        <button class="btn btn-green btn-success" 
-                data-bs-toggle="modal" 
-                data-bs-target="#registerModal">
-            <b>REGISTRATION</b>
-        </button>  
+        </h1>
     </div>
 
     <div id="ncKidzWhatRow" class="nc-kidz-content">
+        <div class="text-center mb-5">
+            <button class="btn btn-green btn-success mb-3 nc-kidz-homepage-button" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#registerModal">
+                    <b>REGISTER</b>
+            </button>
+            <button class="btn bnt-info btn-get-in-touch mb-3 nc-kidz-homepage-button" 
+                    data-bs-toggle="modal" 
+                    data-bs-target="#getInTouchModal">
+                    <b>CONTACT US</b>
+            </button>
+        </div>
+
         <h2>What is NC Kidz?</h2>
         <hr><br>
         <p>
             NC Kidz is a ministry of New Creation Family Church!<br>This ministry, through fellowship between children and leaders, focuses on equipping the children of God's Kingdom, "Train a child in the way he should go and when he is old he will not turn from it," Proverbs 22:6.<br>NC Kidz provides a fun way of teaching Christian values and principles to children as a foundation for their future development in and for Christ, and aims at providing them with the building blocks for their relationship with God. NC Kidz is made up of five sub ministries: NC Babies, NC Glowkidz, NC Kidz Sunday, Jam Sessions, and 412!
         </p>
-
-        <div class="row">
-            <div class="logo-col col-lg-12 col-sm-12 col-xs-12">
-                <div class="whatsapp-container">
-                    <i class="whatsapp-logo bi bi-whatsapp"></i>
-                    <p><b>NC Kidz Online</b></p>
-                    <p>Join our NC Kidz Online WhatsApp group to get in touch<br>and keep up to date with all of the latest information.</p>
-                    <a id="ncKidsWhatsAppLink" 
-                       class="btn btn-green btn-success" 
-                       href="https://chat.whatsapp.com/HRzMHQ80dkn6OKMQAGWi1Y" 
-                       target="_blank">
-                        <b>JOIN GROUP</b>
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 
     <div id="nc-babies-row" class="nc-kidz-content">            
@@ -115,35 +105,16 @@
         <hr>      
         <img class="nc-kidz-image" [src]="ncJamLogoImageUrl" alt="Jam Sessions Logo" width="350">            
         <p>
-            <b>Age:</b> 6 - 10 years<br>
-            <b>Grade:</b> 1 - 4<br>
+            <b>Age:</b> 6 - 13 years<br>
+            <b>Grade:</b> 1 - 7<br>
             <b>When:</b> Friday 17:00 - 19:00
         <p>
         <p>
-            Jam Sessions is a sub ministry of NC Kidz, which is aimed at children aged 6-10 years or Grades 1-4 every term Friday 17:00-19:00. Jam Sessions is a weekly program driven meeting hosted at the New Creation Family Church Auditorium on a Friday Evening. The aim and purpose of Jam Sessions is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. Jam stands for "Jesus And Me", which is the heart of what Jam Sessions wishes to do, Bring Jesus into the hearts of the children and allow Him to be first in our Lives. Jam Sessions achieves this by; encouraging the children to build a strong relationship with Jesus, discipleship of the children through strong mentor based relationships with leaders, and through a fun filled program of Praise, Worship, Teachings and Activities.
+            Jam Sessions is a sub ministry of NC Kidz, which is aimed at children aged 6-13 years or Grades 1-7 every term Friday 17:00-19:00. Jam Sessions is a weekly program driven meeting hosted at the New Creation Family Church Auditorium on a Friday Evening. The aim and purpose of Jam Sessions is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. Jam stands for "Jesus And Me", which is the heart of what Jam Sessions wishes to do, Bring Jesus into the hearts of the children and allow Him to be first in our Lives. Jam Sessions achieves this by; encouraging the children to build a strong relationship with Jesus, discipleship of the children through strong mentor based relationships with leaders, and through a fun filled program of Praise, Worship, Teachings and Activities.
         </p>
         <br>
         
         <button class="btn btn-primary" (click)="navigateToLink('/nc-kidz/jam')" (click)="scrollToTop()">
-            <b>READ MORE</b>
-        </button>
-    </div>
-
-    <div id="412-row" class="nc-kidz-content"> 
-        <h2>What is 412?</h2>           
-        <hr> 
-        <img class="nc-kidz-image" [src]="ncFourTwelveLogoImageUrl" alt="412 Logo" width="350">            
-        <p>
-            <b>Age:</b> 11 - 13 years<br>
-            <b>Grade:</b> 5 - 7<br>
-            <b>When:</b> Friday 17:00 - 19:00                      
-        <p>
-        <p>
-            412 is a sub ministry of NC Kidz, which is aimed at children aged 11-13 years or Grades 5-7 every term Friday 17:00-19:00. 412 is a weekly program driven meeting hosted at the New Creation Family Church Auditorium on a Friday Evening. The aim and purpose of 412 is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. The name 412 comes from 1 Timothy 4:12 "Don't let anyone think less of you because you are young. Be an example to all believers in what you say, in the way you live, in your love, your faith, and your purity". This is the heart of 412, to encourage and disciple the children to have a relationship with Jesus, to live a life of purity, integrity, and compassion, and to serve others with humility and love! 412 achieves this by; encouraging the children to build a strong relationship with Jesus, discipleship of the children through strong mentor based relationships with leaders, and through a fun filled program of Praise, Worship, Teachings and Small Group discussion.
-        </p>
-        <br>
-        
-        <button class="btn btn-primary" (click)="navigateToLink('/nc-kidz/412')" (click)="scrollToTop()">
             <b>READ MORE</b>
         </button>
     </div>
@@ -371,3 +342,5 @@
         </div>
     </div>
 </div>
+
+<app-contact-modal></app-contact-modal>

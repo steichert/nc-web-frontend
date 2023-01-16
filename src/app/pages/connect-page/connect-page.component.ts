@@ -29,7 +29,7 @@ export class ConnectPageComponent implements OnInit {
     allAreasOfService = AREAS_OF_SERVICE;
     allAreasOfMinistry = AREAS_OF_MINISTRY;
 
-    connectAreaModalImageUrl = '/assets/images/backgrounds/connect-background.jpg';
+    connectAreaModalImageUrl = 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/connect-background_wfqcrt.jpg';
 
     firstConnect = [];
     secondConnect = [];

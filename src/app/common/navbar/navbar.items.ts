@@ -37,6 +37,11 @@ export const navbarItems = {
                 dropdownItems: [],
             },
             {
+                name: 'MISSIONS',
+                routerLink: '/missions',
+                dropdownItems: []
+            },
+            {
                 name: 'CONTACT',
                 routerLink: '/contact',
                 dropdownItems: [],
@@ -73,11 +78,6 @@ export const navbarItems = {
             {
                 name: 'JAM',
                 routerLink: '/nc-kidz/jam',
-                dropdownItems: []
-            },
-            {
-                name: '412',
-                routerLink: '/nc-kidz/412',
                 dropdownItems: []
             },
         ]
