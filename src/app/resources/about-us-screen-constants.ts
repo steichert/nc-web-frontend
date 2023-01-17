@@ -146,7 +146,7 @@ export const GOVERNMENTAL_ELDERSHIP = [
         subTitle: "Lead Elders"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/mike_catherine_gk2kk0.jpg',
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-mike-and-catherine_t5qs0t.jpg',
         title: "Mike and Catherine Marais",
         subTitle: "The King's School / Pastoral Care"
     },
@@ -161,7 +161,7 @@ export const GOVERNMENTAL_ELDERSHIP = [
         subTitle: "Oasis / Pastoral Care"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/karl_jenny_ggjzsl.jpg',
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-karl-and-jenny_zsidax.jpg',
         title: "Karl and Jenny Teichert",
         subTitle: "Missions / Training / Community Ministry"
     },
@@ -198,11 +198,11 @@ export const PASTORAL_LEADERSHIP = [
         title: "Rob and Marelise Hull"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/matt_lauren_fgeqjy.jpg',
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-matt-and-lauren_ugdepp.jpg',
         title: "Matt and Lauren Gray"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/mike_catherine_gk2kk0.jpg',
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-mike-and-catherine_t5qs0t.jpg',
         title: "Mike and Catherine Marais"
     },
     {
@@ -210,14 +210,14 @@ export const PASTORAL_LEADERSHIP = [
         title: "Jenni Joubert"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/karl_jenny_ggjzsl.jpg',
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-karl-and-jenny_zsidax.jpg',
         title: "Karl and Jenny Teichert"
     }
 ];
 
 export const CHURCH_STAFF = [
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/paul_mlp5v0.jpg',
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-paul_knqa3l.jpg',
         title: "Paul Dennison",
         subTitle: "Lead Pastor"
     },
@@ -227,12 +227,7 @@ export const CHURCH_STAFF = [
         subTitle: "Lead Pastor"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/piet_be27kt.jpg',
-        title: "Pieter Trichardt",
-        subTitle: "Pastor / Administration"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/teresa_igwcl6.jpg',
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959937/static/leadership/leadership-teresa_xa1lpf.jpg',
         title: "Teresa Kilian",
         subTitle: "Secretary / Administration"
     },
@@ -241,4 +236,19 @@ export const CHURCH_STAFF = [
         title: "Grace Mwachoweka",
         subTitle: "Administration / House keeping"
     },
+    {
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959611/static/leadership/leadership-martha_ba4p5g.jpg',
+        title: 'Martha Simalenga',
+        subTitle: 'Worship / Administrator'
+    },
+    {
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-wessley_veakkk.jpg',
+        title: 'Wessley Thring',
+        subTitle: 'Youth Pastor'
+    },
+    {
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-piet_jxlvqx.jpg',
+        title: "Pieter Trichardt",
+        subTitle: "Pastor / Administration"
+    }
 ]
