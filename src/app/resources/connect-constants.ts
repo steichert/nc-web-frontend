@@ -92,61 +92,103 @@ export const GET_CONNECTED_SERVING = [
 
 export const LIFE_GROUPS = [
     {
-        host: "Nick & Lou Allen",
-        location: "Greenside"
+        host: "Sam & Martha Simalenga",
+        location: "Ferndale",
+        day: "Tuesday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-sam-and-martha_acjybd.jpg"
     },
     {
-        host: "Daniel Cronjé & Cristine Hattingh (Young Adults)",
-        location: "Robin Hills"
+        host: "Craig & Sarah Van Zyl",
+        location: "Virtual",
+        day: "Tuesday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894667/static/life-group-leaders/lg-craig_dsitk3.jpg"
+    }, 
+    {
+        host: "Daniel Cronje & Cristine Hattingh",
+        location: "Robin Hills",
+        day: "Wednesday",
+        category: "Young Adults",
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673943115/static/life-group-leaders/lg-daniel-and-cristine_lehdt7.jpg"
     },
     {
-        host: "Anne Fourie",
-        location: "Robin Hills"
+        host: "Kim Gallus",
+        location: "Rotating homes",
+        day: "Wednesday",
+        category: "Ladies Group",
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-kim_svftcf.jpg"
     },
     {
-        host: "Manfred & Kim Gallus",
-        location: "Fontainebleau"
+        host: "Matt & Lauren Gray",
+        location: "Robin Hills",
+        day: "Wednesday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-matt-and-lauren_ugdepp.jpg"
     },
     {
-        host: "Lauren & Matt Grey",
-        location: "Robin Hills"
-    },
-    {
-        host: "Owen & Paula Hildebrand",
-        location: "Robindale"
-    },
-    {
-        host: "Rob & Marelise Hull",
-        location: "Robin Hills"
-    },
-    {
-        host: "Bev Hung (Afternoon, Ladies)",
-        location: "The Kings School"
+        host: "Bev Hung",
+        location: "Robin Hills",
+        day: "Wednesday",
+        category: "Ladies Group",
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894667/static/life-group-leaders/lg-bev_ahvq8k.jpg"
     },
     {
         host: "Dean & Pat Naidoo",
-        location: "Blairgowrie"
+        location: "Blairgowrie",
+        day: "Wednesday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894667/static/life-group-leaders/lg-dean-and-pat_szluzj.jpg"
     },
     {
-        host: "Heather Potgieter",
-        location: "Linden"
+        host: "Karabo Madiseng & Gabriel Pikiti",
+        location: "Windsor",
+        day: "Wednesday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894667/static/life-group-leaders/lg-karabo-and-gabriel_lclsa7.jpg"
     },
     {
-        host: "Dan & Lucy Robinson",
-        location: "Randpark"
+        host: "Gina Switala",
+        location: "Robin Hills",
+        day: "Wednesday",
+        category: null,
+        imageUrl: null
     },
     {
-        host: "Roscoe & Sharon Stephen",
-        location: "Windsor"
-    },
-    {
-        host: "Steve & Dani Teichert (Young Adults)",
-        location: "Robin Hills"
+        host: "Steve & Dani Teichert",
+        location: "Robin Hills",
+        day: "Wednesday",
+        category: "Young Adults",
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-steve-and-dani_rlmqqr.jpg"
     },
     {
         host: "Ray & Anne Van Der Westhuizen",
-        location: "Ferndale"
-    }
+        location: "Ferndale",
+        day: "Wednesday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-ray-and-anne_ilp98v.jpg"
+    },
+    {
+        host: "Paul & Milaine Dennison",
+        location: "Olivedale",
+        day: "Thursday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/paul_milianne_l2sydl.jpg"
+    },
+    {
+        host: "Owen & Paula Hildebrand",
+        location: "Robin Hills",
+        day: "Thursday",
+        category: null,
+        imageUrl: null
+    },
+    {
+        host: "Roscoe & Sharon Stephen",
+        location: "Windsor",
+        day: "Friday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894665/static/life-group-leaders/lg-roscoe-and-sharon_v1sbz2.jpg"
+    },
 ];
 
 export const AREAS_OF_MINISTRY = [

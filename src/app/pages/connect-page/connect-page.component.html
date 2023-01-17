@@ -123,7 +123,7 @@
 
                     <div class="row">
                         <!-- Personal details -->
-                        <div class="col-lg-6 col-sm-12">
+                        <div class="col-lg-12">
                             <h5><b>PERSONAL DETAILS</b></h5><br>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="lifegroup.fname" name="fname" id="firstName">
@@ -156,14 +156,21 @@
                             </div>
                         </div>
                         <!-- Life Group List -->
-                        <div id="ourLifeGroupsContainer" class="col-lg-6 col-sm-12">
+                        <div id="ourLifeGroupsContainer" class="col-lg-12">
                             <h5><b>OUR LIFE GROUPS</b></h5><br>
-                            <div class="lifegroup-hosts-list">
-                                <div class="lifegroup-hosts-item" *ngFor="let group of allLifeGroups">
-                                    <p>
-                                        <b>{{group.host}}</b><br>
-                                        {{group.location}}
-                                    </p>
+                            <div class="lifegroup-hosts-list row">
+                                <div class="lifegroup-hosts-item col-lg-6 col-sm-12" 
+                                     *ngFor="let group of allLifeGroups">
+                                     <figure>
+                                        <img class="img-responsive img-life-group-leader" [src]="group.imageUrl">
+                                        <figcaption class="figure-caption text-center">
+                                            <b>{{group.host}}</b>
+                                            <br>
+                                            {{group.day}}, {{group.location}}
+                                            <br>
+                                            <small>{{group.category}}</small>
+                                        </figcaption>
+                                    </figure>
                                 </div>
                             </div>
                         </div>
