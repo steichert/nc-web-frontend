@@ -142,76 +142,52 @@ export const FAQS = [
 export const GOVERNMENTAL_ELDERSHIP = [
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/paul_milianne_l2sydl.jpg',
-        title: "Paul and Milaine Dennison",
+        title: "Paul & Milaine Dennison",
         subTitle: "Lead Elders"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-mike-and-catherine_t5qs0t.jpg',
-        title: "Mike and Catherine Marais",
+        title: "Mike & Catherine Marais",
         subTitle: "The King's School / Pastoral Care"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/john_pat_ihec6o.jpg',
-        title: "John and Pat Fanner",
+        title: "John & Pat Fanner",
         subTitle: "The King's School / Pastoral Care"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/chris_marina_scjysu.jpg',
-        title: "Chris and Marina Reyneke",
+        title: "Chris & Marina Reyneke",
         subTitle: "Oasis / Pastoral Care"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-karl-and-jenny_zsidax.jpg',
-        title: "Karl and Jenny Teichert",
+        title: "Karl & Jenny Teichert",
         subTitle: "Missions / Training / Community Ministry"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/dan_lucy_ruy89b.jpg',
-        title: "Daniel and Lucy Robinson",
+        title: "Daniel & Lucy Robinson",
         subTitle: "Administration / Pastoral Care"
     }
 ];
 
 export const PASTORAL_LEADERSHIP = [
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/paul_milianne_l2sydl.jpg',
-        title: "Paul and Milaine Dennison"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/john_pat_ihec6o.jpg',
-        title: "John and Pat Fanner"
-    },
-    {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/piet_beverley_kfouha.jpg',
-        title: "Pieter and Beverley Trichardt"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/chris_marina_scjysu.jpg',
-        title: "Chris and Marina Reyneke"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/dan_lucy_ruy89b.jpg',
-        title: "Daniel and Lucy Robinson"
+        title: "Pieter & Beverley Trichardt"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/rob_marelize_uzhzew.jpg',
-        title: "Rob and Marelise Hull"
+        title: "Rob & Marelise Hull"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-matt-and-lauren_ugdepp.jpg',
-        title: "Matt and Lauren Gray"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-mike-and-catherine_t5qs0t.jpg',
-        title: "Mike and Catherine Marais"
+        title: "Matt & Lauren Gray"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/jenny_vzuzjq.jpg',
         title: "Jenni Joubert"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-karl-and-jenny_zsidax.jpg',
-        title: "Karl and Jenny Teichert"
     }
 ];
 
