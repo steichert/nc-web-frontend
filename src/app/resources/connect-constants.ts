@@ -103,14 +103,14 @@ export const LIFE_GROUPS = [
         location: "Virtual",
         day: "Tuesday",
         category: null,
-        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894667/static/life-group-leaders/lg-craig_dsitk3.jpg"
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1674545358/static/life-group-leaders/lg-craig-and-sarah_ns15sf.jpg"
     }, 
     {
         host: "Daniel Cronje & Cristine Hattingh",
         location: "Robin Hills",
         day: "Wednesday",
         category: "Young Adults",
-        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673943115/static/life-group-leaders/lg-daniel-and-cristine_lehdt7.jpg"
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1674545358/static/life-group-leaders/lg-daniel-and-christine_iconnj.jpg"
     },
     {
         host: "Kim Gallus",
@@ -180,7 +180,7 @@ export const LIFE_GROUPS = [
         location: "Robin Hills",
         day: "Thursday",
         category: null,
-        imageUrl: null
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1674545358/static/life-group-leaders/lg-owen-and-paula_zvds1g.jpg"
     },
     {
         host: "Roscoe & Sharon Stephen",
