@@ -174,20 +174,36 @@ export const GOVERNMENTAL_ELDERSHIP = [
 
 export const PASTORAL_LEADERSHIP = [
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/piet_beverley_kfouha.jpg',
-        title: "Pieter & Beverley Trichardt"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/rob_marelize_uzhzew.jpg',
-        title: "Rob & Marelise Hull"
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675239117/static/life-group-leaders/leadership-justin-and-jl_csjwoz.jpg",
+        title: "Justin & Joni Lyn Goch"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-matt-and-lauren_ugdepp.jpg',
         title: "Matt & Lauren Gray"
     },
     {
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/rob_marelize_uzhzew.jpg',
+        title: "Rob & Marelise Hull"
+    },
+    {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/jenny_vzuzjq.jpg',
         title: "Jenni Joubert"
+    },
+    {
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-sam-and-martha_acjybd.jpg",
+        title: "Sam & Martha Simalenga"
+    },
+    {
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894665/static/life-group-leaders/lg-roscoe-and-sharon_v1sbz2.jpg",
+        title: "Roscoe & Sharon Stephen"
+    },
+    {
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/piet_beverley_kfouha.jpg',
+        title: "Pieter & Beverley Trichardt"
+    },
+    {
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675239117/static/life-group-leaders/leadership-kuda-and-polite_x3kwrj.jpg",
+        title: "Kuda & Polite Zhoya"
     }
 ];
 
