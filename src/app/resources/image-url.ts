@@ -33,5 +33,5 @@ export const imageUrls = {
     leadershipGrantAndLizImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421928/static/leadership/our_story_grant_liz_ebtmyo.png',
     leadershipPaulAndMilaineImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421928/static/leadership/our_story_paul_milianne_orgsue.jpg',
 
-    defaultSermonsThumbnailImageUrl: `assets/images/logos/ncfc-logo-sermons-default.png`
+    defaultSermonsThumbnailImageUrl: `assets/images/logos/podcast-default-logo.JPG`
 };

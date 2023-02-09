@@ -152,7 +152,7 @@ export const LIFE_GROUPS = [
         location: "Robin Hills",
         day: "Wednesday",
         category: null,
-        imageUrl: null
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675870512/static/life-group-leaders/lg-gina_f6zpuu.jpg"
     },
     {
         host: "Steve & Dani Teichert",

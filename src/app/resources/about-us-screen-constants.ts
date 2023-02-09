@@ -166,7 +166,7 @@ export const GOVERNMENTAL_ELDERSHIP = [
         subTitle: "Missions / Training / Community Ministry"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/dan_lucy_ruy89b.jpg',
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675870464/static/leadership/leadership-dan-and-lucy_vdowwq.jpg",
         title: "Daniel & Lucy Robinson",
         subTitle: "Administration / Pastoral Care"
     }
@@ -174,7 +174,7 @@ export const GOVERNMENTAL_ELDERSHIP = [
 
 export const PASTORAL_LEADERSHIP = [
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/piet_beverley_kfouha.jpg',
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675871105/static/leadership/leadership-piet-and-beverley_zn8gqi.jpg",
         title: "Pieter & Beverley Trichardt"
     },
     {
@@ -198,11 +198,11 @@ export const PASTORAL_LEADERSHIP = [
         title: "Roscoe & Sharon Stephen"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/rob_marelize_uzhzew.jpg',
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675870995/static/leadership/leadership-rob-and-marielise_vdkuy6.jpg",
         title: "Marelise Hull"
     },
     {
-        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675239117/static/life-group-leaders/leadership-kuda-and-polite_x3kwrj.jpg",
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675870563/static/leadership/leadership-kuda-and-polite-2_cmzyjf.jpg",
         title: "Kuda & Polite Zhoya"
     }
 ];
@@ -214,7 +214,7 @@ export const CHURCH_STAFF = [
         subTitle: "Lead Pastor"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/miliane_sgsuds.jpg',
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675870195/static/leadership/leadership-milaine_zxg4qj.jpg",
         title: "Milaine Dennison",
         subTitle: "Lead Pastor"
     },
