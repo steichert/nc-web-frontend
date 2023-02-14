@@ -162,6 +162,7 @@
 
             <div class="row photo-row">
                 <div class="photo-col col-lg-3 col-sm-6" 
+                     [ngClass]="{'col-lg-3': i < churchStaff.length - 4, 'col-lg-4': i >= churchStaff.length - 4}"
                      *ngFor="let item of pastoralLeadership; let i = index">
                     <figure>
                         <img class="img-circle img-responsive img-leader" [src]="item.imageSrc" [alt]="item.title">
@@ -178,7 +179,7 @@
             </div>
 
             <div class="row photo-row">
-                <div class="photo-col col-lg-3 col-md-6" 
+                <div class="photo-col col-lg-3 col-md-6"
                      *ngFor="let item of churchStaff; let i = index">
                     <figure>
                         <img class="img-circle img-responsive img-leader" [src]="item.imageSrc" [alt]="item.title">

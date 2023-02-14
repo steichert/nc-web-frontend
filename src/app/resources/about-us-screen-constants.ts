@@ -141,7 +141,7 @@ export const FAQS = [
 
 export const GOVERNMENTAL_ELDERSHIP = [
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/paul_milianne_l2sydl.jpg',
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1676376053/static/leadership/leadership-paul-and-milaine_b6xmfl.jpg",
         title: "Paul & Milaine Dennison",
         subTitle: "Lead Elders"
     },
@@ -184,10 +184,6 @@ export const PASTORAL_LEADERSHIP = [
     {
         imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-sam-and-martha_acjybd.jpg",
         title: "Sam & Martha Simalenga"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/jenny_vzuzjq.jpg',
-        title: "Jenni Joubert"
     },
     {
         imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675239117/static/life-group-leaders/leadership-justin-and-jl_csjwoz.jpg",

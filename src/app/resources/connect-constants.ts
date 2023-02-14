@@ -106,6 +106,13 @@ export const LIFE_GROUPS = [
         imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1674545358/static/life-group-leaders/lg-craig-and-sarah_ns15sf.jpg"
     }, 
     {
+        host: "Nick Allen",
+        location: "Greenside",
+        day: "Wednesday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1676375879/static/life-group-leaders/lg-nick-allen_fpiovx.jpg"
+    }, 
+    {
         host: "Daniel Cronje & Cristine Hattingh",
         location: "Robin Hills",
         day: "Wednesday",
@@ -169,11 +176,18 @@ export const LIFE_GROUPS = [
         imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-ray-and-anne_ilp98v.jpg"
     },
     {
+        host: "Mark Van Der Westhuizen & May Li",
+        location: "Robin Hills",
+        day: "Wednesday",
+        category: "Young Adults",
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1676375880/static/life-group-leaders/lg-mark-and-may_ltnied.jpg"
+    },
+    {
         host: "Paul & Milaine Dennison",
         location: "Olivedale",
         day: "Thursday",
         category: null,
-        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438615/static/leadership/paul_milianne_l2sydl.jpg"
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1676376053/static/leadership/leadership-paul-and-milaine_b6xmfl.jpg"
     },
     {
         host: "Owen & Paula Hildebrand",
