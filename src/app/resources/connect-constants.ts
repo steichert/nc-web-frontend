@@ -127,13 +127,6 @@ export const LIFE_GROUPS = [
         imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-kim_svftcf.jpg"
     },
     {
-        host: "Matt & Lauren Gray",
-        location: "Robin Hills",
-        day: "Wednesday",
-        category: null,
-        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-matt-and-lauren_ugdepp.jpg"
-    },
-    {
         host: "Bev Hung",
         location: "Robin Hills",
         day: "Wednesday",
@@ -195,6 +188,13 @@ export const LIFE_GROUPS = [
         day: "Thursday",
         category: null,
         imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1674545358/static/life-group-leaders/lg-owen-and-paula_zvds1g.jpg"
+    },
+    {
+        host: "Matt & Lauren Gray",
+        location: "Robin Hills",
+        day: "Friday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-matt-and-lauren_ugdepp.jpg"
     },
     {
         host: "Roscoe & Sharon Stephen",
