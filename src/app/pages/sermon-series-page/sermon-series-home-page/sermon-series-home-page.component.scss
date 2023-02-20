@@ -1,0 +1,78 @@
+.sermons-container {
+    padding-bottom: 2em;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.section-title {
+    text-align: center;
+}
+
+#latestSermonTitle {
+    padding-top: 8em;
+    padding-bottom: 2em;
+}
+
+#pastSermonsTitle {
+    padding-top: 5em;
+    padding-bottom: 3em;
+}
+
+#latestSermonSection {
+    background-color: #222;
+    color: white;
+}
+
+#latestSermonContainer {
+    padding-left: 20rem;
+    padding-right: 20rem;
+    padding-bottom: 10rem;
+}
+
+.sermon-video-container {
+    height: 50vh;
+    width: 100%;
+}
+
+.sermon-video-iframe {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#sermonDetails {
+    padding-top: 2em;
+    padding-bottom: 0;
+}
+ 
+#sermonAudioPlayerContainer {
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: #222;
+    padding-bottom: 2rem;
+}
+
+#sermonAudioPlayer {
+    width: 100%;
+}
+
+#pastSermonsContainer {
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.sermon-series-title {
+    text-align: left;
+    padding-left: 0.25rem;
+}
+
+.series-item {
+    padding-bottom: 2rem;
+}
+
+.series-image {
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

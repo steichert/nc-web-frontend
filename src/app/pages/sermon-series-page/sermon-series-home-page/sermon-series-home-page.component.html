@@ -1,0 +1,47 @@
+<div class="sermons-container">
+    <div id="latestSermonSection">
+        <div id="latestSermonTitle" class="section-title">
+            <h3>LATEST SERMON</h3>
+        </div>
+    
+        <div id="latestSermonContainer" class="row">
+            <div id="sermonDetails">
+                <h5><b>{{ activeSermon.postTitle }}</b></h5>
+                <p>{{ activeSermon.speaker }}</p>
+            </div>
+        
+            <div id="sermonAudioPlayerContainer">
+                <audio id="sermonAudioPlayer" 
+                        src="{{ activeSermon.guid }}" 
+                        type="audio/m4a" 
+                        controls>
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="sermon-video-container">
+                <iframe class="sermon-video-iframe"
+                        src="https://www.youtube.com/embed/videoseries?list=PLEkUPWiPdGnuAzzVS1lGwPPQML71_VmA6" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>    
+    </div>
+
+    <div id="pastSermonsTitle" class="section-title">
+        <h3><b>PAST SERMONS</b></h3>
+    </div>
+
+    <div id="pastSermonsContainer" class="row">
+        <div *ngFor="let series of sermonSeries" class="col-lg-4 col-sm-12 series-item">
+            <div class="sermon-series-title">
+                <h5><b>{{ series.seriesTitle }}</b></h5>
+            </div>
+            <img class="series-image"
+                 [src]="defaultThumbnailImageUrl" 
+                 alt="Sermon Series Logo"/>
+        </div>
+    </div>
+</div>

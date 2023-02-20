@@ -12,6 +12,7 @@ import { NcKidsHomePageComponent } from './pages/nc-kids/nc-kids-home-page/nc-ki
 import { NcKidsJamPageComponent } from './pages/nc-kids/nc-kids-jam-page/nc-kids-jam-page.component';
 import { NcKidsSonkidsPageComponent } from './pages/nc-kids/nc-kids-sonkids-page/nc-kids-sonkids-page.component';
 import { NcKidsSundayPageComponent } from './pages/nc-kids/nc-kids-sunday-page/nc-kids-sunday-page.component';
+import { SermonSeriesHomePageComponent } from './pages/sermon-series-page/sermon-series-home-page/sermon-series-home-page.component';
 import { SermonsPageComponent } from './pages/sermons-page/sermons-page.component';
 import { VisitorsCardPageComponent } from './pages/visitors-page/visitors-card-page/visitors-card-page.component';
 import { VisitorsHomePageComponent } from './pages/visitors-page/visitors-home-page/visitors-home-page.component';
@@ -44,6 +45,13 @@ const routes: Routes = [
             { path: 'sunday', component: NcKidsSundayPageComponent, pathMatch: 'full' },
             { path: 'jam', component: NcKidsJamPageComponent, pathMatch: 'full' },
             { path: '**', redirectTo: '/nc-kidz', pathMatch: 'full' }
+        ]
+    },
+    {
+        path: 'series',
+        children: [
+            { path: '', component: SermonSeriesHomePageComponent, pathMatch: 'full' },
+            { path: '**', redirectTo: '/series', pathMatch: 'full' }
         ]
     },
     // This needs to stay at the bottom of the list

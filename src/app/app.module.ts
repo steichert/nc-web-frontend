@@ -23,6 +23,7 @@ import { VisitorsPageModule } from './pages/visitors-page/visitors-page.module';
 import { NcKidsModule } from './pages/nc-kids/nc-kids.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { SermonSeriesPageModule } from './pages/sermon-series-page/sermon-series-page.module';
 
 @NgModule({
     declarations: [AppComponent],
@@ -45,6 +46,7 @@ import { environment } from '../environments/environment';
         MissionsPageModule,
         VisitorsPageModule,
         NcKidsModule,
+        SermonSeriesPageModule,
         BrowserAnimationsModule,
         ToastrModule.forRoot(),
         ServiceWorkerModule.register('ngsw-worker.js', {
