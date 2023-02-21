@@ -21,7 +21,6 @@ export class SermonSeriesHomePageComponent implements OnInit {
     defaultThumbnailImageUrl = imageUrls.defaultSermonsThumbnailImageUrl;
 
     sermonsPage: Page;
-    allSermons: Sermon[] = [];
     activeSermon: Sermon;
     currentSermonPage: Sermon[] = [];
 
@@ -37,23 +36,23 @@ export class SermonSeriesHomePageComponent implements OnInit {
         this.title.setTitle(this.pageTitle);
         this.sermonsPage = new Page([], 1, 0);
         this.activeSermon = new Sermon();
-        this.sermonSeries.push({ seriesTitle: 'As For Me And My House' });
-        this.sermonSeries.push({ seriesTitle: 'Family Conference' });
-        this.sermonSeries.push({ seriesTitle: 'Something' });
-        this.sermonSeries.push({ seriesTitle: 'Practicing The Way' });
-        console.log(this.sermonSeries);
+        this.sermonSeries.push({ seriesTitle: 'As For Me And My House', seriesSeoUrl: 'as-for-me' });
+        this.sermonSeries.push({ seriesTitle: 'Family Conference', seriesSeoUrl: 'family-conference' });
+        this.sermonSeries.push({ seriesTitle: 'Something', seriesSeoUrl: 'something' });
+        this.sermonSeries.push({ seriesTitle: 'Practicing The Way', seriesSeoUrl: 'practicing-the-way' });
     }
 
     ngOnInit(): void {
-        this.fetchAllSermonData();
+        this.fetchRecentSermonData();
+        this.fetchSermonSeriesData();
     }
 
-    public fetchAllSermonData() {
+    public fetchRecentSermonData() {
         this.isLoading = true;
         this.loadingService.startLoading();
 
         let fromDate = new Date();
-        fromDate.setMonth(fromDate.getMonth() - 6);
+        fromDate.setDate(fromDate.getMonth() - 1);
         let fromDateString = fromDate.toISOString().split('T')[0];
 
         let today = new Date();
@@ -62,16 +61,11 @@ export class SermonSeriesHomePageComponent implements OnInit {
         this.ncApi.getSermonPosts(fromDateString, toDateString).subscribe(
             data => {
                 if (data != null) {
-                    this.allSermons = PostMapper.mapToSermons(data);
-                    this.sermonsPage = new Page(this.allSermons, 1, this.pageSize);
-                    this.sermonsPage.archivedItems = this.sermonsPage.allItems;
-                    this.sermonsPage.setPage(1);
+                    let sermonsData = PostMapper.mapToSermons(data);
 
-                    if (this.allSermons.length > 0) {
-                        this.activeSermon = this.allSermons[0];
+                    if (sermonsData.length > 0) {
+                        this.activeSermon = sermonsData[0];
                     }
-                } else {
-                    console.log("Unable to retrieve latest sermon");
                 }
 
                 this.loadingService.stopLoading();
@@ -85,4 +79,11 @@ export class SermonSeriesHomePageComponent implements OnInit {
         );
     }
 
+    public fetchSermonSeriesData() {
+
+    }
+
+    public navigateToSeries(seriesSeoUrl: string) {
+        this.router.navigateByUrl(`/series/${seriesSeoUrl}`);
+    }
 }

@@ -1,16 +1,16 @@
 <div class="sermons-container">
     <div id="latestSermonSection">
         <div id="latestSermonTitle" class="section-title">
-            <h3>LATEST SERMON</h3>
+            <h3><b>LATEST SERMON</b></h3>
         </div>
     
         <div id="latestSermonContainer" class="row">
-            <div id="sermonDetails">
+            <div id="sermonDetails" *ngIf="activeSermon.postTitle">
                 <h5><b>{{ activeSermon.postTitle }}</b></h5>
                 <p>{{ activeSermon.speaker }}</p>
             </div>
         
-            <div id="sermonAudioPlayerContainer">
+            <div id="sermonAudioPlayerContainer" *ngIf="activeSermon.guid">
                 <audio id="sermonAudioPlayer" 
                         src="{{ activeSermon.guid }}" 
                         type="audio/m4a" 
@@ -35,7 +35,9 @@
     </div>
 
     <div id="pastSermonsContainer" class="row">
-        <div *ngFor="let series of sermonSeries" class="col-lg-4 col-sm-12 series-item">
+        <div *ngFor="let series of sermonSeries" 
+             class="col-lg-4 col-md-6 col-sm-12 series-item"
+             (click)="navigateToSeries(series.seriesSeoUrl)">
             <div class="sermon-series-title">
                 <h5><b>{{ series.seriesTitle }}</b></h5>
             </div>

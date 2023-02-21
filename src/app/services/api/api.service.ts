@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
     providedIn: 'root'
@@ -35,5 +36,10 @@ export class ApiService {
         let requestUrl = `${environment.ncApiUrl}/mail/send`;
 
         return this.http.post(requestUrl, requestBody);
+    }
+
+    public getSermonSeriesByName(seriesName: string) {
+        let requestUrl = `${environment.ncApiUrl}/v1/series/${seriesName}`;
+        return this.http.get(requestUrl);
     }
 }
