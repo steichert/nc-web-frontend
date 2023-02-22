@@ -17,6 +17,10 @@ export class LoadingService {
     }
 
     public startLoading() {
+        this.setLoadingStatus(true);
+    }
+
+    public incrementLoading() {
         if (this.loadingCounter == 0) {
             this.setLoadingStatus(true);
         }
@@ -24,7 +28,7 @@ export class LoadingService {
         this.loadingCounter++;
     }
 
-    public stopLoading() {
+    public decrementLoading() {
         this.loadingCounter--;
 
         if (this.loadingCounter == 0) {
@@ -32,5 +36,12 @@ export class LoadingService {
                 this.setLoadingStatus(false);
             }, 500);
         }
+    }
+
+    public stopLoading() {
+        this.loadingCounter = 0;
+        setTimeout(() => {
+            this.setLoadingStatus(false);
+        }, 500);
     }
 }

@@ -69,7 +69,6 @@ export class NavbarComponent implements OnInit {
                 } else {
                     this.setNonHomeNavbarClasses();
                 }
-                this.loadingService.stopLoading();
             }
         );
     }

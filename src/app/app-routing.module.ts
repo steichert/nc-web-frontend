@@ -23,7 +23,6 @@ const routes: Routes = [
     { path: '', component: HomePageComponent, pathMatch: 'full' },
     { path: 'about', component: AboutUsPageComponent, pathMatch: 'full' },
     { path: 'events', component: EventsPageComponent, pathMatch: 'full' },
-    { path: 'sermons', component: SermonSeriesHomePageComponent, pathMatch: 'full' },
     { path: 'connect', component: ConnectPageComponent, pathMatch: 'full' },
     { path: 'missions', component: MissionsPageComponent, pathMatch: 'full' },
     { path: 'services', component: HomePageComponent, data: { page_section: 'services' } },
@@ -50,17 +49,17 @@ const routes: Routes = [
         ]
     },
     {
-        path: 'series',
+        path: 'sermons',
         children: [
             { path: '', component: SermonSeriesHomePageComponent, pathMatch: 'full' },
-            { path: ':seriesName', component: SermonSeriesViewPageComponent, pathMatch: 'full' },
+            { path: 'series/:seriesUrl', component: SermonSeriesViewPageComponent, pathMatch: 'full' },
             { path: '**', redirectTo: '/series', pathMatch: 'full' }
         ]
     },
     {
         path: 'sermon',
         children: [
-            { path: ':sermonTitle', component: SermonViewPageComponent, pathMatch: 'full' },
+            { path: ':sermonUrl', component: SermonViewPageComponent, pathMatch: 'full' },
             { path: '**', redirectTo: '/series', pathMatch: 'full' }
         ]
     },

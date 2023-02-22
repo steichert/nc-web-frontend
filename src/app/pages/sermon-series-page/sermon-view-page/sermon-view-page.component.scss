@@ -17,6 +17,9 @@
 #backToSeriesButton {
     padding-top: 8rem;
     padding-left: 5rem;
+}
+
+#backToSeriesButton span {
     cursor: pointer;
 }
 
@@ -46,6 +49,10 @@
 
 #sermonAudioPlayer {
     width: 100%;
+}
+
+#sermonDescription {
+    padding-top: 2rem;
 }
 
 @media (max-width: 68rem) {

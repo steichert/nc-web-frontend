@@ -29,7 +29,7 @@ export class EventsPageComponent implements OnInit {
     }
 
     private getEvents(): void {
-        this.loadingService.startLoading();
+        this.loadingService.incrementLoading();
 
         let today = new Date();
         let fromDate = today.toISOString().split('T')[0];
@@ -38,10 +38,10 @@ export class EventsPageComponent implements OnInit {
         this.ncApi.getEventPosts(fromDate, toDate).subscribe(
             data => {
                 this.events = PostMapper.mapToEvents(data);
-                this.loadingService.stopLoading();
+                this.loadingService.decrementLoading();
             },
             err => {
-                this.loadingService.stopLoading();
+                this.loadingService.decrementLoading();
             }
         );
     }

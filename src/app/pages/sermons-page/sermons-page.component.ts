@@ -55,7 +55,7 @@ export class SermonsPageComponent implements OnInit {
 
     public fetchAllSermonData() {
         this.isLoading = true;
-        this.loadingService.startLoading();
+        this.loadingService.incrementLoading();
 
         let fromDate = new Date();
         fromDate.setMonth(fromDate.getMonth() - 6);
@@ -79,11 +79,11 @@ export class SermonsPageComponent implements OnInit {
                     console.log("Unable to retrieve latest sermon");
                 }
 
-                this.loadingService.stopLoading();
+                this.loadingService.decrementLoading();
                 this.isLoading = false;
             },
             err => {
-                this.loadingService.stopLoading();
+                this.loadingService.decrementLoading();
                 this.isLoading = false;
                 console.log(err.error.text);
             }

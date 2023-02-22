@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { imageUrls } from 'src/app/resources/image-url';
 import { INTERNATIONAL_PROJECTS, LOCAL_PROJECTS, TRAINING_PROGRAMS } from 'src/app/resources/missions-screen-constants';
+import { LoadingService } from 'src/app/services/loading/loading.service';
 declare var $ :any;
 
 @Component({
@@ -24,11 +25,13 @@ export class MissionsPageComponent implements OnInit {
     public synergyInMissionsUrl = imageUrls.synergyInMissionsUrl;
 
     constructor(private title: Title,
-                private router: Router) {
+                private router: Router,
+                private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);
     }
 
     ngOnInit(): void {
+        this.loadingService.stopLoading();
     }
 
     selectMissionsArea(project: any) {

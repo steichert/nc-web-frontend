@@ -42,4 +42,24 @@ export class ApiService {
         let requestUrl = `${environment.ncApiUrl}/v1/series/${seriesName}`;
         return this.http.get(requestUrl);
     }
+
+    public getLatestSermon() {
+        return this.http.get(`${environment.ncApiUrl}/v1/sermons?latest=true`);
+    }
+
+    public getAllSermonSeriesLite() {
+        return this.http.get(`${environment.ncApiUrl}/v1/sermon-series/lite`);
+    }
+
+    public getSermonSeriesByIdLite(id: number) {
+        return this.http.get(`${environment.ncApiUrl}/v1/sermon-series/${id}/lite`);
+    }
+
+    public getSermonSeriesBySeoUrl(seoUrl: string) {
+        return this.http.get(`${environment.ncApiUrl}/v1/sermon-series/url/${seoUrl}`);
+    }
+
+    public getSermonBySeoUrl(seoUrl: string) {
+        return this.http.get(`${environment.ncApiUrl}/v1/sermons/url/${seoUrl}`);
+    }
 }

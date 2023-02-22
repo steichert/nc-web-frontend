@@ -31,7 +31,6 @@ export class AboutUsPageComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.loadingService.startLoading();
         this.loadingService.stopLoading();
     }
 

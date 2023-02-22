@@ -28,7 +28,7 @@ export class EventsSectionComponent implements OnInit {
         let fromDate = today.toISOString().split('T')[0];
         let toDate = '9999-12-31';
 
-        this.loadingService.startLoading();
+        this.loadingService.incrementLoading();
 
         this.ncApi.getEventPosts(fromDate, toDate).subscribe(
             data => {
@@ -38,10 +38,10 @@ export class EventsSectionComponent implements OnInit {
                     this.events[i] = mappedEvents[i];
                 }
 
-                this.loadingService.stopLoading();
+                this.loadingService.decrementLoading();
             },
             error => {
-                this.loadingService.stopLoading();
+                this.loadingService.decrementLoading();
                 console.log(error.error.text);
             }
         );

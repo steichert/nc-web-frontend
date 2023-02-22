@@ -1,27 +1,27 @@
 <div class="sermons-container">
     <div id="latestSermonSection">
         <div id="latestSermonTitle" class="section-title">
-            <h3><b>LATEST SERMON</b></h3>
+            <h3>LATEST SERMON</h3>
         </div>
     
         <div id="latestSermonContainer" class="row">
-            <div id="sermonDetails" *ngIf="activeSermon.postTitle">
-                <h5><b>{{ activeSermon.postTitle }}</b></h5>
-                <p>{{ activeSermon.speaker }}</p>
+            <div id="sermonDetails" *ngIf="latestSermon.sermonTitle">
+                <h5><b>{{ latestSermon.sermonTitle }}</b></h5>
+                <p>{{ latestSermon.sermonSpeaker }}</p>
             </div>
         
-            <div id="sermonAudioPlayerContainer" *ngIf="activeSermon.guid">
+            <div id="sermonAudioPlayerContainer" *ngIf="latestSermon.sermonAudioUrl">
                 <audio id="sermonAudioPlayer" 
-                        src="{{ activeSermon.guid }}" 
+                        [src]="latestSermon.sermonAudioUrl | safe" 
                         type="audio/m4a" 
                         controls>
                     Your browser does not support the audio element.
                 </audio>
             </div>
 
-            <div class="sermon-video-container">
+            <div class="sermon-video-container" *ngIf="latestSermon.sermonVideoUrl">
                 <iframe class="sermon-video-iframe"
-                        src="https://www.youtube.com/embed/videoseries?list=PLEkUPWiPdGnuAzzVS1lGwPPQML71_VmA6" 
+                        [src]="latestSermon.sermonVideoUrl | safe" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
@@ -35,14 +35,14 @@
     </div>
 
     <div id="pastSermonsContainer" class="row">
-        <div *ngFor="let series of sermonSeries" 
+        <div *ngFor="let series of allSermonSeries" 
              class="col-lg-4 col-md-6 col-sm-12 series-item"
              (click)="navigateToSeries(series.seriesSeoUrl)">
             <div class="sermon-series-title">
                 <h5><b>{{ series.seriesTitle }}</b></h5>
             </div>
             <img class="series-image"
-                 [src]="defaultThumbnailImageUrl" 
+                 [src]="series.seriesCoverImageUrl" 
                  alt="Sermon Series Logo"/>
         </div>
     </div>

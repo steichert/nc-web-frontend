@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Child } from 'src/app/domain/Child';
 import { imageUrls } from 'src/app/resources/image-url';
 import { ApiService } from 'src/app/services/api/api.service';
+import { LoadingService } from 'src/app/services/loading/loading.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
 import { environment } from 'src/environments/environment';
 
@@ -19,7 +20,8 @@ export class NcKidsHomePageComponent implements OnInit {
                 private title: Title,
                 private router: Router,
                 private navbarService: NavbarService,
-                private toastr: ToastrService) {
+                private toastr: ToastrService,
+                private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);
     }
 
@@ -76,6 +78,7 @@ export class NcKidsHomePageComponent implements OnInit {
         this.getYearRanges();
         this.scrollToTop();    
         this.populateDatepicker();
+        this.loadingService.stopLoading();
     }
 
     getYearRanges(): void {
