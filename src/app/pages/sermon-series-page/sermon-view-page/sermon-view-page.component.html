@@ -5,16 +5,16 @@
             <span (click)="navigateToSermonSeries(currentSermonSeries?.seriesSeoUrl)">
                 <i class="bi bi-chevron-left"></i>
                 &nbsp;Back to series:&nbsp;
-                <i>{{ currentSermonSeries?.seriesTitle }}</i>
+                <i>{{ currentSermonSeries?.seriesTitle | titlecase }}</i>
             </span>
         </div>
         <div id="sermonContainer" class="row">
             <div id="sermonDetails" *ngIf="currentSermon.sermonTitle">
                 <h5><b>{{ currentSermon.sermonTitle | titlecase }}</b></h5>
                 <p>
-                    <i>{{ currentSermon.sermonSpeaker }}</i>
+                    <i>{{ currentSermon.sermonSpeaker | titlecase }}</i>
                     <br>
-                    <small>{{ currentSermon.sermonDate }}</small>
+                    <small>{{ currentSermon.sermonDate | date: 'MMM d, y' }}</small>
                 </p>
             </div>
         

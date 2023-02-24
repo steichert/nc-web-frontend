@@ -20,9 +20,9 @@
                  (click)="navigateToSermon(sermon.sermonSeoUrl)">
                 <h4><b>{{ i + 1 }}. {{ sermon.sermonTitle | titlecase }}</b></h4>
                 <p>
-                    <i>{{ sermon.sermonSpeaker }}</i>
+                    <i>{{ sermon.sermonSpeaker | titlecase }}</i>
                     <br>
-                    <small>{{ sermon.sermonDate }}</small>
+                    <small>{{ sermon.sermonDate | date: 'MMM d, y' }}</small>
                 </p>
                 
             </div>

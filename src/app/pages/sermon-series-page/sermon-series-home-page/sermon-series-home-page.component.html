@@ -6,8 +6,12 @@
     
         <div id="latestSermonContainer" class="row">
             <div id="sermonDetails" *ngIf="latestSermon.sermonTitle">
-                <h5><b>{{ latestSermon.sermonTitle }}</b></h5>
-                <p>{{ latestSermon.sermonSpeaker }}</p>
+                <h5><b>{{ latestSermon.sermonTitle | titlecase }}</b></h5>
+                <p>
+                    {{ latestSermon.sermonSpeaker | titlecase }}
+                    <br>
+                    <small>{{ latestSermon.sermonDate | date: 'MMM d, y' }}</small>
+                </p>
             </div>
         
             <div id="sermonAudioPlayerContainer" *ngIf="latestSermon.sermonAudioUrl">
@@ -39,7 +43,7 @@
              class="col-lg-4 col-md-6 col-sm-12 series-item"
              (click)="navigateToSeries(series.seriesSeoUrl)">
             <div class="sermon-series-title">
-                <h5><b>{{ series.seriesTitle }}</b></h5>
+                <h5><b>{{ series.seriesTitle | titlecase }}</b></h5>
             </div>
             <img class="series-image"
                  [src]="series.seriesCoverImageUrl" 
