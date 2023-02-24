@@ -14,7 +14,7 @@ import { EventService } from 'src/app/services/event/event.service';
 export class EventsPageComponent implements OnInit {
 
     pageTitle = 'Events | New Creation Family Church';
-    events: Event[];
+    events: any[];
 
     constructor(private ncApi: ApiService,
                 private loadingService: LoadingService,
@@ -35,9 +35,9 @@ export class EventsPageComponent implements OnInit {
         let fromDate = today.toISOString().split('T')[0];
         let toDate = '9999-12-31';
 
-        this.ncApi.getEventPosts(fromDate, toDate).subscribe(
+        this.ncApi.getEventsByDateRange(fromDate, toDate).subscribe(
             data => {
-                this.events = PostMapper.mapToEvents(data);
+                this.events = data;
                 this.loadingService.decrementLoading();
             },
             err => {

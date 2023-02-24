@@ -12,7 +12,7 @@ import { PostMapper } from 'src/app/utils/post.mapper';
 export class EventsSectionComponent implements OnInit {
 
     numberOfLatestEvents = 4;
-    events:any = [];
+    events: any = [];
 
     constructor(private loadingService: LoadingService,
                 private routingService: RoutingService,
@@ -30,12 +30,12 @@ export class EventsSectionComponent implements OnInit {
 
         this.loadingService.incrementLoading();
 
-        this.ncApi.getEventPosts(fromDate, toDate).subscribe(
+        this.ncApi.getEventsByDateRange(fromDate, toDate).subscribe(
             data => {
-                let mappedEvents = PostMapper.mapToEvents(data);
+                let results = data;
                 
-                for (var i = 0 ; i < this.numberOfLatestEvents && i < mappedEvents.length ; i++) {
-                    this.events[i] = mappedEvents[i];
+                for (var i = 0 ; i < this.numberOfLatestEvents && i < results.length ; i++) {
+                    this.events[i] = results[i];
                 }
 
                 this.loadingService.decrementLoading();

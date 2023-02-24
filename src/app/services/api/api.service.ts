@@ -10,8 +10,8 @@ export class ApiService {
 
     constructor(private http: HttpClient) { }
 
-    public getEventPosts(fromDate: string, toDate: string) {
-        let requestUrl = `${environment.ncApiUrl}/posts/events`;
+    public getEventsByDateRange(fromDate: string, toDate: string): Observable<any> {
+        let requestUrl = `${environment.ncApiUrl}/v1/events`;
 
         let requestParams = {
             "fromDate": fromDate,
