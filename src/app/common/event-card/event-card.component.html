@@ -1,5 +1,4 @@
-<div *ngIf="event?.status == 'Active'"
-     class="card" 
+<div class="card" 
      data-bs-toggle="modal" 
      [attr.data-bs-target]="'#eventModal'+eventModalId">
     <div class="card-block">          
@@ -7,10 +6,10 @@
     </div>
     <div class="card-footer">
         <div id="eventTitle">
-            <p><b>{{event?.title}}</b></p>
+            <h5><b>{{ event?.title | titlecase }}</b></h5>
         </div>
         <div id="eventDate">
-            <p>{{event?.eventDate}}</p>
+            <small>{{event?.eventDate | date: 'MMM d, y'}}</small>
         </div>
     </div>
 </div>
@@ -29,14 +28,15 @@
                         aria-label="Close"></button>
             </div>
             <div class="modal-body event-modal-body">
-                <img class="card-img-top" [src]="event?.coverImageUrl" alt="{{event?.title}}">
+                <img class="card-img-top card-open-img-top" [src]="event?.coverImageUrl" alt="{{event?.title}}">
                 
                 <div class="event-modal-title">
-                    <h4><b>{{event?.title | titlecase}}</b></h4>
+                    <h4><b>{{ event?.title | titlecase }}</b></h4>
+                    <small><i>{{ event?.eventDate | date: 'MMM d, y' }}</i></small>
                 </div>
 
-                <div class="event-modal-date">
-                    <p>{{event?.eventDate | date: 'MMM d, y'}}</p>       
+                <div id="eventModalDescriptio">
+                    <p>{{ event?.description }}</p>
                 </div>
 
                 <div *ngIf="event?.callToActionLink != null" 
@@ -55,15 +55,15 @@
 
             <div class="modal-footer">
                 <button type="button"
-                        class="btn btn-sm btn-secondary btn-contact-us float-left" 
+                        class="btn btn-sm btn-light btn-contact-us float-right" 
                         (click)="triggerContactUsModal()">
                     <b>CONTACT US</b>
                 </button>
-                <button type="button" 
+                <!-- <button type="button" 
                         class="btn btn-sm btn-light float-right" 
                         data-bs-dismiss="modal">
                     <b>CLOSE</b>
-                </button>
+                </button> -->
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
         <h2 id="eventsTitle"><b>EVENTS</b></h2>
     </div>
 
-    <div class="no-events" *ngIf="events == null || events.length == 0">
+    <div class="no-events" *ngIf="activeEvents == null || activeEvents.length == 0">
         <div class="col-12">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar-week" viewBox="0 0 16 16">
                 <path d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
@@ -13,8 +13,8 @@
             <h4>Watch this space for upcoming events</h4>
         </div>
     </div>
-    <div class="event-card-row row" *ngIf="events != null && events.length > 0">
-        <div class='col-lg-3 col-sm-6 col-xs-12' *ngFor="let event of events ; let i = index;">
+    <div class="event-card-row row" *ngIf="activeEvents != null && activeEvents.length > 0">
+        <div class='col-lg-3 col-sm-6 col-xs-12' *ngFor="let event of activeEvents ; let i = index;">
             <app-event-card [event]="event" [eventModalId]="i"></app-event-card>
         </div>
     </div>

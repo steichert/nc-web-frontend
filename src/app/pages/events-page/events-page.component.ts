@@ -14,14 +14,14 @@ import { EventService } from 'src/app/services/event/event.service';
 export class EventsPageComponent implements OnInit {
 
     pageTitle = 'Events | New Creation Family Church';
-    events: any[];
+    activeEvents: any[];
 
     constructor(private ncApi: ApiService,
                 private loadingService: LoadingService,
                 private eventService: EventService,
                 private title: Title) { 
         this.title.setTitle(this.pageTitle);
-        this.events = [];
+        this.activeEvents = [];
     }
 
     ngOnInit(): void {
@@ -37,7 +37,12 @@ export class EventsPageComponent implements OnInit {
 
         this.ncApi.getEventsByDateRange(fromDate, toDate).subscribe(
             data => {
-                this.events = data;
+                for (let i = 0 ; i < data.length ; i++) {
+                    if (data[i].state == 'Active') {
+                        this.activeEvents.push(data[i]);
+                    }
+                }
+
                 this.loadingService.decrementLoading();
             },
             err => {

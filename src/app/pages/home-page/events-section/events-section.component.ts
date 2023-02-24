@@ -32,10 +32,9 @@ export class EventsSectionComponent implements OnInit {
 
         this.ncApi.getEventsByDateRange(fromDate, toDate).subscribe(
             data => {
-                let results = data;
-                
-                for (var i = 0 ; i < this.numberOfLatestEvents && i < results.length ; i++) {
-                    this.events[i] = results[i];
+                for (var i = 0 ; i < this.numberOfLatestEvents && i < data.length ; i++) {
+                    if (data[i].state == 'Active')
+                    this.events.push(data[i]);
                 }
 
                 this.loadingService.decrementLoading();
