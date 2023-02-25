@@ -47,7 +47,7 @@ const routes: Routes = [
         ]
     },
     // This needs to stay at the bottom of the list
-    // { path: '**', redirectTo: '/', pathMatch: 'full' }
+    { path: '**', redirectTo: '/', pathMatch: 'full' }
 ];
 
 @NgModule({
