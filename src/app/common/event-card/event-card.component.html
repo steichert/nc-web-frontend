@@ -35,11 +35,11 @@
                     <small><i>{{ event?.eventDate | date: 'MMM d, y' }}</i></small>
                 </div>
 
-                <div id="eventModalDescriptio">
+                <div id="eventModalDescription">
                     <p>{{ event?.description }}</p>
                 </div>
 
-                <div *ngIf="event?.callToActionLink != null" 
+                <div *ngIf="event?.callToActionLink != null && event?.callToActionLink != ''" 
                      class="text-center">
                     <a role="button" 
                        id="registerButton"
