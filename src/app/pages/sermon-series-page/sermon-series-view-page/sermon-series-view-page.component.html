@@ -1,5 +1,6 @@
 <div class="container-fluid sermon-series-view-container">
-    <div id="sermonSeriesBanner" 
+    <div *ngIf="sermonSeries?.seriesCoverImageUrl"
+         id="sermonSeriesBanner" 
          class="background-image" 
          [ngStyle]="{'background-image': 'url(' + showSermonSeriesBannerImageUrl() + ')'}">
         <!-- Banner Image -->
@@ -7,22 +8,26 @@
 
     <div id="sermonSeriesContentContainer" class="row">
         <div id="sermonSeriesTitle">
-            <h2><b>{{ sermonSeries.seriesTitle | titlecase }}</b></h2>
+            <h2><b>{{ sermonSeries?.seriesTitle | titlecase }}</b></h2>
         </div>
 
-        <div id="sermonSeriesDescription" class="col-lg-4 col-md-6 col-sm-12">
-            <p><i>{{ sermonSeries.seriesDescription }}</i></p>
+        <div *ngIf="sermonSeries?.seriesDescription" 
+             id="sermonSeriesDescription" 
+             class="col-lg-4 col-md-6 col-sm-12">
+            <p><i>{{ sermonSeries?.seriesDescription }}</i></p>
         </div>
 
-        <div id="sermonList" class="col-lg-8 col-md-6 col-sm-12">
+        <div id="sermonList" 
+             [ngClass]="{ 'col-lg-12': sermonSeries?.seriesDescription == '' || sermonSeries?.seriesDescription == null, 'col-lg-8': sermonSeries?.seriesDescription }" 
+             class="col-md-6 col-sm-12">
             <div class="sermon-item" 
-                 *ngFor="let sermon of sermonSeries.sermons; let i = index"
+                 *ngFor="let sermon of sermonSeries?.sermons; let i = index"
                  (click)="navigateToSermon(sermon.sermonSeoUrl)">
-                <h4><b>{{ i + 1 }}. {{ sermon.sermonTitle | titlecase }}</b></h4>
+                <h4><b>{{ i + 1 }}. {{ sermon?.sermonTitle | titlecase }}</b></h4>
                 <p>
-                    <i>{{ sermon.sermonSpeaker | titlecase }}</i>
+                    <i>{{ sermon?.sermonSpeaker | titlecase }}</i>
                     <br>
-                    <small>{{ sermon.sermonDate | date: 'MMM d, y' }}</small>
+                    <small>{{ sermon?.sermonDate | date: 'MMM d, y' }}</small>
                 </p>
                 
             </div>
