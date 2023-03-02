@@ -60,4 +60,8 @@ export class SermonSeriesHomePageComponent implements OnInit {
     public navigateToSeries(seriesSeoUrl: string) {
         this.router.navigateByUrl(`/sermons/series/${seriesSeoUrl}`);
     }
+
+    public navigateToLink(link: string) {
+        this.router.navigateByUrl(link);
+    }
 }

@@ -52,7 +52,7 @@
 }
 
 #searchBarContainer {
-    margin-top: 2rem;
+    margin-top: 1rem;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
@@ -122,8 +122,14 @@
 
 #sermonResultItemThumbnail {
     width: 100%;
+    height: 100%;
     padding-right: 0;
     padding-left: 0;
+    object-fit: cover;
+    -webkit-object-fit: cover;
+    -moz-object-fit: cover;
+    -ms-object-fit: cover;
+    -o-object-fit: cover;
 }
 
 #sermonResultItemContainer {

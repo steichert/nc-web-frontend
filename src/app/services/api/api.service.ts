@@ -47,6 +47,10 @@ export class ApiService {
         return this.http.get(`${environment.ncApiUrl}/v1/sermons?latest=true`);
     }
 
+    public getAllPagedSermons(pageNumber: number) {
+        return this.http.get(`${environment.ncApiUrl}/v1/sermons/page/${pageNumber}`);
+    }
+
     public getAllSermonSeriesLite() {
         return this.http.get(`${environment.ncApiUrl}/v1/sermon-series/lite`);
     }

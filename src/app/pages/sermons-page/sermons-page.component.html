@@ -2,40 +2,6 @@
     <div id="sermonsTitle">
         <h2><b>SERMONS</b></h2>
     </div>
-   
-    <div id="activeSermonContainer" class="row">
-        <div id="activeSermonThumbnailContainer" class="col-lg-3 col-2">
-            <img id="activeSermonThumbnail" 
-                 [src]="defaultThumbnailImageUrl" 
-                 alt="Sermon Series Logo"/>
-        </div>
-
-        <div id="activeSermonDetailsContainer" class="col-lg-6 col-6">
-            <div *ngIf="isLoading">
-                <span class="spinner-border text-secondary" 
-                      role="status" 
-                      aria-hidden="true">
-                </span>
-            </div>
-
-            <h5><b>{{ activeSermon.postTitle }}</b></h5>
-            <p>{{ activeSermon.speaker }}</p>
-            <p>{{ activeSermon.postDescription }}</p>
-        </div>
-
-        <div id="activeSermonDateContainer" class="col-lg-3 col-4 sermon-date">
-            <p>{{ activeSermon.sermonDateFormatted }}</p>
-        </div>
-    </div>
-
-    <div id="sermonAudioPlayerContainer" class="row">
-        <audio id="sermonAudioPlayer" 
-                src="{{ activeSermon.guid }}" 
-                type="audio/m4a" 
-                controls>
-            Your browser does not support the audio element.
-        </audio>
-    </div>
 
     <div id="searchBarContainer" class="row">
         <div id="sermonTypeDropdownContainer" class="col-lg-2 col-3">
@@ -76,23 +42,23 @@
              *ngIf="sermonsPage != null" 
              class="col-lg-12">
             <div class="sermonResultItem" 
-                 *ngFor="let sermonItem of sermonsPage.currentPageItems | filter:sermonsPage:sermonSearchTerm:sermonSearchType" 
-                 (click)="selectSermon(sermonItem)">
+                 *ngFor="let sermonItem of currentSermonFromPage" 
+                 (click)="loadSermon(sermonItem)">
                 <div id="sermonResultItemRow" class="row">
                     <div id="sermonResultItemThumbnailContainer" class="col-lg-1 col-2">
                         <img id="sermonResultItemThumbnail" 
-                             [src]="defaultThumbnailImageUrl" 
+                             [src]="getCoverImageBySermonSeriesId(sermonItem.sermonSeriesId)" 
                              alt="Sermon Series Logo"/>
                     </div>
                     <div id="sermonResultItemContainer" class="col-lg-9 col-6">
                         <p id="sermonResultItemText">
-                            <b>{{ sermonItem?.postTitle }}</b><br>
-                            {{ sermonItem?.speaker }}
+                            <b>{{ sermonItem?.sermonTitle }}</b><br>
+                            {{ sermonItem?.sermonSpeaker }}
                         </p>
                     </div>
                     <div id="sermonResultItemDate" class="col-lg-2 col-4">
                         <p id="sermonResultItemDateText">
-                            {{ sermonItem?.sermonDateFormatted }}
+                            {{ sermonItem?.sermonDate | date: 'MMM d, y' }}
                         </p>
                     </div>
                 </div>
@@ -103,11 +69,12 @@
             <nav aria-label="Sermons Page navigation">
                 <ul class="pagination justify-content-center" 
                     *ngIf="sermonsPage != null">
-                    <li *ngFor="let pageNumber of sermonsPage.pagesList" 
+                    <li *ngFor="let pageNumber of paginationNumbers" 
                         class="page-item" 
-                        [ngClass]="{'active': pageNumber == sermonsPage.pageNumber}">
-                        <a class="page-link" 
-                            (click)="sermonsPage.setPage(pageNumber)">
+                        [ngClass]="{'active': pageNumber == currentPageNumber}">
+                        <a class="page-link"
+                            [ngClass]="{'disabledLink' : totalPages < 2}" 
+                            (click)="loadPage(pageNumber)">
                             &nbsp;{{ pageNumber }}&nbsp;
                         </a>
                     </li>

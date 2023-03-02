@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { RoutingService } from 'src/app/services/routing/routing.service';
-import { PostMapper } from 'src/app/utils/post.mapper';
 
 @Component({
   selector: 'app-events-section',

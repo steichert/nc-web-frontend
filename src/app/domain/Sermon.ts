@@ -1,16 +1,24 @@
 import { Post } from "./Post";
 
 export class Sermon extends Post {
-    sermonSeries: string | null;
-    sermonDate: string | null;
-    sermonDateFormatted: string | null;
-    speaker: string | null;
+    sermonTitle: string | null;
+    sermonDescription: string | null;
+    sermonSpeaker: string | null;
+    sermonAudioUrl: string | null;
+    sermonSeoUrl: string | null;
+    sermonSeriesId: number | null;
+    sermonDate: Date | null;
+    creationDate: Date | null;
 
     constructor() {
         super();
-        this.sermonSeries = null;
+        this.sermonTitle = null;
+        this.sermonDescription = null;
+        this.sermonSpeaker = null;
+        this.sermonAudioUrl = null;
+        this.sermonSeoUrl = null;
+        this.sermonSeriesId = null;
         this.sermonDate = null;
-        this.sermonDateFormatted = null;
-        this.speaker = null;
+        this.creationDate = null;
     }
 }

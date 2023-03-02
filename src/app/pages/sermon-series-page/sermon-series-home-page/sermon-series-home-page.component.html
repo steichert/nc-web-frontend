@@ -31,11 +31,19 @@
                         allowfullscreen>
                 </iframe>
             </div>
+
+            <div id="moreSermonsButtonContainer" class="mt-5">
+                <button id="sermonButton" 
+                        class="btn btn-success btn-green" 
+                        (click)="navigateToLink('/sermons/page/1')">
+                    <b>MORE SERMONS</b>
+                </button>
+            </div>
         </div>    
     </div>
 
     <div id="pastSermonsTitle" class="section-title">
-        <h3><b>PAST SERMONS</b></h3>
+        <h3><b>PAST SERMON SERIES</b></h3>
     </div>
 
     <div id="pastSermonsContainer" class="row">

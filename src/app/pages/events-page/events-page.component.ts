@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
-import { PostMapper } from 'src/app/utils/post.mapper';
-import { Event } from 'src/app/domain/Event';
 import { Title } from '@angular/platform-browser';
 import { EventService } from 'src/app/services/event/event.service';
 

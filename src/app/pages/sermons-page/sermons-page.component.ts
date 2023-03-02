@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Page } from 'src/app/domain/Page';
 import { Sermon } from 'src/app/domain/Sermon';
 import { imageUrls } from 'src/app/resources/image-url';
 import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
-import { PostMapper } from 'src/app/utils/post.mapper';
-
 
 @Component({
     selector: 'app-sermons-page',
@@ -26,57 +24,74 @@ export class SermonsPageComponent implements OnInit {
     sermonSearchType: string;
     availableSearchTypes = ['Title', 'Speaker', 'Series', 'Date'];
 
-    sermonsPage: Page;
-    allSermons: Sermon[] = [];
+    sermonsPage: Page | null = null;
+    currentSermonFromPage: Sermon[] = [];
     activeSermon: Sermon;
-    currentSermonPage: Sermon[] = [];
 
-    pageSize: number = 5;
-    pages: number[] = [];
+    allSermonSeriesLite: any[] = [];
+
+    pageSize: number = 10;
+    totalPages: number = 0;
+    currentPageNumber: number = 1;
+    paginationNumbers: number[] = [1];
 
     constructor(private navbarService: NavbarService,
                 private title: Title,
                 private router: Router,
+                private route: ActivatedRoute,
                 private ncApi: ApiService, 
                 private loadingService: LoadingService) { 
         this.title.setTitle(this.pageTitle);
         this.sermonSearchTerm = '';
         this.sermonSearchType = 'Title';
-        this.sermonsPage = new Page([], 1, 0);
         this.activeSermon = new Sermon();
     }
 
     ngOnInit(): void {
         this.navbarService.setCurrentURL(this.router.url);
-        this.fetchAllSermonData();
+        this.fetchAllSermonSeriesLite();
         this.sermonSearchTerm = '';
         this.sermonSearchType = 'Title';
+
+        this.route.params.subscribe(
+            (params) => {
+                if (params['pageNumber'] != null) {
+                    this.fetchSermonsByPageNumber(params['pageNumber']);
+                } else {
+                    this.router.navigateByUrl('/sermons/all/page/1');
+                }
+            }
+        );
     }
 
-    public fetchAllSermonData() {
+    public fetchAllSermonSeriesLite() {
         this.isLoading = true;
         this.loadingService.incrementLoading();
 
-        let fromDate = new Date();
-        fromDate.setMonth(fromDate.getMonth() - 6);
-        let fromDateString = fromDate.toISOString().split('T')[0];
+        this.ncApi.getAllSermonSeriesLite().subscribe(
+            (data: any) => {
+                this.allSermonSeriesLite = data;
+                this.loadingService.decrementLoading();
+                this.isLoading = false;
+            },
+            (err) => {
+                this.loadingService.decrementLoading();
+                this.isLoading = false;
+                console.log(err.error.text);
+            }
+        )
+    }
 
-        let today = new Date();
-        let toDateString = today.toISOString().split('T')[0];
+    public fetchSermonsByPageNumber(pageNumber: number) {
+        this.isLoading = true;
+        this.loadingService.incrementLoading();
 
-        this.ncApi.getSermonPosts(fromDateString, toDateString).subscribe(
-            data => {
+        this.ncApi.getAllPagedSermons(pageNumber).subscribe(
+            (data: any) => {
                 if (data != null) {
-                    this.allSermons = PostMapper.mapToSermons(data);
-                    this.sermonsPage = new Page(this.allSermons, 1, this.pageSize);
-                    this.sermonsPage.archivedItems = this.sermonsPage.allItems;
-                    this.sermonsPage.setPage(1);
-
-                    if (this.allSermons.length > 0) {
-                        this.activeSermon = this.allSermons[0];
-                    }
-                } else {
-                    console.log("Unable to retrieve latest sermon");
+                    this.sermonsPage = data;
+                    this.updatePagination(this.sermonsPage);
+                    this.currentPageNumber = pageNumber;
                 }
 
                 this.loadingService.decrementLoading();
@@ -88,6 +103,28 @@ export class SermonsPageComponent implements OnInit {
                 console.log(err.error.text);
             }
         );
+    }
+
+    private updatePagination(sermonPage: Page | null) {
+        if (sermonPage == null || sermonPage.rows == null) {
+            this.paginationNumbers = [1];
+            this.totalPages = 0;
+        } else {
+            this.currentSermonFromPage = sermonPage.rows;
+            this.totalPages = sermonPage.count != null ? Math.ceil(sermonPage.count / this.pageSize) : 0;
+            this.paginationNumbers = [];
+            for (let i = 1 ; i <= this.totalPages ; i++) {
+                this.paginationNumbers.push(i );
+            }
+        }
+    }
+
+    public loadPage(pageNumber: number) {
+        this.router.navigateByUrl(`/sermons/all/page/${pageNumber}`)
+    }
+
+    public loadSermon(sermon: Sermon) {
+        this.router.navigateByUrl(`/sermon/${sermon.sermonSeoUrl}`);
     }
 
     public selectSermon(sermon: Sermon) {
@@ -105,6 +142,26 @@ export class SermonsPageComponent implements OnInit {
 
     public setSearchType(type: string) {
         this.sermonSearchType = type;
+    }
+
+    public getCoverImageBySermonSeriesId(id: any) {
+        for (let i = 0 ; i< this.allSermonSeriesLite.length ; i++) {
+            if (this.allSermonSeriesLite[i].id == id) {
+                return this.allSermonSeriesLite[i].seriesCoverImageUrl;
+            }
+        }
+
+        return this.defaultThumbnailImageUrl;
+    }
+
+    public getSeriesTitleBySermonSeriesId(id: any) {
+        for (let i = 0 ; i< this.allSermonSeriesLite.length ; i++) {
+            if (this.allSermonSeriesLite[i].id == id) {
+                return this.allSermonSeriesLite[i].seriesTitle;
+            }
+        }
+
+        return null;
     }
 
     public scrollToTop() {

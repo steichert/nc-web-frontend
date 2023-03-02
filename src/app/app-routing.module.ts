@@ -53,6 +53,7 @@ const routes: Routes = [
         children: [
             { path: '', component: SermonSeriesHomePageComponent, pathMatch: 'full' },
             { path: 'series/:seriesUrl', component: SermonSeriesViewPageComponent, pathMatch: 'full' },
+            { path: 'page/:pageNumber', component: SermonsPageComponent, pathMatch: 'full' },
             { path: '**', redirectTo: '/series', pathMatch: 'full' }
         ]
     },
