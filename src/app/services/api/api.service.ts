@@ -55,6 +55,10 @@ export class ApiService {
         return this.http.get(`${environment.ncApiUrl}/v1/sermon-series/lite`);
     }
 
+    public getAllPagedSermonSeriesLite(page: number, searchTerm: string) {
+        return this.http.get(`${environment.ncApiUrl}/v1/sermon-series/page/${page}/lite?searchTerm=${searchTerm}`);
+    }
+
     public getSermonSeriesByIdLite(id: number) {
         return this.http.get(`${environment.ncApiUrl}/v1/sermon-series/${id}/lite`);
     }
@@ -65,5 +69,15 @@ export class ApiService {
 
     public getSermonBySeoUrl(seoUrl: string) {
         return this.http.get(`${environment.ncApiUrl}/v1/sermons/url/${seoUrl}`);
+    }
+
+    public searchSermons(page: number, searchType: string, searchTerm: string, sortType: string, sortDirection: string) {
+        if (searchType == 'sermonDate' && searchTerm != null && searchTerm != '') {
+            let searchDate = new Date(searchTerm);
+            searchDate.setHours(searchDate.getHours() - 2);
+            searchTerm = new Date(searchDate).toISOString().split('T')[0];
+        }
+        
+        return this.http.get(`${environment.ncApiUrl}/v1/sermons?page=${page}&sortType=${sortType}&sortDirection=${sortDirection}&searchType=${searchType}&searchTerm=${searchTerm}`);
     }
 }

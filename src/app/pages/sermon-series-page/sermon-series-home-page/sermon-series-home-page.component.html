@@ -46,16 +46,61 @@
         <h3><b>PAST SERMON SERIES</b></h3>
     </div>
 
-    <div id="pastSermonsContainer" class="row">
-        <div *ngFor="let series of allSermonSeries" 
-             class="col-lg-4 col-md-6 col-sm-12 series-item"
-             (click)="navigateToSeries(series.seriesSeoUrl)">
+    <div class="series-search-container">
+        <div id="seriesSearchInputGroup" class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search series" aria-label="Search series" [(ngModel)]="searchTerm">
+            <button class="btn btn-outline-secondary" type="button" id="button-search" (click)="searchSermonSeries()">Search</button>
+        </div>
+    </div>
+
+    <div *ngIf="isLoadingSermonSeries row">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="pastSermonsContainer" *ngIf="!isLoadingSermonSeries" class="row">
+        <div *ngFor="let series of sermonSeriesItems" 
+                class="col-lg-4 col-md-6 col-sm-12 series-item"
+                (click)="navigateToSeries(series.seriesSeoUrl)">
             <div class="sermon-series-title">
                 <h5><b>{{ series.seriesTitle | titlecase }}</b></h5>
             </div>
             <img class="series-image"
-                 [src]="series.seriesCoverImageUrl" 
-                 alt="Sermon Series Logo"/>
+                    [src]="series.seriesCoverImageUrl" 
+                    alt="Sermon Series Logo"/>
         </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" 
+                       aria-label="Previous"
+                       [ngClass]="{ 'disabled-link' : totalPages < 2 || currentPageNumber == 1 }"
+                       (click)="loadPreviousPage()">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"
+                    *ngFor="let paginationNumber of paginationNumbers"
+                    [ngClass]="{ 'active': currentPageNumber == paginationNumber && totalPages > 1 }">
+                    <a class="page-link"
+                       [ngClass]="{ 'disabled-link' : totalPages < 2 }"
+                       (click)="loadPage(paginationNumber)">
+                       {{ paginationNumber }}
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link"
+                       aria-label="Next"
+                       [ngClass]="{ 'disabled-link' : totalPages > 2 || currentPageNumber == totalPages }"
+                       (click)="loadNextPage()">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
 </div>

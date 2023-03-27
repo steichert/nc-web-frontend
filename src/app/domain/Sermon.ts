@@ -7,6 +7,7 @@ export class Sermon extends Post {
     sermonAudioUrl: string | null;
     sermonSeoUrl: string | null;
     sermonSeriesId: number | null;
+    sermonSeriesTitle: string | null;
     sermonDate: Date | null;
     creationDate: Date | null;
 
@@ -18,6 +19,7 @@ export class Sermon extends Post {
         this.sermonAudioUrl = null;
         this.sermonSeoUrl = null;
         this.sermonSeriesId = null;
+        this.sermonSeriesTitle = null;
         this.sermonDate = null;
         this.creationDate = null;
     }

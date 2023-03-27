@@ -3,43 +3,51 @@
         <h2><b>SERMONS</b></h2>
     </div>
 
-    <div id="searchBarContainer" class="row">
-        <div id="sermonTypeDropdownContainer" class="col-lg-2 col-3">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" 
-                        type="button" 
-                        id="dropdownMenuButton" 
-                        data-bs-toggle="dropdown" 
-                        aria-haspopup="true" 
-                        aria-expanded="false">
-                    {{ sermonSearchType }}
-                </button>
-                <div class="dropdown-menu" 
-                        aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" 
-                        *ngFor="let type of availableSearchTypes" 
-                        (click)="setSearchType(type)">
-                        {{ type }}
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div id="sermonSearchContainer" class="col-lg-10 col-9">
-            <input [(ngModel)]="sermonSearchTerm" 
-                    name="sermonSearchInput" 
-                    id="sermonSearchInput" 
-                    type="text" 
-                    class="form-control" 
-                    placeholder="Search" 
-                    data-bs-toggle="tooltip" 
-                    data-bs-placement="top">
-        </div>
+    
+    <div id="searchBarContainer" class="input-group">
+        <button class="btn btn-outline-secondary dropdown-toggle" 
+                type="button" 
+                data-bs-toggle="dropdown" 
+                aria-expanded="false">{{ sermonSearchTypeText }}</button>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" (click)="setSearchType('sermonTitle', 'Title')">Title</a>
+                <a class="dropdown-item" (click)="setSearchType('sermonSpeaker', 'Speaker')">Speaker</a>
+                <a class="dropdown-item" (click)="setSearchType('sermonSeriesTitle', 'Series')">Series</a>
+                <a class="dropdown-item" (click)="setSearchType('sermonDate', 'Sermon Date')">Sermon Date</a>
+            </li>
+        </ul>
+        <input *ngIf="sermonSearchType != 'sermonDate'"
+               [(ngModel)]="sermonSearchTerm" 
+               name="sermonSearchInput" 
+               id="sermonSearchInput" 
+               type="text" 
+               class="form-control" 
+               placeholder="Search" 
+               data-bs-toggle="tooltip" 
+               data-bs-placement="top">
+        <input *ngIf="sermonSearchType == 'sermonDate'" 
+               [(ngModel)]="sermonSearchTerm"
+               id="sermonDateInput" 
+               class="form-control"
+               type="date">
+        <button type="button" class="btn btn-outline-success" (click)="searchSermons(1)">
+            <i class="bi bi-search"></i>
+        </button>
+        <button type="button" class="btn btn-outline-secondary" (click)="resetSearch()">
+            <i class="bi bi-arrow-counterclockwise"></i>
+        </button>
     </div>
 
     <div id="sermonListContainer" class="row">
+        <div *ngIf="isLoadingSermons" 
+             class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
         <div id="sermonResultsContainer" 
-             *ngIf="sermonsPage != null" 
+             *ngIf="!isLoadingSermons && sermonsPage != null" 
              class="col-lg-12">
             <div class="sermonResultItem" 
                  *ngFor="let sermonItem of currentSermonFromPage" 
@@ -58,24 +66,40 @@
                     </div>
                     <div id="sermonResultItemDate" class="col-lg-2 col-4">
                         <p id="sermonResultItemDateText">
-                            {{ sermonItem?.sermonDate | date: 'MMM d, y' }}
+                            {{ sermonItem?.sermonDate | date: 'MMM d, y' }}<br>
+                            <small>{{ sermonItem?.sermonSeriesTitle }}</small>
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="sermonResultPaginationContainer" class="col-lg-12">
-            <nav aria-label="Sermons Page navigation">
-                <ul class="pagination justify-content-center" 
-                    *ngIf="sermonsPage != null">
-                    <li *ngFor="let pageNumber of paginationNumbers" 
-                        class="page-item" 
-                        [ngClass]="{'active': pageNumber == currentPageNumber}">
+        <div *ngIf="!isLoadingSermons" id="sermonResultPaginationContainer" class="col-lg-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link" 
+                           aria-label="Previous"
+                           [ngClass]="{ 'disabled-link' : totalPages < 2 || currentPageNumber == 1 }"
+                           (click)="loadPreviousPage()">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"
+                        *ngFor="let paginationNumber of paginationNumbers"
+                        [ngClass]="{ 'active': currentPageNumber == paginationNumber && totalPages > 1 }">
                         <a class="page-link"
-                            [ngClass]="{'disabledLink' : totalPages < 2}" 
-                            (click)="loadPage(pageNumber)">
-                            &nbsp;{{ pageNumber }}&nbsp;
+                           [ngClass]="{ 'disabled-link' : totalPages < 2 }"
+                           (click)="loadPage(paginationNumber)">
+                           {{ paginationNumber }}
+                        </a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link"
+                           aria-label="Next"
+                           [ngClass]="{ 'disabled-link' : totalPages > 2 || currentPageNumber == totalPages }"
+                           (click)="loadNextPage()">
+                            <span aria-hidden="true">&raquo;</span>
                         </a>
                     </li>
                 </ul>

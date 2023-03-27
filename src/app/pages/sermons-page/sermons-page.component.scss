@@ -1,8 +1,8 @@
 .sermons-container {
     padding-top: 10em;
     padding-bottom: 2em;
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 4em;
+    padding-right: 4em;
 }
 
 #sermonsTitle {
@@ -53,7 +53,6 @@
 
 #searchBarContainer {
     margin-top: 1rem;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 #sermonTypeDropdownContainer {
@@ -82,14 +81,6 @@
     padding: 0;
 }
 
-#sermonSearchInput {
-    height: 100%;
-    border-top-left-radius: 0px !important;
-    border-bottom-left-radius: 0px !important;
-    border-top-right-radius: 5px !important;
-    border-bottom-right-radius: 5px !important;
-}
-
 #sermonResultsContainer {
     margin-top: 2%;
     overflow-x: hidden;
@@ -100,6 +91,7 @@
 
 #sermonListContainer {
     margin-top: 1rem;
+    min-height: 400px;
 }
 
 #sermonListColumn {
@@ -160,32 +152,24 @@
     text-align: center;
 }
 
-.page-item {
-    margin-left: 1%;
-    margin-right: 1%;
-}
-
 .page-item:hover {
     cursor: pointer;
 }
 
-.page-item:first-child .page-link,
-.page-item:last-child .page-link {
-    border-radius: 100%;
-}
-
-.page-item.active .page-link {
-    background-color: #dddddd;
-    border-color: #dedede;
-}
-
-.page-link {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-    border-radius: 100%;
-    color: black;
+.disabled-link {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+    text-decoration: none;
+    color: currentColor;
 }
 
 @media screen and (max-width: 68rem) {
+    .sermons-container {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
     #sermonListContainer {
         margin-top: 2rem;
     }

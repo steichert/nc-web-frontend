@@ -15,7 +15,7 @@
 
 #pastSermonsTitle {
     padding-top: 5em;
-    padding-bottom: 3em;
+    padding-bottom: 2em;
 }
 
 #latestSermonSection {
@@ -60,6 +60,21 @@
     text-align: center;
 }
 
+.series-search-container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+    margin-bottom: 2rem;
+}
+
+#seriesSearchInputGroup {
+    padding-left: 68%;
+}
+
+#seriesSearchInputGroup input {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
 #pastSermonsContainer {
     padding-left: 5rem;
     padding-right: 5rem;
@@ -89,6 +104,14 @@
     transition: 200ms ease-out;
 }
 
+.disabled-link {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+    text-decoration: none;
+    color: currentColor;
+}
+
 @media (max-width: 68rem) {
     #latestSermonContainer {
         padding-left: 1rem;
@@ -97,5 +120,9 @@
 
     #latestSermonTitle {
         padding-top: 10em;
+    }
+
+    #seriesSearchInputGroup {
+        padding-left: 0;
     }
 }

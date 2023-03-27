@@ -20,13 +20,12 @@ export class SermonsPageComponent implements OnInit {
     pageTitle = 'Sermons | New Creation Family Church';
     defaultThumbnailImageUrl = imageUrls.defaultSermonsThumbnailImageUrl;
 
-    sermonSearchTerm: string;
-    sermonSearchType: string;
-    availableSearchTypes = ['Title', 'Speaker', 'Series', 'Date'];
+    sermonSearchTerm: string = '';
+    sermonSearchType: string = 'sermonTitle';
+    sermonSearchTypeText: string = 'Title';
 
     sermonsPage: Page | null = null;
     currentSermonFromPage: Sermon[] = [];
-    activeSermon: Sermon;
 
     allSermonSeriesLite: any[] = [];
 
@@ -35,6 +34,8 @@ export class SermonsPageComponent implements OnInit {
     currentPageNumber: number = 1;
     paginationNumbers: number[] = [1];
 
+    isLoadingSermons: boolean = false;
+
     constructor(private navbarService: NavbarService,
                 private title: Title,
                 private router: Router,
@@ -42,23 +43,18 @@ export class SermonsPageComponent implements OnInit {
                 private ncApi: ApiService, 
                 private loadingService: LoadingService) { 
         this.title.setTitle(this.pageTitle);
-        this.sermonSearchTerm = '';
-        this.sermonSearchType = 'Title';
-        this.activeSermon = new Sermon();
     }
 
     ngOnInit(): void {
         this.navbarService.setCurrentURL(this.router.url);
         this.fetchAllSermonSeriesLite();
-        this.sermonSearchTerm = '';
-        this.sermonSearchType = 'Title';
 
         this.route.params.subscribe(
             (params) => {
                 if (params['pageNumber'] != null) {
                     this.fetchSermonsByPageNumber(params['pageNumber']);
                 } else {
-                    this.router.navigateByUrl('/sermons/all/page/1');
+                    this.router.navigateByUrl('/sermons/page/1');
                 }
             }
         );
@@ -86,7 +82,7 @@ export class SermonsPageComponent implements OnInit {
         this.isLoading = true;
         this.loadingService.incrementLoading();
 
-        this.ncApi.getAllPagedSermons(pageNumber).subscribe(
+        this.ncApi.searchSermons(pageNumber, this.sermonSearchType, this.sermonSearchTerm, 'sermonDate', 'desc').subscribe(
             (data: any) => {
                 if (data != null) {
                     this.sermonsPage = data;
@@ -119,29 +115,52 @@ export class SermonsPageComponent implements OnInit {
         }
     }
 
+    public searchSermons(pageNumber: number) {
+        this.isLoadingSermons = true;
+        this.ncApi.searchSermons(pageNumber, this.sermonSearchType, this.sermonSearchTerm, 'sermonDate', 'desc').subscribe(
+            (data: any) => {
+                this.sermonsPage = data;
+                this.updatePagination(this.sermonsPage);
+                this.currentPageNumber = pageNumber;
+                this.isLoadingSermons = false;
+            },
+            (err) => {
+                this.isLoadingSermons = false;
+                console.log(err);
+            }
+        );
+    }
+
+    public loadPreviousPage() {
+        this.scrollToTop();
+        this.searchSermons(this.currentPageNumber - 1);
+    }
+
     public loadPage(pageNumber: number) {
-        this.router.navigateByUrl(`/sermons/all/page/${pageNumber}`)
+        this.scrollToTop();
+        this.searchSermons(pageNumber);
+    }
+
+    public loadNextPage() {
+        this.scrollToTop();
+        this.searchSermons(this.currentPageNumber + 1);
     }
 
     public loadSermon(sermon: Sermon) {
         this.router.navigateByUrl(`/sermon/${sermon.sermonSeoUrl}`);
     }
 
-    public selectSermon(sermon: Sermon) {
-        this.activeSermon = sermon;
-        this.scrollToTop();
+    public setSearchType(searchType: string, searchTypeText: string) {
+        this.sermonSearchTerm = '';
+        this.sermonSearchTypeText = searchTypeText;
+        this.sermonSearchType = searchType;
     }
 
-    public getSermonsPage() {
-        return this.sermonsPage;
-    }
-
-    public setSermonsPage(sermonsPage: any) {
-        this.sermonsPage = sermonsPage;
-    }
-
-    public setSearchType(type: string) {
-        this.sermonSearchType = type;
+    public resetSearch() {
+        this.sermonSearchTerm = '';
+        this.sermonSearchTypeText = 'Title';
+        this.sermonSearchType = 'sermonTitle';
+        this.searchSermons(1);
     }
 
     public getCoverImageBySermonSeriesId(id: any) {
