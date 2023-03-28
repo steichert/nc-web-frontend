@@ -26,6 +26,7 @@ export class SermonsPageComponent implements OnInit {
 
     sermonsPage: Page | null = null;
     currentSermonFromPage: Sermon[] = [];
+    PAGINATION_NUMBER_CUTOFF: number = 5;
 
     allSermonSeriesLite: any[] = [];
 
@@ -86,8 +87,8 @@ export class SermonsPageComponent implements OnInit {
             (data: any) => {
                 if (data != null) {
                     this.sermonsPage = data;
-                    this.updatePagination(this.sermonsPage);
                     this.currentPageNumber = pageNumber;
+                    this.updatePagination(this.sermonsPage);
                 }
 
                 this.loadingService.decrementLoading();
@@ -108,9 +109,10 @@ export class SermonsPageComponent implements OnInit {
         } else {
             this.currentSermonFromPage = sermonPage.rows;
             this.totalPages = sermonPage.count != null ? Math.ceil(sermonPage.count / this.pageSize) : 0;
+            var startNumber = (this.PAGINATION_NUMBER_CUTOFF * Math.floor((this.currentPageNumber - 1) / this.PAGINATION_NUMBER_CUTOFF)) + 1;
             this.paginationNumbers = [];
-            for (let i = 1 ; i <= this.totalPages ; i++) {
-                this.paginationNumbers.push(i );
+            for (let i = 0 ; i < this.PAGINATION_NUMBER_CUTOFF && i + startNumber <= this.totalPages ; i++) {
+                this.paginationNumbers.push(i + startNumber);
             }
         }
     }
@@ -120,8 +122,8 @@ export class SermonsPageComponent implements OnInit {
         this.ncApi.searchSermons(pageNumber, this.sermonSearchType, this.sermonSearchTerm, 'sermonDate', 'desc').subscribe(
             (data: any) => {
                 this.sermonsPage = data;
-                this.updatePagination(this.sermonsPage);
                 this.currentPageNumber = pageNumber;
+                this.updatePagination(this.sermonsPage);
                 this.isLoadingSermons = false;
             },
             (err) => {
@@ -132,18 +134,17 @@ export class SermonsPageComponent implements OnInit {
     }
 
     public loadPreviousPage() {
-        this.scrollToTop();
-        this.searchSermons(this.currentPageNumber - 1);
+        let pageNumber = this.paginationNumbers[0] - 1;
+        this.searchSermons(pageNumber);
     }
 
     public loadPage(pageNumber: number) {
-        this.scrollToTop();
         this.searchSermons(pageNumber);
     }
 
     public loadNextPage() {
-        this.scrollToTop();
-        this.searchSermons(this.currentPageNumber + 1);
+        let pageNumber = this.paginationNumbers[this.paginationNumbers.length - 1] + 1;
+        this.searchSermons(pageNumber);
     }
 
     public loadSermon(sermon: Sermon) {
@@ -188,5 +189,13 @@ export class SermonsPageComponent implements OnInit {
             top: 0,
             behavior: 'smooth'
         });
+    }
+
+    public disablePreviousPageButton() { 
+        return this.currentPageNumber <= this.PAGINATION_NUMBER_CUTOFF;
+    }
+
+    public disableNextPageButton() {
+        return this.paginationNumbers[this.paginationNumbers.length - 1] == this.totalPages;
     }
 }

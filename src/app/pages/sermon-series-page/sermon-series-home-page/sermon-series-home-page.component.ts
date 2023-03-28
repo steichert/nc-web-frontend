@@ -30,6 +30,7 @@ export class SermonSeriesHomePageComponent implements OnInit {
     paginationNumbers: number[] = [];
     totalPages: number = 0
     PAGE_SIZE: number = 6;
+    PAGINATION_NUMBER_CUTOFF: number = 5;
 
     searchTerm: string = '';
 
@@ -60,10 +61,9 @@ export class SermonSeriesHomePageComponent implements OnInit {
         this.isLoadingSermonSeries = true;
         this.ncApi.getAllPagedSermonSeriesLite(pageNumber, searchTerm).subscribe(
             (data: any) => {
-                console.log(data);
                 this.sermonSeriesPage = data;
-                this.updatePagination(this.sermonSeriesPage);
                 this.currentPageNumber = pageNumber;
+                this.updatePagination(this.sermonSeriesPage);
                 this.loadingService.decrementLoading();
                 this.isLoadingSermonSeries = false;
             },
@@ -82,9 +82,10 @@ export class SermonSeriesHomePageComponent implements OnInit {
         } else {
             this.sermonSeriesItems = sermonSeriesPage.rows;
             this.totalPages = sermonSeriesPage.count != null ? Math.ceil(sermonSeriesPage.count / this.PAGE_SIZE) : 0;
+            var startNumber = (this.PAGINATION_NUMBER_CUTOFF * Math.floor((this.currentPageNumber - 1) / this.PAGINATION_NUMBER_CUTOFF)) + 1;
             this.paginationNumbers = [];
-            for (let i = 0 ; i < this.totalPages ; i++) {
-                this.paginationNumbers.push(i + 1);
+            for (let i = 0 ; i < this.PAGINATION_NUMBER_CUTOFF && i + startNumber <= this.totalPages ; i++) {
+                this.paginationNumbers.push(i + startNumber);
             }
         }
     }
@@ -102,7 +103,8 @@ export class SermonSeriesHomePageComponent implements OnInit {
     }
 
     public loadPreviousPage() {
-        this.fetchSermonSeriesData(this.currentPageNumber - 1, this.searchTerm);
+        let pageNumber = this.paginationNumbers[0] - 1;
+        this.fetchSermonSeriesData(pageNumber, this.searchTerm);
     }
 
     public loadPage(pageNumber: number) {
@@ -110,7 +112,15 @@ export class SermonSeriesHomePageComponent implements OnInit {
     }
 
     public loadNextPage() {
-        this.currentPageNumber++;
-        this.fetchSermonSeriesData(this.currentPageNumber + 1, this.searchTerm);
+        let pageNumber = this.paginationNumbers[this.paginationNumbers.length - 1] + 1;
+        this.fetchSermonSeriesData(pageNumber, this.searchTerm);
+    }
+
+    public disablePreviousPageButton() { 
+        return this.currentPageNumber <= this.PAGINATION_NUMBER_CUTOFF;
+    }
+
+    public disableNextPageButton() {
+        return this.paginationNumbers[this.paginationNumbers.length - 1] == this.totalPages;
     }
 }

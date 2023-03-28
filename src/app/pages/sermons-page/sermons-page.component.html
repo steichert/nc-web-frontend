@@ -80,7 +80,7 @@
                     <li class="page-item">
                         <a class="page-link" 
                            aria-label="Previous"
-                           [ngClass]="{ 'disabled-link' : totalPages < 2 || currentPageNumber == 1 }"
+                           [ngClass]="{ 'disabled-link' : disablePreviousPageButton() }"
                            (click)="loadPreviousPage()">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
@@ -97,7 +97,7 @@
                     <li class="page-item">
                         <a class="page-link"
                            aria-label="Next"
-                           [ngClass]="{ 'disabled-link' : totalPages > 2 || currentPageNumber == totalPages }"
+                           [ngClass]="{ 'disabled-link' : disableNextPageButton() }"
                            (click)="loadNextPage()">
                             <span aria-hidden="true">&raquo;</span>
                         </a>
