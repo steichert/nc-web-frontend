@@ -15,13 +15,11 @@ import { NavbarService } from 'src/app/services/navbar/navbar.service';
 })
 export class SermonsPageComponent implements OnInit {
 
-    isLoading: Boolean = false;
-
     pageTitle = 'Sermons | New Creation Family Church';
     defaultThumbnailImageUrl = imageUrls.defaultSermonsThumbnailImageUrl;
 
-    sermonSearchTerm: string = '';
-    sermonSearchType: string = 'sermonTitle';
+    sermonSearchTerm: string | null = '';
+    sermonSearchType: string | null = 'sermonTitle';
     sermonSearchTypeText: string = 'Title';
 
     sermonsPage: Page | null = null;
@@ -53,50 +51,73 @@ export class SermonsPageComponent implements OnInit {
         this.route.params.subscribe(
             (params) => {
                 if (params['pageNumber'] != null) {
-                    this.fetchSermonsByPageNumber(params['pageNumber']);
-                } else {
-                    this.router.navigateByUrl('/sermons/page/1');
+                    this.currentPageNumber = params['pageNumber'];
                 }
+
+                let queryParamMap = this.route.snapshot.queryParamMap;
+
+                if (queryParamMap.get('searchType') != null) {
+                    this.sermonSearchType = queryParamMap.get('searchType');
+                    this.sermonSearchTypeText = this.determineSearchTypeText(this.sermonSearchType);
+                }
+
+                if (queryParamMap.get('searchTerm') != null) {
+                    this.sermonSearchTerm = queryParamMap.get('searchTerm');
+                }
+
+                this.fetchSermons();
+            }
+        );
+
+        this.route.queryParamMap.subscribe(
+            (queryParamMap) => {
+                if (this.route.snapshot.params['pageNumber'] != null) {
+                    this.currentPageNumber = this.route.snapshot.params['pageNumber'];
+                }
+
+                if (queryParamMap.get('searchType') != null) {
+                    this.sermonSearchType = queryParamMap.get('searchType');
+                    this.sermonSearchTypeText = this.determineSearchTypeText(this.sermonSearchType);
+                }
+
+                if (queryParamMap.get('searchTerm') != null) {
+                    this.sermonSearchTerm = queryParamMap.get('searchTerm');
+                }
+
+                this.fetchSermons();
             }
         );
     }
 
     public fetchAllSermonSeriesLite() {
-        this.isLoading = true;
         this.loadingService.incrementLoading();
 
         this.ncApi.getAllSermonSeriesLite().subscribe(
             (data: any) => {
                 this.allSermonSeriesLite = data;
                 this.loadingService.decrementLoading();
-                this.isLoading = false;
             },
             (err) => {
                 this.loadingService.decrementLoading();
-                this.isLoading = false;
                 console.log(err.error.text);
             }
         )
     }
 
-    public fetchSermonsByPageNumber(pageNumber: number) {
-        this.isLoading = true;
+    public fetchSermons() {
         this.loadingService.incrementLoading();
 
-        this.ncApi.searchSermons(pageNumber, this.sermonSearchType, this.sermonSearchTerm, 'sermonDate', 'desc').subscribe(
+        this.ncApi.searchSermons(this.currentPageNumber, this.sermonSearchType, this.sermonSearchTerm, 'sermonDate', 'desc').subscribe(
             (data: any) => {
                 if (data != null) {
                     this.sermonsPage = data;
-                    this.currentPageNumber = pageNumber;
                     this.updatePagination(this.sermonsPage);
                 }
 
                 this.loadingService.decrementLoading();
-                this.isLoading = false;
             },
             err => {
                 this.loadingService.decrementLoading();
-                this.isLoading = false;
                 console.log(err.error.text);
             }
         );
@@ -118,33 +139,38 @@ export class SermonsPageComponent implements OnInit {
     }
 
     public searchSermons(pageNumber: number) {
-        this.isLoadingSermons = true;
-        this.ncApi.searchSermons(pageNumber, this.sermonSearchType, this.sermonSearchTerm, 'sermonDate', 'desc').subscribe(
-            (data: any) => {
-                this.sermonsPage = data;
-                this.currentPageNumber = pageNumber;
-                this.updatePagination(this.sermonsPage);
-                this.isLoadingSermons = false;
-            },
-            (err) => {
-                this.isLoadingSermons = false;
-                console.log(err);
-            }
-        );
+        if (this.sermonSearchTerm != null && this.sermonSearchTerm != '') {
+            this.router.navigateByUrl(`/sermons/page/${pageNumber}?searchType=${this.sermonSearchType}&searchTerm=${this.sermonSearchTerm}`);
+        } else {
+            this.router.navigateByUrl(`/sermons/page/${pageNumber}`);
+        }
     }
 
     public loadPreviousPage() {
         let pageNumber = this.paginationNumbers[0] - 1;
-        this.searchSermons(pageNumber);
+        if (this.sermonSearchTerm != null && this.sermonSearchTerm != '') {
+            this.router.navigateByUrl(`/sermons/page/${pageNumber}?searchType=${this.sermonSearchType}&searchTerm=${this.sermonSearchTerm}`);
+        } else {
+            this.router.navigateByUrl(`/sermons/page/${pageNumber}`);
+        }
+        
     }
 
     public loadPage(pageNumber: number) {
-        this.searchSermons(pageNumber);
+        if (this.sermonSearchTerm != null && this.sermonSearchTerm != '') {
+            this.router.navigateByUrl(`/sermons/page/${pageNumber}?searchType=${this.sermonSearchType}&searchTerm=${this.sermonSearchTerm}`);
+        } else {
+            this.router.navigateByUrl(`/sermons/page/${pageNumber}`);
+        }
     }
 
     public loadNextPage() {
         let pageNumber = this.paginationNumbers[this.paginationNumbers.length - 1] + 1;
-        this.searchSermons(pageNumber);
+        if (this.sermonSearchTerm != null && this.sermonSearchTerm != '') {
+            this.router.navigateByUrl(`/sermons/page/${pageNumber}?searchType=${this.sermonSearchType}&searchTerm=${this.sermonSearchTerm}`);
+        } else {
+            this.router.navigateByUrl(`/sermons/page/${pageNumber}`);
+        }
     }
 
     public loadSermon(sermon: Sermon) {
@@ -197,5 +223,20 @@ export class SermonsPageComponent implements OnInit {
 
     public disableNextPageButton() {
         return this.paginationNumbers[this.paginationNumbers.length - 1] == this.totalPages;
+    }
+
+    private determineSearchTypeText(searchType: string | null) {
+        switch (searchType) {
+            case 'sermonTitle':
+                return 'Title';
+            case 'sermonSeriesTitle':
+                return 'Series';
+            case 'sermonSpeaker':
+                return 'Speaker';
+            case 'sermonDate':
+                return 'Sermon Date';
+            default:
+                return 'Title';
+        }
     }
 }
