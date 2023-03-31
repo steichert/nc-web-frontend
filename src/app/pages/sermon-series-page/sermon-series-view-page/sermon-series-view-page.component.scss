@@ -6,9 +6,9 @@
 
 #sermonSeriesBanner {
     position: absolute;
-    top: 8%;
+    top: 7%;
     left: 0;
-    height: 300px;
+    height: 400px;
     width: 100%;
     background-position: 10%;
 }
@@ -19,12 +19,13 @@
 }
 
 #sermonSeriesTitle {
-    padding-top: 26rem;
+    padding-top: 30rem;
     padding-bottom: 5rem;
 }
 
 #sermonSeriesDescription {
     padding-bottom: 2rem;
+    white-space: pre-wrap;
 }
 
 #sermonList {
@@ -41,12 +42,14 @@
     margin-bottom: 4rem;
     cursor: pointer;
     border-radius: 5px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
     transition: 200ms ease-out;
 }
 
 .sermon-item:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     transition: 200ms ease-in;
 }
 
