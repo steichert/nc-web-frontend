@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { LoadingService } from 'src/app/services/loading/loading.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class HomePageComponent implements OnInit {
 
     constructor(private title: Title,
                 private navbarService: NavbarService,
-                private route: ActivatedRoute) {
+                private route: ActivatedRoute,
+                private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);
     }
 
@@ -27,6 +29,7 @@ export class HomePageComponent implements OnInit {
                 if (data != null && data['page_section'] != null) {
                     setTimeout(() => {
                         this.scrollToPageSection(data['page_section']);
+                        this.loadingService.stopLoading();
                     }, 500);
                 }
             });

@@ -10,11 +10,10 @@ declare var $ :any;
 })
 export class EventCardComponent implements OnInit {
 
-    @Input('event') event: Event | null;
+    @Input('event') event: any | null;
     @Input('eventModalId') eventModalId: number | null;
 
     constructor(private eventService: EventService) { 
-        this.event = new Event();
         this.eventModalId = null;
     }
 

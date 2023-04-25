@@ -11,6 +11,7 @@ import {
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
 import { ToastrService } from 'ngx-toastr';
+import { LoadingService } from 'src/app/services/loading/loading.service';
 declare var $ :any;
 
 @Component({
@@ -56,11 +57,13 @@ export class ConnectPageComponent implements OnInit {
     constructor(private title: Title,
                 private router: Router,
                 private ncApi: ApiService,
-                private toastr: ToastrService) {
+                private toastr: ToastrService,
+                private loadingService: LoadingService) {
         title.setTitle(this.pageTitle);
     }
 
     ngOnInit(): void {
+        this.loadingService.stopLoading();
     }
     
     public submitJoinTeam(): void {

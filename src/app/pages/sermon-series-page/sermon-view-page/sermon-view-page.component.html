@@ -1,0 +1,44 @@
+<div class="sermon-container">
+    <div id="sermonSection">
+        <div id="backToSeriesButton" 
+             class="row">
+            <span (click)="navigateToSermonSeries(currentSermonSeries?.seriesSeoUrl)">
+                <i class="bi bi-chevron-left"></i>
+                &nbsp;Back to series:&nbsp;
+                <i>{{ currentSermonSeries?.seriesTitle | titlecase }}</i>
+            </span>
+        </div>
+        <div id="sermonContainer" class="row">
+            <div id="sermonDetails" *ngIf="currentSermon.sermonTitle">
+                <h5><b>{{ currentSermon.sermonTitle | titlecase }}</b></h5>
+                <p>
+                    <i>{{ currentSermon.sermonSpeaker | titlecase }}</i>
+                    <br>
+                    <small>{{ currentSermon.sermonDate | date: 'MMM d, y' }}</small>
+                </p>
+            </div>
+        
+            <div id="sermonAudioPlayerContainer" *ngIf="currentSermon.sermonAudioUrl">
+                <audio id="sermonAudioPlayer" 
+                        [src]="currentSermon.sermonAudioUrl" 
+                        type="audio/m4a"
+                        controls>
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="sermon-video-container" *ngIf="currentSermon.sermonVideoUrl">
+                <iframe class="sermon-video-iframe"
+                        [src]="currentSermon.sermonVideoUrl | safe" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <div id="sermonDescription">
+                <p><i>{{ currentSermon.sermonDescription }}</i></p>
+            </div>
+        </div>    
+    </div>
+</div>

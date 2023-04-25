@@ -23,6 +23,11 @@
     width: 100%;
 }
 
+.card-open-img-top {
+    max-height: 250px;
+    object-fit: cover;
+}
+
 .card-block {
     max-height: 300px;
     overflow: hidden;
@@ -49,8 +54,12 @@
     margin-top: 5%;
 }
 
+#eventTitle {
+    padding-top: 1rem;
+}
+
 #eventDate {
-    font-size: 95%;
+    padding-bottom: 1rem;
 }
 
 .event-body {
@@ -83,7 +92,14 @@
 }
 
 .event-modal-title {
-    padding-top: 2.5em;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+#eventModalDescription {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    white-space: pre-wrap;
 }
 
 .event-modal-date {
@@ -109,8 +125,7 @@
 }
 
 .btn-contact-us {
-    color: white;
     display: inline-block;
-    margin-left: 0;
-    margin-right: auto;
+    margin-left: auto;
+    margin-right: 0;
 }

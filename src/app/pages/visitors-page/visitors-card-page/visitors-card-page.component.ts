@@ -6,6 +6,7 @@ import { Child } from 'src/app/domain/Child';
 import { Visitor } from 'src/app/domain/Visitor';
 import { imageUrls } from 'src/app/resources/image-url';
 import { ApiService } from 'src/app/services/api/api.service';
+import { LoadingService } from 'src/app/services/loading/loading.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
 import { environment } from 'src/environments/environment';
 
@@ -33,13 +34,15 @@ export class VisitorsCardPageComponent implements OnInit {
                 private navbarService: NavbarService, 
                 private router: Router,
                 private toastr: ToastrService,
-                private title: Title) {
+                private title: Title,
+                private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);             
         this.visitorDetails = new Visitor();
     }
 
     ngOnInit() {
         this.navbarService.setCurrentURL(this.router.url);
+        this.loadingService.stopLoading();
     }
 
     public triggerSubmitForm() {

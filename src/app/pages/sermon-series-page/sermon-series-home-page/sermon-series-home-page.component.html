@@ -1,0 +1,106 @@
+<div class="sermons-container">
+    <div id="latestSermonSection">
+        <div id="latestSermonTitle" class="section-title">
+            <h3>LATEST SERMON</h3>
+        </div>
+    
+        <div id="latestSermonContainer" class="row">
+            <div id="sermonDetails" *ngIf="latestSermon.sermonTitle">
+                <h5><b>{{ latestSermon.sermonTitle | titlecase }}</b></h5>
+                <p>
+                    {{ latestSermon.sermonSpeaker | titlecase }}
+                    <br>
+                    <small>{{ latestSermon.sermonDate | date: 'MMM d, y' }}</small>
+                </p>
+            </div>
+        
+            <div id="sermonAudioPlayerContainer" *ngIf="latestSermon.sermonAudioUrl">
+                <audio id="sermonAudioPlayer" 
+                        [src]="latestSermon.sermonAudioUrl | safe" 
+                        type="audio/m4a" 
+                        controls>
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="sermon-video-container" *ngIf="latestSermon.sermonVideoUrl">
+                <iframe class="sermon-video-iframe"
+                        [src]="latestSermon.sermonVideoUrl | safe" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+
+            <div id="moreSermonsButtonContainer" class="mt-5">
+                <button id="sermonButton" 
+                        class="btn btn-success btn-green" 
+                        (click)="navigateToLink('/sermons/page/1')">
+                    <b>MORE SERMONS</b>
+                </button>
+            </div>
+        </div>    
+    </div>
+
+    <div id="pastSermonsTitle" class="section-title">
+        <h3><b>PAST SERMON SERIES</b></h3>
+    </div>
+
+    <div class="series-search-container">
+        <div id="seriesSearchInputGroup" class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Search series" aria-label="Search series" [(ngModel)]="searchTerm">
+            <button class="btn btn-outline-secondary" type="button" id="button-search" (click)="searchSermonSeries()">Search</button>
+        </div>
+    </div>
+
+    <div *ngIf="isLoadingSermonSeries row">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="pastSermonsContainer" *ngIf="!isLoadingSermonSeries" class="row">
+        <div *ngFor="let series of sermonSeriesItems" 
+                class="col-lg-4 col-md-6 col-sm-12 series-item"
+                (click)="navigateToSeries(series.seriesSeoUrl)">
+            <div class="sermon-series-title">
+                <h5><b>{{ series.seriesTitle | titlecase }}</b></h5>
+            </div>
+            <img class="series-image"
+                    [src]="series.seriesCoverImageUrl" 
+                    alt="Sermon Series Logo"/>
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" 
+                       aria-label="Previous"
+                       [ngClass]="{ 'disabled-link' : disablePreviousPageButton() }"
+                       (click)="loadPreviousPage()">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"
+                    *ngFor="let paginationNumber of paginationNumbers"
+                    [ngClass]="{ 'active': currentPageNumber == paginationNumber && totalPages > 1 }">
+                    <a class="page-link"
+                       [ngClass]="{ 'disabled-link' : totalPages < 2 }"
+                       (click)="loadPage(paginationNumber)">
+                       {{ paginationNumber }}
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link"
+                       aria-label="Next"
+                       [ngClass]="{ 'disabled-link' : disableNextPageButton() }"
+                       (click)="loadNextPage()">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

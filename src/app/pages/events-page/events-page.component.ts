@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
-import { PostMapper } from 'src/app/utils/post.mapper';
-import { Event } from 'src/app/domain/Event';
 import { Title } from '@angular/platform-browser';
 import { EventService } from 'src/app/services/event/event.service';
 
@@ -14,14 +12,14 @@ import { EventService } from 'src/app/services/event/event.service';
 export class EventsPageComponent implements OnInit {
 
     pageTitle = 'Events | New Creation Family Church';
-    events: Event[];
+    activeEvents: any[];
 
     constructor(private ncApi: ApiService,
                 private loadingService: LoadingService,
                 private eventService: EventService,
                 private title: Title) { 
         this.title.setTitle(this.pageTitle);
-        this.events = [];
+        this.activeEvents = [];
     }
 
     ngOnInit(): void {
@@ -29,19 +27,24 @@ export class EventsPageComponent implements OnInit {
     }
 
     private getEvents(): void {
-        this.loadingService.startLoading();
+        this.loadingService.incrementLoading();
 
         let today = new Date();
         let fromDate = today.toISOString().split('T')[0];
         let toDate = '9999-12-31';
 
-        this.ncApi.getEventPosts(fromDate, toDate).subscribe(
+        this.ncApi.getEventsByDateRange(fromDate, toDate).subscribe(
             data => {
-                this.events = PostMapper.mapToEvents(data);
-                this.loadingService.stopLoading();
+                for (let i = 0 ; i < data.length ; i++) {
+                    if (data[i].state == 'Active') {
+                        this.activeEvents.push(data[i]);
+                    }
+                }
+
+                this.loadingService.decrementLoading();
             },
             err => {
-                this.loadingService.stopLoading();
+                this.loadingService.decrementLoading();
             }
         );
     }
