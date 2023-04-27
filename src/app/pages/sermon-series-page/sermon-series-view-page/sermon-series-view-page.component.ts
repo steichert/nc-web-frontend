@@ -40,10 +40,10 @@ export class SermonSeriesViewPageComponent implements OnInit {
             data => {
                 this.sermonSeries = data;
                 this.title.setTitle(`${this.sermonSeries.seriesTitle} | New Creation Family Church`);
-                this.loadingService.decrementLoading();
+                this.loadingService.stopLoading();
             },
             error => {
-                this.loadingService.decrementLoading();
+                this.loadingService.stopLoading();
                 this.router.navigateByUrl('/series');
             }
         );
