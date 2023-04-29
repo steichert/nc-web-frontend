@@ -23,7 +23,7 @@
             <div class="sermon-item" 
                  *ngFor="let sermon of sermonSeries?.sermons; let i = index"
                  (click)="navigateToSermon(sermon.sermonSeoUrl)">
-                <h4><b>{{ i + 1 }}. {{ sermon?.sermonTitle | titlecase }}</b></h4>
+                <h4><b>{{ sermon?.sermonTitle | titlecase }}</b></h4>
                 <p>
                     <i>{{ sermon?.sermonSpeaker | titlecase }}</i>
                     <br>
