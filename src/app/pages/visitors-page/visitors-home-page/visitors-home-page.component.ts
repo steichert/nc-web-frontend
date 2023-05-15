@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { imageUrls } from 'src/app/resources/image-url';
 import { LoadingService } from 'src/app/services/loading/loading.service';
@@ -16,9 +16,11 @@ export class VisitorsHomePageComponent implements OnInit {
     bannerImageUrl = imageUrls.visitorHomeBannerImageUrl;
 
     constructor(private title: Title,
+                private meta: Meta,
                 private router: Router,
                 private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);
+        this.meta.addTag({ name: 'title', content: this.pageTitle });
     }
 
     ngOnInit(): void {

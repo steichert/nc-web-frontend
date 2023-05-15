@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { Page } from 'src/app/domain/Page';
 import { Sermon } from 'src/app/domain/Sermon';
@@ -13,10 +13,12 @@ import { LoadingService } from 'src/app/services/loading/loading.service';
 })
 export class SermonSeriesHomePageComponent implements OnInit {
     constructor(private title: Title,
+                private meta: Meta,
                 private router: Router,
                 private ncApi: ApiService, 
                 private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);
+        this.meta.addTag({ name: 'title', content: this.pageTitle });
         this.latestSermon = new Sermon();
     }
 

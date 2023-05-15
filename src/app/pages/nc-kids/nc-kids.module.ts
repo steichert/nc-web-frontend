@@ -9,6 +9,7 @@ import { NcKidsFourTwelvePageComponent } from './nc-kids-four-twelve-page/nc-kid
 import { NcKidsJamPageComponent } from './nc-kids-jam-page/nc-kids-jam-page.component';
 import { NcKidsSundayPageComponent } from './nc-kids-sunday-page/nc-kids-sunday-page.component';
 import { ContactModalModule } from 'src/app/common/contact-modal/contact-modal.module';
+import { Meta } from '@angular/platform-browser';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,9 @@ import { ContactModalModule } from 'src/app/common/contact-modal/contact-modal.m
         CommonModule,
         FormsModule,
         ContactModalModule
+    ],
+    providers: [
+        Meta
     ],
     exports: [
         NcKidsHomePageComponent

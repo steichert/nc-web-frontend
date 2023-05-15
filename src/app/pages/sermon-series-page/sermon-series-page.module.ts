@@ -5,6 +5,7 @@ import { SermonSeriesViewPageComponent } from './sermon-series-view-page/sermon-
 import { SermonViewPageComponent } from './sermon-view-page/sermon-view-page.component';
 import { SafePipe } from 'src/app/utils/safe.pipe';
 import { FormsModule } from '@angular/forms';
+import { Meta } from '@angular/platform-browser';
 
 @NgModule({
     declarations: [
@@ -16,6 +17,9 @@ import { FormsModule } from '@angular/forms';
     imports: [
         CommonModule,
         FormsModule
+    ],
+    providers: [
+        Meta
     ],
     exports: [
         SermonSeriesHomePageComponent,

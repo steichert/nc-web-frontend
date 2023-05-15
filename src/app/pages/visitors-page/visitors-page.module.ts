@@ -4,6 +4,7 @@ import { VisitorsHomePageComponent } from './visitors-home-page/visitors-home-pa
 import { VisitorsCardPageComponent } from './visitors-card-page/visitors-card-page.component';
 import { FormsModule } from '@angular/forms';
 import { ContactModalModule } from 'src/app/common/contact-modal/contact-modal.module';
+import { Meta } from '@angular/platform-browser';
 
 @NgModule({
     declarations: [
@@ -14,6 +15,9 @@ import { ContactModalModule } from 'src/app/common/contact-modal/contact-modal.m
         CommonModule,
         FormsModule,
         ContactModalModule
+    ],
+    providers: [
+        Meta
     ],
     exports: [
         VisitorsHomePageComponent,
