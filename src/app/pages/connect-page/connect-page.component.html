@@ -79,7 +79,7 @@
      tabindex="-1"
      aria-hidden="true"
      *ngIf="selectedConnect != null">
-    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
+    <div class="modal-dialog modal-xl modal-fullscreen-sm-down">
         <div class="modal-content get-connected-modal-content" 
              [ngStyle]="{'background-image': getConnectedModalImageUrl()}">
             <div class="modal-header">
@@ -137,7 +137,7 @@
                             <div class="input-group mb-3">
                                 <textarea type="text" class="form-control" rows=10 placeholder="Tell us a bit about yourself, or what type of Life Group you would like to join" [(ngModel)]="lifegroup.message" name="message" id="message"></textarea>
                             </div>
-                            <br>
+                            
                             <!-- Submit button -->
                             <div class="form-group">
                                 <button *ngIf="!isLoading" 
