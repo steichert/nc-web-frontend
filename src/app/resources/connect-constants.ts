@@ -106,14 +106,7 @@ export const LIFE_GROUPS = [
         imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1674545358/static/life-group-leaders/lg-craig-and-sarah_ns15sf.jpg"
     }, 
     {
-        host: "Nick Allen",
-        location: "Greenside",
-        day: "Wednesday",
-        category: null,
-        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1676375879/static/life-group-leaders/lg-nick-allen_fpiovx.jpg"
-    }, 
-    {
-        host: "Daniel Cronje & Cristine Hattingh",
+        host: "Daniel & Cristine Cronje",
         location: "Robin Hills",
         day: "Wednesday",
         category: "Young Adults",
@@ -150,7 +143,7 @@ export const LIFE_GROUPS = [
     {
         host: "Gina Switala",
         location: "Robin Hills",
-        day: "Wednesday",
+        day: "Friday",
         category: null,
         imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675870512/static/life-group-leaders/lg-gina_f6zpuu.jpg"
     },
@@ -180,7 +173,7 @@ export const LIFE_GROUPS = [
         location: "Olivedale",
         day: "Thursday",
         category: null,
-        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1676376053/static/leadership/leadership-paul-and-milaine_b6xmfl.jpg"
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1691506612/static/leadership/paul_and_milaine_bro3dv.jpg"
     },
     {
         host: "Owen & Paula Hildebrand",
@@ -188,6 +181,27 @@ export const LIFE_GROUPS = [
         day: "Thursday",
         category: null,
         imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1674545358/static/life-group-leaders/lg-owen-and-paula_zvds1g.jpg"
+    },
+    {
+        host: "Teresa Kilian & Grace Mwachoweka",
+        location: "Robin Hills",
+        day: "Thursday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1691506466/static/life-group-leaders/lg_teresa_and_grace_a15adx.jpg"
+    },
+    {
+        host: "Charl & Cathy Webber",
+        location: "Berario",
+        day: "Tuesday",
+        category: null,
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1691506488/static/life-group-leaders/lg_charl_and_cathy_olquwd.jpg"
+    },
+    {
+        host: "Elise Duff",
+        location: "Robin Hills",
+        day: "Last Friday of Every Month",
+        category: "NC Seniors Group",
+        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1691506488/static/life-group-leaders/lg_elise_uy4sg5.jpg"
     },
     {
         host: "Matt & Lauren Gray",

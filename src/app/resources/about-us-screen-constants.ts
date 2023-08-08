@@ -141,7 +141,7 @@ export const FAQS = [
 
 export const GOVERNMENTAL_ELDERSHIP = [
     {
-        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1676376053/static/leadership/leadership-paul-and-milaine_b6xmfl.jpg",
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1691506612/static/leadership/paul_and_milaine_bro3dv.jpg",
         title: "Paul & Milaine Dennison",
         subTitle: "Lead Elders"
     },

@@ -31,7 +31,7 @@ export const imageUrls = {
     // About Us
     leadershipRonAndAnnImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421927/static/leadership/our_story_ron_ann_l8xd4b.jpg',
     leadershipGrantAndLizImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421928/static/leadership/our_story_grant_liz_ebtmyo.png',
-    leadershipPaulAndMilaineImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421928/static/leadership/our_story_paul_milianne_orgsue.jpg',
+    leadershipPaulAndMilaineImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1691506612/static/leadership/paul_and_milaine_bro3dv.jpg',
 
     defaultSermonsThumbnailImageUrl: `assets/images/logos/podcast-default-logo.JPG`
 };
