@@ -57,10 +57,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Update backup folder
-      uses: canastro/copy-file-action@master
-      with: 
-        source: "release/staging/deploy/"
-        target: "release/staging/backup/"
+      run: cp "./release/staging/deploy/" "./release/staging/backup/"
 
     - name: Build project
       run: |
@@ -68,16 +65,10 @@ jobs:
         npm run build-staging
     
     - name: Prepare deploy directory -> browser
-      uses: canastro/copy-file-action@master
-      with: 
-        source: "dist/nc-web-frontend/browser"
-        target: "release/deploy/"
+      run: cp "./dist/nc-web-frontend/browser" "./release/deploy/"
 
     - name: Prepare deploy directory -> server
-      uses: canastro/copy-file-action@master
-      with: 
-        source: "dist/nc-web-frontend/server"
-        target: "release/deploy/browser/"
+      run: cp "./dist/nc-web-frontend/server" "./release/deploy/browser/"
 
     - name: Sync deploy directory to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
