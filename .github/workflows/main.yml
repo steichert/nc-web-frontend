@@ -59,8 +59,8 @@ jobs:
     - name: Update backup folder
       uses: canastro/copy-file-action@master
       with: 
-        source: "./release/staging/deploy/"
-        target: "./release/staging/backup/"
+        source: "release/staging/deploy/"
+        target: "release/staging/backup/"
 
     - name: Build project
       run: |
@@ -70,14 +70,14 @@ jobs:
     - name: Prepare deploy directory -> browser
       uses: canastro/copy-file-action@master
       with: 
-        source: "./dist/nc-web-frontend/browser"
-        target: "./release/deploy/"
+        source: "dist/nc-web-frontend/browser"
+        target: "release/deploy/"
 
     - name: Prepare deploy directory -> server
       uses: canastro/copy-file-action@master
       with: 
-        source: "./dist/nc-web-frontend/server"
-        target: "./release/deploy/browser/"
+        source: "dist/nc-web-frontend/server"
+        target: "release/deploy/browser/"
 
     - name: Sync deploy directory to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
