@@ -75,11 +75,10 @@ jobs:
       with:
         host: ${{ secrets.FTP_SERVER }}
         user: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
+        password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
         remoteFiles: "*.ttf;*otf;*.txt;*.woff2;*.woff;*.html;*.js;*.webmanifest;*.xml;*.css;ngsw.json"
         remoteDirectories: "/assets;/server"
         workingDir: "/public_html"
-        ignoreSSL: "1"
 
     - name: Sync deploy directory to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
