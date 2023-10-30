@@ -19,7 +19,7 @@ jobs:
         server: ftp.newcreation.co.za
         username: newcre
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
-        local-dir: ./nc-web-frontend/browser/
+        local-dir: ./dist/nc-web-frontend/browser/
         server-dir: public_html/browser/
         dangerous-clean-slate: true
         dry-run: true
@@ -30,7 +30,7 @@ jobs:
         server: ftp.newcreation.co.za
         username: newcre
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
-        local-dir: ./nc-web-frontend/server/
-        server-dir: public_html/server/
+        local-dir: ./dist/nc-web-frontend/server/
+        server-dir: public_html/
         dangerous-clean-slate: true
         dry-run: true
