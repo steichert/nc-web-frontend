@@ -9,7 +9,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build-prod": "ng build --configuration production --base-href=/browser/",
-    "build-staging": "ng build --configuration development --base-href=/development/",
+    "build-staging": "ng build --configuration development --base-href=/development/browser/",
     "dev:ssr": "ng run nc-web-frontend:serve-ssr",
     "serve:ssr": "node dist/nc-web-frontend/server/main.js",
     "build:ssr": "ng build && ng run nc-web-frontend:server",
