@@ -78,7 +78,8 @@ jobs:
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
         remoteFiles: "*.ttf;*otf;*.txt;*.woff2;*.woff;*.html;*.js;*.webmanifest;*.xml;*.css;ngsw.json"
         remoteDirectories: "/assets;/server"
-        workingDir: "/public_html"
+        workingDir: "/public_html/development"
+        ignoreSSL: "1"
 
     - name: Sync deploy directory to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
