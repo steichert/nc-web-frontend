@@ -62,7 +62,7 @@ jobs:
     - name: Build project
       run: |
         npm install
-        npm run build-staging
+        npm run build-staging:ssr
     
     - name: Prepare deploy directory -> browser
       run: cp -r "./dist/nc-web-frontend/browser" "./release/deploy/"

@@ -14,7 +14,7 @@
     "serve:ssr": "node dist/nc-web-frontend/server/main.js",
     "build:ssr": "ng build && ng run nc-web-frontend:server",
     "build-prod:ssr": "ng build --configuration production && ng run nc-web-frontend:server",
-    "build-staging:ssr": "ng build --configuration staging --base-href=/development/ && ng run nc-web-frontend:server",
+    "build-staging:ssr": "ng build --configuration production --base-href=/development/ && ng run nc-web-frontend:server",
     "prerender": "ng run nc-web-frontend:prerender"
   },
   "private": true,
