@@ -49,7 +49,7 @@ jobs:
         dry-run: true
 
   dev-deploy:
-    name: Deploy to Development
+    name: Deploy to Staging
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/development'
     steps:
@@ -80,5 +80,5 @@ jobs:
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
         local-dir: ./dist/nc-web-frontend/server/
         server-dir: public_html/development/browser/
-        dangerous-clean-slate: true
+        dangerous-clean-slate: false
         dry-run: true
