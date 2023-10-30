@@ -1,0 +1,36 @@
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: 🔨 Build Project
+      run: |
+        npm install
+        npm run build-prod
+    
+    - name: 📂 Sync Browser Files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.newcreation.co.za
+        username: newcre
+        password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
+        local-dir: ./nc-web-frontend/browser/
+        server-dir: public_html/browser/
+        dangerous-clean-slate: true
+        dry-run: true
+
+    - name: 📂 Sync Server Files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.newcreation.co.za
+        username: newcre
+        password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
+        local-dir: ./nc-web-frontend/server/
+        server-dir: public_html/server/
+        dangerous-clean-slate: true
+        dry-run: true
