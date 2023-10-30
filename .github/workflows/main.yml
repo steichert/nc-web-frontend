@@ -57,7 +57,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Update backup folder
-      run: cp "./release/staging/deploy/" "./release/staging/backup/"
+      run: cp -r "./release/staging/deploy/" "./release/staging/backup/"
 
     - name: Build project
       run: |
@@ -65,10 +65,10 @@ jobs:
         npm run build-staging
     
     - name: Prepare deploy directory -> browser
-      run: cp "./dist/nc-web-frontend/browser" "./release/deploy/"
+      run: cp -r "./dist/nc-web-frontend/browser" "./release/deploy/"
 
     - name: Prepare deploy directory -> server
-      run: cp "./dist/nc-web-frontend/server" "./release/deploy/browser/"
+      run: cp -r "./dist/nc-web-frontend/server" "./release/deploy/browser/"
 
     - name: Sync deploy directory to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
