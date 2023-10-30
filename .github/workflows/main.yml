@@ -69,19 +69,9 @@ jobs:
 
     - name: Prepare deploy directory -> server
       run: cp -r "./dist/nc-web-frontend/server" "./release/staging/deploy/"
+      run: ls -a ./release/staging/deploy/
 
-    - name: Clean-up FTP server files
-      uses: StephanThierry/ftp-delete-action@v2.1
-      with:
-        host: ${{ secrets.FTP_SERVER }}
-        user: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
-        remoteFiles: "*.ttf;*.otf;*.txt;*.woff2;*.woff;*.html;*.js;*.*.js;*.webmanifest;*.xml;*.css;ngsw.json"
-        remoteDirectories: "assets;server"
-        workingDir: "/public_html/development/"
-        ignoreSSL: "1"
-
-    - name: Sync deploy directory to FTP server
+    - name: Sync files to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_SERVER }}
