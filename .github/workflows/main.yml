@@ -57,7 +57,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Update backup folder
-      run: cp -r "./release/staging/deploy/" "./release/staging/backup/"
+      run: cp -r "./release/staging/deploy/*" "./release/staging/backup/"
 
     - name: Cleanup deploy folder
       run: rm -r ./release/staging/deploy/*
@@ -68,7 +68,7 @@ jobs:
         npm run build-staging:ssr
     
     - name: Prepare deploy directory -> browser
-      run: cp -r "./dist/nc-web-frontend/browser/" "./release/staging/deploy/"
+      run: cp -r "./dist/nc-web-frontend/browser/*" "./release/staging/deploy/"
 
     - name: Prepare deploy directory -> server
       run: cp -r "./dist/nc-web-frontend/server" "./release/staging/deploy/"
