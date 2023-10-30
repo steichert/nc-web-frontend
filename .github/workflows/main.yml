@@ -1,36 +1,84 @@
 on: push
-name: 🚀 Deploy website on push
+name: Deploy on push
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  prod-deploy:
+    name: Deploy to Production
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v3
+    - name: Get latest code
+      uses: actions/checkout@master
 
-    - name: 🔨 Build Project
+    - name: Update backup
+      uses: canastro/copy-file-action@master
+      with: 
+        source: "./release/deploy/"
+        target: "./release/backup/"
+
+    - name: Build project
       run: |
         npm install
         npm run build-prod
     
-    - name: 📂 Sync Browser Files
+    - name: Prepare deploy
+      uses: canastro/copy-file-action@master
+      with: 
+        source: "./dist/nc-web-frontend/"
+        target: "./release/deploy/"
+
+    - name: Sync browser files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.newcreation.co.za
+        username: newcre
+        password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
+        local-dir: ./release/deploy/browser/
+        server-dir: public_html/browser/
+        dangerous-clean-slate: true
+        dry-run: true
+
+    - name: Sync server files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: ftp.newcreation.co.za
+        username: newcre
+        password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
+        local-dir: ./release/deploy/server/
+        server-dir: public_html/browser/
+        dangerous-clean-slate: true
+        dry-run: true
+
+  dev-deploy:
+    name: Deploy to Development
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/development'
+    steps:
+    - name: Get latest code
+      uses: actions/checkout@master
+
+    - name: Build Project
+      run: |
+        npm install
+        npm run build-staging
+    
+    - name: Sync browser files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.newcreation.co.za
         username: newcre
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
         local-dir: ./dist/nc-web-frontend/browser/
-        server-dir: public_html/browser/
+        server-dir: public_html/development/browser/
         dangerous-clean-slate: true
         dry-run: true
 
-    - name: 📂 Sync Server Files
+    - name: Sync server files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.newcreation.co.za
         username: newcre
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
         local-dir: ./dist/nc-web-frontend/server/
-        server-dir: public_html/
+        server-dir: public_html/development/browser/
         dangerous-clean-slate: true
         dry-run: true

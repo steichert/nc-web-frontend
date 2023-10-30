@@ -8,7 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build-prod": "ng build --configuration production --base-hrf=/browser/",
+    "build-prod": "ng build --configuration production --base-href=/browser/",
     "build-staging": "ng build --configuration staging --base-href=/development/",
     "dev:ssr": "ng run nc-web-frontend:serve-ssr",
     "serve:ssr": "node dist/nc-web-frontend/server/main.js",
