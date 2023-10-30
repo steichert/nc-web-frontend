@@ -59,6 +59,9 @@ jobs:
     - name: Update backup folder
       run: cp -r "./release/staging/deploy/" "./release/staging/backup/"
 
+    - name: Cleanup deploy folder
+      run: rm -f "./release/staging/deploy/"
+
     - name: Build project
       run: |
         npm install
@@ -69,7 +72,6 @@ jobs:
 
     - name: Prepare deploy directory -> server
       run: cp -r "./dist/nc-web-frontend/server" "./release/staging/deploy/"
-      run: ls -a ./release/staging/deploy/
 
     - name: Sync files to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
