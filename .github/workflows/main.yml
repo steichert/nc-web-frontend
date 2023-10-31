@@ -50,7 +50,7 @@ jobs:
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
         local-dir: ./release/prod/deploy/
         server-dir: public_html/
-        dry-run: true
+        dry-run: false
 
   dev-deploy:
     name: Deploy to Staging
