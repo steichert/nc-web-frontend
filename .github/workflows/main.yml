@@ -10,44 +10,46 @@ jobs:
     steps:
     - name: Get latest code
       uses: actions/checkout@master
+      
+    - name: Git pull
+      run: git pull
 
-    - name: Update backup
-      uses: canastro/copy-file-action@master
-      with: 
-        source: "./release/deploy/"
-        target: "./release/backup/"
+    - name: Cleanup backup folder
+      run: rm -rf ./release/prod/backup/*
+
+    - name: Update backup folder
+      run: cp -r ./release/prod/deploy/* ./release/prod/backup/
+
+    - name: Cleanup deploy folder
+      run: rm -rf ./release/prod/deploy/*
 
     - name: Build project
       run: |
         npm install
-        npm run build-prod
+        npm run build-prod:ssr
     
-    - name: Prepare deploy
-      uses: canastro/copy-file-action@master
-      with: 
-        source: "./dist/nc-web-frontend/"
-        target: "./release/deploy/"
+    - name: Prepare deploy directory -> browser
+      run: cp -r ./dist/nc-web-frontend/browser/* ./release/prod/deploy/
 
-    - name: Sync browser files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ftp.newcreation.co.za
-        username: newcre
-        password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
-        local-dir: ./release/deploy/browser/
-        server-dir: public_html/browser/
-        dangerous-clean-slate: true
-        dry-run: true
+    - name: Prepare deploy directory -> server
+      run: cp -r ./dist/nc-web-frontend/server ./release/prod/deploy/
 
-    - name: Sync server files
+    - name: Commit release file changes
+      run: |
+        git config --global user.name '${{ secrets.GIT_NAME }}'
+        git config --global user.email '${{ secrets.GIT_EMAIL }}'
+        git add .
+        git commit -m "Github Action: Preparing release to production"
+        git push
+
+    - name: Sync files to FTP server
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
-        local-dir: ./release/deploy/server/
-        server-dir: public_html/browser/
-        dangerous-clean-slate: true
+        local-dir: ./release/prod/deploy/
+        server-dir: public_html/
         dry-run: true
 
   dev-deploy:
@@ -86,7 +88,7 @@ jobs:
         git config --global user.name '${{ secrets.GIT_NAME }}'
         git config --global user.email '${{ secrets.GIT_EMAIL }}'
         git add .
-        git commit -m "Github Action: Preparing release"
+        git commit -m "Github Action: Preparing release to development"
         git push
 
     - name: Sync files to FTP server
