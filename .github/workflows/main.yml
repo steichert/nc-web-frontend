@@ -80,6 +80,7 @@ jobs:
 
     - name: Commit release file changes
       run: |
+        git pull
         git config --global user.name '${{ secrets.GIT_NAME }}'
         git config --global user.email '${{ secrets.GIT_EMAIL }}'
         git add .
