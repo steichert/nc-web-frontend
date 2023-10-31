@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { imageUrls } from 'src/app/resources/image-url';
 import { VALUES, STATEMENT_OF_FAITH, FAQS, GOVERNMENTAL_ELDERSHIP, PASTORAL_LEADERSHIP, CHURCH_STAFF } from 'src/app/resources/about-us-screen-constants';
 import { LoadingService } from 'src/app/services/loading/loading.service';
@@ -26,12 +26,14 @@ export class AboutUsPageComponent implements OnInit {
     leadershipPaulAndMilaineImageUrl = imageUrls.leadershipPaulAndMilaineImageUrl;
 
     constructor(private title: Title,
+                private meta: Meta,
                 private loadingService: LoadingService) { 
         this.title.setTitle(this.pageTitle);
     }
 
     ngOnInit(): void {
         this.loadingService.stopLoading();
+        this.meta.addTag({ name: 'title', content: this.pageTitle });
     }
 
     public rotateValueChevronArrow(currentValue: any) {

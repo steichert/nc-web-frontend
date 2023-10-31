@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Child } from 'src/app/domain/Child';
@@ -18,11 +18,13 @@ export class NcKidsHomePageComponent implements OnInit {
 
     constructor(private ncApi: ApiService, 
                 private title: Title,
+                private meta: Meta,
                 private router: Router,
                 private navbarService: NavbarService,
                 private toastr: ToastrService,
                 private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);
+        this.meta.addTag({ name: 'title', content: this.pageTitle });
     }
 
     pageTitle = 'NC Kidz | New Creation Family Church';

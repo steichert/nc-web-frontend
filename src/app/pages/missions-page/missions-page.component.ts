@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { imageUrls } from 'src/app/resources/image-url';
 import { INTERNATIONAL_PROJECTS, LOCAL_PROJECTS, TRAINING_PROGRAMS } from 'src/app/resources/missions-screen-constants';
@@ -25,9 +25,11 @@ export class MissionsPageComponent implements OnInit {
     public synergyInMissionsUrl = imageUrls.synergyInMissionsUrl;
 
     constructor(private title: Title,
+                private meta: Meta,
                 private router: Router,
                 private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);
+        this.meta.addTag({ name: 'title', content: this.pageTitle });
     }
 
     ngOnInit(): void {

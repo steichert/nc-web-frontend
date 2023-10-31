@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
@@ -15,10 +15,12 @@ export class HomePageComponent implements OnInit {
     urlData: any;
 
     constructor(private title: Title,
+                private meta: Meta,
                 private navbarService: NavbarService,
                 private route: ActivatedRoute,
                 private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);
+        this.meta.addTag({ name: 'title', content: this.pageTitle });
     }
 
     ngOnInit(): void {

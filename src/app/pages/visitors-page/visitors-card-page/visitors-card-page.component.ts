@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Child } from 'src/app/domain/Child';
@@ -31,12 +31,14 @@ export class VisitorsCardPageComponent implements OnInit {
     isLoading: Boolean = false;
 
     constructor(private ncApi: ApiService, 
+                private meta: Meta,
                 private navbarService: NavbarService, 
                 private router: Router,
                 private toastr: ToastrService,
                 private title: Title,
                 private loadingService: LoadingService) {
         this.title.setTitle(this.pageTitle);             
+        this.meta.addTag({ name: 'title', content: this.pageTitle });
         this.visitorDetails = new Visitor();
     }
 
