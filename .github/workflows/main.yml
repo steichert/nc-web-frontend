@@ -56,9 +56,10 @@ jobs:
     if: github.ref == 'refs/heads/development'
     steps:
     - name: Get latest code
-      uses: |
-        actions/checkout@master
-        git pull
+      uses: actions/checkout@master
+      
+    - name: Git pull
+      run: git pull
 
     - name: Cleanup backup folder
       run: rm -rf ./release/staging/backup/*
