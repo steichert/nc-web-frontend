@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
@@ -11,17 +11,21 @@ import { LoadingService } from 'src/app/services/loading/loading.service';
 })
 export class SermonViewPageComponent implements OnInit {
     constructor(private title: Title,
+                private meta: Meta,
                 private loadingService: LoadingService,
                 private route: ActivatedRoute,
                 private router: Router,
                 private api: ApiService) {
     }
 
+    pageTitle = 'Sermon | New Creation Family Church';
+
     currentSermon: any;
     currentSermonSeries: any;
 
     ngOnInit(): void {
         this.title.setTitle('Sermon | New Creation Family Church');
+        this.meta.addTag({ name: 'title', content: this.pageTitle });
         const routeParams = this.route.snapshot.paramMap;
         const sermonUrl = routeParams.get('sermonUrl');
         this.getSermonData(sermonUrl);
@@ -39,7 +43,9 @@ export class SermonViewPageComponent implements OnInit {
         this.api.getSermonBySeoUrl(sermonSeoUrl).subscribe(
             (data) => {
                 this.currentSermon = data;
-                this.title.setTitle(`${this.currentSermon.sermonTitle} | New Creation Family Church`);
+                this.pageTitle = `${this.currentSermon.sermonTitle} | New Creation Family Church`
+                this.title.setTitle(this.pageTitle);
+                this.meta.addTag({ name: 'title', content: this.pageTitle });
                 this.getSermonSeriesLite(this.currentSermon.sermonSeriesId);
             }, 
             (err) => {

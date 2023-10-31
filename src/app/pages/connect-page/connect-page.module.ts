@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ConnectPageComponent } from './connect-page.component';
 import { FormsModule } from '@angular/forms';
 import { ParagraphContentModule } from 'src/app/common/paragraph-content/paragraph-content.module';
+import { Meta } from '@angular/platform-browser';
 
 @NgModule({
     declarations: [
@@ -12,6 +13,9 @@ import { ParagraphContentModule } from 'src/app/common/paragraph-content/paragra
         CommonModule,
         FormsModule,
         ParagraphContentModule
+    ],
+    providers: [
+        Meta
     ],
     exports: [
         ConnectPageComponent

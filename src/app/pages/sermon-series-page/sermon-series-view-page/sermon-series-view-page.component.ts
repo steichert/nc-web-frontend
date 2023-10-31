@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { imageUrls } from 'src/app/resources/image-url';
 import { ApiService } from 'src/app/services/api/api.service';
@@ -12,6 +12,7 @@ import { LoadingService } from 'src/app/services/loading/loading.service';
 })
 export class SermonSeriesViewPageComponent implements OnInit {
     constructor(private loadingService: LoadingService,
+                private meta: Meta,
                 private route: ActivatedRoute,
                 private router: Router,
                 private api: ApiService,
@@ -22,6 +23,8 @@ export class SermonSeriesViewPageComponent implements OnInit {
 
     ngOnInit(): void {
         this.title.setTitle('Sermon Series | New Creation Family Church');
+        this.meta.addTag({ name: 'title', content: 'Sermon Series | New Creation Family Church' });
+
         const routeParams = this.route.snapshot.paramMap;
         const seriesUrl = routeParams.get('seriesUrl');
         this.getSermonSeriesData(seriesUrl);
@@ -40,6 +43,7 @@ export class SermonSeriesViewPageComponent implements OnInit {
             data => {
                 this.sermonSeries = data;
                 this.title.setTitle(`${this.sermonSeries.seriesTitle} | New Creation Family Church`);
+                this.meta.addTag({ name: 'title', content: `${this.sermonSeries.seriesTitle} | New Creation Family Church` });
                 this.loadingService.stopLoading();
             },
             error => {

@@ -1,5 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { Meta, Title } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 import { 
     GET_CONNECTED_MINISTRIES, 
@@ -55,11 +55,13 @@ export class ConnectPageComponent implements OnInit {
     currentConnectImageHover: number = 0;
 
     constructor(private title: Title,
+                private meta: Meta,
                 private router: Router,
                 private ncApi: ApiService,
                 private toastr: ToastrService,
                 private loadingService: LoadingService) {
         title.setTitle(this.pageTitle);
+        this.meta.addTag({ name: 'title', content: this.pageTitle });
     }
 
     ngOnInit(): void {
