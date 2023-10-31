@@ -82,7 +82,8 @@ jobs:
       run: |
         git config --global user.name '${{ secrets.GIT_NAME }}'
         git config --global user.email '${{ secrets.GIT_EMAIL }}'
-        git commit -am "Github Action: Preparing release"
+        git add .
+        git commit -m "Github Action: Preparing release"
         git push
 
     - name: Sync files to FTP server
