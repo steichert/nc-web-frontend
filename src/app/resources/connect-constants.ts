@@ -21,7 +21,7 @@ export const GET_CONNECTED_MINISTRIES = [
             },
             {
                 type: "SIMPLE",
-                value: "We place a big emphasis on community, and have weekly in-person gatherings from 19:30 to 21:00 on Friday nights. These gatherings include games, worship, preaching and life groups."
+                value: "We place a big emphasis on community, and have weekly in-person gatherings from 18:30 to 21:00 every Friday. These gatherings include games, worship, preaching and life groups."
             },
             {
                 type: "SIMPLE_HTML",
