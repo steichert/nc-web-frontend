@@ -36,8 +36,8 @@ export const LOCAL_PROJECTS = [
         // cardTitleColour: "#212529",
         cardTitleColour: "white",
         description: "",
-        cardImageUrl: `${environment.imageUrl}/missions/gardens.jpg`,
-        mainImageUrl: `${environment.imageUrl}/missions/gardens.jpg`,
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1706774631/gardens_dxzzyo.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1706774631/gardens_dxzzyo.jpg',
         mainTitle: "Gardens of Faithfulness",
         paragraphs: [
             {
