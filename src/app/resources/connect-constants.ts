@@ -100,18 +100,11 @@ export const LIFE_GROUPS = [
     },
     {
         host: "Craig & Sarah Van Zyl",
-        location: "Virtual",
+        location: "Rotating homes",
         day: "Tuesday",
         category: null,
         imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1674545358/static/life-group-leaders/lg-craig-and-sarah_ns15sf.jpg"
     }, 
-    {
-        host: "Daniel & Cristine Cronje",
-        location: "Robin Hills",
-        day: "Wednesday",
-        category: "Young Adults",
-        imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1674545358/static/life-group-leaders/lg-daniel-and-christine_iconnj.jpg"
-    },
     {
         host: "Kim Gallus",
         location: "Rotating homes",
@@ -162,7 +155,7 @@ export const LIFE_GROUPS = [
         imageUrl: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673894666/static/life-group-leaders/lg-ray-and-anne_ilp98v.jpg"
     },
     {
-        host: "Mark Van Der Westhuizen & May Li",
+        host: "Mark & May Van Der Westhuizen",
         location: "Robin Hills",
         day: "Wednesday",
         category: "Young Adults",

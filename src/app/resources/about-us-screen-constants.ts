@@ -148,27 +148,27 @@ export const GOVERNMENTAL_ELDERSHIP = [
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-mike-and-catherine_t5qs0t.jpg',
         title: "Mike & Catherine Marais",
-        subTitle: "The King's School / Pastoral Care"
+        subTitle: "The King's School and Pastoral Care"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/john_pat_ihec6o.jpg',
         title: "John & Pat Fanner",
-        subTitle: "The King's School / Pastoral Care"
+        subTitle: "The King's School and Pastoral Care"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/chris_marina_scjysu.jpg',
         title: "Chris & Marina Reyneke",
-        subTitle: "Oasis / Pastoral Care"
+        subTitle: "Oasis and Pastoral Care"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-karl-and-jenny_zsidax.jpg',
         title: "Karl & Jenny Teichert",
-        subTitle: "Missions / Training / Community Ministry"
+        subTitle: "Missions, Training and Community Ministry"
     },
     {
         imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675870464/static/leadership/leadership-dan-and-lucy_vdowwq.jpg",
         title: "Daniel & Lucy Robinson",
-        subTitle: "Administration / Pastoral Care"
+        subTitle: "Administration and Pastoral Care"
     }
 ];
 
@@ -217,27 +217,27 @@ export const CHURCH_STAFF = [
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959937/static/leadership/leadership-teresa_xa1lpf.jpg',
         title: "Teresa Kilian",
-        subTitle: "Secretary / Administration"
+        subTitle: "Secretary and Administration"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/grace_hjjqzd.jpg',
         title: "Grace Mwachoweka",
-        subTitle: "Administration / House keeping"
+        subTitle: "Administration and House keeping"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959611/static/leadership/leadership-martha_ba4p5g.jpg',
         title: 'Martha Simalenga',
-        subTitle: 'Worship / Administrator'
+        subTitle: 'Worship and Administration'
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-wessley_veakkk.jpg',
-        title: 'Wessley Thring',
-        subTitle: 'Youth Pastor'
+        title: 'Wessley Archary',
+        subTitle: 'Youth and Young Adults'
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-piet_jxlvqx.jpg',
         title: "Pieter Trichardt",
-        subTitle: "Pastor / Administration"
+        subTitle: "Pastor and Administration"
     },
     {
         imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675359821/static/leadership/leadership-mike_fi0fve.jpg",
