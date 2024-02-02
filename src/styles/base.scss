@@ -60,7 +60,7 @@ body {
     // -o-animation-fill-mode: forwards;
     // animation-fill-mode: forwards;
 }
-  
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -87,6 +87,11 @@ p {
 
 a {
     font-family: 'Noah';
+}
+
+li {
+    font-family: 'Noah';
+    font-size: 1.2em;
 }
 
 .flex {

@@ -14,11 +14,39 @@
                 <br>
 
                 <p class="text-left">
-                    Synergy in Mission (SIM) represents the various ministries and initiatives that New Creation Family Church is serving in God’s mission both locally and around the world. 
-                    Synergy describes the ongoing collaboration toward the completion of Christ’s Great Commission. 
-                    The SIM Team meets regularly for prayer, planning and action. Sharon Stephen serves and the SIM Coordinator. 
-                    <br><br>
-                    Please contact <a href="mailto:admin@newcreation.co.za">admin@newcreation.co.za</a> to find out more about the SIM vision, ministries and how you can get more involved. 
+                    Synergy in Mission (SIM) represents the various ministries and initiatives that New Creation Family Church is serving in God’s mission both locally and around the world.
+                    Synergy describes the ongoing collaboration toward the completion of Christ’s Great Commission.
+                    The SIM Team meets regularly for prayer, planning and action. Sharon Stephen serves as the SIM Coordinator.
+                </p><br>
+                <h3 id="our-vision-title" class="text-left">
+                    <b>OUR VISION</b>
+                </h3>
+                <p>
+                    Partners in fulfilling the Great Commission
+                </p><br>
+                <h3 id="our-mission-title" class="text-left">
+                    <b>OUR MISSION</b>
+                </h3>
+                <p class="text-left"><b>Prayer and action are the catalyst in us pursuing the following:</b></p>
+
+                <ol>
+                    <li>Sharing the Gospel of Jesus Christ with unbelievers Local and Beyond</li>
+                    <li>Partnering with individuals and Organisations that align with the Great Commission</li>
+                    <li>Inspire other Christians to join the call to be partners in the Great Commission</li>
+                    <li>Bearing fruit through the power of the Holy Spirit</li>
+                </ol>
+
+
+                <p class="text-left"><b>How do we do this?</b></p>
+                <ol>
+                    <li>Seeking opportunities for personal witnessing</li>
+                    <li>Encourage equipping and development with other believers</li>
+                    <li>Provide a platform for those interested in participating in missional projects</li>
+                    <li>Identify and promote membership to Synergy in mission</li>
+                </ol>
+
+                <p>
+                    Please contact <a href="mailto:admin@newcreation.co.za">admin@newcreation.co.za</a> to find out more about the SIM vision, ministries and how you can get more involved.
                 </p>
             </div>
             <div class="col-sm-4 col-xs-12">
@@ -46,7 +74,7 @@
                     <div class="card text-white local-project-card">
                         <img [src]="localProject.cardImageUrl" class="card-img local-project-card-img">
                         <div class="card-img-overlay">
-                            <h4 class="card-title local-projects-card-title text-center" 
+                            <h4 class="card-title local-projects-card-title text-center"
                                 [ngStyle]="{color: localProject.cardTitleColour}">
                                 <b>{{localProject.cardTitle}}</b>
                             </h4>
@@ -54,8 +82,8 @@
                                 {{localProject.description}}
                             </p>
                             <div class="card-btn-container">
-                                <button type="button" 
-                                        class="btn btn-primary" 
+                                <button type="button"
+                                        class="btn btn-primary"
                                         (click)="selectMissionsArea(localProject)">
                                     <b>READ MORE</b>
                                 </button>
@@ -93,8 +121,8 @@
                                 {{internationalProject.description}}
                             </p>
                             <div class="card-btn-container">
-                                <button type="button" 
-                                        class="btn btn-primary" 
+                                <button type="button"
+                                        class="btn btn-primary"
                                         (click)="selectMissionsArea(internationalProject)">
                                     <b>READ MORE</b>
                                 </button>
@@ -120,7 +148,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div *ngIf="!hasTrainingEvents()" class="row no-training">
                 <div class="col-12">
                     <br>
@@ -193,18 +221,18 @@
 </div>
 
 <!-- More Info Modal -->
-<div id="missionsModal" 
-     class="modal missions-modal" 
+<div id="missionsModal"
+     class="modal missions-modal"
      tabindex="-1"
      aria-hidden="true"
      *ngIf="selectedMissionsArea != null">
     <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
         <div class="missions-modal-content modal-content">
             <div class="modal-header missions-modal-header">
-                <button type="button" 
-                        class="btn-close" 
+                <button type="button"
+                        class="btn-close"
                         data-bs-dismiss="modal"
-                        aria-label="Close"></button>                
+                        aria-label="Close"></button>
             </div>
             <div class="modal-body missions-modal-body">
                 <div class="missions-modal-body-content-wrapper">
@@ -222,7 +250,7 @@
                         </div>
                     </div>
                 </div>
-            </div>                        
+            </div>
         </div>
     </div>
 </div>

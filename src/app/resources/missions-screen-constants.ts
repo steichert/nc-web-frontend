@@ -1,51 +1,59 @@
 import { environment } from '../../environments/environment';
 
 export const LOCAL_PROJECTS = [
-    {
-        cardTitle: "CIA: Community In Action",
-        cardTitleColour: "white",
-        description: "",
-        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438138/static/missions/cia-card_fvakrl.jpg',
-        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438047/static/missions/cia_zm417w.jpg',
-        mainTitle: "CIA: Community in Action",
-        paragraphs: [
-            {
-                type: "SIMPLE",
-                value: "During COVID-19, we developed three aspects of Missions outreach in order to facilitate and provide for our community better. We decided to call this section of our outreach, CIA, which stands for Christians in Action."
-            },
-            {
-                type: "SIMPLE",
-                value: "CIA was split into three circles based on the proximity of the community to our church in order to fulfill our biblical mandate better. The first circle, or CIA 1, was reserved for the Barnabas Fund which cares for our church members, particularly families that are a part of New Creation Family Church that have fallen on hard times."
-            },
-            {
-                type: "SIMPLE",
-                value: "The second circle is called CIA 2 and this section takes care of members of the community who are in relationship with our church through our other outreach endeavours such as Project Ngonyama, the Tshepo Aftercare, Life First or any of other outreaches. These are people with whom we have walked a road already. We believe that there is greater accountability in this group and we should be able to care for them more personally. We provided food vouchers all throughout the Lockdown periods 5 to 2. Once the economy opened up we got more stringent on qualifying criteria to access the pool of money that was diminishing quickly."
-            },
-            {
-                type: "SIMPLE",
-                value: "The third cycle is called CIA 3 and this refers to anyone in the community who is asking for help. Our presence should make a difference in our community, and we wanted to help as many people as possible, so we set up a cell number for people to text requesting assistance, and we relaxed the vetting process to a minimum in order to speed up their access to smaller donation packages."
-            },
-            {
-                type: "SIMPLE",
-                value: "The whole Lockdown CIA system that we set up saw more than a thousand families receive aid. We will continue to work through the CIA system in the future wherever we can and as the community needs, as we understand that God is calling us to be a light in the community and to take care of our own."
-            }
-        ]
-    },
     // {
-    //     cardTitle: "Gardens of Faithfulness",
-    //     // cardTitleColour: "#212529",
+    //     cardTitle: "CIA: Community In Action",
     //     cardTitleColour: "white",
     //     description: "",
-    //     cardImageUrl: `${environment.imageUrl}/missions/gardens.jpg`,
-    //     mainImageUrl: `${environment.imageUrl}/missions/gardens.jpg`,
-    //     mainTitle: "Gardens of Faithfulness",
+    //     cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438138/static/missions/cia-card_fvakrl.jpg',
+    //     mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438047/static/missions/cia_zm417w.jpg',
+    //     mainTitle: "CIA: Community in Action",
     //     paragraphs: [
     //         {
     //             type: "SIMPLE",
-    //             value: "Details to be provided by Fred/Lyn."
+    //             value: "During COVID-19, we developed three aspects of Missions outreach in order to facilitate and provide for our community better. We decided to call this section of our outreach, CIA, which stands for Christians in Action."
+    //         },
+    //         {
+    //             type: "SIMPLE",
+    //             value: "CIA was split into three circles based on the proximity of the community to our church in order to fulfill our biblical mandate better. The first circle, or CIA 1, was reserved for the Barnabas Fund which cares for our church members, particularly families that are a part of New Creation Family Church that have fallen on hard times."
+    //         },
+    //         {
+    //             type: "SIMPLE",
+    //             value: "The second circle is called CIA 2 and this section takes care of members of the community who are in relationship with our church through our other outreach endeavours such as Project Ngonyama, the Tshepo Aftercare, Life First or any of other outreaches. These are people with whom we have walked a road already. We believe that there is greater accountability in this group and we should be able to care for them more personally. We provided food vouchers all throughout the Lockdown periods 5 to 2. Once the economy opened up we got more stringent on qualifying criteria to access the pool of money that was diminishing quickly."
+    //         },
+    //         {
+    //             type: "SIMPLE",
+    //             value: "The third cycle is called CIA 3 and this refers to anyone in the community who is asking for help. Our presence should make a difference in our community, and we wanted to help as many people as possible, so we set up a cell number for people to text requesting assistance, and we relaxed the vetting process to a minimum in order to speed up their access to smaller donation packages."
+    //         },
+    //         {
+    //             type: "SIMPLE",
+    //             value: "The whole Lockdown CIA system that we set up saw more than a thousand families receive aid. We will continue to work through the CIA system in the future wherever we can and as the community needs, as we understand that God is calling us to be a light in the community and to take care of our own."
     //         }
     //     ]
     // },
+    {
+        cardTitle: "Gardens of Faithfulness",
+        // cardTitleColour: "#212529",
+        cardTitleColour: "white",
+        description: "",
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1706774631/gardens_dxzzyo.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1706774631/gardens_dxzzyo.jpg',
+        mainTitle: "Gardens of Faithfulness",
+        paragraphs: [
+            {
+                type: "SIMPLE",
+                value: '"Gardens of Faithfulness" is a pioneering Christian community farming initiative launched through "Farming God\'s Way". The program is committed to addressing food scarcity through sustainable urban agriculture within the perimeters of homes and personal living spaces. Rooted in the principles of faith, this initiative not only seeks to alleviate hunger but also aims to foster Christian discipleship through the transfer of vital agricultural skills. Encouraging families to cultivate their own gardens, Gardens of Faithfulness promotes self-sufficiency, environmental stewardship, and a deeper connection to God\'s creation. By blending the spiritual with the practical, the initiative strives to sow seeds of abundance, both in terms of nourishing food production and the spiritual growth of individuals within the community.'
+            },
+            {
+                type: "SIMPLE",
+                value: 'Join us in cultivating faith, sustainability, and community through Gardens of Faithfulness.'
+            },
+            {
+                type: "SIMPLE_HTML",
+                value: 'To learn more, please email: <a href="mailto:admin@newcreation.co.za">admin@newcreation.co.za</a>'
+            }
+        ]
+    },
     {
         cardTitle: "Community Disciple-Making Multiplication",
         cardTitleColour: "white",
@@ -135,7 +143,7 @@ export const LOCAL_PROJECTS = [
             },
             {
                 type: "SIMPLE",
-                value: "Many Discovery Groups are growing in the Word over WhatsApp and in person. Please pray that these disciple-making groups will multiply to engage more people with the goal to form new churches."                
+                value: "Many Discovery Groups are growing in the Word over WhatsApp and in person. Please pray that these disciple-making groups will multiply to engage more people with the goal to form new churches."
             },
             {
                 type: "SIMPLE_HTML",
@@ -166,11 +174,15 @@ export const LOCAL_PROJECTS = [
         paragraphs: [
             {
                 type: "SIMPLE",
-                value: "Fellowship through fitness is an initiative that began to serve the community through sport and fitness related activities, promoting general well-being and an opportunity to meet people seeking to understand the Gospel and all that it means to be a follower of Christ in these modern times. We also provide self-defence training and educate people on Anti-human trafficking – illuminating what our responsibility is in terms of eradicating this hidden scourge in our communities while also helping individuals from becoming human trafficking victims."
+                value: 'Fellowship through fitness is dedicated to enhancing community well-being and development through holistic initiatives centered around health, beauty, fitness, and early childhood development. Established with a commitment to fostering positive change, we address social challenges by implementing impactful programs and projects tailored to meet the specific needs of our local communities.'
             },
             {
                 type: "SIMPLE",
-                values: "Our mission is to shape the body of Christ, emotionally, physically and spiritually and we do this through high intensity workouts and riveting content directed to build others."
+                value: 'Our approach is rooted in community awareness, participation and collaboration. By engaging with local residents, leaders, and organisations, we identify specific needs and design tailored interventions to address these challenges. We believe in fostering a sense of ownership within the community, ensuring the sustainability and lasting impact of our initiatives.'
+            },
+            {
+                type: "SIMPLE_HTML",
+                value: 'To get involved please email: <a href="mailto:admin@newcreation.co.za">admin@newcreation.co.za</a> or visit <a href=\"http://www.fellowshipfitness.co.za\" target=\"_blank\">www.fellowshipfitness.co.za</a> to learn more.'
             }
         ]
     },
