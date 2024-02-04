@@ -3,8 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
 import { 
     GET_CONNECTED_MINISTRIES, 
-    GET_CONNECTED_SERVING, 
-    LIFE_GROUPS, 
+    GET_CONNECTED_SERVING,
     AREAS_OF_MINISTRY, 
     AREAS_OF_SERVICE 
 } from 'src/app/resources/connect-constants';
@@ -26,9 +25,9 @@ export class ConnectPageComponent implements OnInit {
 
     getConnectedMinistries = GET_CONNECTED_MINISTRIES;
     getConnectedServing = GET_CONNECTED_SERVING;
-    allLifeGroups = LIFE_GROUPS;
     allAreasOfService = AREAS_OF_SERVICE;
     allAreasOfMinistry = AREAS_OF_MINISTRY;
+    allLifeGroups: any[] = [];
 
     connectAreaModalImageUrl = 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/connect-background_wfqcrt.jpg';
 
@@ -65,7 +64,22 @@ export class ConnectPageComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.loadingService.stopLoading();
+        this.fetchLifeGroups();
+    }
+
+    public fetchLifeGroups() {
+        this.loadingService.incrementLoading();
+
+        this.ncApi.getAllLifeGroups().subscribe(
+            (data: any) => {
+                this.allLifeGroups = data;
+                this.loadingService.decrementLoading();
+            },
+            (err) => {
+                this.loadingService.decrementLoading();
+                console.log(err.error.text);
+            }
+        )
     }
     
     public submitJoinTeam(): void {
