@@ -82,4 +82,8 @@ export class ApiService {
 
         return this.http.get(requestUrl);
     }
+
+    public getAllLifeGroups() {
+        return this.http.get(`${environment.ncApiUrl}/v1/life-groups/cache`);
+    }
 }
