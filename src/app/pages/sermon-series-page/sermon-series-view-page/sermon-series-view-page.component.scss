@@ -20,7 +20,7 @@
 
 #sermonSeriesTitle {
     padding-top: 32rem;
-    padding-bottom: 5rem;
+    padding-bottom: 4rem;
 }
 
 #sermonSeriesDescription {
@@ -31,7 +31,7 @@
 #sermonList {
     margin-left: auto;
     margin-right: 0;
-    padding-left: 5rem;
+    padding-left: 0;
 }
 
 .sermon-item {
@@ -39,9 +39,10 @@
     padding-bottom: 1em;
     padding-left: 1em;
     padding-right: 1em;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     cursor: pointer;
     border-radius: 5px;
+    background-color: rgb(245, 245, 245);
     // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     box-shadow: rgba(99, 99, 99, 0.1) 0px 2px 8px 0px;
     transition: 200ms ease-out;

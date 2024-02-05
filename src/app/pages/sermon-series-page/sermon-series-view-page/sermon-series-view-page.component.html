@@ -6,30 +6,28 @@
         <!-- Banner Image -->
     </div>
 
-    <div id="sermonSeriesContentContainer" class="row">
+    <div id="sermonSeriesContentContainer">
         <div id="sermonSeriesTitle">
             <h2><b>{{ sermonSeries?.seriesTitle | titlecase }}</b></h2>
+            <h4><i>Sermons</i></h4>
         </div>
 
-        <div *ngIf="sermonSeries?.seriesDescription" 
+        <!-- <div *ngIf="sermonSeries?.seriesDescription" 
              id="sermonSeriesDescription" 
              class="col-lg-4 col-md-6 col-sm-12">
             <p><i>{{ sermonSeries?.seriesDescription }}</i></p>
-        </div>
+        </div> -->
 
-        <div id="sermonList" 
-             [ngClass]="{ 'col-lg-12': sermonSeries?.seriesDescription == '' || sermonSeries?.seriesDescription == null, 'col-lg-8': sermonSeries?.seriesDescription }" 
-             class="col-md-6 col-sm-12">
-            <div class="sermon-item" 
+        <div id="sermonList">
+            <div class="sermon-item"
                  *ngFor="let sermon of sermonSeries?.sermons; let i = index"
                  (click)="navigateToSermon(sermon.sermonSeoUrl)">
-                <h4><b>{{ sermon?.sermonTitle | titlecase }}</b></h4>
+                <h4><b>{{ i + 1 }}.&nbsp;{{ sermon?.sermonTitle | titlecase }}</b></h4>
                 <p>
                     <i>{{ sermon?.sermonSpeaker | titlecase }}</i>
                     <br>
                     <small>{{ sermon?.sermonDate | date: 'MMM d, y' }}</small>
-                </p>
-                
+                </p>  
             </div>
         </div>
     </div>
