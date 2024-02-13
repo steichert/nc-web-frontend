@@ -32,6 +32,29 @@ export const LOCAL_PROJECTS = [
     //     ]
     // },
     {
+        cardTitle: "LifeFirst Pregnancy Help Centre",
+        // cardTitleColour: "#212529",
+        cardTitleColour: "white",
+        description: "",
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1707829598/static/missions/jerik4s3slrablxf2zyx.png',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1707829597/static/missions/gdq4ruqeml1nup4vu9gy.jpg',
+        mainTitle: "LifeFirst Pregnancy Help Centre ",
+        paragraphs: [
+            {
+                type: "SIMPLE",
+                value: 'LifeFirst is a compassionate Christian pro-life organisation dedicated to upholding the sanctity of human life and empowering women and men with love, support, and guidance. Committed to fostering a culture that values and protects mother and unborn child and the family unit as a structure created by God, LifeFirst actively engages in promoting alternatives to abortion. Through a foundation of faith, the organisation seeks to rebuild the dignity of women by offering practical assistance, emotional support, and informed advice. LifeFirst advocates for a holistic approach that cherishes life from conception to natural end, believing in the transformative power of love to inspire hope, resilience, and a brighter future for both women and their precious children.'
+            },
+            {
+                type: "SIMPLE_HTML",
+                value: 'To get involved please send an email to <a href="mailto:admin@newcreation.co.za">admin@newcreation.co.za</a> or find us on social media here: <a href=\"https://www.facebook.com/LifeFirstPregnancyHelp\" target="_blank">https://www.facebook.com/LifeFirstPregnancyHelp</a>'
+            },
+            {
+                type: "SIMPLE_HTML",
+                value: 'To learn more, please visit: <a href="http://www.pregnancyhelpcentre.org" target="_blank">www.pregnancyhelpcentre.org.</a>'
+            }
+        ]
+    },
+    {
         cardTitle: "Gardens of Faithfulness",
         // cardTitleColour: "#212529",
         cardTitleColour: "white",
