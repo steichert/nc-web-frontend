@@ -36,8 +36,8 @@ export const LOCAL_PROJECTS = [
         // cardTitleColour: "#212529",
         cardTitleColour: "white",
         description: "",
-        cardImageUrl: 'assets/images/life-first-banner.png',
-        mainImageUrl: 'assets/images/logos/LifeFirst-Logo.jpg',
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1707829598/static/missions/jerik4s3slrablxf2zyx.png',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1707829597/static/missions/gdq4ruqeml1nup4vu9gy.jpg',
         mainTitle: "LifeFirst Pregnancy Help Centre ",
         paragraphs: [
             {
