@@ -280,8 +280,14 @@ export const INTERNATIONAL_PROJECTS = [
                 value: "Lesotho, with a population of 2 million, is one of the countries in Africa facing a devastating impact of HIV and AIDS. This has caused the up and coming generation to grow up without parents. There is a huge need for rural community organizations that aim to educate, support and empower Basotho children and youth with skills that would enable them to overcome their despair."
             },
             {
-                type: "SIMPLE_HTML",
-                value: "Synergy In Mission, sent by New Creation Family Church, have been involved in several mission trips to Rutanang. We are involved in the following inititives: Outreach and support for the Girl's Dignity Programme run by RFC that assists young girls to finish school and make an impact within the community, building and support the foundations office and newly completed Khotso Hall, holiday programmes for the youth and sustainable farming initiatives."
+                type: "UNORDERED_LIST",
+                heading: "Synergy In Mission, sent by New Creation Family Church, have been involved in several mission trips to Rutanang. We are involved in the following inititives:",
+                values: [
+                    "Outreach and support for the Girl's Dignity Programme run by RFC that assists young girls to finish school and make an impact within the community",
+                    "Building and support of the foundation's office and newly completed Khotso Hall",
+                    "Holiday programmes for the youth",
+                    "Sustainable farming initiatives"
+                ]
             },
             {
                 type: "SIMPLE_HTML",
