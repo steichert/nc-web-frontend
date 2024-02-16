@@ -35,7 +35,7 @@
                     <small><i>{{ event?.eventDate | date: 'MMM d, y' }}</i></small>
                 </div>
 
-                <div id="eventModalDescription">
+                <div *ngIf="event?.callToActionLink == null" id="eventModalDescription">
                     <p>{{ event?.description }}</p>
                 </div>
 
@@ -54,6 +54,15 @@
             </div>
 
             <div class="modal-footer">
+                <a *ngIf="event.contentUrl != null" 
+                        type="button" 
+                        data-toggle="tooltip" 
+                        data-placement="top" 
+                        title="Download attachment"
+                        class="btn btn-sm btn-light btn-attachment float-left" 
+                        [href]="event.contentUrl" download>
+                    <b><i class="bi bi-download"></i>&nbsp;&nbsp;ATTACHMENT</b>
+                </a>
                 <button type="button"
                         class="btn btn-sm btn-light btn-contact-us float-right" 
                         (click)="triggerContactUsModal()">
