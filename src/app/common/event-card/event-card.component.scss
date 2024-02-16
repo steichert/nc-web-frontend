@@ -4,11 +4,12 @@
     margin-bottom: 15%;
     text-align: center;
     cursor: pointer;
-    -webkit-box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
-    -moz-box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
-    -ms-box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
-    -o-box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
-    box-shadow: rgba(100, 100, 111, 0.3) 0px 7px 29px 0px;
+    -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    -moz-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    -ms-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    -o-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    transition: 200ms ease-out;
 }
 
 .card:hover {
@@ -17,6 +18,7 @@
     -ms-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     -o-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 200ms ease-in;
 }
 
 .card-img-top {
@@ -24,8 +26,9 @@
 }
 
 .card-open-img-top {
-    max-height: 250px;
+    max-height: 300px;
     object-fit: cover;
+    object-position: top;
 }
 
 .card-block {
@@ -47,6 +50,7 @@
 
 .card-footer {    
     height: auto;
+    background-color: white;
 }
 
 .card-footer p {
@@ -96,7 +100,7 @@
     padding-bottom: 2em;
 }
 
-#eventModalDescription {
+.event-modal-description {
     padding-left: 1rem;
     padding-right: 1rem;
     white-space: pre-wrap;
@@ -117,11 +121,18 @@
 
 #registerButton {
     width: 10em;
-    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .modal-footer .btn {
     width: 8em;
+}
+
+.btn-attachment {
+    display: inline-block;
+    margin-left: 0;
+    margin-right: auto;
+    width: 10em !important;
 }
 
 .btn-contact-us {

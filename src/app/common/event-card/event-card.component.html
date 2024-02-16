@@ -35,13 +35,9 @@
                     <small><i>{{ event?.eventDate | date: 'MMM d, y' }}</i></small>
                 </div>
 
-                <div id="eventModalDescription">
-                    <p>{{ event?.description }}</p>
-                </div>
-
-                <div *ngIf="event?.callToActionLink != null && event?.callToActionLink != ''" 
-                     class="text-center">
-                    <a role="button" 
+                <div class="text-center">
+                    <a *ngIf="event?.callToActionLink != null && event?.callToActionLink != ''"
+                       role="button" 
                        id="registerButton"
                        class="btn btn-success btn-green" 
                        [href]="event?.callToActionLink" 
@@ -50,20 +46,24 @@
                     </a>
                 </div>
 
-                <p class="event-body" [innerHTML]="event?.postDescription"></p>
+                <p class="event-modal-description" [innerHTML]="event?.description"></p>
             </div>
 
             <div class="modal-footer">
+                <a *ngIf="event.contentUrl != null" 
+                        type="button" 
+                        data-toggle="tooltip" 
+                        data-placement="top" 
+                        title="Download attachment"
+                        class="btn btn-sm btn-light btn-attachment float-left" 
+                        [href]="event.contentUrl" download>
+                    <b><i class="bi bi-download"></i>&nbsp;&nbsp;ATTACHMENT</b>
+                </a>
                 <button type="button"
                         class="btn btn-sm btn-light btn-contact-us float-right" 
                         (click)="triggerContactUsModal()">
                     <b>CONTACT US</b>
                 </button>
-                <!-- <button type="button" 
-                        class="btn btn-sm btn-light float-right" 
-                        data-bs-dismiss="modal">
-                    <b>CLOSE</b>
-                </button> -->
             </div>
         </div>
     </div>
