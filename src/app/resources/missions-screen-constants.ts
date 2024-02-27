@@ -59,8 +59,8 @@ export const LOCAL_PROJECTS = [
         // cardTitleColour: "#212529",
         cardTitleColour: "black",
         description: "",
-        cardImageUrl: 'assets/images/gof-website-banner.jpg',
-        mainImageUrl: 'assets/images/gof-main-image.jpg',
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1708968373/static/missions/bbohenlduj51ysrmvwph.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1708968374/static/missions/iujbjfyuhqbx3nfk4wp1.jpg',
         mainTitle: "Gardens of Faithfulness",
         paragraphs: [
             {
@@ -267,8 +267,8 @@ export const INTERNATIONAL_PROJECTS = [
         cardTitle: "Cross Border Mission to Rutanang, Lesotho",
         cardTitleColour: "black",
         description: "",
-        cardImageUrl: 'assets/images/rutanang-website-banner.jpg',
-        mainImageUrl: 'assets/images/rutanang-mission-team.jpg',
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1708968373/static/missions/adyvk9okerc1yyeo5xrt.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1708968374/static/missions/gbvxi7qo3vsbr8h7vkok.jpg',
         mainTitle: "Cross Border Mission to Rutanang, Lesotho",
         paragraphs: [
             {
