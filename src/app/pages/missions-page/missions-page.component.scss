@@ -57,6 +57,14 @@
     margin-right: 0;
 }
 
+.missions-latest-updates-section {
+    min-height: 300px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .grey-background {
     background-color: #eaeaea;
 }
@@ -230,6 +238,12 @@
         padding-right: 1rem;
     }
 
+    .missions-latest-updates-section {
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
     .missions-modal-image {
         height: 200px;
     }
@@ -246,6 +260,10 @@
     }
 
     .missions-section {
+        padding-bottom: 10%;
+    }
+
+    .missions-latest-updates-section {
         padding-bottom: 10%;
     }
 }
