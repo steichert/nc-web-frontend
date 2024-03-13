@@ -79,10 +79,10 @@ export const LOCAL_PROJECTS = [
     },
     {
         cardTitle: "Community Disciple-Making Multiplication",
-        cardTitleColour: "white",
+        cardTitleColour: "yellow",
         description: "",
-        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438048/static/missions/dmm_f6y8pi.jpg',
-        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438048/static/missions/dmm_f6y8pi.jpg',
+        cardImageUrl: 'assets/images/dbs-card.jpeg',
+        mainImageUrl: 'assets/images/dbs-card.jpeg',
         mainTitle: "Community Disciple-Making Multiplication",
         paragraphs: [
             {
@@ -189,9 +189,9 @@ export const LOCAL_PROJECTS = [
     // },
     {
         cardTitle: "Fellowship Through Fitness",
-        cardTitleColour: "white",
+        cardTitleColour: "yellow",
         description: "",
-        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/fellowship-through-fitness-2_uxxqeg.jpg',
+        cardImageUrl: 'assets/images/fellowship-through-fitness-card.jpeg',
         mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/fellowship-through-fitness_qxjvpa.jpg',
         mainTitle: "Fellowship Through Fitness",
         paragraphs: [
@@ -297,7 +297,7 @@ export const INTERNATIONAL_PROJECTS = [
     },
     {
         cardTitle: "Chinese Outreach Network",
-        cardTitleColour: "white",
+        cardTitleColour: "yellow",
         description: "",
         cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/sacon-cover_dj544a.jpg',
         mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/sacon_rgyl4b.jpg',
