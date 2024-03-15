@@ -57,12 +57,24 @@
     margin-right: 0;
 }
 
+.missions-row {
+    padding-left: 0;
+}
+
 .missions-latest-updates-section {
     min-height: 300px;
     padding-left: 5rem;
     padding-right: 5rem;
     margin-left: 0;
     margin-right: 0;
+}
+
+.missions-updates-img {
+    max-height: 300px;
+    width: auto;
+    float: right;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .grey-background {
@@ -265,5 +277,11 @@
 
     .missions-latest-updates-section {
         padding-bottom: 10%;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+    .missions-updates-img {
+        max-height: 240px;
     }
 }
