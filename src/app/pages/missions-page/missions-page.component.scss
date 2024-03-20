@@ -50,7 +50,7 @@
 .missions-section {
     min-height: 300px;
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
     padding-left: 5rem;
     padding-right: 5rem;
     margin-left: 0;
@@ -90,11 +90,11 @@
 }
 
 .project-col {
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 
 .project-col:nth-child(7) {
-    margin-left: 17%;
+    margin-left: 27%;
 }
 
 .local-project-card {
@@ -185,8 +185,8 @@
 }
 
 .missions-modal-image {
-    height: 300px;
-    width: auto;
+    width: 500px;
+    height: auto;
 }
 
 .missions-modal-body {
@@ -257,7 +257,8 @@
     }
 
     .missions-modal-image {
-        height: 200px;
+        width: 300px;
+        height: auto;
     }
 
     .missions-modal-body {

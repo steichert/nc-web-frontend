@@ -209,6 +209,32 @@ export const LOCAL_PROJECTS = [
             }
         ]
     },
+    {
+        cardTitle: "National Freedom Network",
+        cardTitleColour: "black",
+        description: "",
+        cardImageUrl: 'assets/images/national-freedom-network-card.jpg',
+        mainImageUrl: 'assets/images/national-freedom-network-logo.png',
+        mainTitle: "",
+        paragraphs: [
+            {
+                type: "SIMPLE",
+                value: 'The National Freedom Network (NFN) was formally launched with the aim to connect all the various counter-Trafficking organisations with one another as well as with other role players across the movement. It has since grown into South Africa’s counter-Trafficking network.'
+            },
+            {
+                type: "SIMPLE",
+                value: 'The NFN acts as a point of connection for anyone working in the counter-Trafficking field; as a channel of communication to ensure that interaction between sectors allows for the flow of information as well as the sharing of resources and best practices; and as a hub of much needed collaboration.'
+            },
+            {
+                type: "SIMPLE",
+                value: 'The NFN acts as a point of connection for anyone working in the counter-Trafficking field; as a channel of communication to ensure that interaction between sectors allows for the flow of information as well as the sharing of resources and best practices; and as a hub of much needed collaboration.'
+            },
+            {
+                type: "SIMPLE_HTML",
+                value: 'To find out more please email: <a href="mailto:info@nfn.org.za">info@nfn.org.za</a> or visit <a href=\"https://nfn.org.za\" target=\"_blank\">www.nfn.org.za</a> to learn more.<br><br>We also have an interactive online portal, NFN Online: <a href=\"https://nfn.org.za/nfn-online\" target=\"_blank\">www.nfn.org.za/nfn-online</a><br><br>EMERGENCY NUMBERS:<br>National Human Trafficking Hotline: 0800 222 777<br>Salvation Army Helpline: 08000 73728'
+            }
+        ]
+    },
     // {
     //     cardTitle: "Helen Joseph Hospital Visitation",
     //     cardTitleColour: "white",
