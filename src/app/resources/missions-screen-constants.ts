@@ -226,12 +226,24 @@ export const LOCAL_PROJECTS = [
                 value: 'The NFN acts as a point of connection for anyone working in the counter-Trafficking field; as a channel of communication to ensure that interaction between sectors allows for the flow of information as well as the sharing of resources and best practices; and as a hub of much needed collaboration.'
             },
             {
-                type: "SIMPLE",
-                value: 'The NFN acts as a point of connection for anyone working in the counter-Trafficking field; as a channel of communication to ensure that interaction between sectors allows for the flow of information as well as the sharing of resources and best practices; and as a hub of much needed collaboration.'
+                type: "SIMPLE_HTML",
+                value: 'The NFN acts as a point of connection for anyone working in the counter-Trafficking field; as a channel of communication to ensure that interaction between sectors allows for the flow of information as well as the sharing of resources and best practices; and as a hub of much needed collaboration.<br><br><b>Vision</b><br>All sectors of society united and organised to prevent and combat Trafficking in Persons.<br><br><b>Mission</b><br>To effectively fight Trafficking in Persons through strategic networking, collaboration and partnership.'
+            },
+            {
+                type: "UNORDERED_LIST",
+                heading: "Program Areas:",
+                listType: "1",
+                values: [
+                    "Networking",
+                    "Care & Support",
+                    "Advocacy",
+                    "Capacity Building",
+                    "Special Projects"
+                ]
             },
             {
                 type: "SIMPLE_HTML",
-                value: 'To find out more please email: <a href="mailto:info@nfn.org.za">info@nfn.org.za</a> or visit <a href=\"https://nfn.org.za\" target=\"_blank\">www.nfn.org.za</a> to learn more.<br><br>We also have an interactive online portal, NFN Online: <a href=\"https://nfn.org.za/nfn-online\" target=\"_blank\">www.nfn.org.za/nfn-online</a><br><br>EMERGENCY NUMBERS:<br>National Human Trafficking Hotline: 0800 222 777<br>Salvation Army Helpline: 08000 73728'
+                value: '<br>To find out more please email: <a href="mailto:info@nfn.org.za">info@nfn.org.za</a> or visit <a href=\"https://nfn.org.za\" target=\"_blank\">www.nfn.org.za</a> to learn more.<br>We also have an interactive online portal, NFN Online: <a href=\"https://nfn.org.za/nfn-online\" target=\"_blank\">www.nfn.org.za/nfn-online</a><br><br><b>EMERGENCY NUMBERS:</b><br>National Human Trafficking Hotline: 0800 222 777<br>Salvation Army Helpline: 08000 73728'
             }
         ]
     },
