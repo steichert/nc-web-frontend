@@ -50,11 +50,31 @@
 .missions-section {
     min-height: 300px;
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 3rem;
     padding-left: 5rem;
     padding-right: 5rem;
     margin-left: 0;
     margin-right: 0;
+}
+
+.missions-row {
+    padding-left: 0;
+}
+
+.missions-latest-updates-section {
+    min-height: 300px;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.missions-updates-img {
+    max-height: 300px;
+    width: auto;
+    float: right;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .grey-background {
@@ -70,11 +90,11 @@
 }
 
 .project-col {
-    margin-bottom: 5%;
+    margin-bottom: 1%;
 }
 
 .project-col:nth-child(7) {
-    margin-left: 17%;
+    margin-left: 27%;
 }
 
 .local-project-card {
@@ -165,8 +185,8 @@
 }
 
 .missions-modal-image {
-    height: 300px;
-    width: auto;
+    width: 500px;
+    height: auto;
 }
 
 .missions-modal-body {
@@ -230,8 +250,15 @@
         padding-right: 1rem;
     }
 
+    .missions-latest-updates-section {
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
     .missions-modal-image {
-        height: 200px;
+        width: 300px;
+        height: auto;
     }
 
     .missions-modal-body {
@@ -247,5 +274,15 @@
 
     .missions-section {
         padding-bottom: 10%;
+    }
+
+    .missions-latest-updates-section {
+        padding-bottom: 10%;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 767px) {
+    .missions-updates-img {
+        max-height: 240px;
     }
 }

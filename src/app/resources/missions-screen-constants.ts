@@ -79,10 +79,10 @@ export const LOCAL_PROJECTS = [
     },
     {
         cardTitle: "Community Disciple-Making Multiplication",
-        cardTitleColour: "white",
+        cardTitleColour: "yellow",
         description: "",
-        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438048/static/missions/dmm_f6y8pi.jpg',
-        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438048/static/missions/dmm_f6y8pi.jpg',
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328586/static/missions/xieiaynaz3is0tzpu0nk.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328586/static/missions/xieiaynaz3is0tzpu0nk.jpg',
         mainTitle: "Community Disciple-Making Multiplication",
         paragraphs: [
             {
@@ -189,9 +189,9 @@ export const LOCAL_PROJECTS = [
     // },
     {
         cardTitle: "Fellowship Through Fitness",
-        cardTitleColour: "white",
+        cardTitleColour: "yellow",
         description: "",
-        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/fellowship-through-fitness-2_uxxqeg.jpg',
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328635/static/missions/qhdfm1gkpnfwel3hbn8b.jpg',
         mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/fellowship-through-fitness_qxjvpa.jpg',
         mainTitle: "Fellowship Through Fitness",
         paragraphs: [
@@ -206,6 +206,44 @@ export const LOCAL_PROJECTS = [
             {
                 type: "SIMPLE_HTML",
                 value: 'To get involved please email: <a href="mailto:admin@newcreation.co.za">admin@newcreation.co.za</a> or visit <a href=\"http://www.fellowshipfitness.co.za\" target=\"_blank\">www.fellowshipfitness.co.za</a> to learn more.'
+            }
+        ]
+    },
+    {
+        cardTitle: "National Freedom Network",
+        cardTitleColour: "black",
+        description: "",
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328635/static/missions/l9mqddkvzprjluckhy9w.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328635/static/missions/tzknmfqgkv8xbbvwz8cu.png',
+        mainTitle: "",
+        paragraphs: [
+            {
+                type: "SIMPLE",
+                value: 'The National Freedom Network (NFN) was formally launched with the aim to connect all the various counter-Trafficking organisations with one another as well as with other role players across the movement. It has since grown into South Africa’s counter-Trafficking network.'
+            },
+            {
+                type: "SIMPLE",
+                value: 'The NFN acts as a point of connection for anyone working in the counter-Trafficking field; as a channel of communication to ensure that interaction between sectors allows for the flow of information as well as the sharing of resources and best practices; and as a hub of much needed collaboration.'
+            },
+            {
+                type: "SIMPLE_HTML",
+                value: 'The NFN acts as a point of connection for anyone working in the counter-Trafficking field; as a channel of communication to ensure that interaction between sectors allows for the flow of information as well as the sharing of resources and best practices; and as a hub of much needed collaboration.<br><br><b>Vision</b><br>All sectors of society united and organised to prevent and combat Trafficking in Persons.<br><br><b>Mission</b><br>To effectively fight Trafficking in Persons through strategic networking, collaboration and partnership.'
+            },
+            {
+                type: "UNORDERED_LIST",
+                heading: "Program Areas:",
+                listType: "1",
+                values: [
+                    "Networking",
+                    "Care & Support",
+                    "Advocacy",
+                    "Capacity Building",
+                    "Special Projects"
+                ]
+            },
+            {
+                type: "SIMPLE_HTML",
+                value: '<br>To find out more please email: <a href="mailto:info@nfn.org.za">info@nfn.org.za</a> or visit <a href=\"https://nfn.org.za\" target=\"_blank\">www.nfn.org.za</a> to learn more.<br>We also have an interactive online portal, NFN Online: <a href=\"https://nfn.org.za/nfn-online\" target=\"_blank\">www.nfn.org.za/nfn-online</a><br><br><b>EMERGENCY NUMBERS:</b><br>National Human Trafficking Hotline: 0800 222 777<br>Salvation Army Helpline: 08000 73728'
             }
         ]
     },
@@ -297,7 +335,7 @@ export const INTERNATIONAL_PROJECTS = [
     },
     {
         cardTitle: "Chinese Outreach Network",
-        cardTitleColour: "white",
+        cardTitleColour: "yellow",
         description: "",
         cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/sacon-cover_dj544a.jpg',
         mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/sacon_rgyl4b.jpg',
