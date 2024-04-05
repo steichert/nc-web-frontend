@@ -81,8 +81,8 @@ export const LOCAL_PROJECTS = [
         cardTitle: "Community Disciple-Making Multiplication",
         cardTitleColour: "yellow",
         description: "",
-        cardImageUrl: 'assets/images/dbs-card.jpeg',
-        mainImageUrl: 'assets/images/dbs-card.jpeg',
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328586/static/missions/xieiaynaz3is0tzpu0nk.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328586/static/missions/xieiaynaz3is0tzpu0nk.jpg',
         mainTitle: "Community Disciple-Making Multiplication",
         paragraphs: [
             {
@@ -191,7 +191,7 @@ export const LOCAL_PROJECTS = [
         cardTitle: "Fellowship Through Fitness",
         cardTitleColour: "yellow",
         description: "",
-        cardImageUrl: 'assets/images/fellowship-through-fitness-card.jpeg',
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328635/static/missions/qhdfm1gkpnfwel3hbn8b.jpg',
         mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/fellowship-through-fitness_qxjvpa.jpg',
         mainTitle: "Fellowship Through Fitness",
         paragraphs: [
@@ -213,8 +213,8 @@ export const LOCAL_PROJECTS = [
         cardTitle: "National Freedom Network",
         cardTitleColour: "black",
         description: "",
-        cardImageUrl: 'assets/images/national-freedom-network-card.jpg',
-        mainImageUrl: 'assets/images/national-freedom-network-logo.png',
+        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328635/static/missions/l9mqddkvzprjluckhy9w.jpg',
+        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328635/static/missions/tzknmfqgkv8xbbvwz8cu.png',
         mainTitle: "",
         paragraphs: [
             {
