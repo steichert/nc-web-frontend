@@ -31,43 +31,8 @@
     margin-right: 1rem;
 }
 
-.logo-col {
-    padding-top: 3%;
-    padding-bottom: 3%;
-}
-
-.whatsapp-container {
-    text-align: center;
-    border-radius: 100px;
-    border-color: white;
-    /* font-size: 20px; */
-}
-
-.whatsapp-logo {
-    color: #39a542;
-    font-size: 60px;
-    margin-bottom: 1%;
-}
-
-#ncKidsWhatsAppLink {
-    margin-top: 1%;
-}
-
-
 .nc-kidz-content {
     margin-bottom: 10%;
-}
-
-#back-btn-link {
-    text-decoration: none;
-    color: #333;    
-}
-
-#back-btn {
-    position: absolute;
-    top: 1%;
-    left: 2%;
-    font-size: 120%;
 }
 
 hr {
@@ -104,21 +69,6 @@ ol li {
     padding-bottom: 10px;
 }
 
-#dob-row {
-    display: block;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-bottom: 15px;
-}
-
-#dob-row .col-sm-12 {
-    padding-left: 0;
-}
-
-.required-field {
-    color: orange;
-}
-
 #contact-row {
     margin-bottom: 10%;
 }
@@ -131,18 +81,6 @@ ol li {
     .nc-kidz-image {
         width: 200px;
         margin-bottom: 5%;
-    }
-
-    .modal-dialog {
-        margin: 0;
-    }
-    
-    .modal-content {
-        border-radius: 0;
-    }
-
-    #back-btn {
-        visibility: hidden;
     }
 }
 
