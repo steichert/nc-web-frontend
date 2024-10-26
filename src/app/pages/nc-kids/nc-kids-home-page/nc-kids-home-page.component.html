@@ -9,15 +9,15 @@
 
     <div id="ncKidzWhatRow" class="nc-kidz-content">
         <div class="text-center mb-5">
-            <button class="btn btn-green btn-success mb-3 nc-kidz-homepage-button" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#registerModal">
-                    <b>REGISTER</b>
-            </button>
+            <a class="btn btn-green btn-success mb-3 nc-kidz-homepage-button" 
+                [href]="registrationFormUrl"
+                target="_blank">
+                <b>REGISTER</b>
+            </a>
             <button class="btn bnt-info btn-get-in-touch mb-3 nc-kidz-homepage-button" 
-                    data-bs-toggle="modal" 
-                    data-bs-target="#getInTouchModal">
-                    <b>CONTACT US</b>
+                data-bs-toggle="modal" 
+                data-bs-target="#getInTouchModal">
+                <b>CONTACT US</b>
             </button>
         </div>
 
@@ -210,136 +210,6 @@
         <p>
             For more info contact Piet at:<br>011 792 1151 or piet@newcreation.co.za
         </p>
-    </div>
-</div>
-
-<div class="modal" 
-     id="registerModal"
-     tabindex="-1"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">NC Kidz Registration</h3>
-                <button type="button" 
-                        class="btn-close" 
-                        data-bs-dismiss="modal" 
-                        aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    With the information given, we will keep you updated as to the events and times of all the Children's Ministry programmes. Please fill in the information you feel comfortable with.
-                    <br><br>
-                    <div class="mb-3">
-                        <span class="required-field">*</span><sup> - Required field</sup>
-                    </div>                    
-
-                    <div class="mb-3">
-                        <label for="child-name">Child's Name: <span class="required-field">*</span></label>
-                        <input type="text" class="form-control" id="child-name" name="child-name" [(ngModel)]="child.firstName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="child-surname">Child's Surname: <span class="required-field">*</span></label>
-                        <input type="text" class="form-control" id="child-surname" name="child-surname" [(ngModel)]="child.surname" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="mother-name">Mother's Name: <span class="required-field">*</span></label>
-                        <input type="text" class="form-control" id="mother-name" name="mother-name" [(ngModel)]="child.motherFirstName" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="father-name">Father's Name:</label>
-                        <input type="text" class="form-control" id="father-name" name="father-name" [(ngModel)]="child.fatherFirstName">
-                    </div>
-                    
-                    <label>Date of birth: <span class="required-field">*</span></label>
-                    <div id="dob-row" class="mb-3 row g-3">                        
-                        <div class="col">
-                            <select #dobday id="dobday" class="form-select" name="dobday" [(ngModel)]="childDOB.day" (click)="verifyDOB()" required>
-                            <option value="" disabled selected>Day</option>
-                            <option *ngFor="let day of days" [value]="day">{{day}}</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <select #dobmonth id="dobmonth" class="form-select" name="dobmonth" [(ngModel)]="childDOB.month" (click)="verifyDOB()" required>
-                            <option value="" disabled selected>Month</option>
-                            <option *ngFor="let month of months; let i = index" [value]="getMonthValue(i)" [attr.disabled]="+childDOB.day > 29 && month == 'February' ? 'disabled' : null">{{month}}</option>
-                            </select>
-                        </div>
-                        <div class="col">
-                            <select #dobyear id="dobyear" class="form-select" name="dobyear" [(ngModel)]="childDOB.year" (click)="verifyDOB()" required>
-                            <option value="" disabled selected>Year</option>
-                            <option *ngFor="let year of years" [value]="year">{{year}}</option>
-                            </select>
-                        </div>                                         
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="email">Email address: </label>
-                        <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email">
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="mother-contact">Mother's Number: <span class="required-field">*</span></label>
-                        <input type="text" class="form-control" id="mother-contact" name="mother-contact" [(ngModel)]="child.motherContactNumber" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="father-contact">Father's Number:</label>
-                        <input type="text" class="form-control" id="father-contact" name="father-contact" [(ngModel)]="child.fatherContactNumber">
-                    </div><br>
-
-                    <div class="mb-3">
-                        <label>Ministry: <span class="required-field">*</span></label>
-                    </div>
-                    <div class="mb-3">                        
-                        <input #ministry1 type="checkbox" value="NCBabies" name="ncbabies-check" [(ngModel)]="babiesMinistry">&nbsp;&nbsp;NC Babies (0 - 3 years)<br>
-                        <input #ministry2 type="checkbox" value="Sonkidz" name="sonkidz-check" [(ngModel)]="sonkidzMinistry">&nbsp;&nbsp;Sonkidz (3 - 4 years)<br>
-                        <input #ministry3 type="checkbox" value="Glowkidz" name="glowkidz-check" [(ngModel)]="glowkidzMinistry">&nbsp;&nbsp;Glowkidz (4 - 5 years)<br>
-                        <input #ministry4 type="checkbox" value="NCKidz Sunday" name="sunday-check" [(ngModel)]="sundayMinistry">&nbsp;&nbsp;NC Kidz Sunday (6 - 13 years)<br>
-                        <input #ministry5 type="checkbox" value="NCKidz Friday" name="friday-check" [(ngModel)]="fridayMinistry">&nbsp;&nbsp;NC Kidz Friday (6 - 13 years)
-                    </div><br>
-
-                    <div class="mb-3">
-                        <label for="">Add to WhatsApp groups? <span class="required-field">*</span></label>
-                        <div class="radio">
-                            <label><input type="radio" name="yes" value="1" [(ngModel)]="whatsApp">&nbsp;Yes</label>
-                        </div>
-                        <div class="radio">
-                            <label><input type="radio" name="no" value="0" [(ngModel)]="whatsApp">&nbsp;No</label>
-                        </div>
-                    </div><br>
-                    
-                    <div class="mb-3" *ngIf="errors.length > 0">
-                        <div class="alert alert-danger">                            
-                            <ul>
-                                <li *ngFor="let error of errors">{{error}}</li>
-                            </ul>
-                        </div>
-                    </div>
-                </form>                
-                
-            </div>
-            <div class="modal-footer">
-                <button *ngIf="!isLoading" 
-                        type="submit" 
-                        class="btn btn-green btn-success" 
-                        (click)="submitForm()">
-                    <b>SUBMIT</b>
-                </button>
-                <button *ngIf="isLoading" 
-                        class="btn btn-default btn-green btn-success submit-button" 
-                        type="button" 
-                        disabled>
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                    &nbsp;<b>SENDING...</b>
-                </button>
-                <button id="close-modal-btn" 
-                        type="button" 
-                        class="btn btn-default" 
-                        data-bs-dismiss="modal">
-                    <b>CLOSE</b>
-                </button> 
-            </div>
-        </div>
     </div>
 </div>
 
