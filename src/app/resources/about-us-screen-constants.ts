@@ -215,24 +215,14 @@ export const CHURCH_STAFF = [
         subTitle: "Lead Pastor"
     },
     {
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959611/static/leadership/leadership-martha_ba4p5g.jpg',
+        title: 'Martha Simalenga',
+        subTitle: 'Worship and Operations'
+    },
+    {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959937/static/leadership/leadership-teresa_xa1lpf.jpg',
         title: "Teresa Kilian",
         subTitle: "Secretary and Administration"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/grace_hjjqzd.jpg',
-        title: "Grace Mwachoweka",
-        subTitle: "Administration and House keeping"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959611/static/leadership/leadership-martha_ba4p5g.jpg',
-        title: 'Martha Simalenga',
-        subTitle: 'Worship and Administration'
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-wessley_veakkk.jpg',
-        title: 'Wessley Archary',
-        subTitle: 'Youth and Young Adults'
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-piet_jxlvqx.jpg',
@@ -240,8 +230,18 @@ export const CHURCH_STAFF = [
         subTitle: "Pastor and Administration"
     },
     {
-        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675359821/static/leadership/leadership-mike_fi0fve.jpg",
-        title: "Mike van Skyf",
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/grace_hjjqzd.jpg',
+        title: "Grace Mwachoweka",
+        subTitle: "Administration and House keeping"
+    },
+    {
+        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-wessley_veakkk.jpg',
+        title: 'Wessley Archary',
+        subTitle: 'Youth and Young Adults'
+    },
+    {
+        imageSrc: "",
+        title: "Nathan Goch",
         subTitle: "Intern"
     }
 ]
