@@ -1,12 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
-import { 
-    GET_CONNECTED_MINISTRIES, 
-    GET_CONNECTED_SERVING,
-    AREAS_OF_MINISTRY, 
-    AREAS_OF_SERVICE 
-} from 'src/app/resources/connect-constants';
+import { VOLUNTEER_AREAS } from 'src/app/resources/connect-constants';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
 import { ToastrService } from 'ngx-toastr';
@@ -20,29 +15,16 @@ declare var $ :any;
 })
 export class ConnectPageComponent implements OnInit {
 
-    pageTitle: string = "Connect | New Creation Family Church";
+    pageTitle: string = "Be Involved | New Creation Family Church";
     isLoading: Boolean = false;
 
-    getConnectedMinistries = GET_CONNECTED_MINISTRIES;
-    getConnectedServing = GET_CONNECTED_SERVING;
-    allAreasOfService = AREAS_OF_SERVICE;
-    allAreasOfMinistry = AREAS_OF_MINISTRY;
+    volunteerAreas = VOLUNTEER_AREAS;
     allLifeGroups: any[] = [];
 
     connectAreaModalImageUrl = 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/connect-background_wfqcrt.jpg';
+    volunteerSignUpUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSd40pBr8mqUPQ8qIKoY5swy79yrFZOhuXkaaRlQzNb-q2I3iw/viewform';
 
-    firstConnect = [];
-    secondConnect = [];
-    selectedConnect: any;
-    selectedAreas: any[] = [];
-    
-    joinTeam = {
-        fname: "",
-        lname: "",
-        number: "",
-        email: "",
-        areas: [],
-    };
+    selectedItem: any;
 
     lifegroup = {
         fname: "",
@@ -80,55 +62,6 @@ export class ConnectPageComponent implements OnInit {
                 console.log(err.error.text);
             }
         )
-    }
-    
-    public submitJoinTeam(): void {
-        if (this.isValidJoinTeam()) {
-            this.isLoading = true;
-
-            let context = {
-                firstName: this.joinTeam.fname,
-                surname: this.joinTeam.lname,
-                phoneNumber: this.joinTeam.number,
-                email: this.joinTeam.email,
-                areas: this.convertToStringList(this.joinTeam.areas),
-            };
-
-            let requestBody = {
-                fromAddress: environment.emailDetails.joinTeam.fromAddress,
-                toAddress: environment.emailDetails.joinTeam.toAddress,
-                replyTo: environment.emailDetails.joinTeam.replyTo,
-                subject: environment.emailDetails.joinTeam.subject,
-                template: environment.emailDetails.joinTeam.template,
-                context: context
-            };
-            
-            this.ncApi.sendEmail(requestBody).subscribe(
-                res => {
-                    this.isLoading = false;
-                    this.toastr.success('Your message has been sent successfully', 'Success');
-                    this.clearJoinTeamContext();
-                },
-                err => {
-                    this.isLoading = false;
-                    this.toastr.error('Failed to send message. Please try again later.', 'Error');
-                }
-            );
-        }
-    }
-
-    public convertToStringList(areas: any[]) {
-        let output = '';
-
-        areas.forEach(area => {
-            if (output == '') {
-                output += area.name;    
-            } else {
-                output += ', ' + area.name;
-            }
-        });
-
-        return output;
     }
 
     public submitLifeGroup(): void {
@@ -188,28 +121,6 @@ export class ConnectPageComponent implements OnInit {
         }
     }
 
-    private isValidJoinTeam(): boolean {
-        if (this.joinTeam.fname != '' && this.joinTeam.lname != '' && this.joinTeam.number != '' && this.joinTeam.email != '') {
-            if (this.joinTeam.areas.length != 0) {
-                    if (!this.validateEmail(this.joinTeam.email)) {
-                        alert("Please enter a valid email address.");
-                        return false;
-                    } else if (!this.validateNumber(this.joinTeam.number)) {
-                        alert("Please enter a valid phone number");
-                        return false;
-                    } else {
-                        return true;
-                    }
-                } else {
-                    alert("Please indicate at least one area of interest.");
-                    return false;
-                }
-        } else {
-            alert("Please complete the personal information section.");
-            return false;
-        }
-    }
-
     public validateEmail(email: string): boolean {
         var regex = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (regex.test(email)) {
@@ -228,13 +139,17 @@ export class ConnectPageComponent implements OnInit {
         }
     }
 
-    public triggerConnectItem(connect: any) {
-        this.selectedConnect = connect;
+    public triggerItem(item: any) {
+        this.selectedItem = item;
 
-        if (this.selectedConnect.label == "NC KIDZ") {
+        if (this.selectedItem.label == "NC KIDZ") {
             this.router.navigate(['/nc-kidz']);
-        } else if (this.selectedConnect.label == "MISSIONS") {
+        } else if (this.selectedItem.label == "MISSIONS") {
             this.router.navigate(['/missions']);
+        } else if (this.selectedItem.label == "OASIS") {
+            window.location.href = "https://oasishaven.org/";
+        } else if (this.selectedItem.label == "THE KINGS SCHOOL") {
+            window.location.href = "https://thekingsschool.co.za/";
         } else {
             this.openConnectModal();
         }
@@ -256,20 +171,8 @@ export class ConnectPageComponent implements OnInit {
         }, 100);
     }
 
-    public setSelectedAreas(areas: any[]) {
-        this.selectedAreas = areas;
-    }
-
     public getConnectedModalImageUrl() {
         return 'url(\'' + this.connectAreaModalImageUrl + '\')';
-    }
-
-    public clearJoinTeamContext() {
-        this.joinTeam.fname = "";
-        this.joinTeam.lname = "";
-        this.joinTeam.number = "";
-        this.joinTeam.email = "";
-        this.joinTeam.areas = [];
     }
 
     public clearLifeGroupContext() {

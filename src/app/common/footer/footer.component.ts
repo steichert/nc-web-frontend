@@ -9,9 +9,11 @@ import { environment } from 'src/environments/environment';
 export class FooterComponent implements OnInit {
     
     baseUrl: string;
+    currentYear: string;
 
     constructor() {
         this.baseUrl = environment.baseUrl;
+        this.currentYear = new Date().getFullYear().toString();
     }
 
     ngOnInit(): void {}

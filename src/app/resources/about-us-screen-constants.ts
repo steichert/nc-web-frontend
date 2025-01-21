@@ -217,30 +217,25 @@ export const CHURCH_STAFF = [
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959611/static/leadership/leadership-martha_ba4p5g.jpg',
         title: 'Martha Simalenga',
-        subTitle: 'Worship and Operations'
+        subTitle: 'Worship & Operations'
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959937/static/leadership/leadership-teresa_xa1lpf.jpg',
         title: "Teresa Kilian",
-        subTitle: "Secretary and Administration"
+        subTitle: "Secretary & Administration"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-piet_jxlvqx.jpg',
         title: "Pieter Trichardt",
-        subTitle: "Pastor and Administration"
+        subTitle: "Assistant Pastor"
     },
     {
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/grace_hjjqzd.jpg',
         title: "Grace Mwachoweka",
-        subTitle: "Administration and House keeping"
+        subTitle: "Administration & House Keeping"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-wessley_veakkk.jpg',
-        title: 'Wessley Archary',
-        subTitle: 'Youth and Young Adults'
-    },
-    {
-        imageSrc: "",
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737289540/static/leadership/staff_nathan_goch_ebtbb5.jpg",
         title: "Nathan Goch",
         subTitle: "Intern"
     }

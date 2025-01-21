@@ -19,7 +19,7 @@
 .activities-join-team-btn {
     margin-left: 1rem;
     margin-right: 1rem;
-    width: 12rem;
+    width: 14rem;
 }
 
 .activities-find-more-btn {
@@ -36,32 +36,17 @@
     text-align: center;
 }
 
-.img-circle {
-    -webkit-transition: 0.2s filter ease-in-out;
-    -moz-transition: 0.2s filter ease-in-out;
-    -ms-transition: 0.2s filter ease-in-out;
-    -o-transition: 0.2s filter ease-in-out;
-    transition: 0.2s filter ease-in-out;
+.connect-link .img-circle {
+    -webkit-filter: blur(1.5px);
+    -moz-filter: blur(1.5px);
+    -ms-filter: blur(1.5px);
+    -o-filter: blur(1.5px);
+    filter: blur(1.5px);
 }
 
-.connect-link:hover .img-circle {
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -ms-filter: blur(5px);
-    -o-filter: blur(5px);
-    filter: blur(5px);
-}
-
-.connect-label {
-    -webkit-transition: 0.2s opacity ease-in-out;
-    -moz-transition: 0.2s opacity ease-in-out;
-    -ms-transition: 0.2s opacity ease-in-out;
-    -o-transition: 0.2s opacity ease-in-out;
-    transition: 0.2s opacity ease-in-out;
-}
-
-.connect-link:hover .connect-label {
+.connect-link .connect-label {
     opacity: 1;
+    font-weight: bold;
 }
 
 .connect-col {

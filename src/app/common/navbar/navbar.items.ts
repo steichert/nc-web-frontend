@@ -13,7 +13,7 @@ export const navbarItems = {
             },
             {
                 name: 'BE INVOLVED',
-                routerLink: '/connect',
+                routerLink: '/be-involved',
                 dropdownItems: [],
             },
             {
