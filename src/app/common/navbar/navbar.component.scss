@@ -65,9 +65,9 @@ nav {
 .primary-navigation {
     z-index: 1000;
     justify-content: center;
-    margin-left: -12rem !important;
     list-style: none;
-    padding: 0;
+    padding-left: 0;
+    padding-right: 14rem;
     margin: 0;
 }
 
@@ -142,7 +142,13 @@ nav {
     }
 }
 
-@media (max-width: 68rem) {
+@media (max-width: 86rem) {
+    .primary-navigation {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 72rem) {
     .primary-navigation {
         --gap: 2em;
 
