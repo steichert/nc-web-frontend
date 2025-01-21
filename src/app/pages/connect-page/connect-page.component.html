@@ -3,74 +3,34 @@
         <h2><b>MINISTRIES</b></h2>
     </div>
 
+    <div class="activities-btn-container">
+        <a class="activities-join-team-btn btn btn-success btn-green"
+           [href]="volunteerSignUpUrl" 
+           target="blank">
+            <b>VOLUNTEER SIGN-UP</b>
+        </a>
+    </div>
+
     <div class="connect-row row">
-        <div class="col-lg-3 col-sm-6 col-12 connect-col" 
-             *ngFor="let connect of getConnectedMinistries; let i = index">
+        <div class="col-lg-3 col-sm-6 col-12 connect-col"
+             [ngClass]="{'col-lg-3': i < volunteerAreas.length - 3, 'col-lg-4': i >= volunteerAreas.length - 3}" 
+             *ngFor="let volunteerArea of volunteerAreas; let i = index">
             <div class="connect-image">
                 <a class="connect-link"
-                   (click)="triggerConnectItem(connect)">
+                   (click)="triggerItem(volunteerArea)">
                     <img [id]="'connectImage' + i" 
                          class="img-circle" 
-                         [src]="connect.image" 
+                         [src]="volunteerArea.image" 
                          width="200">
-                    <div class="connect-text">
+                    <div class="connect-text text-shadow-grey">
                         <h4 [id]="'connectLabel' + i" 
-                            class="connect-label">
-                            <b>{{connect.label}}</b>
+                            class="connect-label"
+                            [innerHTML]="volunteerArea.label">
                         </h4>
                     </div>
                 </a>
             </div>
         </div>
-    </div>
-
-    <div class="activities-btn-container">
-        <button class="activities-join-team-btn btn btn-success btn-green" 
-                data-bs-toggle="modal" 
-                data-bs-target="#joinTeamModal" 
-                (click)="setSelectedAreas(allAreasOfMinistry)">
-            <b>JOIN A MINISTRY</b>
-        </button>
-    </div>
-
-    <div id="servingTitle" class="connect-title row">
-        <h2><b>SERVING</b></h2>
-    </div>
-    
-    <div class="connect-row row">
-        <div class="col-lg-4 col-sm-6 col-12 connect-col" 
-             *ngFor="let connect of getConnectedServing; let i = index"
-             [ngClass]="{'col-sm-6': i < getConnectedServing.length - 1, 'col-sm-12': i == getConnectedServing.length - 1}">
-            <div class="connect-image">
-                <a class="connect-link" 
-                   (click)="triggerConnectItem(connect)">
-                    <img [id]="'serveImage' + (i + getConnectedMinistries.length)" 
-                         class="img-circle" 
-                         [src]="connect.image" 
-                         width="200">
-                    <div class="connect-text">
-                        <h4 [id]="'connectLabel' + (i + getConnectedMinistries.length)" 
-                            class="connect-label">
-                            <b>{{connect.label}}</b>
-                        </h4>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="activities-btn-container">
-        <button class="activities-join-team-btn btn btn-success btn-green" 
-                data-bs-toggle="modal" 
-                data-bs-target="#joinTeamModal" 
-                (click)="setSelectedAreas(allAreasOfService)">
-            <b>JOIN A TEAM</b>
-        </button>
-        <button class="activities-find-more-btn btn btn-success btn-green" 
-                data-bs-toggle="modal" 
-                data-bs-target="#findOutMoreModal">
-            <b>FIND OUT MORE</b>
-        </button>
     </div>
 </div>
 
@@ -78,7 +38,7 @@
      class="modal get-connected-modal" 
      tabindex="-1"
      aria-hidden="true"
-     *ngIf="selectedConnect != null">
+     *ngIf="selectedItem != null">
     <div class="modal-dialog modal-xl modal-fullscreen-sm-down">
         <div class="modal-content get-connected-modal-content" 
              [ngStyle]="{'background-image': getConnectedModalImageUrl()}">
@@ -89,33 +49,24 @@
                         aria-label="Close"></button>                
             </div>
             <div class="modal-body">
-                <div *ngIf="selectedConnect.label != 'LIFE GROUPS'" class="connect-body-content-wrapper">
-                    <h3><b>{{selectedConnect.label}}</b></h3>
+                <div *ngIf="selectedItem.id != 'life-groups'" class="connect-body-content-wrapper">
+                    <h3 [innerHTML]="selectedItem.label" style="font-weight: bold;"></h3>
 
                     <div class="connect-body-wrapper">
-                        <p class="connect-body" *ngFor="let paragraph of selectedConnect.paragraphs">
+                        <p class="connect-body" *ngFor="let paragraph of selectedItem.paragraphs">
                             <app-paragraph-content [paragraph]="paragraph"></app-paragraph-content>
                         </p>
                     </div>
                     
-                    <div *ngIf="selectedConnect.join_team">
-                        <button *ngIf="selectedConnect.area_type == 'ministry'"
-                                class="activities-join-team-btn btn btn-success btn-green" 
-                                data-bs-toggle="modal" 
-                                data-bs-dismiss="modal" 
-                                (click)="setSelectedAreas(allAreasOfMinistry); toggleJoinTeamModal()">
-                            <b>JOIN A MINISTRY</b>
-                        </button>
-                        <button *ngIf="selectedConnect.area_type == 'serving'"
-                                class="activities-join-team-btn btn btn-success btn-green" 
-                                data-bs-toggle="modal" 
-                                data-bs-dismiss="modal" 
-                                (click)="setSelectedAreas(allAreasOfService); toggleJoinTeamModal()">
-                            <b>JOIN A TEAM</b>
-                        </button>
+                    <div *ngIf="selectedItem.join_team">
+                        <a class="activities-join-team-btn btn btn-success btn-green"
+                        [href]="volunteerSignUpUrl" 
+                        target="blank">
+                            <b>VOLUNTEER SIGN-UP</b>
+                        </a>
                     </div>
                 </div>
-                <div id="lifeGroupSection" *ngIf="selectedConnect.label == 'LIFE GROUPS'" class="connect-body-content-wrapper">
+                <div id="lifeGroupSection" *ngIf="selectedItem.id == 'life-groups'" class="connect-body-content-wrapper">
                     <h3><b>FIND A LIFE GROUP</b></h3>
                     <br>
                     <p>Please fill out your details below and we'll help you get connected with one of our Life Groups</p>   
@@ -220,99 +171,6 @@
                         data-bs-dismiss="modal">
                     <b>CLOSE</b>
                 </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Join Ministry Modal -->
-<div id="joinTeamModal" 
-     class="modal"
-     tabindex="-1"
-     aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-fullscreen-sm-down">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" 
-                        class="btn-close" 
-                        data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <h3><b>GET INVOLVED</b></h3>
-                <br>
-                <p>
-                    Let us know where you would like to get involved.
-                </p>
-                <br>
-                <form>
-                    <h4>PERSONAL INFORMATION</h4>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="input-group mb-3">
-                                <input [(ngModel)]="joinTeam.fname" name="fname" type="text" class="form-control" id="firstName" placeholder="First Name">
-                            </div>
-                            <div class="input-group mb-3">
-                                <input [(ngModel)]="joinTeam.lname" name="lname" type="text" class="form-control" id="lastName" placeholder="Surname">
-                            </div>
-                            <div class="input-group mb-3">
-                                <input [(ngModel)]="joinTeam.number" name="number" type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
-                            </div>
-                            <div class="input-group mb-3">
-                                <input [(ngModel)]="joinTeam.email" name="email" type="email" class="form-control" id="email" placeholder="Email">
-                            </div>
-                        </div>
-                    </div>
-
-                    <br>
-                    <h4>I WANT TO VOLUNTEER AT</h4>
-                    <br>
-
-                    <div *ngFor="let area of selectedAreas">
-                        <h5>{{ area.name }}</h5>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="form-group checkbox-container">
-                                    <div *ngFor="let subarea of area.subareas">
-                                        <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox" (change)="toggleRole(joinTeam.areas, subarea)" value="">
-                                                {{ subarea.name }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-6">
-                            <button *ngIf="!isLoading" 
-                                    id="submitJoinTeam" 
-                                    class="btn btn-success btn-green join-team-button" 
-                                    (click)="submitJoinTeam()">
-                                <b>SUBMIT</b>
-                            </button>
-                            <button *ngIf="isLoading" 
-                                    class="btn btn-success btn-green submit-button join-team-button"
-                                    type="button" 
-                                    disabled>
-                                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                                    &nbsp;SENDING...
-                            </button>
-                        </div>
-                        <div class="col-6">
-                            <button type="button" 
-                                    class="btn btn-default join-team-button" 
-                                    data-bs-dismiss="modal">
-                                <b>CLOSE</b>
-                            </button>
-                        </div>
-                    </div>
-                    <br>
-                </form>
             </div>
         </div>
     </div>

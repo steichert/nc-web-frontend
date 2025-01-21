@@ -7,18 +7,13 @@ export const navbarItems = {
                 dropdownItems: [],
             },
             {
-                name: 'SERVICES',
-                routerLink: '/services',
-                dropdownItems: [],
-            },
-            {
                 name: 'VISITORS',
                 routerLink: '/visitors',
                 dropdownItems: [],
             },
             {
-                name: 'GIVING',
-                routerLink: '/giving',
+                name: 'BE INVOLVED',
+                routerLink: '/be-involved',
                 dropdownItems: [],
             },
             {
@@ -32,8 +27,8 @@ export const navbarItems = {
                 dropdownItems: [],
             },
             {
-                name: 'CONNECT',
-                routerLink: '/connect',
+                name: 'GIVING',
+                routerLink: '/giving',
                 dropdownItems: [],
             },
             {
