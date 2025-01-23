@@ -1,6 +1,6 @@
 .connect-container {
     padding-top: 10em;
-    padding-bottom: 2em;
+    padding-bottom: 5em;
     padding-left: 0;
     padding-right: 0;
 }
@@ -20,16 +20,6 @@
     margin-left: 1rem;
     margin-right: 1rem;
     width: 14rem;
-}
-
-.activities-find-more-btn {
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: 12rem;
-}
-
-#servingTitle {
-    padding-top: 4rem; 
 }
 
 .connect-image {
@@ -98,10 +88,9 @@ a:focus {
     outline: none;
 }
 
-@media screen and (max-width: 28rem) {
-    .activities-find-more-btn {
-        margin-top: 1rem;
-    }
+#lifeGroupBannerImage {
+    width: 100%;
+    margin-bottom: 5rem;
 }
 
 @media screen and (max-width: 58rem) {
@@ -156,12 +145,14 @@ a:focus {
     text-align: left;
 }
 
+.connect-body-title {
+    padding-top: 2rem;
+    font-weight: bold;
+}
+
 .connect-body-content-wrapper {
     background: rgba(255, 255, 255, 0.75);
-    padding-top: 2rem;
     padding-bottom: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
 }
 
 .connect-body-wrapper {
@@ -185,27 +176,10 @@ ul {
     text-align: left;
 }
 
-/* Join Team Modal */
-
-.checkbox-container {
-    text-align: left;
-    border: 1px solid lightgray;
-    border-radius: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.join-team-button {
-    width: 10rem;
-}
-
 /* Life Group Modals */
 
 #lifeGroupSection {
     text-align: center;
-    padding-top: 2rem;
-    padding-left: 5%;
-    padding-right: 5%;
 }
 
 #ourLifeGroupsContainer {
@@ -225,11 +199,6 @@ ul {
 .lifegroup-hosts-item p {
     margin-bottom: 4%;
     font-size: 0.85rem;
-}
-
-.submit-group-button {
-    width: 20%;
-    float: right;
 }
 
 .img-life-group-leader {

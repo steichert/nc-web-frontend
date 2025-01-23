@@ -1,10 +1,9 @@
 export const VOLUNTEER_AREAS = [
     {
-        id: "missions",
-        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420286/static/connect/get-conn-missions_xx24em.jpg',
-        label: "MISSIONS",
-        join_team: false,
-        area_type: "serving"
+        id: "volunteer-signup",
+        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420302/static/connect/get-conn-hospitality_ls1efh.jpg',
+        label: "VOLUNTEER<br>SIGNUP",
+        join_team: false
     },
     {
         id: "life-groups",
@@ -12,7 +11,14 @@ export const VOLUNTEER_AREAS = [
         label: "LIFE GROUPS",
         join_team: false,
         area_type: "ministry"
-    }, 
+    },
+    {
+        id: "missions",
+        image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420286/static/connect/get-conn-missions_xx24em.jpg',
+        label: "MISSIONS",
+        join_team: false,
+        area_type: "serving"
+    },
     {
         id: "nc-kidz",
         image: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673420278/static/connect/get-conn-nckidz_imicqf.jpg',
