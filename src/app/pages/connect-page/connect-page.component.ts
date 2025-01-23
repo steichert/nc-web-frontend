@@ -1,6 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { environment } from 'src/environments/environment';
 import { VOLUNTEER_AREAS } from 'src/app/resources/connect-constants';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
@@ -24,6 +23,7 @@ export class ConnectPageComponent implements OnInit {
     connectAreaModalImageUrl = 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/connect-background_wfqcrt.jpg';
     volunteerSignUpUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSd40pBr8mqUPQ8qIKoY5swy79yrFZOhuXkaaRlQzNb-q2I3iw/viewform';
     lifeGroupsBannerImageUrl = 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737640035/static/connect/life-groups-banner_vseoci.jpg';
+    lifeGroupsSignUpUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSemV8ojV3shJsT0qOQgiRE9MECCLpNsuV5dUiDHGenJgU1ZBQ/viewform';
 
     selectedItem: any;
 
