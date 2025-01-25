@@ -10,6 +10,7 @@ import { NcKidsJamPageComponent } from './nc-kids-jam-page/nc-kids-jam-page.comp
 import { NcKidsSundayPageComponent } from './nc-kids-sunday-page/nc-kids-sunday-page.component';
 import { ContactModalModule } from 'src/app/common/contact-modal/contact-modal.module';
 import { Meta } from '@angular/platform-browser';
+import { NcKidzGoPageComponent } from './nc-kidz-go-page/nc-kidz-go-page.component';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { Meta } from '@angular/platform-browser';
         NcKidsGlowkidsPageComponent,
         NcKidsFourTwelvePageComponent,
         NcKidsJamPageComponent,
-        NcKidsSundayPageComponent
+        NcKidsSundayPageComponent,
+        NcKidzGoPageComponent
     ],
     imports: [
         CommonModule,

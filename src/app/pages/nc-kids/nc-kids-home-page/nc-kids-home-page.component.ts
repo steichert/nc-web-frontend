@@ -31,6 +31,7 @@ export class NcKidsHomePageComponent implements OnInit {
     ncJamLogoImageUrl = imageUrls.ncJamLogoImageUrl;
     ncSonKidzLogoImageUrl = imageUrls.ncSonKidzLogoImageUrl;
     ncKidzSundayLogoImageUrl = imageUrls.ncKidzSundayLogoImageUrl;
+    ncGoLogoImageUrl = imageUrls.ncGoLogoImageUrl;
 
     ngOnInit() {
         this.navbarService.setCurrentURL(this.router.url);
@@ -40,10 +41,6 @@ export class NcKidsHomePageComponent implements OnInit {
 
     public scrollToTop() {
         window.scrollTo(0,0);
-    }
-
-    public getNcHomeBannerImageUrl() {
-        return 'url(\'' + this.ncKidsHomeBannerImageUrl + '\')';
     }
 
     public navigateToLink(link: string) {

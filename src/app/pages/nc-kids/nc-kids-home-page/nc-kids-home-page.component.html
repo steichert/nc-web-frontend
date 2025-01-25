@@ -1,13 +1,18 @@
 <div class="container-fluid nc-kids-home-container">
-    <div id="ncHomeBannerRow" 
-         class="nc-kidz-content background-image" 
-         [ngStyle]="{'background-image': getNcHomeBannerImageUrl()}">
-        <h1 id="ncTitle">
-            <b>NC KIDZ</b>
-        </h1>
+    <div id="ncKidzBannerContainer">
+        <img id="ncKidzBannerImage" [src]="ncKidsHomeBannerImageUrl" alt="NC Kidz banner">
+    </div>
+   
+    <div class="nc-kidz-video-container">
+        <iframe class="nc-kidz-video-iframe"
+                src="https://www.youtube.com/embed/bnjXVu48eWc?si=D3Ivmo_3TnjYv_z-" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
     </div>
 
-    <div id="ncKidzWhatRow" class="nc-kidz-content">
+    <div class="nc-kidz-content">
         <div class="text-center mb-5">
             <a class="btn btn-green btn-success mb-3 nc-kidz-homepage-button" 
                 [href]="registrationFormUrl"
@@ -24,97 +29,125 @@
         <h2>What is NC Kidz?</h2>
         <hr><br>
         <p>
-            NC Kidz is a ministry of New Creation Family Church!<br>This ministry, through fellowship between children and leaders, focuses on equipping the children of God's Kingdom, "Train a child in the way he should go and when he is old he will not turn from it," Proverbs 22:6.<br>NC Kidz provides a fun way of teaching Christian values and principles to children as a foundation for their future development in and for Christ, and aims at providing them with the building blocks for their relationship with God. NC Kidz is made up of five sub ministries: NC Babies, NC Glowkidz, NC Kidz Sunday, Jam Sessions, and 412!
+            NC Kidz is a ministry of New Creation Family Church!<br>
+            This ministry, through fellowship between children and leaders, focuses on equipping the children of God's Kingdom, 
+            "Train a child in the way he should go and when he is old he will not turn from it," Proverbs 22:6.
+        </p>
+        <p>
+            NC Kidz provides a fun way of teaching Christian values and principles to children as a foundation for their future 
+            development in and for Christ, and aims at providing them with the building blocks for their relationship with God.
+        <p>
+            NC Kidz is made up of five sub ministries: NC Babies, NC Glowkidz, NC Kidz Sunday, Jam Sessions, and 412!
         </p>
     </div>
 
     <div id="nc-babies-row" class="nc-kidz-content">            
-        <h2>What is NC Babies?</h2>
-        <hr>
         <img class="nc-kidz-image" [src]="ncBabiesLogoImageUrl" alt="NC Babies Logo" width="350"> 
         <p>
-            <b>Age:</b> 6 months - 3 years<br>
+            <b>Ages:</b> 6 months - 3 years<br>
             <b>When:</b> Sunday 9:00 - 10:30 
         </p>           
         <p>
-            NC Babies is a sub ministry of NC Kidz, which is aimed at babies aged 6 months-3 years every Sunday morning 9:00-10:30. NC Babies is a weekly program driven meeting hosted at the New Creation Family Church on a Sunday morning. The aim and purpose of NC Babies is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC Babies achieves this through a simple parent to baby interactive program that uses songs and visuals.
+            NC Babies is a sub ministry of NC Kidz, which is aimed at babies aged 6 months to 3 years every Sunday morning 9:00-10:30 at New Creation Family Church.
         </p>
-        <br>
-        
+        <p>
+            The aim and purpose of NC Babies is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC Babies achieves this through a simple parent to baby interactive program that uses songs and visuals.
+        </p>
+
         <button class="btn btn-primary" (click)="navigateToLink('/nc-kidz/babies')" (click)="scrollToTop()">
             <b>READ MORE</b>
         </button>
     </div>
 
     <div id="nc-sonkidz-row" class="nc-kidz-content">
-        <h2>What is NC SonKidz?</h2>                  
-        <hr>      
         <img class="nc-kidz-image" [src]="ncSonKidzLogoImageUrl" alt="NC Sonkidz Logo" width="350"> 
         <p>
-            <b>Age:</b> 3 - 4 years<br>
-            <b>When:</b> Sunday 9:00 - 10:30            
+            <b>Ages:</b> 3 - 4 years<br>
+            <b>When:</b> Sunday 9:00 - 10:30
         </p>          
         <p>
-            NC SonKidz is a sub ministry of NC Kidz, which is aimed at toddlers aged 3-4 years every Sunday morning 9:00-10:30. NC SunKidz is a weekly program driven meeting hosted at the New Creation Family Church on a Sunday morning. The aim and purpose of NC SonKidz is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC NC SonKidz achieves this through a simple parent led program that consists of; singing songs, bible story based lessons, fun dramas and puppet shows, and lesson focused activities! 
+            NC SonKidz is a sub ministry of NC Kidz, which is aimed at toddlers aged 3-4 years every Sunday morning 9:00-10:30 at New Creation Family Church.
         </p>
-        <br>
+        <p>
+            The aim and purpose of NC SonKidz is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC NC SonKidz achieves this through a simple parent led program that consists of; singing songs, bible story based lessons, fun dramas and puppet shows, and lesson focused activities! 
+        </p>
         
         <button class="btn btn-primary" (click)="navigateToLink('/nc-kidz/sonkidz')" (click)="scrollToTop()">
             <b>READ MORE</b>
         </button>
     </div>
 
-    <div id="nc-glowkidz-row" class="nc-kidz-content">
-        <h2>What is NC GlowKidz?</h2>   
-        <hr>         
+    <div id="nc-glowkidz-row" class="nc-kidz-content">       
         <img class="nc-kidz-image" [src]="ncGlowKidzLogoImageUrl" alt="NC GlowKidz Logo" width="350">
         <p>
-                <b>Age:</b> 4 - 6 years<br>
+                <b>Ages:</b> 4 - 6 years<br>
                 <b>When:</b> Sunday 9:00 - 10:30                      
         <p>            
         <p>
-            NC Glowkidz is a sub ministry of NC Kidz, which is aimed at toddlers aged 4-6 years every Sunday morning 9:00-10:30. NC Glowkidz is a weekly program driven meeting hosted at the New Creation Family Church on a Sunday morning. The aim and purpose of NC Glowkidz is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC Glowkidz achieves this through a simple parent led program that consists of; singing songs, bible story based lessons, fun dramas and puppet shows, and lesson focused activities!
+            NC Glowkidz is a sub ministry of NC Kidz, which is aimed at toddlers aged 4-6 years every Sunday morning 9:00-10:30 at New Creation Family Church.
         </p>
-        <br>
+        <p>
+            The aim and purpose of NC Glowkidz is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC Glowkidz achieves this through a simple parent led program that consists of; singing songs, bible story based lessons, fun dramas and puppet shows, and lesson focused activities!
+        </p>
         
         <button class="btn btn-primary" (click)="navigateToLink('/nc-kidz/glowkidz')" (click)="scrollToTop()">
             <b>READ MORE</b>
         </button>
     </div>
 
-    <div id="nc-sunday-row" class="nc-kidz-content">
-        <h2>What is NC Kidz Sunday?</h2>     
-        <hr>       
+    <div id="nc-sunday-row" class="nc-kidz-content">   
         <img class="nc-kidz-image" [src]="ncKidzSundayLogoImageUrl" alt="NC Kidz Sunday Logo" width="350">            
         <p>
-            <b>Age:</b> 6 - 13 years<br>
+            <b>Ages:</b> 6 - 13 years<br>
             <b>When:</b> Sunday 9:00 - 10:30                      
         <p>
         <p>
-            NC Kidz Sunday is a sub ministry of NC Kidz, which is aimed at children aged 6-13 years every Sunday morning 9:00-10:30. NC Kidz Sunday is a weekly program driven meeting hosted at the New Creation Family Church on a Sunday morning. The aim and purpose of NC Kidz Sunday is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC Kidz Sunday achieves this through a 1½ hour children's church service. The program consists of; praise and worship, prayer, Bible based teachings, activities, and games!
+            NC Kidz Sunday is a sub ministry of NC Kidz, which is aimed at children aged 6-13 years every Sunday morning 9:00-10:30 at New Creation Family Church.
         </p>
-        <br>
+        <p>
+            The aim and purpose of NC Kidz Sunday is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. NC Kidz Sunday achieves this through a 1½ hour children's church service. The program consists of; praise and worship, prayer, Bible based teachings, activities, and games!
+        </p>
         
         <button class="btn btn-primary" (click)="navigateToLink('/nc-kidz/sunday')" (click)="scrollToTop()">
             <b>READ MORE</b>
         </button>
     </div>
 
-    <div id="jam-sessions-row" class="nc-kidz-content">
-        <h2>What is Jam Sessions?</h2>      
-        <hr>      
+    <div id="jam-sessions-row" class="nc-kidz-content">   
         <img class="nc-kidz-image" [src]="ncJamLogoImageUrl" alt="Jam Sessions Logo" width="350">            
         <p>
-            <b>Age:</b> 6 - 13 years<br>
-            <b>Grade:</b> 1 - 7<br>
+            <b>Ages:</b> 7 - 12 years<br>
             <b>When:</b> Friday 17:00 - 19:00
         <p>
         <p>
-            Jam Sessions is a sub ministry of NC Kidz, which is aimed at children aged 6-13 years or Grades 1-7 every term Friday 17:00-19:00. Jam Sessions is a weekly program driven meeting hosted at the New Creation Family Church Auditorium on a Friday Evening. The aim and purpose of Jam Sessions is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. Jam stands for "Jesus And Me", which is the heart of what Jam Sessions wishes to do, Bring Jesus into the hearts of the children and allow Him to be first in our Lives. Jam Sessions achieves this by; encouraging the children to build a strong relationship with Jesus, discipleship of the children through strong mentor based relationships with leaders, and through a fun filled program of Praise, Worship, Teachings and Activities.
+            JAM is a sub ministry of NC Kidz, which is aimed at children aged 6-12 years or Grades 1-7, meeting at the New Creation Family Church Auditorium on a Friday Evening.
         </p>
-        <br>
+        <p>
+            The aim and purpose of JAM is to fulfill the mission and vision of NC Kidz in a manner that is relevant and age appropriate. JAM stands for “Jesus And Me”, which is the heart of what Jam wishes to do; bring Jesus into the hearts of the children and allow Him to be first in their lives. JAM achieves this by: encouraging the children to build a strong relationship with Jesus, discipleship of the children through strong mentor-based relationships with leaders, and through a fun-filled program of praise, worship, teachings and activities. For more information, see the JAM Model.
+        </p>
         
         <button class="btn btn-primary" (click)="navigateToLink('/nc-kidz/jam')" (click)="scrollToTop()">
+            <b>READ MORE</b>
+        </button>
+    </div>
+
+    <div id="go-row" class="nc-kidz-content">
+        <img class="nc-kidz-image" [src]="ncGoLogoImageUrl" alt="Go Logo" width="350">            
+        <p>
+            <b>Ages:</b> 12 - 13 years<br>
+            <b>When:</b> Friday 17:00 - 19:00
+        <p>
+        <p>
+            GO is an exciting sub-ministry of NC Kidz, created specifically for preteens in Grades 6-7. It runs concurrently with Jam on Friday evenings at the New Creation Family Church Auditorium.
+        </p>
+        <p>
+            The purpose of GO is to fulfill the mission and vision of NC Kidz in a way that is relevant to preteens, equipping them to live out their faith with confidence and purpose. GO stands for “God & Others,” reflecting the two greatest commandments—loving God and loving others. The word "go" appears more than 1,140 times in the Bible, emphasizing both a call to faith and a command to action.
+        </p>
+        <p>
+            This program encourages preteens to actively pursue their relationship with God and serve those around them.GO achieves its mission by: Encouraging preteens to deepen their love for God and others through engaging and age-appropriate biblical teaching. Providing discipleship through meaningful relationships with dedicated leaders and mentors. Inspiring action through worship, service opportunities, and interactive activities that reinforce faith in everyday life. For more information, see the GO Program Model.
+        </p>
+        
+        <button class="btn btn-primary" (click)="navigateToLink('/nc-kidz/go')" (click)="scrollToTop()">
             <b>READ MORE</b>
         </button>
     </div>

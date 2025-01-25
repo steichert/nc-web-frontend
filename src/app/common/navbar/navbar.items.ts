@@ -75,6 +75,11 @@ export const navbarItems = {
                 routerLink: '/nc-kidz/jam',
                 dropdownItems: []
             },
+            {
+                name: 'GO',
+                routerLink: '/nc-kidz/go',
+                dropdownItems: []
+            }
         ]
     }
 };

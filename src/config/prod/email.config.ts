@@ -26,12 +26,5 @@ export const emailConfig = {
         replyTo: 'noreply@newcreation.co.za',
         subject: 'Visitor Information - NC Website',
         template: 'visitor-details-email',
-    },
-    ncKidzRegistration: {
-        fromAddress: 'web@newcreation.co.za',
-        toAddress: 'piet@newcreation.co.za',
-        replyTo: 'noreply@newcreation.co.za',
-        subject: 'Registration - NC Kidz - NC Website',
-        template: 'nc-kidz-registration-email',
     }
 };
