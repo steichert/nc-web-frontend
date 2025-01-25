@@ -16,13 +16,14 @@ export const imageUrls = {
     synergyInMissionsUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/synergy-in-mission_bfy0gd.jpg',
 
     // NC Kids
-    ncKidsHomeBannerImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/nc-kidz-home-banner_xzu1bq.jpg',
-    ncBabiesLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/nc_babies_ifqd3v.png',
-    ncGlowKidzLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/nc_glowkids_zizvok.png',
+    ncKidsHomeBannerImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737658183/static/logos/nc-kidz-main-logo_omvpel.png',
+    ncBabiesLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737660866/static/logos/nc-babies-logo_kpsrdz.png',
+    ncGlowKidzLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737660866/static/logos/glowkids-logo_aobu4a.png',
     ncFourTwelveLogoImageUrl: `${environment.imageUrl}/logos/412.png`,
-    ncJamLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/jam_sessions_btr2ip.png',
-    ncSonKidzLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/nc_sonkidz_wozwkg.png',
-    ncKidzSundayLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421516/static/logos/nc_kidz_sunday_xgnhep.png',
+    ncJamLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737660867/static/logos/jam-logo_riuo4k.png',
+    ncSonKidzLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737660866/static/logos/sonkids-logo_efymwm.png',
+    ncKidzSundayLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737660867/static/logos/nc-kidz-sunday-logo_ac7kt5.png',
+    ncGoLogoImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737660866/static/logos/go-logo_ryymu5.png',
 
     // Visitor Pages
     visitorHomeBannerImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/visitor-home-background_sg7byh.jpg',
