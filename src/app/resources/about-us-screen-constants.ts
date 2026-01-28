@@ -142,33 +142,27 @@ export const FAQS = [
 export const GOVERNMENTAL_ELDERSHIP = [
     {
         imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1691506612/static/leadership/paul_and_milaine_bro3dv.jpg",
-        title: "Paul & Milaine Dennison",
-        subTitle: "Lead Elders"
+        title: "Paul & Milaine Dennison"
     },
     {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-mike-and-catherine_t5qs0t.jpg',
-        title: "Mike & Catherine Marais",
-        subTitle: "The King's School and Pastoral Care"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/john_pat_ihec6o.jpg',
-        title: "John & Pat Fanner",
-        subTitle: "The King's School and Pastoral Care"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/chris_marina_scjysu.jpg',
-        title: "Chris & Marina Reyneke",
-        subTitle: "Oasis and Pastoral Care"
-    },
-    {
-        imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-karl-and-jenny_zsidax.jpg',
-        title: "Karl & Jenny Teichert",
-        subTitle: "Missions, Training and Community Ministry"
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-mike-and-catherine_t5qs0t.jpg",
+        title: "Mike Marais"
     },
     {
         imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1675870464/static/leadership/leadership-dan-and-lucy_vdowwq.jpg",
-        title: "Daniel & Lucy Robinson",
-        subTitle: "Administration and Pastoral Care"
+        title: "Daniel Robinson"
+    },
+    {
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438616/static/leadership/john_pat_ihec6o.jpg",
+        title: "John Fanner"
+    },
+    {
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1769630326/static/leadership/anne-gray-thumbnail_lfgape.jpg",
+        title: "Anne Gray"
+    },
+    {
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673959612/static/leadership/leadership-karl-and-jenny_zsidax.jpg",
+        title: "Karl Teichert"
     }
 ];
 
@@ -233,10 +227,5 @@ export const CHURCH_STAFF = [
         imageSrc: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438617/static/leadership/grace_hjjqzd.jpg',
         title: "Grace Mwachoweka",
         subTitle: "Administration & House Keeping"
-    },
-    {
-        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1737289540/static/leadership/staff_nathan_goch_ebtbb5.jpg",
-        title: "Nathan Goch",
-        subTitle: "Intern"
     }
 ]
