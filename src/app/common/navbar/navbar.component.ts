@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
@@ -9,7 +9,10 @@ import { navbarItems } from './navbar.items';
     templateUrl: './navbar.component.html',
     styleUrls: ['./navbar.component.scss'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, AfterViewInit {
+
+    @ViewChild('navbarHeader')
+    private navbarHeader!: ElementRef<HTMLElement>;
 
     // screen.availHeight (device screen, not viewport) is intentional: it gives
     // a stable threshold that doesn't shift if the URL bar collapses on mobile.
@@ -18,6 +21,9 @@ export class NavbarComponent implements OnInit {
     private static readonly DESKTOP_BREAKPOINT_PX = 1152;
     private static readonly COLLAPSED_BG = 'hsl(0 0% 13% / 1)';
     private static readonly TRANSPARENT_BG = 'none';
+    // Slight-opacity dark overlay used at mobile widths so the navbar stays
+    // legible over the home banner image without going fully opaque.
+    private static readonly MOBILE_REST_BG = 'hsl(0 0% 13% / 0.4)';
     private static readonly HOME = '/';
 
     public currentNavbarItems: any[] = navbarItems.homePage.items;
@@ -45,6 +51,27 @@ export class NavbarComponent implements OnInit {
             this.currentUrl = url;
             this.determineNavbarItems();
             this.applyRouteState(url);
+            this.publishNavbarHeight();
+        });
+    }
+
+    ngAfterViewInit(): void {
+        this.publishNavbarHeight();
+    }
+
+    /**
+     * Publishes the navbar's rendered height as a CSS custom property on the
+     * document root so other components (e.g. the home banner) can offset
+     * themselves by exactly the navbar height regardless of breakpoint or
+     * collapse state.
+     */
+    private publishNavbarHeight(): void {
+        if (typeof window === 'undefined' || !this.navbarHeader) {
+            return;
+        }
+        requestAnimationFrame(() => {
+            const height = this.navbarHeader.nativeElement.offsetHeight;
+            document.documentElement.style.setProperty('--navbar-height', `${height}px`);
         });
     }
 
@@ -63,10 +90,23 @@ export class NavbarComponent implements OnInit {
         });
     }
 
+    @HostListener('window:resize')
+    onResize() {
+        this.applyRouteState(this.currentUrl);
+        this.publishNavbarHeight();
+    }
+
+    private isMobileViewport(): boolean {
+        return typeof window !== 'undefined'
+            && window.innerWidth <= NavbarComponent.DESKTOP_BREAKPOINT_PX;
+    }
+
     /**
      * Re-evaluates collapse state and header background from the current scroll
      * position. Only called on the home page; non-home routes are pinned to the
-     * collapsed state by applyRouteState().
+     * collapsed state by applyRouteState(). At mobile widths the "rest" state
+     * uses a translucent dark overlay instead of fully transparent so the
+     * navbar stays legible over the banner image.
      */
     private updateScrollState() {
         if (typeof window === 'undefined') {
@@ -82,24 +122,26 @@ export class NavbarComponent implements OnInit {
             const opacity = Math.min(1, (y / screen.availHeight) - NavbarComponent.SCROLL_THRESHOLD_FRACTION);
             this.headerBackground = `hsl(0 0% 13% / ${opacity})`;
         } else {
-            this.headerBackground = NavbarComponent.TRANSPARENT_BG;
+            this.headerBackground = this.isMobileViewport()
+                ? NavbarComponent.MOBILE_REST_BG
+                : NavbarComponent.TRANSPARENT_BG;
         }
     }
 
     /**
-     * Pins the header to the right state for a given route. Home pages start
-     * uncollapsed/transparent (the scroll handler takes over from there); every
-     * other route renders fully collapsed with a solid dark header.
+     * Pins the header to the right state for a given route. Non-home routes
+     * render fully collapsed with a solid dark header. On the home route,
+     * mobile uses a translucent dark overlay so text stays legible over the
+     * banner image; desktop renders uncollapsed/transparent and lets the
+     * scroll handler take over from there.
      */
     private applyRouteState(url: string | null) {
-        if (url === NavbarComponent.HOME) {
-            this.isCollapsed = false;
-            this.headerBackground = NavbarComponent.TRANSPARENT_BG;
-            this.updateScrollState();
-        } else {
+        if (url !== NavbarComponent.HOME) {
             this.isCollapsed = true;
             this.headerBackground = NavbarComponent.COLLAPSED_BG;
+            return;
         }
+        this.updateScrollState();
     }
 
     determineNavbarItems() {
