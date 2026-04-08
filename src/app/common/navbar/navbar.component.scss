@@ -26,6 +26,10 @@
     transition: transform 0.7s ease;
 }
 
+.nav-chevron {
+    display: none;
+}
+
 .navbar-logo-wrapper {
     cursor: pointer;
 }
@@ -105,7 +109,7 @@ nav {
     background: none;
 }
 
-/* 
+/*
 *  Underline animation
 */
 
@@ -126,7 +130,7 @@ nav {
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
 }
-  
+
 .hover-underline-animation:hover:after {
     transform: scaleX(1);
     transform-origin: bottom left;
@@ -273,6 +277,64 @@ nav {
         -ms-transform-origin: bottom left;
         transform-origin: bottom left;
     }
+}
+
+/*
+*  Desktop scroll-reveal: hamburger visible at top of home page,
+*  nav items fade in once the user scrolls past the toggle threshold.
+*/
+
+@media (min-width: 72.0625rem) {
+    .primary-navigation {
+        transition: opacity 400ms ease, visibility 400ms ease;
+    }
+
+    .mobile-nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        z-index: 9999;
+        top: 2rem;
+        right: 2rem;
+        background: transparent;
+        border: none;
+        padding: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 400ms ease, visibility 400ms ease;
+    }
+
+    .mobile-nav-toggle .hamburger-box {
+        display: none;
+    }
+
+    .nav-chevron {
+        display: inline-block;
+        color: white;
+        font-size: 2.25rem;
+        line-height: 1;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+        animation: nav-chevron-bounce 2s ease-in-out infinite;
+    }
+
+    .primary-header:not(.collapsed-navbar-header) .primary-navigation {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .primary-header:not(.collapsed-navbar-header) .mobile-nav-toggle {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+@keyframes nav-chevron-bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(6px); }
 }
 
 @supports (backdrop-filter: blur(1rem)) {

@@ -6,7 +6,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    background-image: url('https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/welcome-banner_tbsvc2.jpg');
+    background-image: url('https://res.cloudinary.com/dbmlnkfvh/image/upload/v1775657445/static/backgrounds/home-page-2026-theme_lzzjlh.png');
 }
 .welcome-home-container {
     z-index: 2;
@@ -83,6 +83,9 @@
     }   
 }
 @media (max-width: 51rem) {
+    .welcome-banner-background {
+        height: 55vh;
+    }
     .welcome-home-container {
         height: 14rem;
         width: 14rem;
