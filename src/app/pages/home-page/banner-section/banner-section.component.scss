@@ -84,7 +84,10 @@
 }
 @media (max-width: 51rem) {
     .welcome-banner-background {
-        height: 55vh;
+        height: 100vh;
+        background-image: url('https://res.cloudinary.com/dbmlnkfvh/image/upload/v1775678301/static/backgrounds/home-page-2026-portrait-3_omfvqj.png');
+        background-size: cover;
+        background-position: center;
     }
     .welcome-home-container {
         height: 14rem;
