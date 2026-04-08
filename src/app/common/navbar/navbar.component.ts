@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
@@ -11,70 +11,99 @@ import { navbarItems } from './navbar.items';
 })
 export class NavbarComponent implements OnInit {
 
-    @ViewChild('navbarHeader')
-    navbarHeader!: ElementRef;
+    // screen.availHeight (device screen, not viewport) is intentional: it gives
+    // a stable threshold that doesn't shift if the URL bar collapses on mobile.
+    private static readonly SCROLL_THRESHOLD_FRACTION = 1 / 5;
+    // Matches the 72rem breakpoint in navbar.component.scss (72 * 16 = 1152).
+    private static readonly DESKTOP_BREAKPOINT_PX = 1152;
+    private static readonly COLLAPSED_BG = 'hsl(0 0% 13% / 1)';
+    private static readonly TRANSPARENT_BG = 'none';
+    private static readonly HOME = '/';
 
-    @ViewChild('navbarButton')
-    navbarButton!: ElementRef;
+    public currentNavbarItems: any[] = navbarItems.homePage.items;
+    public currentUrl: string | null = null;
 
-    @ViewChild('navbarLogo')
-    navbarLogo!: ElementRef;
+    // View state — bound directly from the template.
+    public isCollapsed = false;
+    public navbarVisible = false;
+    public headerBackground: string = NavbarComponent.TRANSPARENT_BG;
 
-    @ViewChild('primaryNavigation')
-    primaryNavigation!: ElementRef;
-
-    @HostListener('window:scroll', ['$event'])
-    onScroll() {
-        if (this.currentUrl != null && this.currentUrl === this.HOME) {
-            this.triggerNavbarTransform();
-        }
-    }
-
-    public currentNavbarItems: any[];
-    public navbarVisible: boolean;
-    public navbarToggleSplit: number = 5; 
-    public currentUrl: string | null;
-
-    // Routes
-    private HOME: string = "/";
+    private scrollFrameQueued = false;
 
     constructor(private navbarService: NavbarService,
                 private loadingService: LoadingService,
-                private router: Router) {
-        this.navbarVisible = false;
-        this.currentUrl = null;
-        this.currentNavbarItems = navbarItems.homePage.items;
-    }
+                private router: Router) {}
 
     ngOnInit(): void {
-        this.initializeUrlChangeListener();
+        this.currentUrl = this.navbarService.getCurrentURL();
         this.determineNavbarItems();
+        this.applyRouteState(this.currentUrl);
 
-        if (this.currentUrl != null && this.currentUrl !== this.HOME) {
-            this.setNonHomeNavbarClasses();
+        this.navbarService.urlChange.subscribe((url) => {
+            this.loadingService.startLoading();
+            this.scrollToTop();
+            this.currentUrl = url;
+            this.determineNavbarItems();
+            this.applyRouteState(url);
+        });
+    }
+
+    @HostListener('window:scroll')
+    onScroll() {
+        if (this.currentUrl !== NavbarComponent.HOME) {
+            return;
+        }
+        if (this.scrollFrameQueued) {
+            return;
+        }
+        this.scrollFrameQueued = true;
+        requestAnimationFrame(() => {
+            this.updateScrollState();
+            this.scrollFrameQueued = false;
+        });
+    }
+
+    /**
+     * Re-evaluates collapse state and header background from the current scroll
+     * position. Only called on the home page; non-home routes are pinned to the
+     * collapsed state by applyRouteState().
+     */
+    private updateScrollState() {
+        if (typeof window === 'undefined') {
+            return;
+        }
+
+        const threshold = screen.availHeight * NavbarComponent.SCROLL_THRESHOLD_FRACTION;
+        const y = window.scrollY;
+
+        this.isCollapsed = y > threshold;
+
+        if (this.isCollapsed) {
+            const opacity = Math.min(1, (y / screen.availHeight) - NavbarComponent.SCROLL_THRESHOLD_FRACTION);
+            this.headerBackground = `hsl(0 0% 13% / ${opacity})`;
+        } else {
+            this.headerBackground = NavbarComponent.TRANSPARENT_BG;
         }
     }
 
-    private initializeUrlChangeListener() {
-        this.currentUrl = this.navbarService.getCurrentURL();
-
-        this.navbarService.urlChange.subscribe(
-            (url) => {
-                this.loadingService.startLoading();
-                this.scrollToTop();
-                this.currentUrl = url;
-                this.determineNavbarItems();
-                if (this.currentUrl != null && this.currentUrl === this.HOME) {
-                    this.triggerNavbarTransform();
-                } else {
-                    this.setNonHomeNavbarClasses();
-                }
-            }
-        );
+    /**
+     * Pins the header to the right state for a given route. Home pages start
+     * uncollapsed/transparent (the scroll handler takes over from there); every
+     * other route renders fully collapsed with a solid dark header.
+     */
+    private applyRouteState(url: string | null) {
+        if (url === NavbarComponent.HOME) {
+            this.isCollapsed = false;
+            this.headerBackground = NavbarComponent.TRANSPARENT_BG;
+            this.updateScrollState();
+        } else {
+            this.isCollapsed = true;
+            this.headerBackground = NavbarComponent.COLLAPSED_BG;
+        }
     }
 
     determineNavbarItems() {
-        if (this.currentUrl?.includes("/nc-kidz")) {
+        if (this.currentUrl?.includes('/nc-kidz')) {
             this.currentNavbarItems = navbarItems.ncKids.items;
         } else {
             this.currentNavbarItems = navbarItems.homePage.items;
@@ -82,122 +111,60 @@ export class NavbarComponent implements OnInit {
     }
 
     toggleNavbar() {
-        let isNavbarVisible = this.primaryNavigation.nativeElement.getAttribute('data-visible');
-
-        if (isNavbarVisible == "true") {
-            this.closeNavbar()
-        } else if (isNavbarVisible == "false") {
-            this.openNavbar();
+        // At desktop on the home-page top, the toggle is a chevron that
+        // smooth-scrolls to the services section. The slide-in drawer doesn't
+        // exist at desktop, so we never fall through to the drawer toggle.
+        if (this.isDesktopHomeTop()) {
+            this.scrollToServices();
+            return;
         }
 
+        if (this.navbarVisible) {
+            this.closeNavbar();
+        } else {
+            this.openNavbar();
+        }
         this.toggleScrolling();
     }
 
+    private isDesktopHomeTop(): boolean {
+        return typeof window !== 'undefined'
+            && window.innerWidth > NavbarComponent.DESKTOP_BREAKPOINT_PX
+            && this.currentUrl === NavbarComponent.HOME
+            && !this.isCollapsed;
+    }
+
+    private scrollToServices() {
+        const servicesEl = document.getElementById('services');
+        if (!servicesEl) {
+            return;
+        }
+
+        const top = servicesEl.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top, behavior: 'smooth' });
+    }
+
     openNavbar() {
-        this.primaryNavigation.nativeElement.setAttribute('data-visible', true);
-        this.navbarButton.nativeElement.setAttribute('aria-expanded', true);
-        this.navbarButton.nativeElement.classList.add('is-active');
         this.navbarVisible = true;
     }
 
     closeNavbar() {
-        this.primaryNavigation.nativeElement.setAttribute('data-visible', false);
-        this.navbarButton.nativeElement.setAttribute('aria-expanded', false);
-        this.navbarButton.nativeElement.classList.remove('is-active');
         this.navbarVisible = false;
     }
 
     toggleScrolling() {
-        if (typeof document == 'undefined') {
+        if (typeof document === 'undefined') {
             return;
         }
-
-        let body = document.getElementById('body');
+        const body = document.getElementById('body');
         if (body != null) {
-            if (this.navbarVisible) {
-                body.style.overflow = 'hidden';
-            } else {
-                body.style.overflow = 'auto';
-            }
-        }
-    }
-
-    triggerNavbarTransform() {
-        this.triggerNavbarBackgroundTransparency();
-
-        if (typeof scrollY == 'undefined') {
-            return;
-        }
-
-        if (scrollY > screen.availHeight / this.navbarToggleSplit) {
-            if (!this.navbarHeader.nativeElement.classList.contains('collapsed-navbar-header')) {
-                this.navbarHeader.nativeElement.classList.add('collapsed-navbar-header');
-            }
-            if (!this.navbarLogo.nativeElement.classList.contains('shrink-navbar-logo')) {
-                this.navbarLogo.nativeElement.classList.add('shrink-navbar-logo');
-            }
-            if (!this.primaryNavigation.nativeElement.classList.contains('collapsed-primary-navigation')) {
-                this.primaryNavigation.nativeElement.classList.add('collapsed-primary-navigation');
-            }
-            if (!this.navbarButton.nativeElement.classList.contains('shrink-navbar-button')) {
-                this.navbarButton.nativeElement.classList.add('shrink-navbar-button');
-            }
-        } else {
-            this.navbarHeader.nativeElement.classList.remove('collapsed-navbar-header');
-            this.navbarLogo.nativeElement.classList.remove('shrink-navbar-logo');
-            this.navbarButton.nativeElement.classList.remove('shrink-navbar-button');
-            this.primaryNavigation.nativeElement.classList.remove('collapsed-primary-navigation');
-        }
-    }
-
-    triggerNavbarBackgroundTransparency() {
-        if (typeof document == 'undefined') {
-            return;
-        }
-
-        let primaryHeader = document.getElementById('primaryHeader');
-        if (primaryHeader != null) {
-            let screenHeight = screen.availHeight;
-            if (scrollY > screenHeight / this.navbarToggleSplit) {
-                let opacity = (scrollY  / screenHeight) - (1 / this.navbarToggleSplit);
-                if (opacity > 1) {
-                    opacity = 1;
-                }
-                primaryHeader.style.background = 'hsl(0 0% 13% / ' + opacity + ')';
-            } else {
-                primaryHeader.style.background = 'none';
-            }
-        }
-    }
-
-    setNonHomeNavbarClasses() {
-        if (typeof document == 'undefined') {
-            return;
-        }
-
-        let primaryHeader = document.getElementById('primaryHeader');
-        if (primaryHeader != null) {
-            primaryHeader.style.background = 'hsl(0 0% 13% / 1)';
-        }
-        if (!this.navbarHeader.nativeElement.classList.contains('collapsed-navbar-header')) {
-            this.navbarHeader.nativeElement.classList.add('collapsed-navbar-header');
-        }
-        if (!this.navbarLogo.nativeElement.classList.contains('shrink-navbar-logo')) {
-            this.navbarLogo.nativeElement.classList.add('shrink-navbar-logo');
-        }
-        if (!this.primaryNavigation.nativeElement.classList.contains('collapsed-primary-navigation')) {
-            this.primaryNavigation.nativeElement.classList.add('collapsed-primary-navigation');
-        }
-        if (!this.navbarButton.nativeElement.classList.contains('shrink-navbar-button')) {
-            this.navbarButton.nativeElement.classList.add('shrink-navbar-button');
+            body.style.overflow = this.navbarVisible ? 'hidden' : 'auto';
         }
     }
 
     public scrollToTop() {
         if (typeof window !== 'undefined') {
-            window.scroll({
-                top: 0
-            });
+            window.scroll({ top: 0 });
         }
     }
 

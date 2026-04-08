@@ -6,7 +6,7 @@
     </div>
     <div class="card-footer">
         <div id="eventTitle">
-            <h5><b>{{ event?.title | titlecase }}</b></h5>
+            <h5><b>{{ event?.title | uppercase }}</b></h5>
         </div>
         <div id="eventDate">
             <small>{{event?.eventDate | date: 'MMM d, y'}}</small>
