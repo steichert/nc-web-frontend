@@ -21,9 +21,6 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     private static readonly DESKTOP_BREAKPOINT_PX = 1152;
     private static readonly COLLAPSED_BG = 'hsl(0 0% 13% / 1)';
     private static readonly TRANSPARENT_BG = 'none';
-    // Slight-opacity dark overlay used at mobile widths so the navbar stays
-    // legible over the home banner image without going fully opaque.
-    private static readonly MOBILE_REST_BG = 'hsl(0 0% 13% / 0.4)';
     private static readonly HOME = '/';
 
     public currentNavbarItems: any[] = navbarItems.homePage.items;
@@ -96,17 +93,11 @@ export class NavbarComponent implements OnInit, AfterViewInit {
         this.publishNavbarHeight();
     }
 
-    private isMobileViewport(): boolean {
-        return typeof window !== 'undefined'
-            && window.innerWidth <= NavbarComponent.DESKTOP_BREAKPOINT_PX;
-    }
-
     /**
      * Re-evaluates collapse state and header background from the current scroll
      * position. Only called on the home page; non-home routes are pinned to the
-     * collapsed state by applyRouteState(). At mobile widths the "rest" state
-     * uses a translucent dark overlay instead of fully transparent so the
-     * navbar stays legible over the banner image.
+     * collapsed state by applyRouteState(). The header rests transparent at the
+     * top of the page and fades to a solid dark background as the user scrolls.
      */
     private updateScrollState() {
         if (typeof window === 'undefined') {
@@ -122,18 +113,15 @@ export class NavbarComponent implements OnInit, AfterViewInit {
             const opacity = Math.min(1, (y / screen.availHeight) - NavbarComponent.SCROLL_THRESHOLD_FRACTION);
             this.headerBackground = `hsl(0 0% 13% / ${opacity})`;
         } else {
-            this.headerBackground = this.isMobileViewport()
-                ? NavbarComponent.MOBILE_REST_BG
-                : NavbarComponent.TRANSPARENT_BG;
+            this.headerBackground = NavbarComponent.TRANSPARENT_BG;
         }
     }
 
     /**
      * Pins the header to the right state for a given route. Non-home routes
-     * render fully collapsed with a solid dark header. On the home route,
-     * mobile uses a translucent dark overlay so text stays legible over the
-     * banner image; desktop renders uncollapsed/transparent and lets the
-     * scroll handler take over from there.
+     * render fully collapsed with a solid dark header. On the home route the
+     * header starts transparent and the scroll handler fades it to dark as
+     * the user scrolls down.
      */
     private applyRouteState(url: string | null) {
         if (url !== NavbarComponent.HOME) {
