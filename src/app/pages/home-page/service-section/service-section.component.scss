@@ -1,30 +1,69 @@
 .service-section {
     color: white;
-    text-align: center;
     height: 100%;
 }
+.service-details {
+    padding: 7em 7.5rem;
+    min-height: 48rem;
+    display: flex;
+    align-items: flex-end;
+}
+.service-content {
+    text-align: left;
+    max-width: 40rem;
+}
+.service-pill {
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 999px;
+    padding: 0.5em 1.4em;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+.service-title {
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 0.95;
+    margin: 0 0 1rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    text-shadow: 0 4px 14px rgba(0, 0, 0, 0.6);
+}
+.service-description {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
 #churchOnlineButton {
-    margin-top: 1.5em;
     width: 15em;
 }
-.service-details {
-    padding-top: 7em;
-    padding-bottom: 7em;
-    padding-left: 7.5rem;
-    padding-right: 7.5rem;
-}
 .morning-service-details {
-    background-image: url('https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/morning-service_pdr3ku.jpg');
+    background-image: url('https://res.cloudinary.com/dbmlnkfvh/image/upload/v1775760847/static/backgrounds/WhatsApp_Image_2026-04-09_at_09.27.03_obf8sd.jpg');
 }
 /*
 *  Responsive styles
 */
 @media (max-width: 68rem) {
-    #churchOnlineButton {
-        margin-top: 1.5em;
+    .service-details {
+        padding: 4em 3rem;
+        min-height: 38rem;
+    }
+    .service-title {
+        font-size: 4rem;
+    }
+    .service-pill {
+        font-size: 0.85rem;
+    }
+}
+@media (max-width: 36rem) {
+    .service-title {
+        font-size: 3rem;
     }
     .service-details {
-        padding-left: 3rem;
-        padding-right: 3rem;
+        padding: 3em 1.5rem;
+        min-height: 30rem;
     }
 }
