@@ -17,8 +17,6 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     // screen.availHeight (device screen, not viewport) is intentional: it gives
     // a stable threshold that doesn't shift if the URL bar collapses on mobile.
     private static readonly SCROLL_THRESHOLD_FRACTION = 1 / 5;
-    // Matches the 72rem breakpoint in navbar.component.scss (72 * 16 = 1152).
-    private static readonly DESKTOP_BREAKPOINT_PX = 1152;
     private static readonly COLLAPSED_BG = 'hsl(0 0% 13% / 1)';
     private static readonly TRANSPARENT_BG = 'none';
     private static readonly HOME = '/';
@@ -141,37 +139,12 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     }
 
     toggleNavbar() {
-        // At desktop on the home-page top, the toggle is a chevron that
-        // smooth-scrolls to the services section. The slide-in drawer doesn't
-        // exist at desktop, so we never fall through to the drawer toggle.
-        if (this.isDesktopHomeTop()) {
-            this.scrollToServices();
-            return;
-        }
-
         if (this.navbarVisible) {
             this.closeNavbar();
         } else {
             this.openNavbar();
         }
         this.toggleScrolling();
-    }
-
-    private isDesktopHomeTop(): boolean {
-        return typeof window !== 'undefined'
-            && window.innerWidth > NavbarComponent.DESKTOP_BREAKPOINT_PX
-            && this.currentUrl === NavbarComponent.HOME
-            && !this.isCollapsed;
-    }
-
-    private scrollToServices() {
-        const servicesEl = document.getElementById('services');
-        if (!servicesEl) {
-            return;
-        }
-
-        const top = servicesEl.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({ top, behavior: 'smooth' });
     }
 
     openNavbar() {

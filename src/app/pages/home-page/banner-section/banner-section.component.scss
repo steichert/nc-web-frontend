@@ -6,7 +6,7 @@
     position: relative;
     height: 100%;
     width: 100%;
-    background-image: url('https://res.cloudinary.com/dbmlnkfvh/image/upload/v1775657445/static/backgrounds/home-page-2026-theme_lzzjlh.png');
+    background-image: url('https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673421283/static/backgrounds/welcome-banner_tbsvc2.jpg');
 }
 .welcome-home-container {
     z-index: 2;
@@ -83,12 +83,6 @@
     }   
 }
 @media (max-width: 51rem) {
-    .welcome-banner-background {
-        height: 100vh;
-        background-image: url('https://res.cloudinary.com/dbmlnkfvh/image/upload/v1775752094/static/backgrounds/WhatsApp_Image_2026-04-09_at_09.32.50_lvqybn.jpg');
-        background-size: cover;
-        background-position: center;
-    }
     .welcome-home-container {
         height: 14rem;
         width: 14rem;
