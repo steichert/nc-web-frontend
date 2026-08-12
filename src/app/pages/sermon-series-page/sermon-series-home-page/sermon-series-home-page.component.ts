@@ -5,6 +5,7 @@ import { Page } from 'src/app/domain/Page';
 import { Sermon } from 'src/app/domain/Sermon';
 import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
+import { FEATURE_FLAGS } from 'src/app/resources/feature-flags';
 
 @Component({
     selector: 'app-sermon-series-home-page',
@@ -44,6 +45,12 @@ export class SermonSeriesHomePageComponent implements OnInit {
     }
 
     public fetchLatestSermonData() {
+        if (!FEATURE_FLAGS.fetchSermons) {
+            this.latestSermon = new Sermon();
+            this.loadingService.decrementLoading();
+            return;
+        }
+
         this.ncApi.getLatestSermon().subscribe(
             data => {
                 if (data != null) {
@@ -60,6 +67,14 @@ export class SermonSeriesHomePageComponent implements OnInit {
     }
 
     public fetchSermonSeriesData(pageNumber: number, searchTerm: string) {
+        if (!FEATURE_FLAGS.fetchSermons) {
+            this.sermonSeriesPage = null;
+            this.sermonSeriesItems = [];
+            this.updatePagination(null);
+            this.isLoadingSermonSeries = false;
+            return;
+        }
+
         this.isLoadingSermonSeries = true;
         this.ncApi.getAllPagedSermonSeriesLite(pageNumber, searchTerm).subscribe(
             (data: any) => {
