@@ -52,6 +52,10 @@ jobs:
         local_path: './release/prod/deploy/*'
         remote_path: 'public_html/'
         delete_remote_files: false
+        # The host account is SFTP-only, so the action's pre-flight `ssh ... mkdir -p`
+        # fails with "exec request failed on channel 0" and aborts before any upload.
+        # public_html/ already exists, so skip that step.
+        sftp_only: true
 
   dev-deploy:
     name: Deploy to Staging
@@ -102,3 +106,5 @@ jobs:
         local_path: './release/staging/deploy/*'
         remote_path: 'public_html/development/'
         delete_remote_files: false
+        # See the note on the production job above.
+        sftp_only: true
