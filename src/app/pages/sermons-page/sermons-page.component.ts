@@ -117,6 +117,8 @@ export class SermonsPageComponent implements OnInit {
             this.sermonsPage = null;
             this.currentSermonFromPage = [];
             this.updatePagination(null);
+            // Nothing is loading, so clear the spinner the navbar raised on navigation.
+            this.loadingService.stopLoading();
             return;
         }
 

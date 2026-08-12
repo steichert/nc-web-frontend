@@ -47,6 +47,8 @@ export class ConnectPageComponent implements OnInit {
     public fetchLifeGroups() {
         if (!FEATURE_FLAGS.fetchLifeGroups) {
             this.allLifeGroups = [];
+            // Nothing is loading, so clear the spinner the navbar raised on navigation.
+            this.loadingService.stopLoading();
             return;
         }
 

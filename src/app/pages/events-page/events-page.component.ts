@@ -36,6 +36,9 @@ export class EventsPageComponent implements OnInit {
                 this.activeEvents.push(HARDCODED_EVENTS[i]);
             }
         }
+
+        // Nothing is loading, so clear the spinner the navbar raised on navigation.
+        this.loadingService.stopLoading();
     }
 
 }

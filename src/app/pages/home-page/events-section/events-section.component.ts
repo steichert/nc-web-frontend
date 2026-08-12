@@ -29,6 +29,10 @@ export class EventsSectionComponent implements OnInit {
             if (HARDCODED_EVENTS[i].state == 'Active')
                 this.events.push(HARDCODED_EVENTS[i]);
         }
+
+        // The navbar raises the loading spinner on every URL change and this was the
+        // only thing on the home page that lowered it, so clear it explicitly.
+        this.loadingService.stopLoading();
     }
 
     public navigateToLink(link: string): void {
