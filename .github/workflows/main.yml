@@ -42,15 +42,16 @@ jobs:
         git commit -m "Github Action: Preparing release"
         git push
 
-    - name: Sync files to FTP server
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: Sync files to SFTP server
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
-        local-dir: ./release/prod/deploy/
-        server-dir: public_html/
-        dry-run: false
+        port: 22
+        local_path: './release/prod/deploy/*'
+        remote_path: 'public_html/'
+        delete_remote_files: false
 
   dev-deploy:
     name: Deploy to Staging
@@ -91,12 +92,13 @@ jobs:
         git commit -m "Github Action: Preparing release"
         git push
 
-    - name: Sync files to FTP server
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: Sync files to SFTP server
+      uses: wlixcc/SFTP-Deploy-Action@v1.2.4
       with:
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.NEW_CRE_FTP_PASSWORD }}
-        local-dir: ./release/staging/deploy/
-        server-dir: public_html/development/
-        dry-run: false
+        port: 22
+        local_path: './release/staging/deploy/*'
+        remote_path: 'public_html/development/'
+        delete_remote_files: false

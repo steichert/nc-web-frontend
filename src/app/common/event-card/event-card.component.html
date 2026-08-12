@@ -32,7 +32,9 @@
                 
                 <div class="event-modal-title">
                     <h4><b>{{ event?.title | titlecase }}</b></h4>
-                    <small><i>{{ event?.eventDate | date: 'MMM d, y' }}</i></small>
+                    <small><i>{{ event?.eventDate | date: 'MMM d, y' }}<span *ngIf="event?.eventTime">, {{ event?.eventTime }}</span></i></small>
+                    <br *ngIf="event?.venue">
+                    <small *ngIf="event?.venue"><i>{{ event?.venue }}</i></small>
                 </div>
 
                 <div class="text-center">

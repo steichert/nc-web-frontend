@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { imageUrls } from 'src/app/resources/image-url';
@@ -16,7 +17,8 @@ export class NcKidsHomePageComponent implements OnInit {
                 private meta: Meta,
                 private router: Router,
                 private navbarService: NavbarService,
-                private loadingService: LoadingService) {
+                private loadingService: LoadingService,
+                @Inject(PLATFORM_ID) private platformId: Object) {
         this.title.setTitle(this.pageTitle);
         this.meta.addTag({ name: 'title', content: this.pageTitle });
     }
@@ -40,7 +42,11 @@ export class NcKidsHomePageComponent implements OnInit {
     }
 
     public scrollToTop() {
-        window.scrollTo(0,0);
+        // `window` does not exist during SSR/prerender, and throwing here would
+        // abort ngOnInit before stopLoading() runs, leaving the spinner up.
+        if (isPlatformBrowser(this.platformId)) {
+            window.scrollTo(0,0);
+        }
     }
 
     public navigateToLink(link: string) {

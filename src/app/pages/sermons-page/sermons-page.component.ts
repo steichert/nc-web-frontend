@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Page } from 'src/app/domain/Page';
 import { Sermon } from 'src/app/domain/Sermon';
 import { imageUrls } from 'src/app/resources/image-url';
+import { FEATURE_FLAGS } from 'src/app/resources/feature-flags';
 import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { NavbarService } from 'src/app/services/navbar/navbar.service';
@@ -92,6 +93,11 @@ export class SermonsPageComponent implements OnInit {
     }
 
     public fetchAllSermonSeriesLite() {
+        if (!FEATURE_FLAGS.fetchSermons) {
+            this.allSermonSeriesLite = [];
+            return;
+        }
+
         this.loadingService.incrementLoading();
 
         this.ncApi.getAllSermonSeriesLite().subscribe(
@@ -107,6 +113,15 @@ export class SermonsPageComponent implements OnInit {
     }
 
     public fetchSermons() {
+        if (!FEATURE_FLAGS.fetchSermons) {
+            this.sermonsPage = null;
+            this.currentSermonFromPage = [];
+            this.updatePagination(null);
+            // Nothing is loading, so clear the spinner the navbar raised on navigation.
+            this.loadingService.stopLoading();
+            return;
+        }
+
         this.loadingService.incrementLoading();
 
         this.ncApi.searchSermons(this.currentPageNumber, this.sermonSearchType, this.sermonSearchTerm, 'sermonDate', 'desc').subscribe(

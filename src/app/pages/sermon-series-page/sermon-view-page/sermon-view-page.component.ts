@@ -3,6 +3,7 @@ import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
+import { FEATURE_FLAGS } from 'src/app/resources/feature-flags';
 
 @Component({
     selector: 'app-sermon-view-page',
@@ -32,8 +33,14 @@ export class SermonViewPageComponent implements OnInit {
     }
 
     public getSermonData(sermonSeoUrl: string | null) {
+        if (!FEATURE_FLAGS.fetchSermons) {
+            // Nothing to render without the sermon data, so fall back to the series list.
+            this.router.navigateByUrl('/series');
+            return;
+        }
+
         this.loadingService.incrementLoading();
-        
+
         if (sermonSeoUrl == null) {
             this.loadingService.decrementLoading();
             this.router.navigateByUrl('/series');

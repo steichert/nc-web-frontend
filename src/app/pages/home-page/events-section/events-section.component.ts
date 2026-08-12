@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { RoutingService } from 'src/app/services/routing/routing.service';
+import { HARDCODED_EVENTS } from 'src/app/resources/event-constants';
 
 @Component({
   selector: 'app-events-section',
@@ -23,26 +24,15 @@ export class EventsSectionComponent implements OnInit {
     }
 
     private fetchLatestEvents(): void {
-        let today = new Date();
-        let fromDate = today.toISOString().split('T')[0];
-        let toDate = '9999-12-31';
+        // TEMPORARY WORKAROUND: serve events from a hard-coded list instead of the API.
+        for (var i = 0 ; i < this.numberOfLatestEvents && i < HARDCODED_EVENTS.length ; i++) {
+            if (HARDCODED_EVENTS[i].state == 'Active')
+                this.events.push(HARDCODED_EVENTS[i]);
+        }
 
-        this.loadingService.incrementLoading();
-
-        this.ncApi.getEventsByDateRange(fromDate, toDate).subscribe(
-            data => {
-                for (var i = 0 ; i < this.numberOfLatestEvents && i < data.length ; i++) {
-                    if (data[i].state == 'Active')
-                    this.events.push(data[i]);
-                }
-
-                this.loadingService.decrementLoading();
-            },
-            error => {
-                this.loadingService.decrementLoading();
-                console.log(error.error.text);
-            }
-        );
+        // The navbar raises the loading spinner on every URL change and this was the
+        // only thing on the home page that lowered it, so clear it explicitly.
+        this.loadingService.stopLoading();
     }
 
     public navigateToLink(link: string): void {

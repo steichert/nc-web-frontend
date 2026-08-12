@@ -3,6 +3,7 @@ import { ApiService } from 'src/app/services/api/api.service';
 import { LoadingService } from 'src/app/services/loading/loading.service';
 import { Meta, Title } from '@angular/platform-browser';
 import { EventService } from 'src/app/services/event/event.service';
+import { HARDCODED_EVENTS } from 'src/app/resources/event-constants';
 
 @Component({
     selector: 'app-events-page',
@@ -29,26 +30,15 @@ export class EventsPageComponent implements OnInit {
     }
 
     private getEvents(): void {
-        this.loadingService.incrementLoading();
-
-        let today = new Date();
-        let fromDate = today.toISOString().split('T')[0];
-        let toDate = '9999-12-31';
-
-        this.ncApi.getEventsByDateRange(fromDate, toDate).subscribe(
-            data => {
-                for (let i = 0 ; i < data.length ; i++) {
-                    if (data[i].state == 'Active') {
-                        this.activeEvents.push(data[i]);
-                    }
-                }
-
-                this.loadingService.decrementLoading();
-            },
-            err => {
-                this.loadingService.decrementLoading();
+        // TEMPORARY WORKAROUND: serve events from a hard-coded list instead of the API.
+        for (let i = 0 ; i < HARDCODED_EVENTS.length ; i++) {
+            if (HARDCODED_EVENTS[i].state == 'Active') {
+                this.activeEvents.push(HARDCODED_EVENTS[i]);
             }
-        );
+        }
+
+        // Nothing is loading, so clear the spinner the navbar raised on navigation.
+        this.loadingService.stopLoading();
     }
 
 }
