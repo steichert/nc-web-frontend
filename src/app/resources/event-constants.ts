@@ -13,5 +13,17 @@ export const HARDCODED_EVENTS = [
         callToActionTitle: 'Register',
         callToActionLink: 'https://docs.google.com/forms/d/e/1FAIpQLSclBonT1GDPMqElB3u0l7yWjZKwf2CvoCbqECePWv4E03T_Ow/viewform?usp=header',
         contentUrl: null
+    },
+    {
+        state: 'Active',
+        title: "Managing Our Finances: God's Way",
+        eventDate: '2026-09-04T00:00:00',
+        eventTime: null,
+        venue: null,
+        coverImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1785326010/events/WhatsApp%20Image%202026-07-29%20at%2012-1785326010832.jpg',
+        description: '4 &amp; 5 September<br><br>The Bible is packed with wise counsel about your financial life today.<br><br>In this study you will hear from five renowned experts on the subject of biblical financial management.',
+        callToActionTitle: 'Register',
+        callToActionLink: 'https://www.quicket.co.za/events/389152-finance-course/?ref=events-list#/',
+        contentUrl: null
     }
 ];
