@@ -1,7 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { VOLUNTEER_AREAS } from 'src/app/resources/connect-constants';
-import { FEATURE_FLAGS } from 'src/app/resources/feature-flags';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
 import { ToastrService } from 'ngx-toastr';
@@ -45,13 +44,6 @@ export class ConnectPageComponent implements OnInit {
     }
 
     public fetchLifeGroups() {
-        if (!FEATURE_FLAGS.fetchLifeGroups) {
-            this.allLifeGroups = [];
-            // Nothing is loading, so clear the spinner the navbar raised on navigation.
-            this.loadingService.stopLoading();
-            return;
-        }
-
         this.loadingService.incrementLoading();
 
         this.ncApi.getAllLifeGroups().subscribe(
