@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-Angular 14 frontend for the New Creation church website. Uses Angular Universal (SSR via `@nguniversal/express-engine`), Bootstrap 5, and `ngx-toastr`. Targets Node v19.8.1 / npm v9.5.1.
+Angular 14 frontend for the New Creation church website. Uses Angular Universal (SSR via `@nguniversal/express-engine`), Bootstrap 5, and `ngx-toastr`. Targets Node v24 / npm v11 (Node version pinned in `.nvmrc`, enforced via `engines` and CI `setup-node`).
 
 ## Commands
 
