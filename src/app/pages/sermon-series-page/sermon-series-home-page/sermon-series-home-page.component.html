@@ -14,10 +14,12 @@
                 </p>
             </div>
         
-            <div id="sermonAudioPlayerContainer" *ngIf="latestSermon.sermonAudioUrl">
+            <div id="sermonAudioPlayerContainer" *ngIf="latestSermon.sermonAudioUrl && isLatestSermonAudioAvailable">
                 <audio id="sermonAudioPlayer" 
                         [src]="latestSermon.sermonAudioUrl | safe" 
                         type="audio/m4a" 
+                        preload="metadata"
+                        (error)="onLatestSermonAudioError()"
                         controls>
                     Your browser does not support the audio element.
                 </audio>

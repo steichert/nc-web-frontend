@@ -25,6 +25,7 @@ export class SermonSeriesHomePageComponent implements OnInit {
     pageTitle = 'Sermons | New Creation Family Church';
 
     latestSermon: any;
+    isLatestSermonAudioAvailable: boolean = true;
     sermonSeriesPage: Page | null = null;
     sermonSeriesItems: any[] = [];
 
@@ -48,6 +49,7 @@ export class SermonSeriesHomePageComponent implements OnInit {
             data => {
                 if (data != null) {
                     this.latestSermon = data;
+                    this.isLatestSermonAudioAvailable = true;
                 }
 
                 this.fetchSermonSeriesData(this.currentPageNumber, '');
@@ -90,6 +92,15 @@ export class SermonSeriesHomePageComponent implements OnInit {
                 this.paginationNumbers.push(i + startNumber);
             }
         }
+    }
+
+    /**
+     * Fired by the audio element when the browser cannot load or decode the
+     * sermon audio (missing file, bad URL, unsupported format). Hides the
+     * player rather than leaving a broken one on the page.
+     */
+    public onLatestSermonAudioError() {
+        this.isLatestSermonAudioAvailable = false;
     }
 
     public searchSermonSeries() {

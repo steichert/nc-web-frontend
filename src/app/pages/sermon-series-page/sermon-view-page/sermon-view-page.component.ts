@@ -23,6 +23,8 @@ export class SermonViewPageComponent implements OnInit {
     currentSermon: any;
     currentSermonSeries: any;
 
+    isSermonAudioAvailable: boolean = true;
+
     ngOnInit(): void {
         this.title.setTitle('Sermon | New Creation Family Church');
         this.meta.addTag({ name: 'title', content: this.pageTitle });
@@ -43,6 +45,7 @@ export class SermonViewPageComponent implements OnInit {
         this.api.getSermonBySeoUrl(sermonSeoUrl).subscribe(
             (data) => {
                 this.currentSermon = data;
+                this.isSermonAudioAvailable = true;
                 this.pageTitle = `${this.currentSermon.sermonTitle} | New Creation Family Church`
                 this.title.setTitle(this.pageTitle);
                 this.meta.addTag({ name: 'title', content: this.pageTitle });
@@ -66,6 +69,15 @@ export class SermonViewPageComponent implements OnInit {
                 this.loadingService.decrementLoading();
             }
         )
+    }
+
+    /**
+     * Fired by the audio element when the browser cannot load or decode the
+     * sermon audio (missing file, bad URL, unsupported format). Hides the
+     * player rather than leaving a broken one on the page.
+     */
+    public onSermonAudioError() {
+        this.isSermonAudioAvailable = false;
     }
 
     public navigateToSermonSeries(sermonSeriesSeoUrl: string) {
