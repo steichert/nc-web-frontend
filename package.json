@@ -14,9 +14,10 @@
     "dev:ssr": "ng run nc-web-frontend:serve-ssr",
     "serve:ssr": "node dist/nc-web-frontend/server/main.js",
     "build:ssr": "ng build && ng run nc-web-frontend:server",
-    "build-prod:ssr": "ng build --configuration production && ng run nc-web-frontend:server",
-    "build-staging:ssr": "ng build --configuration production --base-href=/development/ && ng run nc-web-frontend:server",
-    "prerender": "ng run nc-web-frontend:prerender"
+    "build-prod:ssr": "ng build --configuration production && ng run nc-web-frontend:server && npm run verify:styles",
+    "build-staging:ssr": "ng build --configuration production --base-href=/development/ && ng run nc-web-frontend:server && npm run verify:styles",
+    "prerender": "ng run nc-web-frontend:prerender",
+    "verify:styles": "node scripts/verify-component-styles.js"
   },
   "private": true,
   "engines": {
@@ -89,7 +90,7 @@
     "tar": "^7.5.22",
     "tmp": "^0.2.7",
     "uuid": "^11.1.1",
-    "webpack": "^5.109.2",
+    "webpack": "~5.95.0",
     "webpack-dev-middleware": "^5.3.4"
   }
 }

@@ -40,6 +40,27 @@ Angular 14 frontend for the New Creation church website. Uses Angular Universal 
 ### SSR
 The app is built with Angular Universal. `server.ts` is the Express SSR entrypoint and `src/app/app.server.module.ts` is the server module. Be careful with browser-only APIs (`window`, `document`, `localStorage`, jQuery) in components — guard them with `isPlatformBrowser` or they will break SSR/prerender builds.
 
+## Dependency constraints
+
+`package.json` has an `overrides` block that pulls vulnerable transitive dev-toolchain deps
+forward. Two entries there are load-bearing and must not be bumped casually:
+
+- **`webpack` is pinned to `~5.95.0`.** From 5.96.0 onwards the webpack child compilation that
+  `@ngtools/webpack@14.x` uses to load component `styleUrls` stops emitting assets, so every
+  component stylesheet compiles to nothing. There is no build error, no failing unit test and no
+  runtime exception — the site simply renders unstyled. This shipped to production once. Keeping
+  it at 5.95.0 still clears the only webpack advisory that reaches the browser bundle (the
+  `AutoPublicPathRuntimeModule` DOM-clobbering XSS, fixed in 5.94.0); the remaining webpack
+  findings are low-severity `buildHttp`/`HttpUriPlugin` SSRF issues, and Angular's build never
+  fetches modules over HTTP. Raising webpack past 5.95.0 requires an Angular major upgrade.
+- **`immutable` is deliberately not overridden** — `immutable@^4` breaks `browser-sync-ui`, so
+  `dev:ssr` no longer starts.
+
+`npm run build-prod:ssr` and `build-staging:ssr` end with `npm run verify:styles`
+(`scripts/verify-component-styles.js`), which fails the build if no compiled component styles
+are present in the output. Leave that step in place — it is the only thing that catches this
+class of silent breakage before deploy.
+
 ## Branching & deploy
 
 - Branch off `master` with descriptive names (`feature/...`, `bugfix/...`) and open PRs against `master`.
