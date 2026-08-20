@@ -4,9 +4,9 @@ Welcome to the New Creation Angular Frontend repository!
 
 ## Versions
 
-- node: v19.8.1
-- npm: v9.5.1
-- Angular: v14.2.8
+- node: v24 (pinned in `.nvmrc`)
+- npm: v11
+- Angular: v14.3.0
 
 > Note: I highly recommend installing nvm (Node Version Manager) to make managing these versions easier. Here is a guide for the installation and usage: https://help.dreamhost.com/hc/en-us/articles/360029083351-Installing-a-custom-version-of-NVM-and-Node-js
 

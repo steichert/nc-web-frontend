@@ -1,6 +1,7 @@
-import { TestBed } from '@angular/core/testing';
+import { fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { LoadingService } from './services/loading/loading.service';
 
 describe('AppComponent', () => {
     beforeEach(async () => {
@@ -16,18 +17,17 @@ describe('AppComponent', () => {
         expect(app).toBeTruthy();
     });
 
-    it(`should have as title 'nc-web-frontend'`, () => {
+    it('should reflect the loading service status', fakeAsync(() => {
         const fixture = TestBed.createComponent(AppComponent);
         const app = fixture.componentInstance;
-        expect(app.title).toEqual('nc-web-frontend');
-    });
+        const loadingService = TestBed.inject(LoadingService);
 
-    it('should render title', () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-        const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector('.content span')?.textContent).toContain(
-            'nc-web-frontend app is running!'
-        );
-    });
+        loadingService.startLoading();
+        expect(app.isLoading).toBeTrue();
+
+        // stopLoading() defers the status change by 500ms.
+        loadingService.stopLoading();
+        tick(500);
+        expect(app.isLoading).toBeFalse();
+    }));
 });
