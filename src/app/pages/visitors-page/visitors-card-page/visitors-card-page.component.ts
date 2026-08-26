@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Child } from 'src/app/domain/Child';
 import { Visitor } from 'src/app/domain/Visitor';
 import { imageUrls } from 'src/app/resources/image-url';
 import { ApiService } from 'src/app/services/api/api.service';
@@ -57,8 +56,6 @@ export class VisitorsCardPageComponent implements OnInit {
                 surname: this.visitorDetails.surname,
                 email: this.visitorDetails.email,
                 contactNumber: this.visitorDetails.contactNumber,
-                spouseName: this.visitorDetails.spouseName,
-                children: this.visitorDetails.children,
                 moreInfoAreas: this.visitorDetails.moreInfoAreas,
                 otherArea: this.visitorDetails.otherArea
             };
@@ -101,16 +98,6 @@ export class VisitorsCardPageComponent implements OnInit {
         }
 
         return this.isValidForm;
-    }
-
-    public addChild() {
-        var child = new Child();
-
-        this.visitorDetails.children.push(child);
-    }
-
-    public removeChild(index: number) {
-        this.visitorDetails.children.splice(index, 1);
     }
 
     public toggleAreaOfInterest(area: any) {
