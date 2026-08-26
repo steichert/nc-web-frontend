@@ -93,10 +93,6 @@
     margin-bottom: 1%;
 }
 
-.project-col:nth-child(7) {
-    margin-left: 27%;
-}
-
 .local-project-card {
     border-radius: 0.5rem;
     height: 224px;
@@ -119,6 +115,19 @@
 .international-project-card-img {
     border-radius: 0.5rem;
     height: 224px;
+}
+
+.local-project-card .card-img-overlay,
+.international-project-card .card-img-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.65) 100%);
+    border-radius: 0.5rem;
+}
+
+.local-project-card .card-title,
+.local-project-card .card-text,
+.international-project-card .card-title,
+.international-project-card .card-text {
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 .local-projects-card-title {
@@ -240,10 +249,6 @@
         margin-top: 15%;
     }
 
-    .project-col:nth-child(7) {
-        margin-left: 0;
-    }
-
     .missions-section {
         padding-bottom: 1rem;
         padding-left: 1rem;
@@ -268,10 +273,6 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .project-col:nth-child(7) {
-        margin-left: 17%;
-    }
-
     .missions-section {
         padding-bottom: 10%;
     }

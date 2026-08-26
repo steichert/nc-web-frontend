@@ -54,126 +54,6 @@ export const LOCAL_PROJECTS = [
             }
         ]
     },
-    {
-        cardTitle: "Gardens of Faithfulness",
-        // cardTitleColour: "#212529",
-        cardTitleColour: "black",
-        description: "",
-        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1708968373/static/missions/bbohenlduj51ysrmvwph.jpg',
-        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1708968374/static/missions/iujbjfyuhqbx3nfk4wp1.jpg',
-        mainTitle: "Gardens of Faithfulness",
-        paragraphs: [
-            {
-                type: "SIMPLE",
-                value: '"Gardens of Faithfulness" is a pioneering Christian community farming initiative launched through "Farming God\'s Way". The program is committed to addressing food scarcity through sustainable urban agriculture within the perimeters of homes and personal living spaces. Rooted in the principles of faith, this initiative not only seeks to alleviate hunger but also aims to foster Christian discipleship through the transfer of vital agricultural skills. Encouraging families to cultivate their own gardens, Gardens of Faithfulness promotes self-sufficiency, environmental stewardship, and a deeper connection to God\'s creation. By blending the spiritual with the practical, the initiative strives to sow seeds of abundance, both in terms of nourishing food production and the spiritual growth of individuals within the community.'
-            },
-            {
-                type: "SIMPLE",
-                value: 'Join us in cultivating faith, sustainability, and community through Gardens of Faithfulness.'
-            },
-            {
-                type: "SIMPLE_HTML",
-                value: 'To learn more, please email: <a href="mailto:admin@newcreation.co.za">admin@newcreation.co.za</a>'
-            }
-        ]
-    },
-    {
-        cardTitle: "Community Disciple-Making Multiplication",
-        cardTitleColour: "yellow",
-        description: "",
-        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328586/static/missions/xieiaynaz3is0tzpu0nk.jpg',
-        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328586/static/missions/xieiaynaz3is0tzpu0nk.jpg',
-        mainTitle: "Community Disciple-Making Multiplication",
-        paragraphs: [
-            {
-                type: "SIMPLE_HTML",
-                value: "During the COVID-19 pandemic, New Creation Family Church has provided many food parcels to those in need in Windsor East/West. This has been in partnership with the Kingdom Valley LEAN (Local Ecumenical Action Network. Through the food distribution and new Gardens of Faithfulness gardens, Karl has been training and courage local community pastors and believers across Randburg to share the gospel and ignite a <b>Disciple-Making Movement (DMM)</b> in the process."
-            },
-            {
-                type: "SIMPLE",
-                value: "A Disciple-Making Movement is a process of spreading the gospel by making disciples who learn to obey the Word of God and quickly make other disciples to do the same. This results in many new churches being planted, frequently in regions of that were previously very hostile to Christianity. It focuses on Christ’s final command in Matthew 28:18-20; \"All authority in heaven and on earth has been given to me. Therefore go and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to obey everything I have commanded you. And surely I am with you always, to the very end of the age.\""
-            },
-            {
-                type: "UNORDERED_LIST",
-                heading: "A Disciple-Making Movement focus on the following principals:",
-                values: [
-                    "Go slow in the beginning to go fast later.",
-                    "Engage an entire family or group, rather than just individuals.",
-                    "Share only when and where people are ready to hear.",
-                    "Study all the scriptures.",
-                    "Focus on discovering and obeying, not just teaching and knowledge.",
-                    "Make disciples of Jesus Christ, not converts to Christianity.",
-                    "Mature disciples that multiply disciples.",
-                    "Mentor a few leaders to reproduce many leaders and groups.",
-                    "Gospel movements best happen inside affinity groups (a close connection of people with common and natural likes and understanding).",
-                    "Pursue simple, relevant and reproducible activities.",
-                    "Prayer is the driving force."
-                ]
-            },
-            {
-                type: "ORDERED_LIST",
-                heading: "Contagious disciple-makers engage in the following activities:",
-                listType: "1",
-                values: [
-                    "Praying with faith and depending on God’s leading.",
-                    "Engaging lost and broken communities.",
-                    "Looking for Persons of Peace (the ones God has prepared to receive the gospel in their community).",
-                    "Helping them discover Jesus through Discovery Groups (an inductive group Bible study process designed to take people from not knowing Christ to falling in love with Him).",
-                    "Baptizing new believers.",
-                    "Helping them become communities of faith and ultimately new churches.",
-                    "Mentoring emerging leaders and working as a team (practice WADL – watch, assess, do and leave).",
-                    "Reproducing more leaders to multiply generations of Discover Groups and churches "
-                ]
-            },
-            {
-                type: "SIMPLE",
-                value: "A Discovery Group (Discovery Bible Study - DBS) does not have an expert teacher. Rather, the group has a facilitator who creates space for every person to share. Group discovery is the most powerful form of learning. When we encourage people in groups to discover truth, we create an environment where God can speak directly to their hearts."
-            },
-            {
-                type: "ORDERED_LIST",
-                heading: "The basic 7 Discovery Group questions are:",
-                listType: "A",
-                values: [
-                    {
-                        type: "ORDERED_LIST",
-                        heading: "CONNECT",
-                        listType: "1",
-                        values: [
-                            "What are you thankful for?",
-                            "What are you struggling with?",
-                            "What were you able to do and who to share with about our discovery last time?"
-                        ]
-                    },
-                    {
-                        type: "ORDERED_LIST",
-                        heading: "DISCOVERY",
-                        listType: "1",
-                        values: [
-                            "What does this scripture say?",
-                            "What does it mean?"
-                        ]
-                    },
-                    {
-                        type: "ORDERED_LIST",
-                        heading: "MULTIPLY",
-                        listType: "1",
-                        values: [
-                            "What will you do in response?",
-                            "Who will you tell?"
-                        ]
-                    }
-                ]
-            },
-            {
-                type: "SIMPLE",
-                value: "Many Discovery Groups are growing in the Word over WhatsApp and in person. Please pray that these disciple-making groups will multiply to engage more people with the goal to form new churches."
-            },
-            {
-                type: "SIMPLE_HTML",
-                value: "Please WhatsApp <b>Karl Teichert</b> at <b>072-477-2950</b> if you would like more information and get more involved."
-            }
-        ]
-    },
     // {
     //     cardTitle: "Finetown Outreach",
     //     cardTitleColour: "white",
@@ -189,7 +69,7 @@ export const LOCAL_PROJECTS = [
     // },
     {
         cardTitle: "Fellowship Through Fitness",
-        cardTitleColour: "yellow",
+        cardTitleColour: "white",
         description: "",
         cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328635/static/missions/qhdfm1gkpnfwel3hbn8b.jpg',
         mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/fellowship-through-fitness_qxjvpa.jpg',
@@ -206,44 +86,6 @@ export const LOCAL_PROJECTS = [
             {
                 type: "SIMPLE_HTML",
                 value: 'To get involved please email: <a href="mailto:admin@newcreation.co.za">admin@newcreation.co.za</a> or visit <a href=\"http://www.fellowshipfitness.co.za\" target=\"_blank\">www.fellowshipfitness.co.za</a> to learn more.'
-            }
-        ]
-    },
-    {
-        cardTitle: "National Freedom Network",
-        cardTitleColour: "black",
-        description: "",
-        cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328635/static/missions/l9mqddkvzprjluckhy9w.jpg',
-        mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1712328635/static/missions/tzknmfqgkv8xbbvwz8cu.png',
-        mainTitle: "",
-        paragraphs: [
-            {
-                type: "SIMPLE",
-                value: 'The National Freedom Network (NFN) was formally launched with the aim to connect all the various counter-Trafficking organisations with one another as well as with other role players across the movement. It has since grown into South Africa’s counter-Trafficking network.'
-            },
-            {
-                type: "SIMPLE",
-                value: 'The NFN acts as a point of connection for anyone working in the counter-Trafficking field; as a channel of communication to ensure that interaction between sectors allows for the flow of information as well as the sharing of resources and best practices; and as a hub of much needed collaboration.'
-            },
-            {
-                type: "SIMPLE_HTML",
-                value: 'The NFN acts as a point of connection for anyone working in the counter-Trafficking field; as a channel of communication to ensure that interaction between sectors allows for the flow of information as well as the sharing of resources and best practices; and as a hub of much needed collaboration.<br><br><b>Vision</b><br>All sectors of society united and organised to prevent and combat Trafficking in Persons.<br><br><b>Mission</b><br>To effectively fight Trafficking in Persons through strategic networking, collaboration and partnership.'
-            },
-            {
-                type: "UNORDERED_LIST",
-                heading: "Program Areas:",
-                listType: "1",
-                values: [
-                    "Networking",
-                    "Care & Support",
-                    "Advocacy",
-                    "Capacity Building",
-                    "Special Projects"
-                ]
-            },
-            {
-                type: "SIMPLE_HTML",
-                value: '<br>To find out more please email: <a href="mailto:info@nfn.org.za">info@nfn.org.za</a> or visit <a href=\"https://nfn.org.za\" target=\"_blank\">www.nfn.org.za</a> to learn more.<br>We also have an interactive online portal, NFN Online: <a href=\"https://nfn.org.za/nfn-online\" target=\"_blank\">www.nfn.org.za/nfn-online</a><br><br><b>EMERGENCY NUMBERS:</b><br>National Human Trafficking Hotline: 0800 222 777<br>Salvation Army Helpline: 08000 73728'
             }
         ]
     },
@@ -303,7 +145,7 @@ export const LOCAL_PROJECTS = [
 export const INTERNATIONAL_PROJECTS = [
     {
         cardTitle: "Cross Border Mission to Rutanang, Lesotho",
-        cardTitleColour: "black",
+        cardTitleColour: "white",
         description: "",
         cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1708968373/static/missions/adyvk9okerc1yyeo5xrt.jpg',
         mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1708968374/static/missions/gbvxi7qo3vsbr8h7vkok.jpg',
@@ -335,7 +177,7 @@ export const INTERNATIONAL_PROJECTS = [
     },
     {
         cardTitle: "Chinese Outreach Network",
-        cardTitleColour: "yellow",
+        cardTitleColour: "white",
         description: "",
         cardImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/sacon-cover_dj544a.jpg',
         mainImageUrl: 'https://res.cloudinary.com/dbmlnkfvh/image/upload/v1673438046/static/missions/sacon_rgyl4b.jpg',
