@@ -157,7 +157,7 @@ export const GOVERNMENTAL_ELDERSHIP = [
         title: "John Fanner"
     },
     {
-        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1769630326/static/leadership/anne-gray-thumbnail_lfgape.jpg",
+        imageSrc: "https://res.cloudinary.com/dbmlnkfvh/image/upload/v1791128731/static/leadership/anne-and-dan_si8scg.jpg",
         title: "Anne Gray"
     },
     {
