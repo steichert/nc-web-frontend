@@ -24,7 +24,7 @@ export class NcKidsHomePageComponent implements OnInit {
     }
 
     pageTitle = 'NC Kidz | New Creation Family Church';
-    registrationFormUrl = "https://newcreationfamilychurch.churchcenter.com/people/forms/841410"
+    registrationFormUrl = "https://newcreationfamilychurch.churchcenter.com/people/forms/1137782"
 
     ncKidsHomeBannerImageUrl = imageUrls.ncKidsHomeBannerImageUrl;
     ncBabiesLogoImageUrl = imageUrls.ncBabiesLogoImageUrl;
